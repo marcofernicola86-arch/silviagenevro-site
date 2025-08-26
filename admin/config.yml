@@ -2,9 +2,6 @@ backend:
   name: github
   repo: marcofernicola86-arch/silviagenevro-site
   branch: main
-  auth_type: implicit
-  app_id: TUO_CLIENT_ID_AUTH0
-  base_url: https://TUODOMINIO_AUTH0.us.auth0.com
 
 media_folder: "assets/img"
 public_folder: "/assets/img"
