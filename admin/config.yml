@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: marcofernicola86-arch/silviagenevro-site
+  name: git-gateway
   branch: main
 
 media_folder: "assets/img"
