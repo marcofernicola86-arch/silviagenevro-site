@@ -276,3 +276,42 @@ footer {
   }
 }
 
+/* === MOBILE FIX ONLY === */
+@media (max-width: 768px) {
+  /* Menu più leggibile */
+  header nav a {
+    font-size: 1.3em;     /* ingrandito per visibilità */
+    padding: 10px;
+  }
+
+  /* Hero image ridotta quanto basta */
+  .hero img {
+    max-height: 240px;
+  }
+
+  /* Cards Corsi: titoli e testi più proporzionati */
+  .cards .card h3 {
+    font-size: 1.15em;
+  }
+  .cards .card p {
+    font-size: 0.95em;
+  }
+
+  /* About text leggermente ridimensionato */
+  .about-text {
+    font-size: 1em;
+  }
+
+  /* Newsletter form: testo più leggibile */
+  #newsletter h2 {
+    font-size: 1.4em;
+  }
+  #newsletter p {
+    font-size: 1.05em;
+  }
+  #newsletter input[type="email"],
+  #newsletter button {
+    font-size: 1.1em;     /* almeno 16px consigliato per evitare zoom iOS :contentReference[oaicite:3]{index=3} */
+    padding: 14px;
+  }
+}
