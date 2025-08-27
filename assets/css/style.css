@@ -40,6 +40,45 @@ header nav a {
   }
 }
 
+/* ===== HAMBURGER MENU ===== */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background: #fff;
+    padding: 20px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  #nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 18px;
+    left: 20px;
+  }
+
+  header nav a {
+    font-size: 1.1rem;
+    margin: 8px 0;
+    display: block;
+  }
+}
 
 /* ===== HERO ===== */
 .hero {
@@ -423,5 +462,4 @@ footer {
 #certificazioni {
   text-align: center; /* ✅ le centra */
 }
-
 
