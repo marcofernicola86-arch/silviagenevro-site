@@ -294,54 +294,31 @@ footer {
 /* Mobile & tablet */
 @media (max-width: 992px){
 
-  /* hamburger in alto a destra */
-  .menu-toggle{
-    display: block;
-    position: fixed;    /* indipendente dal centraggio dell'header */
-    top: 16px;
-    right: 16px;
-    padding: 10px;      /* area di tap ampia */
-    z-index: 10001;
-  }
-
-  /* menu nascosto di default */
-  #nav-links{
-    display: none;
-    position: fixed;
-    top: 60px; left: 0;
-    width: 100%;
-    background: #fff;
-    text-align: center;
-    padding: 22px 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    z-index: 9999;
-    /* layout verticale leggibile */
-    display: none;
-    flex-direction: column !important;
-    gap: 18px;
-    align-items: center;
-  }
-
-  /* quando attivo, mostra il menu */
-  #nav-links.active{ display: flex !important; }
-
-  /* link grandi e comodi */
-  #nav-links a{
-    display: block !important;
-    font-size: 1.2rem !important;
-    padding: 10px 20px;
-    margin: 0;
-  }
-
-  /* opzionale: blocca lo scroll pagina quando menu aperto (richiede body.menu-open da JS) */
-  body.menu-open{ overflow: hidden; }
-}
-
-/* Backdrop (se usi il click-fuori) */
-#menu-backdrop{
+ /* ===== HAMBURGER ICON DEFINITIVA ===== */
+.menu-toggle {
   display: none;
   position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.25);
-  z-index: 10000;
+  top: 16px;
+  right: 16px;
+  width: 40px;     /* dimensione bottone */
+  height: 32px;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+/* disegna le tre linee */
+.menu-toggle::before,
+.menu-toggle::after,
+.menu-toggle div {
+  content: "";
+  display: block;
+  height: 4px;               /* spessore delle linee */
+  background: #24323a;       /* colore */
+  margin: 6px 0;             /* spazio tra le linee */
+  border-radius: 2px;
+}
+
+/* mostra solo su mobile */
+@media (max-width: 992px) {
+  .menu-toggle { display: block; }
 }
