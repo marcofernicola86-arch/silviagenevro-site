@@ -154,7 +154,7 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
   width: 63px;            /* 42px → +50% */
   height: 51px;           /* 34px → +50% */
   cursor: pointer;
-  z-index: 10001;
+  z-index: 10003;
 }
 
 /* tre barre spesse e ben visibili */
@@ -185,7 +185,7 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
     text-align: center;
     padding: 22px 0;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    z-index: 9999;
+    z-index: 10002;
 
     /* layout verticale leggibile */
     flex-direction: column;
@@ -214,5 +214,5 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.25);
-  z-index: 10000;
+  z-index: 10001;
 }
