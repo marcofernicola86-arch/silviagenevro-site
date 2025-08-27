@@ -55,8 +55,15 @@ header nav a {
   font-weight: bold;
 }
 
-.btn.primary { background: #2fa79b; color: #fff; }
-.btn.alt { background: #f2695c; color: #fff; }
+.btn.primary {
+  background: #2fa79b;
+  color: #fff;
+}
+
+.btn.alt {
+  background: #f2695c;
+  color: #fff;
+}
 
 .section {
   padding: 60px 20px;
@@ -106,7 +113,7 @@ footer {
 /* Contatti */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 12px;
   margin-top: 20px;
 }
@@ -124,53 +131,48 @@ footer {
   transition: .2s;
 }
 
-.contact-btn:hover { opacity:.85; }
+.contact-btn:hover { opacity: .85; }
+.contact-btn.email { background: #0073e6; }
+.contact-btn.phone { background: #00b894; }
+.contact-btn.whatsapp { background: #25D366; }
+.contact-btn.instagram { background: #E1306C; }
+.contact-btn.telegram { background: #0088cc; }
 
-.contact-btn.email { background:#0073e6; }
-.contact-btn.phone { background:#00b894; }
-.contact-btn.whatsapp { background:#25D366; }
-.contact-btn.instagram { background:#E1306C; }
-.contact-btn.telegram { background:#0088cc; }
-
-.video-container {
-  max-width: 800px;
-  margin: 20px auto;
+/* Video centrato */
+.meditazione-section {
+  text-align: center;
+  margin: 40px auto;
 }
 
-/* Ottimizzazioni mobile */
-@media (max-width: 700px) {
-  .hero img { max-height: 220px; }
-  .hero-buttons { flex-direction: column; gap: 10px; }
-  .about-container { flex-direction: column; text-align: center; }
-  .about-container img { max-width: 180px; }
+.container-meditazione {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-  #certificazioni img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .cards { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .contact-btn { font-size: 0.9em; padding: 10px; }
+.container-meditazione video {
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
 }
 
 /* Newsletter */
 #newsletter {
   background: #f7f0e9;
-  padding: 60px 20px;
+  padding: 40px 20px;
   text-align: center;
   border-radius: 8px;
-  margin: 60px auto;
+  margin: 40px auto;
   max-width: 500px;
 }
 
 #newsletter h2 {
-  font-size: 1.8em;
-  font-weight: bold;
   margin-bottom: 12px;
+  font-size: 1.6em;
+  font-weight: bold;
 }
 
 #newsletter p {
@@ -209,52 +211,43 @@ footer {
   background-color: #256f6c;
 }
 
-/* Responsive newsletter */
-@media (max-width: 480px) {
-  #newsletter form { flex-direction: column; }
-  #newsletter input,
-  #newsletter button {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-/* Instagram block */
 .follow-instagram {
   text-align: center;
-  margin-top: 30px; /* più spazio sotto al form */
+  margin-top: 30px;
 }
 
 .follow-instagram p {
   font-size: 1.2em;
   font-weight: bold;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
 .instagram-btn {
   display: inline-block;
-  padding: 12px 28px;
+  padding: 12px 24px;
   background: #E1306C;
   color: white;
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1em;
   transition: background 0.3s;
 }
 
-.instagram-btn:hover { background: #c2275a; }
-
-/* Meditazione */
-.meditazione-section {
-  text-align: center;
-  margin: 40px auto;
+.instagram-btn:hover {
+  background: #c2275a;
 }
 
-.container-meditazione {
-  max-width: 600px;
-  margin: 0 auto;
+/* Responsive */
+@media(max-width:700px){
+  .cards { grid-template-columns:1fr; }
+  .about-container { flex-direction:column;text-align:center; }
+  .about-container img { max-width:180px; }
+  .contact-grid { grid-template-columns:1fr 1fr; gap:10px; }
+  .contact-btn { font-size:.9em; padding:10px; }
 }
 
-.container-meditazione video {
-  width: 1
+@media(max-width:480px){
+  #newsletter form { flex-direction:column; }
+  #newsletter input,
+  #newsletter button { width:100%; max-width:none; }
+}
