@@ -544,27 +544,7 @@ footer {
     margin: 0;
     text-align: center;
   }
-/* ===== HAMBURGER ICON FIX ===== */
-.menu-toggle {
-  display: none;
-  font-size: 40px;       /* molto più grande */
-  cursor: pointer;
-  line-height: 1;
-  user-select: none;
-}
 
-@media (max-width: 992px) {
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 40px;
-    padding: 10px;
-    background: transparent;
-    z-index: 10000;
-  }
-}
 
 /* ===== HAMBURGER ICON FIX ===== */
 .menu-toggle{
