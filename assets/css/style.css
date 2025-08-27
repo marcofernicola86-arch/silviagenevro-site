@@ -212,3 +212,4 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
   background: rgba(0,0,0,0.25);
   z-index: 10001;               /* sotto al menu */
 }
+#menu-backdrop { display: none !important; }
