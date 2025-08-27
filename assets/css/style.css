@@ -545,3 +545,19 @@ footer {
     text-align: center;
   }
 }
+#nav-links.active {
+  display: block !important;
+  background: yellow !important;
+  position: fixed !important;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  z-index: 9999;
+}
+#nav-links.active a {
+  display: block !important;
+  font-size: 1.5rem !important;
+  padding: 15px 0;
+}
