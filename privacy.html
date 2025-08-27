@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy & Cookies Policy - Silvia Genevro</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header>
+  <span class="menu-toggle" id="menu-toggle" role="button" aria-label="Apri/chiudi menu" aria-expanded="false"></span>
+  <nav id="nav-links">
+    <a href="index.html#home">Home</a>
+    <a href="index.html#chi-sono">Chi sono</a>
+    <a href="index.html#corsi">Corsi</a>
+    <a href="index.html#formazione">Formazione</a>
+    <a href="index.html#eventi">Eventi</a>
+    <a href="index.html#certificazioni">Certificazioni</a>
+    <a href="meditazione.html">Meditazione Guidata</a>
+    <a href="index.html#contatti">Contatti</a>
+  </nav>
+</header>
+
+<section class="section">
+  <h1>Privacy & Cookies Policy</h1>
+  <p>Questa pagina descrive come vengono trattati i dati personali e l’uso dei cookie sul sito <strong>silviagenevro.netlify.app</strong>.</p>
+
+  <h2>1. Titolare del trattamento</h2>
+  <p><strong>Silvia Genevro</strong> – Mindfulness Professional Trainer<br>
+  Email: <a href="mailto:silvia.genevro@gmail.com">silvia.genevro@gmail.com</a></p>
+
+  <h2>2. Dati raccolti</h2>
+  <ul>
+    <li><strong>Form di contatto / newsletter</strong>: i dati inviati (es. indirizzo email) vengono utilizzati esclusivamente per fornire aggiornamenti e risposte alle richieste.</li>
+    <li><strong>Nessun dato sensibile</strong> viene richiesto né trattato attraverso il sito.</li>
+  </ul>
+
+  <h2>3. Cookie</h2>
+  <ul>
+    <li>Il sito utilizza solo <strong>cookie tecnici</strong> per il corretto funzionamento.</li>
+    <li>Non sono utilizzati cookie di profilazione o marketing.</li>
+    <li>Google Fonts può comportare richieste a server di Google, ma non vengono utilizzati cookie di profilazione da parte del sito.</li>
+  </ul>
+
+  <h2>4. Finalità del trattamento</h2>
+  <p>I dati raccolti tramite form sono utilizzati esclusivamente per inviare comunicazioni richieste dall’utente (es. iscrizione alla newsletter o contatti diretti).</p>
+
+  <h2>5. Conservazione</h2>
+  <p>I dati vengono conservati per il tempo necessario a rispondere alle richieste o gestire la newsletter, e possono essere cancellati su semplice richiesta.</p>
+
+  <h2>6. Diritti dell’utente</h2>
+  <p>L’utente può in ogni momento richiedere: accesso, rettifica, cancellazione dei dati scrivendo a <a href="mailto:silvia.genevro@gmail.com">silvia.genevro@gmail.com</a>.</p>
+
+  <h2>7. Aggiornamenti</h2>
+  <p>La presente informativa può essere aggiornata. Ultimo aggiornamento: agosto 2025.</p>
+</section>
+
+<footer>
+  <p>© 2025 Silvia Genevro – Mindfulness Professional Trainer<br>P.IVA: 13288610010</p>
+</footer>
+
+<script>
+  /* stesso script menu delle altre pagine */
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks   = document.getElementById("nav-links");
+
+    const isOpen = () => navLinks.classList.contains("active");
+    const openMenu = () => { navLinks.classList.add("active"); document.body.classList.add("menu-open"); menuToggle.setAttribute("aria-expanded", "true"); };
+    const closeMenu = () => { navLinks.classList.remove("active"); document.body.classList.remove("menu-open"); menuToggle.setAttribute("aria-expanded", "false"); };
+
+    menuToggle.addEventListener("click", (e) => { e.stopPropagation(); isOpen() ? closeMenu() : openMenu(); });
+    navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+    document.addEventListener("click", (e) => { if (isOpen() && !navLinks.contains(e.target) && e.target !== menuToggle) closeMenu(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && isOpen()) closeMenu(); });
+    window.addEventListener("scroll", () => { if (isOpen()) closeMenu(); }, { passive: true });
+    window.addEventListener("hashchange", closeMenu);
+    window.addEventListener("resize", () => { if (window.innerWidth > 992 && isOpen()) closeMenu(); });
+  });
+</script>
+
+</body>
+</html>
