@@ -61,44 +61,42 @@
     <a class="btn primary" href="index.html">← Torna al sito</a>
   </p>
 
-  <!-- Toggle menu + click fuori -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuToggle = document.getElementById("menu-toggle");
-      const navLinks   = document.getElementById("nav-links");
-      let backdrop;
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks   = document.getElementById("nav-links");
 
-      function openMenu(){
-        navLinks.classList.add("active");
-        document.body.classList.add("menu-open");
-        if(!backdrop){
-          backdrop = document.createElement("div");
-          backdrop.id = "menu-backdrop";
-          document.body.appendChild(backdrop);
-          backdrop.addEventListener("click", closeMenu);
-        }
-        backdrop.style.display = "block";
-      }
+  function openMenu(){
+    navLinks.classList.add("active");
+    document.body.classList.add("menu-open");
+  }
+  function closeMenu(){
+    navLinks.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  }
 
-      function closeMenu(){
-        navLinks.classList.remove("active");
-        document.body.classList.remove("menu-open");
-        if(backdrop) backdrop.style.display = "none";
-      }
+  // Apri/chiudi con l'icona
+  menuToggle.addEventListener("click", (e) => {
+    e.stopPropagation(); // evita che il click cada sul document
+    navLinks.classList.contains("active") ? closeMenu() : openMenu();
+  });
 
-      menuToggle.addEventListener("click", () => {
-        navLinks.classList.contains("active") ? closeMenu() : openMenu();
-      });
+  // Chiudi cliccando un link del menu
+  navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
 
-      // chiudi al click su un link
-      navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+  // Chiudi cliccando fuori dal menu (senza backdrop)
+  document.addEventListener("click", (e) => {
+    if (navLinks.classList.contains("active") &&
+        !navLinks.contains(e.target) &&
+        e.target !== menuToggle) {
+      closeMenu();
+    }
+  });
 
-      // chiudi con ESC
-      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+  // Chiudi con ESC
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
 
-      // se torni a desktop, chiudi
-      window.addEventListener("resize", () => { if (window.innerWidth > 992) closeMenu(); });
-    });
-  </script>
-</body>
-</html>
+  // Se torni a desktop, chiudi
+  window.addEventListener("resize", () => { if (window.innerWidth > 992) closeMenu(); });
+});
+</script>
