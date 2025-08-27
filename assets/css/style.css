@@ -1,4 +1,4 @@
-/* === STILE GENERALE === */
+/* ------------ BASE ------------ */
 body {
   margin: 0;
   font-family: Lato, Arial, sans-serif;
@@ -6,104 +6,63 @@ body {
   color: #24323a;
   line-height: 1.6;
 }
+h1,h2,h3 { font-family: Montserrat, Arial, sans-serif; margin-bottom: 0.6em; }
 
-h1, h2, h3 {
-  font-family: Montserrat, Arial, sans-serif;
-}
-
-/* === HEADER / MENU === */
+/* ------------ HEADER ------------ */
 header {
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,.05);
-  padding: 16px 20px;
+  padding: 14px 20px;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
 }
-
 header nav {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 18px;
 }
-
 header nav a {
-  margin: 0;
   text-decoration: none;
   color: #24323a;
-  font-weight: 700;
-  font-size: 1.1em; /* più grande e leggibile */
-  transition: color 0.25s ease;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
-header nav a:hover {
-  color: #2fa79b;
-}
-
-/* === HERO === */
-.hero {
-  text-align: center;
-  padding: 60px 20px;
-}
-
+/* ------------ HERO ------------ */
+.hero { text-align: center; padding: 60px 20px; }
 .hero img {
   max-width: 100%;
   height: auto;
-  max-height: 350px;
+  max-height: 320px;
   margin: 20px auto;
   display: block;
   border-radius: 12px;
 }
-
 .hero-buttons {
   margin-top: 15px;
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
 }
-
 .btn {
   display: inline-block;
   padding: 12px 24px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1rem;
 }
+.btn.primary { background: #2fa79b; color: #fff; }
+.btn.alt { background: #f2695c; color: #fff; }
 
-.btn.primary {
-  background: #2fa79b;
-  color: #fff;
-}
+/* ------------ SEZIONI ------------ */
+.section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 16px; }
+.card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 16px; }
 
-.btn.alt {
-  background: #f2695c;
-  color: #fff;
-}
-
-/* === SEZIONI === */
-.section {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-}
-
-.card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 16px;
-  font-size: 0.95em; /* più equilibrato su mobile */
-}
-
+/* ------------ ABOUT ------------ */
 .about-container {
   display: flex;
   align-items: center;
@@ -111,17 +70,76 @@ header nav a:hover {
   flex-wrap: wrap;
   justify-content: center;
 }
+.about-container img { max-width: 220px; border-radius: 50%; }
+.about-text { max-width: 500px; }
 
-.about-container img {
-  max-width: 220px;
-  border-radius: 50%;
+/* ------------ NEWSLETTER ------------ */
+#newsletter {
+  background: #f7f0e9;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 50px auto;
+  max-width: 550px;
 }
-
-.about-text {
-  max-width: 500px;
+#newsletter h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 12px;
 }
+#newsletter p { margin-bottom: 24px; color: #555; }
+#newsletter form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+#newsletter input[type="email"] {
+  padding: 14px;
+  font-size: 1rem;
+  flex: 1 1 250px;
+  max-width: 320px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#newsletter button {
+  padding: 14px 26px;
+  font-size: 1rem;
+  background-color: #2c8f8c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#newsletter button:hover { background-color: #256f6c; }
 
-/* === FOOTER === */
+/* ------------ CONTATTI ------------ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap: 14px;
+  margin-top: 25px;
+}
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  transition: .2s;
+}
+.contact-btn:hover { opacity: .85; }
+.contact-btn.email { background: #0073e6; }
+.contact-btn.phone { background: #00b894; }
+.contact-btn.whatsapp { background: #25D366; }
+.contact-btn.instagram { background: #E1306C; }
+.contact-btn.telegram { background: #0088cc; }
+
+/* ------------ FOOTER ------------ */
 footer {
   padding: 20px;
   text-align: center;
@@ -131,124 +149,12 @@ footer {
   margin-top: 40px;
 }
 
-/* === FORM NEWSLETTER === */
-#newsletter {
-  background: #f7f0e9;
-  padding: 40px 20px;
-  text-align: center;
-  border-radius: 8px;
-  margin: 60px auto;
-  max-width: 500px;
-}
-
-#newsletter h2 {
-  font-size: 1.4em;
-  margin-bottom: 12px;
-}
-
-#newsletter p {
-  margin-bottom: 20px;
-  color: #555;
-  font-size: 1.05em;
-}
-
-#newsletter form {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-#newsletter input[type="email"] {
-  padding: 14px;
-  font-size: 1em;
-  flex: 1 1 250px;
-  max-width: 320px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-#newsletter button {
-  padding: 14px 26px;
-  font-size: 1em;
-  background-color: #2c8f8c;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  flex: 0 0 auto;
-}
-
-#newsletter button:hover {
-  background-color: #256f6c;
-}
-
-.follow-instagram {
-  text-align: center;
-  margin-top: 28px; /* più spazio dal form */
-}
-
-.follow-instagram p {
-  font-size: 1.2em;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.instagram-btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #E1306C;
-  color: white;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
-  font-size: 1.05em;
-}
-
-.instagram-btn:hover {
-  background: #c2275a;
-}
-
-/* === VIDEO === */
-.meditazione-section {
-  text-align: center;
-  margin: 40px auto;
-}
-
-.container-meditazione {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.container-meditazione video {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  display: block;
-}
-
-/* === MOBILE FIX === */
-@media (max-width: 700px) {
-  header nav {
-    gap: 14px;
-  }
-  header nav a {
-    font-size: 1.15em; /* più grande su mobile */
-  }
-  .cards {
-    grid-template-columns: 1fr; /* 1 corso per riga */
-  }
-  .card {
-    font-size: 1em; /* leggibile ma non enorme */
-  }
-  #newsletter {
-    max-width: 90%;
-    padding: 30px 16px;
-  }
-  #newsletter input[type="email"],
-  #newsletter button {
-    width: 100%;
-    max-width: none;
-  }
+/* ------------ MOBILE FIX ------------ */
+@media (max-width: 768px) {
+  header nav { gap: 10px; }
+  header nav a { font-size: 1rem; }
+  .cards { grid-template-columns: 1fr; }
+  #newsletter { max-width: 90%; }
+  #newsletter input, #newsletter button { width: 100%; max-width: none; }
+  .contact-grid { grid-template-columns: 1fr 1fr; }
 }
