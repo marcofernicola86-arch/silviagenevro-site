@@ -1,31 +1,31 @@
-/* Reset */
+/* ===== RESET ===== */
 body {
   margin: 0;
-  font-family: Lato, Arial, sans-serif;
+  font-family: 'Lato', Arial, sans-serif;
   background: #fffaf5;
   color: #24323a;
   line-height: 1.6;
 }
 
 h1, h2, h3 {
-  font-family: Montserrat, Arial, sans-serif;
-  margin: 0 0 15px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin-top: 0;
 }
 
-/* Header */
+/* ===== HEADER ===== */
 header {
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,.05);
-  padding: 14px 20px;
+  padding: 16px 20px;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 10;
 }
 
 header nav {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
@@ -40,18 +40,16 @@ header nav a:hover {
   color: #2fa79b;
 }
 
-/* Sezioni */
-.section {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: auto;
+/* ===== HERO ===== */
+.hero {
   text-align: center;
+  padding: 60px 20px;
 }
 
-/* Hero */
 .hero img {
   max-width: 100%;
   height: auto;
+  max-height: 400px;
   margin: 20px auto;
   display: block;
   border-radius: 12px;
@@ -62,31 +60,42 @@ header nav a:hover {
   display: flex;
   justify-content: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
-/* Bottoni */
 .btn {
   display: inline-block;
-  padding: 12px 22px;
+  padding: 12px 24px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
   font-size: 1em;
-  transition: background .3s, transform .2s;
+  transition: 0.3s;
 }
-
-.btn:hover { transform: scale(1.05); }
 
 .btn.primary { background: #2fa79b; color: #fff; }
 .btn.alt { background: #f2695c; color: #fff; }
-.btn.instagram { background: #E1306C; color: #fff; }
 
-/* Cards Corsi */
+.btn:hover { opacity: 0.85; }
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* ===== CARDS ===== */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
   gap: 20px;
-  margin-top: 20px;
 }
 
 .card {
@@ -94,26 +103,56 @@ header nav a:hover {
   border: 1px solid #eee;
   border-radius: 12px;
   padding: 20px;
-  font-size: 0.95em;
+  text-align: center;
 }
 
-/* Newsletter */
+.card h3 {
+  font-size: 1.3em;
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 1em;
+}
+
+/* ===== ABOUT ===== */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-container img {
+  max-width: 220px;
+  border-radius: 50%;
+}
+
+.about-text {
+  max-width: 500px;
+  font-size: 1.1em;
+}
+
+/* ===== NEWSLETTER ===== */
 #newsletter {
   background: #f7f0e9;
   padding: 50px 20px;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 12px;
   margin: 60px auto;
   max-width: 600px;
 }
 
 #newsletter h2 {
-  font-size: 1.6em;
-  margin-bottom: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
 #newsletter p {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   color: #555;
   font-size: 1.1em;
 }
@@ -128,16 +167,16 @@ header nav a:hover {
 
 #newsletter input[type="email"] {
   padding: 14px;
-  font-size: 1.1em;
-  flex: 1 1 260px;
+  font-size: 1em;
+  flex: 1 1 250px;
   max-width: 320px;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
 
 #newsletter button {
-  padding: 14px 26px;
-  font-size: 1.1em;
+  padding: 14px 28px;
+  font-size: 1em;
   background-color: #2c8f8c;
   color: white;
   border: none;
@@ -149,10 +188,33 @@ header nav a:hover {
   background-color: #256f6c;
 }
 
-/* Contatti */
+.follow-instagram {
+  margin-top: 25px;
+}
+
+.follow-instagram p {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 12px;
+}
+
+.instagram-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #E1306C;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.instagram-btn:hover { background: #c2275a; }
+
+/* ===== CONTACTS ===== */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
   gap: 12px;
   margin-top: 20px;
 }
@@ -162,47 +224,55 @@ header nav a:hover {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px;
-  border-radius: 30px;
+  padding: 14px;
+  border-radius: 12px;
   font-weight: bold;
   text-decoration: none;
   color: #fff;
+  font-size: 1.1em;
   transition: .2s;
 }
 
-.contact-btn:hover { opacity: .9; }
-
+.contact-btn:hover { opacity: .85; }
 .contact-btn.email { background:#0073e6; }
 .contact-btn.phone { background:#00b894; }
 .contact-btn.whatsapp { background:#25D366; }
 .contact-btn.instagram { background:#E1306C; }
 .contact-btn.telegram { background:#0088cc; }
 
-/* Video centrato */
-.video-container {
-  max-width: 800px;
-  margin: 20px auto;
+/* ===== FOOTER ===== */
+footer {
+  padding: 20px;
   text-align: center;
+  color: #5b6b73;
+  font-size: .9em;
+  background: #fafafa;
+  margin-top: 40px;
 }
 
-.video-container video {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* Responsive */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  header nav a { font-size: 1.2em; }
+  .hero img { max-height: 280px; }
+  .card h3 { font-size: 1.1em; }
+  .card p { font-size: 0.95em; }
+  .about-text { font-size: 1em; }
+  #newsletter { padding: 40px 15px; }
+}
+
+@media (max-width: 480px) {
+  header nav {
+    gap: 10px;
+  }
   header nav a {
     font-size: 1.2em;
+    display: block;
   }
-  .card {
-    font-size: 0.9em;
-  }
-  #newsletter h2 {
-    font-size: 1.4em;
-  }
-  #newsletter p {
-    font-size: 1em;
+  .hero-buttons { flex-direction: column; }
+  #newsletter form { flex-direction: column; }
+  #newsletter input, #newsletter button {
+    width: 100%;
+    max-width: none;
   }
 }
 
