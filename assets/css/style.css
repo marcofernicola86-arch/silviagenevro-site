@@ -8,6 +8,8 @@ body {
 }
 h1, h2, h3 {
   font-family: Montserrat, Arial, sans-serif;
+  font-weight: 700;
+  text-align: center;
 }
 
 /* --- HEADER --- */
@@ -23,7 +25,7 @@ header nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 20px;
 }
 header nav a {
   text-decoration: none;
@@ -32,12 +34,26 @@ header nav a {
   font-size: 1.05em;
 }
 
-/* --- SEZIONI --- */
+/* --- CONTENITORI SEZIONI --- */
 .section {
   padding: 60px 20px;
   max-width: 1000px;
   margin: auto;
+  text-align: center;
 }
+
+/* --- HERO --- */
+.hero img {
+  max-width: 100%;
+  height: auto;
+  max-height: 350px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+/* --- ABOUT --- */
 .about-container {
   display: flex;
   align-items: center;
@@ -80,7 +96,7 @@ header nav a {
 }
 #newsletter h2 {
   margin-bottom: 12px;
-  font-size: 1.3em;
+  font-size: 1.4em;
 }
 #newsletter p {
   margin-bottom: 20px;
@@ -113,20 +129,30 @@ header nav a {
   background-color: #256f6c;
 }
 
+/* --- FOOTER --- */
+footer {
+  padding: 20px;
+  text-align: center;
+  color: #5b6b73;
+  font-size: .9em;
+  background: #fafafa;
+  margin-top: 40px;
+}
+
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   header nav a {
-    font-size: 1.2em; /* menu più leggibile */
+    font-size: 1.2em; /* menu più grande */
   }
   .about-text {
     text-align: center;
     font-size: 1em;
   }
   .card {
-    font-size: 0.9em; /* testi corsi più piccoli */
+    font-size: 0.9em; /* corsi più leggibili */
   }
   #newsletter {
-    max-width: 90%;
+    max-width: 95%;
   }
 }
 
