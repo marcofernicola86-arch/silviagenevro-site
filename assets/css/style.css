@@ -12,18 +12,30 @@ h1, h2, h3 {
 
 header {
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
   padding: 12px 20px;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
+/* --- Menu centrato --- */
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 header nav a {
-  margin: 0 10px;
   text-decoration: none;
   color: #24323a;
   font-weight: 600;
+  transition: color 0.2s;
+}
+
+header nav a:hover {
+  color: #2fa79b;
 }
 
 .hero {
@@ -110,7 +122,41 @@ footer {
   margin-top: 40px;
 }
 
-/* Griglia contatti */
+@media(max-width: 700px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .hero img {
+    max-height: 220px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-container img {
+    max-width: 180px;
+  }
+  #certificazioni img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .contact-btn {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+}
+
+/* --- Pulsanti contatti --- */
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -141,13 +187,12 @@ footer {
 .contact-btn.instagram { background: #E1306C; }
 .contact-btn.telegram { background: #0088cc; }
 
-/* Container video meditazione */
 .video-container {
   max-width: 800px;
   margin: 20px auto;
 }
 
-/* Newsletter */
+/* --- Newsletter --- */
 #newsletter {
   background: #f7f0e9;
   padding: 60px 20px;
@@ -199,21 +244,33 @@ footer {
   background-color: #256f6c;
 }
 
-/* Instagram */
+/* --- Responsive newsletter --- */
+@media (max-width: 480px) {
+  #newsletter form {
+    flex-direction: column;
+  }
+  #newsletter input,
+  #newsletter button {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* --- Instagram follow --- */
 .follow-instagram {
   text-align: center;
-  margin-top: 40px; /* più spazio sotto la newsletter */
+  margin-top: 40px; /* spazio extra sopra */
 }
 
 .follow-instagram p {
-  font-size: 1.6em;  /* uguale a newsletter h2 */
-  font-weight: bold; /* stesso peso */
+  font-size: 1.3em;
+  font-weight: bold;
   margin-bottom: 15px;
 }
 
 .instagram-btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 24px;
   background: #E1306C;
   color: white;
   border-radius: 25px;
@@ -226,7 +283,7 @@ footer {
   background: #c2275a;
 }
 
-/* Sezione meditazione */
+/* --- Sezione meditazione --- */
 .meditazione-section {
   text-align: center;
   margin: 40px auto;
@@ -235,36 +292,12 @@ footer {
 .container-meditazione {
   max-width: 800px;
   margin: 0 auto;
-  text-align: center;
 }
 
 .container-meditazione video {
   width: 100%;
+  max-width: 100%;
   border-radius: 8px;
   margin-bottom: 20px;
   display: block;
 }
-
-/* Ottimizzazioni mobile */
-@media(max-width:700px){
-  .cards { grid-template-columns:1fr; }
-  .hero img { max-height:220px; }
-  .hero-buttons { flex-direction:column; gap:10px; }
-  .about-container { flex-direction:column; text-align:center; }
-  .about-container img { max-width:180px; }
-
-  #certificazioni img {
-    width:100%;
-    max-width:500px;
-    height:auto;
-    display:block;
-    margin:0 auto;
-  }
-
-  .contact-grid { grid-template-columns:1fr 1fr; gap:10px; }
-  .contact-btn { font-size:0.9em; padding:10px; }
-
-  #newsletter form { flex-direction:column; }
-  #newsletter input, #newsletter button { width:100%; max-width:none; }
-}
-
