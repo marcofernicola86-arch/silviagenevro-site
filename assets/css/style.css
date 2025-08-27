@@ -23,13 +23,23 @@ header {
   text-align: center;
 }
 
+/* MENU HEADER */
 header nav a {
-  margin: 0 10px;
+  margin: 0 12px;
   text-decoration: none;
   color: #24323a;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.2em; /* aumentato del 20% rispetto al valore standard */
 }
+
+/* Migliora leggibilità su mobile */
+@media (max-width: 700px) {
+  header nav a {
+    font-size: 1.1em; /* anche su mobile ingrandito */
+    margin: 0 8px;
+  }
+}
+
 
 /* ===== HERO ===== */
 .hero {
