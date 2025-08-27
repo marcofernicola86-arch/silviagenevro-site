@@ -48,19 +48,28 @@ header nav a {
 }
 
 /* Mobile menu */
-@media (max-width: 768px) {
-  #nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 12px;
-    background: #fff;
-    padding: 20px;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
+@media (max-width: 992px) {
+ #nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  background: #fff;
+  padding: 20px;
+  position: fixed;      /* ✅ da absolute → fixed */
+  top: 60px;
+  left: 0;
+  width: 100%;          /* ✅ prende tutta la larghezza */
+  text-align: center;   /* ✅ centra i link */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;         /* ✅ sopra agli altri elementi */
+}
+
+#nav-links a {
+  font-size: 1.2rem;
+  padding: 10px 0;
+  display: block;
+}
+
 
   #nav-links.active {
     display: flex;
