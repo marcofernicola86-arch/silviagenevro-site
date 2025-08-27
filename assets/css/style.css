@@ -311,3 +311,19 @@ footer {
   }
 }
 
+/* ===== SEZIONE CHI SONO ===== */
+.about-text {
+  font-size: 1.25rem;   /* 🔼 Aumentato del 25% rispetto a ~1rem */
+  line-height: 1.6;
+}
+
+.about-text p {
+  font-size: 1.25rem;   /* 🔼 anche per i paragrafi */
+  line-height: 1.6;
+}
+
+/* Pulsante "Scopri i corsi" nella sezione Chi sono */
+.about-container .btn {
+  font-size: 1.1rem;    /* 🔼 più grande del 25% */
+  padding: 14px 28px;   /* 🔼 ingrandito */
+}
