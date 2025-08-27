@@ -252,23 +252,31 @@ footer {
   background: #c2275a;
 }
 
-/* ===== MEDITAZIONE SECTION ===== */
+/* ===== SEZIONE MEDITAZIONE ===== */
 .meditazione-section {
   text-align: center;
   margin: 40px auto;
+  max-width: 800px;   /* limita la larghezza */
+  padding: 0 20px;    /* margine interno per evitare testo attaccato */
 }
 
-.container-meditazione {
-  max-width: 800px;
-  margin: 0 auto;
+.meditazione-section h1,
+.meditazione-section p {
+  text-align: center;
+  margin: 0 auto 20px;
+  max-width: 700px;   /* così il testo non diventa troppo largo */
+  line-height: 1.6;
 }
 
-.container-meditazione video {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 20px;
+.meditazione-section video {
   display: block;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 600px;   /* dimensione massima */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
