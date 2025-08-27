@@ -393,3 +393,22 @@ footer {
 .cards .card h3 a:hover {
   text-decoration: underline;
 }
+/* ===== EVENTI ===== */
+.card.evento {
+  background: linear-gradient(135deg, #283593, #5c6bc0); /* blu-viola */
+  color: #fff;
+  text-align: center;
+}
+
+.card.evento h3 {
+  font-size: 1.4rem;
+  margin: 15px 0 8px;
+  font-weight: bold;
+}
+
+.card.evento p {
+  font-size: 1rem;
+  margin: 0 0 15px;
+  opacity: 0.9;
+}
+
