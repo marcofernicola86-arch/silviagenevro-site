@@ -1,46 +1,33 @@
-/* ===== RESET ===== */
 body {
   margin: 0;
-  font-family: 'Lato', Arial, sans-serif;
+  font-family: Lato, Arial, sans-serif;
   background: #fffaf5;
   color: #24323a;
   line-height: 1.6;
 }
 
 h1, h2, h3 {
-  font-family: 'Montserrat', Arial, sans-serif;
-  margin-top: 0;
+  font-family: Montserrat, Arial, sans-serif;
 }
 
-/* ===== HEADER ===== */
 header {
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,.05);
-  padding: 16px 20px;
+  padding: 12px 20px;
   position: sticky;
   top: 0;
   z-index: 10;
-}
-
-header nav {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
 header nav a {
+  margin: 0 10px;
   text-decoration: none;
   color: #24323a;
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: 1rem;
 }
 
-header nav a:hover {
-  color: #2fa79b;
-}
-
-/* ===== HERO ===== */
 .hero {
   text-align: center;
   padding: 60px 20px;
@@ -49,7 +36,7 @@ header nav a:hover {
 .hero img {
   max-width: 100%;
   height: auto;
-  max-height: 400px;
+  max-height: 350px;
   margin: 20px auto;
   display: block;
   border-radius: 12px;
@@ -60,69 +47,59 @@ header nav a:hover {
   display: flex;
   justify-content: center;
   gap: 12px;
-  flex-wrap: wrap;
 }
 
 .btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 12px 20px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1em;
-  transition: 0.3s;
+  min-width: 150px;          /* stessa larghezza di base */
+  text-align: center;
+  box-sizing: border-box;
+  transition: background 0.2s, transform 0.1s;
 }
 
-.btn.primary { background: #2fa79b; color: #fff; }
-.btn.alt { background: #f2695c; color: #fff; }
+.btn:active {
+  transform: scale(0.97);    /* feedback senza deformare */
+}
 
-.btn:hover { opacity: 0.85; }
+.btn.primary {
+  background: #2fa79b;
+  color: #fff;
+}
 
-/* ===== SECTIONS ===== */
+.btn.alt {
+  background: #f2695c;
+  color: #fff;
+}
+
 .section {
   padding: 60px 20px;
   max-width: 1000px;
   margin: auto;
 }
 
-.section h2 {
-  text-align: center;
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-/* ===== CARDS ===== */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
 }
 
 .card {
   background: #fff;
   border: 1px solid #eee;
   border-radius: 12px;
-  padding: 20px;
-  text-align: center;
+  padding: 16px;
 }
 
-.card h3 {
-  font-size: 1.3em;
-  margin-bottom: 12px;
-}
-
-.card p {
-  font-size: 1em;
-}
-
-/* ===== ABOUT ===== */
 .about-container {
   display: flex;
   align-items: center;
   gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
-  text-align: center;
 }
 
 .about-container img {
@@ -132,115 +109,8 @@ header nav a:hover {
 
 .about-text {
   max-width: 500px;
-  font-size: 1.1em;
 }
 
-/* ===== NEWSLETTER ===== */
-#newsletter {
-  background: #f7f0e9;
-  padding: 50px 20px;
-  text-align: center;
-  border-radius: 12px;
-  margin: 60px auto;
-  max-width: 600px;
-}
-
-#newsletter h2 {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-#newsletter p {
-  margin-bottom: 24px;
-  color: #555;
-  font-size: 1.1em;
-}
-
-#newsletter form {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 25px;
-}
-
-#newsletter input[type="email"] {
-  padding: 14px;
-  font-size: 1em;
-  flex: 1 1 250px;
-  max-width: 320px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-#newsletter button {
-  padding: 14px 28px;
-  font-size: 1em;
-  background-color: #2c8f8c;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-#newsletter button:hover {
-  background-color: #256f6c;
-}
-
-.follow-instagram {
-  margin-top: 25px;
-}
-
-.follow-instagram p {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 12px;
-}
-
-.instagram-btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #E1306C;
-  color: white;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.instagram-btn:hover { background: #c2275a; }
-
-/* ===== CONTACTS ===== */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.contact-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px;
-  border-radius: 12px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.1em;
-  transition: .2s;
-}
-
-.contact-btn:hover { opacity: .85; }
-.contact-btn.email { background:#0073e6; }
-.contact-btn.phone { background:#00b894; }
-.contact-btn.whatsapp { background:#25D366; }
-.contact-btn.instagram { background:#E1306C; }
-.contact-btn.telegram { background:#0088cc; }
-
-/* ===== FOOTER ===== */
 footer {
   padding: 20px;
   text-align: center;
@@ -250,68 +120,188 @@ footer {
   margin-top: 40px;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  header nav a { font-size: 1.2em; }
-  .hero img { max-height: 280px; }
-  .card h3 { font-size: 1.1em; }
-  .card p { font-size: 0.95em; }
-  .about-text { font-size: 1em; }
-  #newsletter { padding: 40px 15px; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
 }
 
-@media (max-width: 480px) {
-  header nav {
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  transition: .2s;
+}
+
+.contact-btn:hover {
+  opacity: .85;
+}
+
+.contact-btn.email { background: #0073e6; }
+.contact-btn.phone { background: #00b894; }
+.contact-btn.whatsapp { background: #25D366; }
+.contact-btn.instagram { background: #E1306C; }
+.contact-btn.telegram { background: #0088cc; }
+
+.video-container {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+/* Newsletter */
+#newsletter {
+  background: #f7f0e9;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 60px auto;
+  max-width: 500px;
+}
+
+#newsletter h2 {
+  margin-bottom: 12px;
+}
+
+#newsletter p {
+  margin-bottom: 24px;
+  color: #555;
+}
+
+#newsletter form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#newsletter input[type="email"] {
+  padding: 12px;
+  font-size: 1em;
+  flex: 1 1 250px;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#newsletter button {
+  padding: 12px 24px;
+  font-size: 1em;
+  background-color: #2c8f8c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+#newsletter button:hover {
+  background-color: #256f6c;
+}
+
+/* Instagram follow */
+.follow-instagram {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.follow-instagram p {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.instagram-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #E1306C;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.instagram-btn:hover {
+  background: #c2275a;
+}
+
+.meditazione-section {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.container-meditazione {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.container-meditazione video {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Mobile fixes */
+@media (max-width: 768px) {
+  header nav a {
+    font-size: 1.1rem;   /* più grande su mobile */
+    padding: 12px 8px;
+  }
+
+  .hero img {
+    max-height: 220px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
     gap: 10px;
   }
-  header nav a {
-    font-size: 1.2em;
-    display: block;
-  }
-  .hero-buttons { flex-direction: column; }
-  #newsletter form { flex-direction: column; }
-  #newsletter input, #newsletter button {
-    width: 100%;
-    max-width: none;
-  }
-}
 
-/* === MOBILE FIX ONLY === */
-@media (max-width: 768px) {
-  /* Menu più leggibile */
-  header nav a {
-    font-size: 1.3em;     /* ingrandito per visibilità */
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-container img {
+    max-width: 180px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .contact-btn {
+    font-size: 0.9em;
     padding: 10px;
   }
 
-  /* Hero image ridotta quanto basta */
-  .hero img {
-    max-height: 240px;
+  #newsletter {
+    padding: 40px 16px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  #newsletter form {
+    flex-direction: column;
   }
 
-  /* Cards Corsi: titoli e testi più proporzionati */
-  .cards .card h3 {
-    font-size: 1.15em;
-  }
-  .cards .card p {
-    font-size: 0.95em;
-  }
-
-  /* About text leggermente ridimensionato */
-  .about-text {
-    font-size: 1em;
-  }
-
-  /* Newsletter form: testo più leggibile */
-  #newsletter h2 {
-    font-size: 1.4em;
-  }
-  #newsletter p {
-    font-size: 1.05em;
-  }
-  #newsletter input[type="email"],
+  #newsletter input,
   #newsletter button {
-    font-size: 1.1em;     /* almeno 16px consigliato per evitare zoom iOS :contentReference[oaicite:3]{index=3} */
-    padding: 14px;
+    width: 100%;
+    max-width: none;
   }
 }
