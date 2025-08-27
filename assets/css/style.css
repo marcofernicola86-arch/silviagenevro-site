@@ -411,4 +411,15 @@ footer {
   margin: 0 0 15px;
   opacity: 0.9;
 }
+/* Certificazioni */
+#certificazioni img {
+  max-width: 150px;   /* ✅ limite massimo dimensione */
+  height: auto;
+  margin: 10px;
+  display: inline-block;
+}
+
+#certificazioni {
+  text-align: center; /* ✅ centra le immagini */
+}
 
