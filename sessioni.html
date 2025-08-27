@@ -51,5 +51,62 @@
   <footer>
     <p>© 2025 Silvia Genevro – Mindfulness Professional Trainer</p>
   </footer>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks   = document.getElementById("nav-links");
+
+  const isOpen = () => navLinks.classList.contains("active");
+  const openMenu = () => {
+    navLinks.classList.add("active");
+    document.body.classList.add("menu-open");
+    menuToggle.setAttribute("aria-expanded", "true");
+  };
+  const closeMenu = () => {
+    navLinks.classList.remove("active");
+    document.body.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  };
+
+  // Toggle con l’icona
+  menuToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    isOpen() ? closeMenu() : openMenu();
+  });
+
+  // Chiudi clic su un link
+  navLinks.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      closeMenu();
+    });
+  });
+
+  // Chiudi clic FUORI dal menu (senza backdrop)
+  document.addEventListener("click", (e) => {
+    if (isOpen() && !navLinks.contains(e.target) && e.target !== menuToggle) {
+      closeMenu();
+    }
+  });
+
+  // Chiudi con ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && isOpen()) closeMenu();
+  });
+
+  // Chiudi allo scroll
+  window.addEventListener("scroll", () => {
+    if (isOpen()) closeMenu();
+  }, { passive: true });
+
+  // Chiudi se cambia l’anchor/hash
+  window.addEventListener("hashchange", closeMenu);
+
+  // Chiudi tornando a desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 992 && isOpen()) closeMenu();
+  });
+});
+</script>
+
 </body>
 </html>
