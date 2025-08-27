@@ -1,80 +1,163 @@
+body {
+  margin: 0;
+  font-family: Lato, Arial, sans-serif;
+  background: #fffaf5;
+  color: #24323a;
+  line-height: 1.6;
+}
 
-body{margin:0;font-family:Lato,Arial,sans-serif;background:#fffaf5;color:#24323a;line-height:1.6}
-h1,h2,h3{font-family:Montserrat,Arial,sans-serif}
-header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.05);padding:12px 20px;position:sticky;top:0;z-index:10}
-header nav a{margin:0 10px;text-decoration:none;color:#24323a;font-weight:600}
-.hero{text-align:center;padding:60px 20px}
-.hero img{max-width:100%;height:auto;max-height:350px;margin:20px auto;display:block;border-radius:12px}
-.hero-buttons{margin-top:15px;display:flex;justify-content:center;gap:12px}
-.btn{display:inline-block;padding:10px 20px;border-radius:30px;text-decoration:none;font-weight:bold}
-.btn.primary{background:#2fa79b;color:#fff}
-.btn.alt{background:#f2695c;color:#fff}
-.section{padding:60px 20px;max-width:1000px;margin:auto}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.card{background:#fff;border:1px solid #eee;border-radius:12px;padding:16px}
-.about-container{display:flex;align-items:center;gap:30px;flex-wrap:wrap;justify-content:center}
-.about-container img{max-width:220px;border-radius:50%}
-.about-text{max-width:500px}
-footer{padding:20px;text-align:center;color:#5b6b73;font-size:.9em;background:#fafafa;margin-top:40px}
-@media(max-width:700px){.cards{grid-template-columns:1fr}}
+h1, h2, h3 {
+  font-family: Montserrat, Arial, sans-serif;
+}
 
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:20px}
-.contact-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:10px;
-font-weight:bold;text-decoration:none;color:#fff;transition:.2s}
-.contact-btn:hover{opacity:.85}
-.contact-btn.email{background:#0073e6}
-.contact-btn.phone{background:#00b894}
-.contact-btn.whatsapp{background:#25D366}
-.contact-btn.instagram{background:#E1306C}
-.contact-btn.telegram{background:#0088cc}
+header {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
-.video-container{max-width:800px;margin:20px auto}
+header nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #24323a;
+  font-weight: 600;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero img {
+  max-width: 100%;
+  height: auto;
+  max-height: 350px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.hero-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn.primary { background: #2fa79b; color: #fff; }
+.btn.alt { background: #f2695c; color: #fff; }
+
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about-container img {
+  max-width: 220px;
+  border-radius: 50%;
+}
+
+.about-text {
+  max-width: 500px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  color: #5b6b73;
+  font-size: .9em;
+  background: #fafafa;
+  margin-top: 40px;
+}
+
+/* Contatti */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  transition: .2s;
+}
+
+.contact-btn:hover { opacity:.85; }
+
+.contact-btn.email { background:#0073e6; }
+.contact-btn.phone { background:#00b894; }
+.contact-btn.whatsapp { background:#25D366; }
+.contact-btn.instagram { background:#E1306C; }
+.contact-btn.telegram { background:#0088cc; }
+
+.video-container {
+  max-width: 800px;
+  margin: 20px auto;
+}
 
 /* Ottimizzazioni mobile */
 @media (max-width: 700px) {
-  .hero img {
-    max-height: 220px;
-  }
-  .hero-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  .about-container img {
-    max-width: 180px;
-  }
+  .hero img { max-height: 220px; }
+  .hero-buttons { flex-direction: column; gap: 10px; }
+  .about-container { flex-direction: column; text-align: center; }
+  .about-container img { max-width: 180px; }
+
   #certificazioni img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .cards { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .contact-btn { font-size: 0.9em; padding: 10px; }
 }
 
-  /* Fix certificazioni responsive */
-#certificazioni img {
-  width: 100%;
-  max-width: 500px;   /* puoi aumentare/diminuire a piacere per desktop */
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-  .cards {
-    grid-template-columns: 1fr; /* 1 card per riga */
-  }
-  .contact-grid {
-    grid-template-columns: 1fr 1fr; /* 2 colonne */
-    gap: 10px;
-  }
-  .contact-btn {
-    font-size: 0.9em;
-    padding: 10px;
-  }
-}
-
+/* Newsletter */
 #newsletter {
   background: #f7f0e9;
   padding: 60px 20px;
@@ -85,6 +168,8 @@ font-weight:bold;text-decoration:none;color:#fff;transition:.2s}
 }
 
 #newsletter h2 {
+  font-size: 1.8em;
+  font-weight: bold;
   margin-bottom: 12px;
 }
 
@@ -124,56 +209,52 @@ font-weight:bold;text-decoration:none;color:#fff;transition:.2s}
   background-color: #256f6c;
 }
 
-/* Responsive for mobile */
+/* Responsive newsletter */
 @media (max-width: 480px) {
-  #newsletter form {
-    flex-direction: column;
-  }
-  
+  #newsletter form { flex-direction: column; }
   #newsletter input,
   #newsletter button {
     width: 100%;
     max-width: none;
   }
 }
+
+/* Instagram block */
 .follow-instagram {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px; /* più spazio sotto al form */
 }
 
 .follow-instagram p {
-  font-size: 1.1em;
-  margin-bottom: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 12px;
 }
 
 .instagram-btn {
   display: inline-block;
-  padding: 10px 20px;
-  background: #E1306C; /* colore ufficiale instagram */
+  padding: 12px 28px;
+  background: #E1306C;
   color: white;
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.1em;
   transition: background 0.3s;
 }
 
-.instagram-btn:hover {
-  background: #c2275a;
-}
+.instagram-btn:hover { background: #c2275a; }
+
+/* Meditazione */
 .meditazione-section {
   text-align: center;
   margin: 40px auto;
 }
 
 .container-meditazione {
-  max-width: 600px; /* così non occupa tutta la pagina */
+  max-width: 600px;
   margin: 0 auto;
 }
 
 .container-meditazione video {
-  width: 100%;
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  display: block;
-}
+  width: 1
