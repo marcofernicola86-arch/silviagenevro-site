@@ -23,7 +23,7 @@ header {
   text-align: center;
 }
 
-/* MENU HEADER */
+/* MENU HEADER (desktop default) */
 header nav a {
   margin: 0 12px;
   text-decoration: none;
@@ -32,60 +32,11 @@ header nav a {
   font-size: 1.2em; /* aumentato del 20% rispetto al valore standard */
 }
 
-/* Migliora leggibilità su mobile */
+/* Migliora leggibilità su mobile (generale) */
 @media (max-width: 992px) {
   header nav a {
-    font-size: 1.1em; /* anche su mobile ingrandito */
+    font-size: 1.1em;
     margin: 0 8px;
-  }
-}
-
-/* ===== HAMBURGER MENU ===== */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-/* Mobile menu */
-@media (max-width: 992px) {
- #nav-links {
-  display: none;
-  flex-direction: column;
-  gap: 16px;
-  background: #fff;
-  padding: 20px;
-  position: fixed;      /* ✅ da absolute → fixed */
-  top: 60px;
-  left: 0;
-  width: 100%;          /* ✅ prende tutta la larghezza */
-  text-align: center;   /* ✅ centra i link */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  z-index: 999;         /* ✅ sopra agli altri elementi */
-}
-
-#nav-links a {
-  font-size: 1.2rem;
-  padding: 10px 0;
-  display: block;
-}
-
-
-  #nav-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    top: 18px;
-    left: 20px;
-  }
-
-  header nav a {
-    font-size: 1.1rem;
-    margin: 8px 0;
-    display: block;
   }
 }
 
@@ -124,15 +75,8 @@ header nav a {
   text-decoration: none;
 }
 
-.btn.primary {
-  background: #2fa79b;
-  color: #fff;
-}
-
-.btn.alt {
-  background: #f2695c;
-  color: #fff;
-}
+.btn.primary { background: #2fa79b; color: #fff; }
+.btn.alt     { background: #f2695c; color: #fff; }
 
 /* ===== SECTIONS ===== */
 .section {
@@ -161,36 +105,18 @@ header nav a {
   color: #fff; /* testo bianco sulle card colorate */
 }
 
-/* Hover accattivante */
 .card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* Ogni card con colore diverso */
-.card.mbsr {
-  background: linear-gradient(135deg, #00796b, #009688);
-}
-.card.intro {
-  background: linear-gradient(135deg, #6a1b9a, #9c27b0);
-}
-.card.sessioni {
-  background: linear-gradient(135deg, #e91e63, #ad1457);
-}
+.card.mbsr     { background: linear-gradient(135deg, #00796b, #009688); }
+.card.intro    { background: linear-gradient(135deg, #6a1b9a, #9c27b0); }
+.card.sessioni { background: linear-gradient(135deg, #e91e63, #ad1457); }
 
-/* Titolo e descrizione */
-.cards .card h3 {
-  font-size: 1.3rem;
-  margin: 15px 0 10px;
-}
+.cards .card h3 { font-size: 1.3rem; margin: 15px 0 10px; }
+.cards .card p  { flex-grow: 1; padding: 0 15px; font-size: 0.95rem; }
 
-.cards .card p {
-  flex-grow: 1;
-  padding: 0 15px;
-  font-size: 0.95rem;
-}
-
-/* Bottone nelle card */
 .cards .card a.btn {
   display: inline-block;
   margin: 15px auto 20px;
@@ -202,12 +128,7 @@ header nav a {
   text-decoration: none;
   transition: background 0.3s ease, color 0.3s ease;
 }
-
-.cards .card a.btn:hover {
-  background: #333;
-  color: #fff;
-}
-
+.cards .card a.btn:hover { background: #333; color: #fff; }
 
 /* ===== ABOUT ===== */
 .about-container {
@@ -218,14 +139,8 @@ header nav a {
   justify-content: center;
 }
 
-.about-container img {
-  max-width: 220px;
-  border-radius: 50%;
-}
-
-.about-text {
-  max-width: 500px;
-}
+.about-container img { max-width: 220px; border-radius: 50%; }
+.about-text         { max-width: 500px; }
 
 /* ===== FOOTER ===== */
 footer {
@@ -257,20 +172,16 @@ footer {
   color: #fff;
   transition: .2s;
 }
-
 .contact-btn:hover { opacity: .85; }
 
-.contact-btn.email { background: #0073e6; }
-.contact-btn.phone { background: #00b894; }
+.contact-btn.email    { background: #0073e6; }
+.contact-btn.phone    { background: #00b894; }
 .contact-btn.whatsapp { background: #25D366; }
-.contact-btn.instagram { background: #E1306C; }
+.contact-btn.instagram{ background: #E1306C; }
 .contact-btn.telegram { background: #0088cc; }
 
 /* ===== VIDEO CONTAINER ===== */
-.video-container {
-  max-width: 800px;
-  margin: 20px auto;
-}
+.video-container { max-width: 800px; margin: 20px auto; }
 
 /* ===== NEWSLETTER ===== */
 #newsletter {
@@ -281,16 +192,8 @@ footer {
   margin: 60px auto;
   max-width: 500px;
 }
-
-#newsletter h2 {
-  margin-bottom: 12px;
-  font-size: 1.4rem;
-}
-
-#newsletter p {
-  margin-bottom: 24px;
-  color: #555;
-}
+#newsletter h2 { margin-bottom: 12px; font-size: 1.4rem; }
+#newsletter p  { margin-bottom: 24px; color: #555; }
 
 #newsletter form {
   display: flex;
@@ -298,57 +201,25 @@ footer {
   gap: 8px;
   flex-wrap: wrap;
 }
-
-#newsletter input[type="email"] {
-  padding: 12px;
-  font-size: 1em;
-  flex: 1 1 250px;
-  max-width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+#newsletter input[type="email"]{
+  padding: 12px; font-size: 1em; flex: 1 1 250px; max-width: 300px;
+  border: 1px solid #ccc; border-radius: 4px;
 }
-
-#newsletter button {
-  padding: 12px 24px;
-  font-size: 1em;
-  background-color: #2c8f8c;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  flex: 0 0 auto;
+#newsletter button{
+  padding: 12px 24px; font-size: 1em; background-color: #2c8f8c;
+  color: white; border: none; border-radius: 4px; cursor: pointer; flex: 0 0 auto;
 }
-
-#newsletter button:hover {
-  background-color: #256f6c;
-}
+#newsletter button:hover{ background-color: #256f6c; }
 
 /* Instagram follow */
-.follow-instagram {
-  text-align: center;
-  margin-top: 40px;
-}
+.follow-instagram { text-align: center; margin-top: 40px; }
+.follow-instagram p { font-size: 1.2rem; font-weight: bold; margin-bottom: 14px; }
 
-.follow-instagram p {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 14px;
+.instagram-btn{
+  display: inline-block; padding: 10px 20px; background: #E1306C; color: white;
+  border-radius: 25px; text-decoration: none; font-weight: bold; transition: background 0.3s;
 }
-
-.instagram-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #E1306C;
-  color: white;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.instagram-btn:hover {
-  background: #c2275a;
-}
+.instagram-btn:hover{ background: #c2275a; }
 
 /* ===== SEZIONE MEDITAZIONE ===== */
 .meditazione-section {
@@ -357,7 +228,6 @@ footer {
   max-width: 800px;
   padding: 0 20px;
 }
-
 .meditazione-section h1,
 .meditazione-section p {
   text-align: center;
@@ -365,204 +235,113 @@ footer {
   max-width: 700px;
   line-height: 1.6;
 }
-
-.meditazione-section video {
-  display: block;
-  margin: 20px auto;
-  width: 100%;
-  max-width: 600px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.meditazione-section video{
+  display: block; margin: 20px auto; width: 100%; max-width: 600px;
+  border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE (extra) ===== */
 @media (max-width: 768px) {
-  /* Nav più grande su mobile */
-  header nav a {
-    font-size: 1.2rem !important;
-    padding: 14px 10px !important;
-  }
-
-  .hero img {
-    max-height: 220px;
-  }
-
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-container img {
-    max-width: 180px;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .contact-btn {
-    font-size: 0.9em;
-    padding: 10px;
-  }
-
-  #newsletter {
-    max-width: 90%;
-    padding: 40px 15px;
-  }
+  header nav a { font-size: 1.2rem !important; padding: 14px 10px !important; }
+  .hero img { max-height: 220px; }
+  .about-container { flex-direction: column; text-align: center; }
+  .about-container img { max-width: 180px; }
+  .cards { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .contact-btn { font-size: 0.9em; padding: 10px; }
+  #newsletter { max-width: 90%; padding: 40px 15px; }
 }
 
 /* ===== SEZIONE CHI SONO ===== */
-.about-text {
-  font-size: 1.25rem;
-  line-height: 1.6;
-}
+.about-text { font-size: 1.25rem; line-height: 1.6; }
+.about-text p { font-size: 1.25rem; line-height: 1.6; }
 
-.about-text p {
-  font-size: 1.25rem;
-  line-height: 1.6;
-}
+/* Pulsante "Scopri i corsi" */
+.about-container .btn { font-size: 1.1rem; padding: 14px 28px; }
 
-/* Pulsante "Scopri i corsi" nella sezione Chi sono */
-.about-container .btn {
-  font-size: 1.1rem;
-  padding: 14px 28px;
-}
-.cards .card h3 a {
-  text-decoration: none;
-  color: inherit;
-}
+.cards .card h3 a { text-decoration: none; color: inherit; }
+.cards .card h3 a:hover { text-decoration: underline; }
 
-.cards .card h3 a:hover {
-  text-decoration: underline;
-}
 /* ===== EVENTI ===== */
-.card.evento {
-  background: linear-gradient(135deg, #283593, #5c6bc0); /* blu-viola */
-  color: #fff;
-  text-align: center;
+.card.evento{
+  background: linear-gradient(135deg, #283593, #5c6bc0);
+  color: #fff; text-align: center;
 }
+.card.evento h3{ font-size: 1.4rem; margin: 15px 0 8px; font-weight: bold; }
+.card.evento p { font-size: 1rem; margin: 0 0 15px; opacity: 0.9; }
 
-.card.evento h3 {
-  font-size: 1.4rem;
-  margin: 15px 0 8px;
-  font-weight: bold;
-}
-
-.card.evento p {
-  font-size: 1rem;
-  margin: 0 0 15px;
-  opacity: 0.9;
-}
 /* Certificazioni */
 #certificazioni img {
-  width: 100%;
-  max-width: 800px;
-  height: auto;      /* mantiene le proporzioni */
-  margin: 20px auto;
-  display: block;
+  width: 100%; max-width: 800px; height: auto;
+  margin: 20px auto; display: block;
 }
+#certificazioni { text-align: center; }
 
-#certificazioni {
-  text-align: center; /* ✅ le centra */
-}
+/* ===================================================== */
+/* ================== MENU MOBILE PULITO =============== */
+/* ===================================================== */
 
-/* ===== HAMBURGER MENU FIX ===== */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-/* Mobile/tablet */
-@media (max-width: 992px) {
-  /* nasconde il menu orizzontale */
-  #nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 12px;
-    background: #fff;
-    padding: 20px;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-
-  /* mostra hamburger */
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    top: 18px;
-    left: 20px;
-  }
-
-  /* quando attivo, compare */
-  #nav-links.active {
-    display: flex;
-  }
-
-  /* link più grandi */
-  header nav a {
-    font-size: 1.1rem;
-    margin: 8px 0;
-    display: block;
-  }
-}
-/* ===== FIX MENU MOBILE ===== */
-@media (max-width: 992px) {
-  #nav-links {
-    display: none;
-    flex-direction: column !important;  /* forza colonna */
-    align-items: center;                /* centra orizzontalmente */
-    justify-content: flex-start;
-    gap: 20px;
-    background: #fff;
-    padding: 30px 0;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    z-index: 999;
-  }
-
-  #nav-links.active {
-    display: flex !important;
-  }
-
-  #nav-links a {
-    display: block !important;     /* forza i link a blocco */
-    font-size: 1.3rem !important;  /* più grandi e leggibili */
-    padding: 10px 0;
-    margin: 0;
-    text-align: center;
-  }
-
-
-/* ===== HAMBURGER ICON FIX ===== */
+/* Icona hamburger: nascosta su desktop */
 .menu-toggle{
-  display:none;
-  font-size:44px;        /* più grande */
-  line-height:1;
-  cursor:pointer;
-  user-select:none;
-  color:#24323a;
+  display: none;
+  font-size: 44px;      /* grande e visibile */
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  color: #24323a;
 }
 
+/* Mobile & tablet */
 @media (max-width: 992px){
+
+  /* hamburger in alto a destra */
   .menu-toggle{
-    display:block;
-    position:fixed;      /* non viene più centrata dal header */
-    top:16px;
-    right:16px;          /* davvero in alto a destra */
-    padding:10px;        /* area di tap ampia */
-    z-index:10001;
+    display: block;
+    position: fixed;    /* indipendente dal centraggio dell'header */
+    top: 16px;
+    right: 16px;
+    padding: 10px;      /* area di tap ampia */
+    z-index: 10001;
   }
+
+  /* menu nascosto di default */
+  #nav-links{
+    display: none;
+    position: fixed;
+    top: 60px; left: 0;
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    padding: 22px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 9999;
+    /* layout verticale leggibile */
+    display: none;
+    flex-direction: column !important;
+    gap: 18px;
+    align-items: center;
+  }
+
+  /* quando attivo, mostra il menu */
+  #nav-links.active{ display: flex !important; }
+
+  /* link grandi e comodi */
+  #nav-links a{
+    display: block !important;
+    font-size: 1.2rem !important;
+    padding: 10px 20px;
+    margin: 0;
+  }
+
+  /* opzionale: blocca lo scroll pagina quando menu aperto (richiede body.menu-open da JS) */
+  body.menu-open{ overflow: hidden; }
+}
+
+/* Backdrop (se usi il click-fuori) */
+#menu-backdrop{
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 10000;
 }
