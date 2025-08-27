@@ -413,10 +413,11 @@ footer {
 }
 /* Certificazioni */
 #certificazioni img {
-  width: 200px;      /* ✅ larghezza fissa */
+  width: 100%;
+  max-width: 800px;
   height: auto;      /* mantiene le proporzioni */
-  margin: 10px;
-  display: inline-block;
+  margin: 20px auto;
+  display: block;
 }
 
 #certificazioni {
