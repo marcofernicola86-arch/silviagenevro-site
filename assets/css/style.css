@@ -397,6 +397,33 @@ footer {
   .nav-links li {
     margin: 10px 0;
   }
+  /* Stile link nelle card corsi */
+.cards .card a {
+  text-decoration: none;   /* toglie la sottolineatura */
+  color: inherit;          /* mantiene il colore del testo normale */
+  font-weight: bold;       /* titoli più evidenti */
+  transition: color 0.3s ease;
+}
+
+.cards .card a:hover {
+  color: #00796b; /* colore evidenziato al passaggio del mouse */
+}
+
+/* Miglioramenti estetici delle card */
+.cards .card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
   
   .nav-links.active {
     display: flex;
