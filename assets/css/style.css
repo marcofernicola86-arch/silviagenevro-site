@@ -463,3 +463,46 @@ footer {
   text-align: center; /* ✅ le centra */
 }
 
+/* ===== HAMBURGER MENU FIX ===== */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile/tablet */
+@media (max-width: 992px) {
+  /* nasconde il menu orizzontale */
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background: #fff;
+    padding: 20px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  /* mostra hamburger */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 18px;
+    left: 20px;
+  }
+
+  /* quando attivo, compare */
+  #nav-links.active {
+    display: flex;
+  }
+
+  /* link più grandi */
+  header nav a {
+    font-size: 1.1rem;
+    margin: 8px 0;
+    display: block;
+  }
+}
