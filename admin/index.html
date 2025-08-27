@@ -5,11 +5,19 @@
   <title>Admin - Silvia Genevro</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Carico Decap -->
-  <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
+  <!-- Carico Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js"></script>
 </head>
 <body>
   <!-- Contenitore richiesto -->
   <div id="nc-root"></div>
+
+  <script>
+    if (window.CMS) {
+      window.CMS.init();
+    } else {
+      console.error("Decap CMS non è stato caricato correttamente");
+    }
+  </script>
 </body>
 </html>
