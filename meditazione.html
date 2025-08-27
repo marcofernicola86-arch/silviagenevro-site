@@ -61,42 +61,65 @@
     <a class="btn primary" href="index.html">← Torna al sito</a>
   </p>
 
-  <script>
+ <script>
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.getElementById("menu-toggle");
   const navLinks   = document.getElementById("nav-links");
 
-  function openMenu(){
+  const isOpen = () => navLinks.classList.contains("active");
+  const openMenu = () => {
     navLinks.classList.add("active");
     document.body.classList.add("menu-open");
-  }
-  function closeMenu(){
+    menuToggle.setAttribute("aria-expanded", "true");
+  };
+  const closeMenu = () => {
     navLinks.classList.remove("active");
     document.body.classList.remove("menu-open");
-  }
+    menuToggle.setAttribute("aria-expanded", "false");
+  };
 
-  // Apri/chiudi con l'icona
+  // Toggle con l'icona
+  menuToggle.setAttribute("role","button");
+  menuToggle.setAttribute("aria-label","Apri/chiudi menu");
   menuToggle.addEventListener("click", (e) => {
-    e.stopPropagation(); // evita che il click cada sul document
-    navLinks.classList.contains("active") ? closeMenu() : openMenu();
+    e.stopPropagation(); // evita chiusura immediata per click sul documento
+    isOpen() ? closeMenu() : openMenu();
   });
 
   // Chiudi cliccando un link del menu
-  navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+  navLinks.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      // se è un anchor della stessa pagina, chiudi subito
+      closeMenu();
+      // lasciare il tempo all'ancora di scrollare
+    });
+  });
 
-  // Chiudi cliccando fuori dal menu (senza backdrop)
+  // Chiudi clic fuori dal menu
   document.addEventListener("click", (e) => {
-    if (navLinks.classList.contains("active") &&
-        !navLinks.contains(e.target) &&
-        e.target !== menuToggle) {
+    if (isOpen() && !navLinks.contains(e.target) && e.target !== menuToggle) {
       closeMenu();
     }
   });
 
   // Chiudi con ESC
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && isOpen()) closeMenu();
+  });
 
-  // Se torni a desktop, chiudi
-  window.addEventListener("resize", () => { if (window.innerWidth > 992) closeMenu(); });
+  // Chiudi quando l'utente INIZIA a scorrere
+  let lastScrollY = window.scrollY;
+  window.addEventListener("scroll", () => {
+    if (isOpen()) closeMenu();
+    lastScrollY = window.scrollY;
+  }, { passive: true });
+
+  // Chiudi se cambia l'hash (clic su #ancora)
+  window.addEventListener("hashchange", closeMenu);
+
+  // Chiudi tornando a desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 992 && isOpen()) closeMenu();
+  });
 });
 </script>
