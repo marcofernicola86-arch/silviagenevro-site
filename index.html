@@ -1,204 +1,109 @@
-/* ---------- BASE ---------- */
-body {
-  margin: 0;
-  font-family: Lato, Arial, sans-serif;
-  background: #fffaf5;
-  color: #24323a;
-  line-height: 1.6;
-}
-h1,h2,h3 {
-  font-family: Montserrat, Arial, sans-serif;
-  margin-bottom: 0.6em;
-}
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Silvia Genevro - Mindfulness</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato&display=swap" rel="stylesheet">
+</head>
+<body>
 
-/* ---------- HEADER & MENU ---------- */
-header {
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,.05);
-  padding: 12px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-header nav {
-  display: flex;
-  justify-content: center;  /* centrato */
-  flex-wrap: wrap;
-  gap: 15px;
-}
-header nav a {
-  text-decoration: none;
-  color: #24323a;
-  font-weight: 600;
-  font-size: 1rem; /* più grande per mobile */
-}
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#chi-sono">Chi sono</a>
+      <a href="#corsi">Corsi</a>
+      <a href="#formazione">Formazione</a>
+      <a href="#eventi">Eventi</a>
+      <a href="#certificazioni">Certificazioni</a>
+      <a href="meditazione.html">Meditazione Guidata</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </header>
 
-/* ---------- HERO ---------- */
-.hero {
-  text-align: center;
-  padding: 50px 20px;
-}
-.hero img {
-  max-width: 100%;
-  height: auto;
-  max-height: 320px;
-  margin: 20px auto;
-  display: block;
-  border-radius: 12px;
-}
-.hero-buttons {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.btn {
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-}
-.btn.primary { background:#2fa79b; color:#fff; }
-.btn.alt { background:#f2695c; color:#fff; }
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <h1>Mindfulness per vivere con presenza e leggerezza</h1>
+    <p>Corsi MBSR, meditazioni guidate e percorsi personalizzati per ridurre lo stress e coltivare consapevolezza.</p>
+    <img src="assets/img/hero-heart-brain.png" alt="Mindfulness cuore cervello">
+    <div class="hero-buttons">
+      <a class="btn primary" href="#corsi">Scopri i corsi</a>
+      <a class="btn alt" href="meditazione.html">Prova una meditazione</a>
+    </div>
+  </section>
 
-/* ---------- SECTIONS ---------- */
-.section {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-}
-.card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 20px;
-  font-size: 1rem;
-}
+  <!-- CHI SONO -->
+  <section id="chi-sono" class="section about">
+    <h2>Chi sono</h2>
+    <div class="about-container">
+      <img src="assets/img/Silviafotoprofilo.jpg" alt="Silvia Genevro">
+      <div class="about-text">
+        <p>Sono <strong>Silvia Genevro</strong>, istruttrice di Mindfulness. Integro il teatro come strumento per andare oltre il controllo razionale. Mi occupo di Retreat, percorsi MBSR, formazione e percorsi aziendali.</p>
+        <a class="btn primary" href="#corsi">Scopri i corsi</a>
+      </div>
+    </div>
+  </section>
 
-/* ---------- ABOUT ---------- */
-.about-container {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.about-container img {
-  max-width: 220px;
-  border-radius: 50%;
-}
-.about-text { max-width: 500px; }
+  <!-- CORSI -->
+  <section id="corsi" class="section">
+    <h2>Corsi</h2>
+    <div class="cards">
+      <div class="card"><h3>MBSR – 8 settimane</h3><p>Protocollo completo per ridurre lo stress e coltivare la presenza.</p></div>
+      <div class="card"><h3>Introduttivo – 4 incontri</h3><p>Un primo passo semplice e guidato nella mindfulness.</p></div>
+      <div class="card"><h3>Sessioni individuali</h3><p>Percorso su misura con obiettivi chiari e flessibilità.</p></div>
+    </div>
+  </section>
 
-/* ---------- NEWSLETTER ---------- */
-#newsletter {
-  background: #f7f0e9;
-  padding: 40px 20px;
-  text-align: center;
-  border-radius: 8px;
-  margin: 60px auto;
-  max-width: 500px;
-}
-#newsletter h2 {
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin-bottom: 12px;
-}
-#newsletter p { margin-bottom: 20px; color:#555; font-size: 1rem; }
-#newsletter form {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-#newsletter input[type="email"] {
-  padding: 14px;
-  font-size: 1rem;
-  flex: 1 1 260px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-#newsletter button {
-  padding: 14px 26px;
-  font-size: 1rem;
-  background-color: #2c8f8c;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-#newsletter button:hover { background-color: #256f6c; }
+  <!-- FORMAZIONE -->
+  <section id="formazione" class="section">
+    <h2>Formazione</h2>
+    <p>Soft Skills, Team Working, Team Building, Comunicazione Efficace, MBSR. Disponibili percorsi individuali e per aziende.</p>
+  </section>
 
-/* Instagram follow */
-.follow-instagram { margin-top: 30px; }
-.follow-instagram p {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 12px;
-}
-.instagram-btn {
-  display:inline-block;
-  padding:12px 24px;
-  background:#E1306C;
-  color:white;
-  border-radius:25px;
-  text-decoration:none;
-  font-weight:bold;
-  transition:background .3s;
-}
-.instagram-btn:hover { background:#c2275a; }
+  <!-- EVENTI -->
+  <section id="eventi" class="section">
+    <h2>Eventi</h2>
+    <p>Prossimi appuntamenti: webinar introduttivo, ciclo MBSR di 8 settimane.</p>
+  </section>
 
-/* ---------- CONTACTS ---------- */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 12px;
-  margin-top: 20px;
-}
-.contact-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px;
-  border-radius: 10px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
-  transition: .2s;
-  font-size: 1rem;
-}
-.contact-btn:hover { opacity:.85; }
-.contact-btn.email { background:#0073e6; }
-.contact-btn.phone { background:#00b894; }
-.contact-btn.whatsapp { background:#25D366; }
-.contact-btn.instagram { background:#E1306C; }
-.contact-btn.telegram { background:#0088cc; }
+  <!-- CERTIFICAZIONI -->
+  <section id="certificazioni" class="section">
+    <h2>Certificazioni</h2>
+    <p>
+      Istruttrice di Mindfulness con iscrizione all'Albo Nazionale Federmindfulness n. 3038.<br>
+      <a href="https://www.albonazionalemindfulness.it/professionista/silvia-genevro" target="_blank">🔗 Verifica le credenziali sull'Albo ufficiale</a>
+    </p>
+    <img src="assets/img/certificazioni.png" alt="Certificazioni di Silvia Genevro">
+  </section>
 
-/* ---------- FOOTER ---------- */
-footer {
-  padding: 20px;
-  text-align: center;
-  color: #5b6b73;
-  font-size: .9em;
-  background:#fafafa;
-  margin-top:40px;
-}
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="section">
+    <h2>Entra nella Newsletter periodica!</h2>
+    <p>Lascia la tua email per ricevere aggiornamenti sui corsi e progetti futuri :)</p>
+    <form name="newsletter" method="POST" data-netlify="true">
+      <input type="email" name="email" placeholder="La tua email" required>
+      <button type="submit">Iscriviti</button>
+    </form>
+  </section>
 
-/* ---------- MOBILE OPTIMIZATION ---------- */
-@media(max-width: 768px) {
-  header nav { gap: 10px; }
-  header nav a { font-size: 1.1rem; }  /* più grande per mobile */
-  .cards { grid-template-columns: 1fr; }
-  .about-container { flex-direction: column; text-align: center; }
-  .about-container img { max-width: 180px; }
-  #newsletter { margin:40px 10px; padding:30px 15px; }
-  #newsletter input, #newsletter button { width: 100%; max-width: none; }
-}
+  <!-- CONTATTI -->
+  <section id="contatti" class="section">
+    <h2>Contatti</h2>
+    <div class="contact-grid">
+      <a class="contact-btn email" href="mailto:info@silviagenevro.it">✉️ Email</a>
+      <a class="contact-btn phone" href="tel:+393000000000">📞 Telefono</a>
+      <a class="contact-btn whatsapp" href="https://wa.me/393000000000" target="_blank">💬 WhatsApp</a>
+      <a class="contact-btn instagram" href="https://www.instagram.com/silvia_genevro" target="_blank">📸 Instagram</a>
+      <a class="contact-btn telegram" href="https://t.me/silviagenevro" target="_blank">✈️ Telegram</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Silvia Genevro – Mindfulness Professional Trainer<br>P.IVA: 13288610010</p>
+  </footer>
+
+</body>
+</html>
