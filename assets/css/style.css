@@ -136,3 +136,27 @@ font-weight:bold;text-decoration:none;color:#fff;transition:.2s}
     max-width: none;
   }
 }
+.follow-instagram {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.follow-instagram p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.instagram-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #E1306C; /* colore ufficiale instagram */
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.instagram-btn:hover {
+  background: #c2275a;
+}
