@@ -24,15 +24,15 @@ header nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 28px; /* più distanziato */
-  padding: 12px 0;
+  gap: 32px; /* più spazio */
+  padding: 14px 0;
 }
 
 header nav a {
   text-decoration: none;
   color: #24323a;
   font-weight: 700;
-  font-size: 1.05em; /* più grande del default */
+  font-size: 1.1em; /* desktop un po' più grande */
   transition: color 0.25s ease;
 }
 
@@ -44,8 +44,13 @@ header nav a:hover {
 @media (max-width: 700px) {
   header nav {
     flex-wrap: wrap;
-    gap: 16px;
-    font-size: 1.1em; /* leggermente più grande su schermi piccoli */
+    gap: 20px;
+    padding: 16px 0;
+  }
+
+  header nav a {
+    font-size: 1.3em;   /* molto più grande su mobile */
+    line-height: 1.6;   /* più spazio verticale */
   }
 }
 
