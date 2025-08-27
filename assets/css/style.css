@@ -566,3 +566,23 @@ footer {
   }
 }
 
+/* ===== HAMBURGER ICON FIX ===== */
+.menu-toggle{
+  display:none;
+  font-size:44px;        /* più grande */
+  line-height:1;
+  cursor:pointer;
+  user-select:none;
+  color:#24323a;
+}
+
+@media (max-width: 992px){
+  .menu-toggle{
+    display:block;
+    position:fixed;      /* non viene più centrata dal header */
+    top:16px;
+    right:16px;          /* davvero in alto a destra */
+    padding:10px;        /* area di tap ampia */
+    z-index:10001;
+  }
+}
