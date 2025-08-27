@@ -413,7 +413,7 @@ footer {
 }
 /* Certificazioni */
 #certificazioni img {
-  max-width: 150px;   /* ✅ limite massimo dimensione */
+  max-width: 220px;   /* ✅ limite massimo dimensione */
   height: auto;
   margin: 10px;
   display: inline-block;
