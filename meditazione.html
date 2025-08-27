@@ -1,60 +1,58 @@
 <!doctype html>
 <html lang="it">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Meditazione Guidata</title>
-<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meditazione Guidata</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
 <header>
   <nav>
-    <a href="index.html#home">Home</a>
-    <a href="index.html#chi-sono">Chi sono</a>
-    <a href="index.html#corsi">Corsi</a>
-    <a href="index.html#formazione">Formazione</a>
-    <a href="index.html#eventi">Eventi</a>
+    <a href="index.html">Home</a>
+    <a href="#chi-sono">Chi sono</a>
+    <a href="#corsi">Corsi</a>
+    <a href="#formazione">Formazione</a>
+    <a href="#eventi">Eventi</a>
     <a href="meditazione.html">Meditazione Guidata</a>
-    <a href="index.html#contatti">Contatti</a>
+    <a href="#contatti">Contatti</a>
   </nav>
 </header>
 
+<main class="meditazione-section">
+  <h1>Meditazione Guidata</h1>
+  <p>
+    Questa meditazione guidata è un omaggio per tutti coloro che desiderano avvicinarsi 
+    alla pratica della mindfulness. Concediti qualche minuto di presenza e ascolto.
+  </p>
 
-
-<section class="section meditazione-section">
   <div class="container-meditazione">
-    <h1>Meditazione Guidata</h1>
-    <p>Questa meditazione guidata è un omaggio per tutti coloro che desiderano avvicinarsi alla pratica della mindfulness. Concediti qualche minuto di presenza e ascolto.</p>
-
-    <!-- VIDEO -->
     <video controls>
       <source src="assets/media/meditazione.mp4" type="video/mp4">
       Il tuo browser non supporta il video.
     </video>
+  </div>
+</main>
 
-    <!-- NEWSLETTER -->
-    <section id="newsletter">
-      <h2>Entra nella Newsletter periodica!</h2>
-      <p>Lascia la tua email per ricevere aggiornamenti sui corsi e progetti futuri :)</p>
+<section id="newsletter" class="section">
+  <h2>Entra nella Newsletter periodica!</h2>
+  <p>Lascia la tua email per ricevere aggiornamenti sui corsi e progetti futuri :)</p>
 
-      <form name="newsletter" method="POST" data-netlify="true">
-        <input type="email" name="email" placeholder="La tua email" required>
-        <button type="submit">Iscriviti</button>
-      </form>
+  <form name="newsletter" method="POST" data-netlify="true">
+    <input type="email" name="email" placeholder="La tua email" required>
+    <button type="submit">Iscriviti</button>
+  </form>
 
-      <div class="follow-instagram">
-        <p>Segui tutte le novità su Instagram!</p>
-        <a href="https://www.instagram.com/silvia_genevro" target="_blank" class="btn instagram-btn">
-          👉 Seguimi su Instagram
-        </a>
-      </div>
-    </section>
-
-    <p style="margin-top:30px;">
-      <a class="btn primary" href="index.html">← Torna al sito</a>
-    </p>
+  <div class="follow-instagram">
+    <p>Segui tutte le novità su Instagram!</p>
+    <a href="https://www.instagram.com/silvia_genevro" target="_blank" class="btn instagram-btn">
+      👉 Seguimi su Instagram
+    </a>
   </div>
 </section>
+
+<footer>
+  <p><a class="btn primary" href="index.html">← Torna al sito</a></p>
+</footer>
 </body>
 </html>
