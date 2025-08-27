@@ -160,3 +160,20 @@ font-weight:bold;text-decoration:none;color:#fff;transition:.2s}
 .instagram-btn:hover {
   background: #c2275a;
 }
+.meditazione-section {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.container-meditazione {
+  max-width: 600px; /* così non occupa tutta la pagina */
+  margin: 0 auto;
+}
+
+.container-meditazione video {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: block;
+}
