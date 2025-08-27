@@ -158,3 +158,38 @@ footer {
   #newsletter input, #newsletter button { width: 100%; max-width: none; }
   .contact-grid { grid-template-columns: 1fr 1fr; }
 }
+/* ------------ VIDEO MEDITAZIONE ------------ */
+.meditazione-section { text-align: center; }
+.video-container {
+  max-width: 800px;
+  margin: 20px auto;
+}
+.video-container video {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+/* ------------ FOLLOW INSTAGRAM ------------ */
+.follow-instagram {
+  margin-top: 40px;
+  text-align: center;
+}
+.follow-instagram h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.instagram-btn {
+  display: inline-block;
+  padding: 12px 26px;
+  background: #E1306C;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+.instagram-btn:hover { background: #c2275a; }
+
