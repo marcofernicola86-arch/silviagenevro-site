@@ -364,3 +364,26 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
 @media (max-width: 768px){
   #regalo.xmas{ padding-top: 74px; padding-bottom: 74px; }
 }
+/* === Aggiornamento colori natalizi per le gift card === */
+#regalo.xmas .card.regalo1 {
+  /* rosso natalizio */
+  background: linear-gradient(135deg, #b3262e 0%, #8e1c24 100%);
+}
+
+#regalo.xmas .card.regalo2 {
+  /* dorato elegante */
+  background: linear-gradient(135deg, #cfa23f 0%, #e7be59 100%);
+  color: #2a2a2a; /* testo scuro per leggibilità su fondo chiaro */
+}
+
+#regalo.xmas .card.regalo2 .gift-features {
+  color: rgba(0, 0, 0, 0.85);
+}
+#regalo.xmas .card.regalo2 .gift-buy {
+  border-color: #2a2a2a;
+  color: #2a2a2a !important;
+}
+#regalo.xmas .card.regalo2 .gift-buy:hover {
+  background: #2a2a2a !important;
+  color: #fff !important;
+}
