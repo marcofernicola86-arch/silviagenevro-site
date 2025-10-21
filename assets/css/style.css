@@ -351,3 +351,105 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
 }
 
 
+/* ===== NATALE: festoni + fiocchi + stelline (solo nella sezione #regalo.xmas) ===== */
+
+/* 1) FESTONE superiore e inferiore (SVG inline come background) */
+#regalo.xmas::before,
+#regalo.xmas::after{
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 68px;
+  pointer-events: none;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 480px 68px; /* scala su desktop, si adatta su mobile */
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
+}
+
+/* top festone */
+#regalo.xmas::before{
+  top: 0;
+  background-image: url('data:image/svg+xml;utf8,\
+  <svg xmlns="http://www.w3.org/2000/svg" width="480" height="68" viewBox="0 0 480 68">\
+    <defs>\
+      <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">\
+        <stop offset="0%" stop-color="%232a4f41"/>\
+        <stop offset="100%" stop-color="%231e3a31"/>\
+      </linearGradient>\
+    </defs>\
+    <!-- ramo curvo -->\
+    <path d="M0,22 C80,54 160,-6 240,22 C320,50 400,-8 480,22" fill="none" stroke="%232b5a49" stroke-width="10" stroke-linecap="round"/>\
+    <!-- aghi pino -->\
+    <g stroke='url(%23g)' stroke-width='4' stroke-linecap='round'>\
+      <path d='M30,24 l-18,18'/><path d='M58,20 l-18,18'/><path d='M86,24 l-18,18'/>\
+      <path d='M114,20 l-18,18'/><path d='M142,24 l-18,18'/><path d='M170,20 l-18,18'/>\
+      <path d='M198,24 l-18,18'/><path d='M226,20 l-18,18'/><path d='M254,24 l-18,18'/>\
+      <path d='M282,20 l-18,18'/><path d='M310,24 l-18,18'/><path d='M338,20 l-18,18'/>\
+      <path d='M366,24 l-18,18'/><path d='M394,20 l-18,18'/><path d='M422,24 l-18,18'/>\
+    </g>\
+    <!-- palline -->\
+    <circle cx='96'  cy='42' r='6' fill='%23c0303a'/>\
+    <circle cx='210' cy='40' r='6' fill='%23ffd666'/>\
+    <circle cx='324' cy='42' r='6' fill='%23c0303a'/>\
+    <circle cx='438' cy='40' r='6' fill='%23ffd666'/>\
+  </svg>');
+}
+
+/* bottom festone (specchiato e più soft) */
+#regalo.xmas::after{
+  bottom: 0;
+  transform: scaleY(-1);
+  opacity: 0.85;
+  background-image: url('data:image/svg+xml;utf8,\
+  <svg xmlns="http://www.w3.org/2000/svg" width="480" height="68" viewBox="0 0 480 68">\
+    <path d="M0,22 C80,54 160,-6 240,22 C320,50 400,-8 480,22" fill="none" stroke="%232b5a49" stroke-width="10" stroke-linecap="round"/>\
+    <g stroke="%232a4f41" stroke-width="4" stroke-linecap="round">\
+      <path d='M30,24 l-18,18'/><path d='M58,20 l-18,18'/><path d='M86,24 l-18,18'/>\
+      <path d='M114,20 l-18,18'/><path d='M142,24 l-18,18'/><path d='M170,20 l-18,18'/>\
+      <path d='M198,24 l-18,18'/><path d='M226,20 l-18,18'/><path d='M254,24 l-18,18'/>\
+      <path d='M282,20 l-18,18'/><path d='M310,24 l-18,18'/><path d='M338,20 l-18,18'/>\
+      <path d='M366,24 l-18,18'/><path d='M394,20 l-18,18'/><path d='M422,24 l-18,18'/>\
+    </g>\
+    <circle cx='150' cy='42' r='6' fill='%23ffd666'/>\
+    <circle cx='264' cy='40' r='6' fill='%23c0303a'/>\
+    <circle cx='378' cy='42' r='6' fill='%23ffd666'/>\
+  </svg>');
+}
+
+/* 2) Fiocchi di neve molto discreti (pattern CSS) */
+#regalo.xmas{
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.35) 99%, transparent 100%),
+    radial-gradient(1px 1px at 82% 36%, rgba(255,255,255,0.25) 99%, transparent 100%),
+    radial-gradient(1px 1px at 44% 78%, rgba(255,255,255,0.20) 99%, transparent 100%),
+    linear-gradient(160deg, #193a2f 0%, #112520 100%); /* mantiene il velluto verde */
+}
+
+/* 3) Stelline dorate “twinkle” (layer sopra, non invadente) */
+#regalo.xmas .twinkle{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 15% 30%, rgba(255,226,154,0.9) 99%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 28% 72%, rgba(255,226,154,0.7) 99%, transparent 100%),
+    radial-gradient(2px 2px at 70% 40%, rgba(255,226,154,0.85) 99%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 84% 66%, rgba(255,226,154,0.6) 99%, transparent 100%),
+    radial-gradient(1.8px 1.8px at 52% 18%, rgba(255,226,154,0.8) 99%, transparent 100%);
+  animation: twinkle 4s linear infinite;
+  opacity: .9;
+}
+
+@keyframes twinkle{
+  0%, 100% { filter: brightness(100%); opacity: .9; }
+  50%      { filter: brightness(120%); opacity: 1; }
+}
+
+/* margini per non far coprire i festoni al contenuto */
+#regalo.xmas .section-inner{
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
