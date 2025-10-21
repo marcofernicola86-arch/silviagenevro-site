@@ -241,4 +241,113 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
   border: 0;
 }
 .gift-buy:hover{ background:#24323a !important; color:#fff !important; }
+/* ===== FAI UN REGALO — TEMA NATALIZIO ELEGANTE ===== */
+#regalo.xmas {
+  position: relative;
+  border-radius: 14px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  /* sfondo vellutato con leggerissima "neve" */
+  background:
+    radial-gradient(1px 1px at 20% 20%, rgba(255,255,255,0.25) 99%, transparent 100%),
+    radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.18) 99%, transparent 100%),
+    radial-gradient(1px 1px at 40% 75%, rgba(255,255,255,0.15) 99%, transparent 100%),
+    linear-gradient(160deg, #193a2f 0%, #112520 100%); /* verde ottanio profondo */
+  box-shadow: 0 20px 45px rgba(10,25,20,0.25) inset;
+}
+
+/* titolo leggibile su sfondo scuro */
+#regalo.xmas h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 6px;
+}
+#regalo.xmas .xmas-note {
+  text-align: center;
+  color: rgba(255,255,255,0.85);
+  margin-top: 6px;
+  margin-bottom: 18px;
+  font-size: 0.98rem;
+}
+
+/* card: due palette sobrie (rosso vino + verde abete) con accento oro */
+#regalo.xmas .card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  transform: translateZ(0);
+  backdrop-filter: blur(0.5px);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+#regalo.xmas .card.regalo1 { /* Sessione singola → ROSSO VINO */
+  background: linear-gradient(135deg, #6b1e2a 0%, #8c2b37 100%);
+}
+#regalo.xmas .card.regalo2 { /* Percorso → VERDE ABETE */
+  background: linear-gradient(135deg, #1c3d32 0%, #255446 100%);
+}
+
+/* micro nastro/ribbon all'angolo, elegante */
+#regalo.xmas .card::after{
+  content: "";
+  position: absolute;
+  top: -28px; right: -28px;
+  width: 0; height: 0;
+  border-left: 56px solid transparent;
+  border-top: 56px solid rgba(255, 214, 102, 0.9); /* oro chiaro, #FFD666 */
+  transform: rotate(45deg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* header emoji più discreto */
+#regalo.xmas .card .card-header{
+  font-size: 2rem;
+  line-height: 1;
+  margin-top: 14px;
+  opacity: 0.9;
+}
+
+/* prezzi in “oro” ma non sgargiante */
+#regalo.xmas .gift-price{
+  color: #ffe29a; /* oro tenue */
+  text-shadow: 0 1px 0 rgba(0,0,0,0.25);
+  letter-spacing: 0.3px;
+}
+
+/* elenco caratteristiche più pulito su card scura */
+#regalo.xmas .gift-features{
+  color: rgba(255,255,255,0.95);
+  border-top: 1px dashed rgba(255,255,255,0.25);
+  padding-top: 10px;
+}
+
+/* pulsante “acquista” con contorno oro e hover invertito */
+#regalo.xmas .gift-buy{
+  background: transparent !important;
+  color: #ffe29a !important;
+  border: 2px solid #ffe29a;
+  border-radius: 28px;
+  padding: 10px 22px;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+}
+#regalo.xmas .gift-buy:hover{
+  background: #ffe29a !important;
+  color: #2a3033 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+/* micro-hover sulle card (niente zoom eccessivo) */
+#regalo.xmas .card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 32px rgba(0,0,0,0.28);
+}
+
+/* responsive piccoli ritocchi */
+@media (max-width: 768px){
+  #regalo.xmas { border-radius: 10px; padding: 38px 16px; }
+  #regalo.xmas .card::after{ transform: rotate(45deg) scale(.9); }
+}
+
 
