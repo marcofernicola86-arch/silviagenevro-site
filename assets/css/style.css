@@ -370,20 +370,26 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
   background: linear-gradient(135deg, #b3262e 0%, #8e1c24 100%);
 }
 
+/* === Oro realistico, profondo e luminoso === */
 #regalo.xmas .card.regalo2 {
-  /* dorato elegante */
-  background: linear-gradient(135deg, #cfa23f 0%, #e7be59 100%);
-  color: #2a2a2a; /* testo scuro per leggibilità su fondo chiaro */
+  background: linear-gradient(145deg, #b58e0f 0%, #f9d648 40%, #ffeb7b 100%);
+  color: #2a2a2a; /* testo scuro per contrasto */
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.25),
+              0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
+/* testo e dettagli leggibili */
 #regalo.xmas .card.regalo2 .gift-features {
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, 0.82);
 }
+
+/* bottone elegante in tono */
 #regalo.xmas .card.regalo2 .gift-buy {
-  border-color: #2a2a2a;
+  border: 2px solid #2a2a2a;
   color: #2a2a2a !important;
+  background: rgba(255,255,255,0.15);
 }
 #regalo.xmas .card.regalo2 .gift-buy:hover {
   background: #2a2a2a !important;
-  color: #fff !important;
+  color: #ffeb7b !important;
 }
