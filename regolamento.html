@@ -3,13 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Regolamento – Silvia Genevro</title>
   <meta name="description" content="Regolamento completo per i voucher regalo di Mindfulness.">
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato&display=swap" rel="stylesheet">
-
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17512970480"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -18,10 +15,7 @@
     gtag('config', 'AW-17512970480');
   </script>
 </head>
-
 <body>
-
-  <!-- HEADER -->
   <header>
     <span class="menu-toggle" id="menu-toggle" role="button" aria-label="Apri/chiudi menu" aria-expanded="false"></span>
     <nav id="nav-links">
@@ -36,13 +30,11 @@
     </nav>
   </header>
 
-  <!-- CONTENUTO PRINCIPALE -->
   <section class="section" style="text-align:center; min-height:60vh;">
     <h1>📜 Regolamento in fase di definizione</h1>
     <p>Questa pagina sarà aggiornata a breve con tutti i dettagli dell’iniziativa “Fai un Regalo”.</p>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2025 Silvia Genevro – Mindfulness Professional Trainer<br>P.IVA: 13288610010</p>
     <p style="font-size:0.8em; margin-top:8px;">
@@ -50,16 +42,13 @@
     </p>
   </footer>
 
-  <!-- SCRIPT MENU MOBILE -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const menuToggle = document.getElementById("menu-toggle");
       const navLinks   = document.getElementById("nav-links");
-
       const isOpen = () => navLinks.classList.contains("active");
       const openMenu = () => { navLinks.classList.add("active"); document.body.classList.add("menu-open"); menuToggle.setAttribute("aria-expanded", "true"); };
       const closeMenu = () => { navLinks.classList.remove("active"); document.body.classList.remove("menu-open"); menuToggle.setAttribute("aria-expanded", "false"); };
-
       menuToggle.addEventListener("click", (e) => { e.stopPropagation(); isOpen() ? closeMenu() : openMenu(); });
       navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
       document.addEventListener("click", (e) => { if (isOpen() && !navLinks.contains(e.target) && e.target !== menuToggle) closeMenu(); });
@@ -68,6 +57,5 @@
       window.addEventListener("resize", () => { if (window.innerWidth > 992 && isOpen()) closeMenu(); });
     });
   </script>
-
 </body>
 </html>
