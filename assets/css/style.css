@@ -213,3 +213,32 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
   z-index: 10001;               /* sotto al menu */
 }
 #menu-backdrop { display: none !important; }
+
+/* ===== FAI UN REGALO ===== */
+.card.regalo1 { background: linear-gradient(135deg, #2fa79b, #3dcbbf); }
+.card.regalo2 { background: linear-gradient(135deg, #6a1b9a, #9c27b0); }
+
+.gift-price{
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 8px 0 6px;
+  color: #fff;
+}
+
+.gift-features{
+  list-style: none;
+  padding: 0 18px;
+  margin: 6px 0 10px;
+  text-align: left;
+  line-height: 1.5;
+  opacity: .95;
+}
+.gift-features li{ margin: 6px 0; }
+
+.gift-buy{
+  background: #fff !important;
+  color: #24323a !important;
+  border: 0;
+}
+.gift-buy:hover{ background:#24323a !important; color:#fff !important; }
+
