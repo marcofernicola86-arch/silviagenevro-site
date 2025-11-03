@@ -22,6 +22,14 @@ header {
   z-index: 10;
   text-align: center;
 }
+/* NAV su una sola riga e link sempre visibili */
+header nav{
+  white-space: nowrap;          /* impedisce il ritorno a capo dei link */
+}
+header nav a{
+  display: inline-block;        /* evita collassi strani di inline puro */
+  vertical-align: middle;
+}
 
 /* MENU HEADER (desktop default) */
 header nav a {
