@@ -7,12 +7,14 @@ media_folder: "assets/img"
 public_folder: "/assets/img"
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "blog"
+  - name: "posts"
+    label: "Articoli"
+    folder: "src/blog/posts"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: "frontmatter"
     fields:
-      - {label: "Titolo", name: "title", widget: "string"}
-      - {label: "Data", name: "date", widget: "datetime"}
-      - {label: "Contenuto", name: "body", widget: "markdown"}
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Descrizione", name: "description", widget: "string", required: false }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
