@@ -1,15 +1,14 @@
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // Copia pass-through degli asset statici
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("admin");
 
   return {
-    // Leggi TUTTO dalla root (.) così prende sia /index.html sia /src/blog/**
     dir: {
-      input: ".",           // <-- chiave
-      includes: "layouts",  // i tuoi layout sono in /layouts
+      input: ".",          // <-- prende sia /index.html sia /src/blog/**
+      includes: "layouts", // <-- i tuoi layout stanno in /layouts (a fianco di /src)
       output: "_site"
     },
-    templateFormats: ["njk", "html", "md"] // processa .njk e .html
+    templateFormats: ["njk", "html", "md"]
   };
 };
