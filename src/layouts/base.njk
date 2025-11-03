@@ -39,9 +39,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.getElementById("menu-toggle");
   const navLinks   = document.getElementById("nav-links");
-  const isOpen = () => navLinks.classList.contains("active");
-  const openMenu = () => { navLinks.classList.add("active"); document.body.classList.add("menu-open"); menuToggle.setAttribute("aria-expanded","true"); };
-  const closeMenu = () => { navLinks.classList.remove("active"); document.body.classList.remove("menu-open"); menuToggle.setAttribute("aria-expanded","false"); };
+  const isOpen = () => navLinks?.classList.contains("active");
+  const openMenu = () => { navLinks.classList.add("active"); document.body.classList.add("menu-open"); menuToggle?.setAttribute("aria-expanded","true"); };
+  const closeMenu = () => { navLinks.classList.remove("active"); document.body.classList.remove("menu-open"); menuToggle?.setAttribute("aria-expanded","false"); };
   menuToggle?.addEventListener("click",(e)=>{e.stopPropagation(); isOpen()?closeMenu():openMenu();});
   navLinks?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>closeMenu()));
   document.addEventListener("click",(e)=>{ if(isOpen() && !navLinks.contains(e.target) && e.target!==menuToggle){ closeMenu(); }});
@@ -54,3 +54,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+
