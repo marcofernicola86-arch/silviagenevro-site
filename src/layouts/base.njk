@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} — {% endif %}Silvia Genevro</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<header>
+  <span class="menu-toggle" id="menu-toggle" role="button" aria-label="Apri/chiudi menu" aria-expanded="false"></span>
+  <nav id="nav-links">
+    <a href="/#home">Home</a>
+    <a href="/#chi-sono">Chi sono</a>
+    <a href="/#corsi">Corsi</a>
+    <a href="/#formazione">Formazione</a>
+    <a href="/#eventi">Eventi</a>
+    <a href="/#certificazioni">Certificazioni</a>
+    <a href="/#regalo">Fai un Regalo</a>
+    <a href="/meditazione.html">Meditazione Guidata</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#contatti">Contatti</a>
+  </nav>
+</header>
+
+<main class="section">
+  {{ content | safe }}
+</main>
+
+<footer>
+  <p>© 2025 Silvia Genevro – Mindfulness Professional Trainer<br>P.IVA: 13288610010</p>
+  <p style="font-size:0.8em; margin-top:8px;">
+    <a href="/privacy.html" style="color:#666; text-decoration:none;">Privacy & Cookies Policy</a>
+  </p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks   = document.getElementById("nav-links");
+  const isOpen = () => navLinks.classList.contains("active");
+  const openMenu = () => { navLinks.classList.add("active"); document.body.classList.add("menu-open"); menuToggle.setAttribute("aria-expanded","true"); };
+  const closeMenu = () => { navLinks.classList.remove("active"); document.body.classList.remove("menu-open"); menuToggle.setAttribute("aria-expanded","false"); };
+  menuToggle?.addEventListener("click",(e)=>{e.stopPropagation(); isOpen()?closeMenu():openMenu();});
+  navLinks?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>closeMenu()));
+  document.addEventListener("click",(e)=>{ if(isOpen() && !navLinks.contains(e.target) && e.target!==menuToggle){ closeMenu(); }});
+  document.addEventListener("keydown",(e)=>{ if(e.key==="Escape" && isOpen()) closeMenu(); });
+  window.addEventListener("scroll",()=>{ if(isOpen()) closeMenu(); },{passive:true});
+  window.addEventListener("hashchange",closeMenu);
+  window.addEventListener("resize",()=>{ if(window.innerWidth>992 && isOpen()) closeMenu(); });
+});
+</script>
+
+</body>
+</html>
