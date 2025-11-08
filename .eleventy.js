@@ -1,14 +1,15 @@
 module.exports = function (eleventyConfig) {
-  // Alias: permettono di usare "layout: base" o "layout: base.njk" ecc.
+  // Alias doppi: funzionano sia "base" che "base.njk"
   eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
+  eleventyConfig.addLayoutAlias('base.njk', 'layouts/base.njk');
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
+  eleventyConfig.addLayoutAlias('post.njk', 'layouts/post.njk');
 
   return {
     dir: {
-      input: "src",
+      input: "src",        // <— IMPORTANTE! Così _includes è sotto src
       includes: "_includes",
       data: "_data",
-      // niente dir.layouts: i layout stanno sotto _includes/layouts (default v2)
       output: "_site"
     }
   };
