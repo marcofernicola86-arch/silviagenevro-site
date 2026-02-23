@@ -9,12 +9,11 @@ module.exports = function(eleventyConfig) {
 
   // filtro date (se lo hai messo)…
 
-  return {
-    dir: {
-      input: "src",
-      includes: "_includes",
-      data: "_data",
-      output: "_site"
-    }
-  };
+return {
+  dir: {
+    input: "src",
+    // lasciare includes NON specificato: Eleventy userà "src/_includes" automaticamente
+    data: "_data",
+    output: "_site"
+  }
 };
