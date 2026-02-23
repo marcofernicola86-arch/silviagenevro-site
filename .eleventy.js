@@ -1,19 +1,18 @@
-module.exports = function(eleventyConfig) {
-  // alias layout come li hai già
-  eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
-  eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
+module.exports = function (eleventyConfig) {
+  // alias layout
+  eleventyConfig.addLayoutAlias("base", "layouts/base.njk");
+  eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
-  // copia 1:1 asset e admin nella build
-  eleventyConfig.addPassthroughCopy("src/assets");
-  eleventyConfig.addPassthroughCopy("src/admin");
+  // copia 1:1 cartelle statiche nella build
+  // (nel tuo repo sono a livello root: /assets e /admin)
+  eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("admin");
 
-  // filtro date (se lo hai messo)…
-
-return {
-  dir: {
-    input: "src",
-    // lasciare includes NON specificato: Eleventy userà "src/_includes" automaticamente
-    data: "_data",
-    output: "_site"
-  }
+  return {
+    dir: {
+      input: "src",
+      output: "_site",
+      // includes e data li lasciamo di default (src/_includes e src/_data)
+    },
+  };
 };
