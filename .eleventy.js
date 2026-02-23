@@ -1,7 +1,7 @@
 module.exports = function (eleventyConfig) {
   // alias layout
-  eleventyConfig.addLayoutAlias("base", "layouts/base.njk");
-  eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
+eleventyConfig.addLayoutAlias("base.njk", "layouts/base.njk");
+eleventyConfig.addLayoutAlias("post.njk", "layouts/post.njk");
 
   // copia 1:1 cartelle statiche nella build
   // (nel tuo repo sono a livello root: /assets e /admin)
