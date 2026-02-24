@@ -153,17 +153,19 @@
   </p>
   <img src="assets/img/certificazioni.png" alt="Certificazioni di Silvia Genevro">
 </section>
-
+  
 <!-- NEWSLETTER -->
 <section id="newsletter" class="section">
   <h2>Entra nella Newsletter periodica!</h2>
   <p>Lascia la tua email per ricevere aggiornamenti sui corsi e progetti futuri :)</p>
 
-  <form id="newsletterForm" autocomplete="on">
-    <!-- token (deve combaciare con TOKEN nello script Apps) -->
+  <form id="newsletterForm"
+        method="POST"
+        action="https://script.google.com/macros/s/AKfycbygkrK2lwQdds9jt4ssXWReiceFJGKcuy8oeP5ZFeqYUo2yvQwbq3ql73pQV73ytNs06Q/exec"
+        target="nl_iframe">
+
     <input type="hidden" name="token" value="NL_2026_SILVIA_9f3b7c2a_1a4d_4c8e_91f2_3c9a7b1d2e44">
 
-    <!-- honeypot anti-bot -->
     <div style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
       <label>Lascia vuoto <input type="text" name="website" autocomplete="off"></label>
     </div>
@@ -181,48 +183,41 @@
       <a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a>.
     </label>
 
-    <button type="submit">Iscriviti</button>
+    <button type="submit" id="nlBtn">Iscriviti</button>
     <p id="newsletterMsg" style="margin-top:12px; display:none;"></p>
   </form>
 
+  <iframe name="nl_iframe" id="nl_iframe" style="display:none;"></iframe>
+
   <script>
-    (function () {
-      const form = document.getElementById("newsletterForm");
-      const msg  = document.getElementById("newsletterMsg");
-      if (!form || !msg) return;
+  (function () {
+    const form = document.getElementById("newsletterForm");
+    const msg  = document.getElementById("newsletterMsg");
+    const btn  = document.getElementById("nlBtn");
+    if (!form || !msg) return;
 
-      const ENDPOINT = "https://script.google.com/macros/s/AKfycbygkrK2lwQdds9jt4ssXWReiceFJGKcuy8oeP5ZFeqYUo2yvQwbq3ql73pQV73ytNs06Q/exec";
+    form.addEventListener("submit", function () {
+      msg.style.display = "block";
+      msg.textContent = "Invio in corso...";
+      if (btn) btn.disabled = true;
+    });
 
-      form.addEventListener("submit", async function (e) {
-        e.preventDefault();
+    window.addEventListener("message", function (e) {
+      if (!e.data || typeof e.data !== "object") return;
+      if (typeof e.data.ok !== "boolean") return;
 
-        msg.style.display = "block";
-        msg.textContent = "Invio in corso...";
-
-        const data = new FormData(form);
-
-        // Validazione veloce lato client (prima di chiamare Google)
-        const email = (data.get("email") || "").toString().trim();
-        if (!email) { msg.textContent = "Inserisci una email."; return; }
-
-        try {
-          // no-cors => il browser non blocca CORS e noi non leggiamo la risposta
-          await fetch(ENDPOINT, {
-            method: "POST",
-            mode: "no-cors",
-            body: data
-          });
-
-          msg.textContent = "Iscrizione inviata ✅";
-          form.reset();
-        } catch (err) {
-          msg.textContent = "Errore di rete. Riprova tra poco.";
-        }
-      });
-    })();
+      if (e.data.ok) {
+        msg.textContent = "Iscrizione inviata ✅";
+        form.reset();
+      } else {
+        const code = e.data.code || "ERRORE";
+        msg.textContent = "Errore invio: " + code;
+      }
+      if (btn) btn.disabled = false;
+    });
+  })();
   </script>
 </section>
-
 <!-- CONTATTI -->
 <section id="contatti" class="section">
   <h2>Contatti</h2>
