@@ -162,11 +162,13 @@
 
   <form id="newsletterForm"
         method="POST"
-        action="INCOLLA_QUI_LA_TUA_URL_EXEC"
-        target="nl_iframe">
+        action="__URL_WEBAPP__"
+        target="nl_iframe"
+        accept-charset="UTF-8">
 
     <input type="hidden" name="token" value="NL_2026_SILVIA_9f3b7c2a_1a4d_4c8e_91f2_3c9a7b1d2e44">
 
+    <!-- Honeypot anti-bot -->
     <div style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
       <label>Lascia vuoto <input type="text" name="website" autocomplete="off"></label>
     </div>
@@ -197,18 +199,29 @@
     const btn  = document.getElementById("nlBtn");
     if (!form || !msg) return;
 
+    let timer = null;
+
     form.addEventListener("submit", function () {
       msg.style.display = "inline";
       msg.textContent = "Invio in corso...";
       if (btn) btn.disabled = true;
+
+      // se Google non risponde, non restiamo mai bloccati
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        msg.style.display = "inline";
+        msg.textContent = "Nessuna risposta dal server. Riprova tra poco.";
+        if (btn) btn.disabled = false;
+      }, 12000);
     });
 
     window.addEventListener("message", function (e) {
       if (!e.data || typeof e.data !== "object") return;
       if (typeof e.data.ok !== "boolean") return;
 
-      msg.style.display = "inline";
+      clearTimeout(timer);
 
+      msg.style.display = "inline";
       if (e.data.ok) {
         msg.textContent = "Iscrizione inviata ✅";
         form.reset();
