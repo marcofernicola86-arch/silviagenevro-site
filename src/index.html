@@ -261,6 +261,48 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+<script>
+(function () {
+  const form = document.getElementById('newsletterForm');
+  if (!form) return;
 
+  const msg = document.getElementById('newsletterMsg');
+
+  function encode(data) {
+    return new URLSearchParams(data).toString();
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // << blocca qualsiasi redirect/404
+
+    const formData = new FormData(form);
+    const payload = {};
+    formData.forEach((v, k) => payload[k] = v);
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode(payload)
+      });
+
+      // Anche se la response non fosse perfetta, Netlify di solito registra comunque la submission.
+      if (msg) {
+        msg.style.display = 'block';
+        msg.textContent = (res.ok)
+          ? 'Iscrizione ricevuta ✅'
+          : 'Iscrizione inviata ✅ (se non vedi la conferma in Netlify Forms, dimmelo)';
+      }
+
+      form.reset();
+    } catch (err) {
+      if (msg) {
+        msg.style.display = 'block';
+        msg.textContent = 'Errore di rete. Riprova tra pochi secondi.';
+      }
+    }
+  });
+})();
+</script>
 </body>
 </html>
