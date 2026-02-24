@@ -156,13 +156,10 @@
   <h2>Entra nella Newsletter periodica!</h2>
   <p>Lascia la tua email per ricevere aggiornamenti sui corsi e progetti futuri :)</p>
 
-  <form id="newsletterForm"
-        method="POST"
-        action="https://script.google.com/macros/s/AKfycbzEabdZumVn7tKwSDknr3Ti0mqELN5l94Y2qupBvET_c1OW3PsyTuDkgp6l6-TxN_XsRQ/exec"
-        target="nl_iframe">
-
+  <form id="newsletterForm">
     <input type="hidden" name="token" value="NL_2026_SILVIA_9f3b7c2a_1a4d_4c8e_91f2_3c9a7b1d2e44">
 
+    <!-- Honeypot anti-bot (deve restare vuoto) -->
     <div style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
       <label>Lascia vuoto <input type="text" name="website" autocomplete="off"></label>
     </div>
@@ -184,43 +181,48 @@
     <p id="newsletterMsg" style="margin-top:12px; display:none;"></p>
   </form>
 
-  <iframe name="nl_iframe" id="nl_iframe" style="display:none;"></iframe>
-
   <script>
   (function () {
+    const ENDPOINT = "https://script.google.com/macros/s/AKfycbzEabdZumVn7tKwSDknr3Ti0mqELN5l94Y2qupBvET_c1OW3PsyTuDkgp6l6-TxN_XsRQ/exec";
+
     const form = document.getElementById("newsletterForm");
     const msg  = document.getElementById("newsletterMsg");
     if (!form || !msg) return;
 
-    form.addEventListener("submit", function () {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
       msg.style.display = "block";
       msg.textContent = "Invio in corso...";
-    });
 
-    window.addEventListener("message", function (e) {
-      if (!e.data || typeof e.data !== "object") return;
-      if (typeof e.data.ok !== "boolean") return;
+      const fd = new FormData(form);
 
-      if (e.data.ok === true) {
-        msg.style.display = "block";
+      // validazione minima lato client (evita invii “vuoti”)
+      const email = (fd.get("email") || "").toString().trim();
+      const consenso = fd.get("consenso_newsletter");
+      if (!email) { msg.textContent = "Inserisci una email."; return; }
+      if (!consenso) { msg.textContent = "Serve il consenso per iscriversi."; return; }
+
+      // IMPORTANTISSIMO: no custom headers => niente preflight.
+      // mode:"no-cors" => il browser non blocca la richiesta cross-domain.
+      try {
+        await fetch(ENDPOINT, {
+          method: "POST",
+          mode: "no-cors",
+          body: new URLSearchParams(fd)
+        });
+
+        // Non possiamo leggere la risposta (no-cors), quindi mostriamo conferma.
         msg.textContent = "Iscrizione inviata ✅";
         form.reset();
-      } else {
-        const code = e.data.code || "ERRORE";
-        msg.style.display = "block";
 
-        if (code === "RATE_LIMIT") msg.textContent = "Attendi un minuto e riprova.";
-        else if (code === "CONSENSO_MANCANTE") msg.textContent = "Serve il consenso per iscriversi.";
-        else if (code === "EMAIL_NON_VALIDA") msg.textContent = "Email non valida.";
-        else if (code === "BOT_DETECTED") msg.textContent = "Invio bloccato (anti-spam).";
-        else if (code === "TOKEN_INVALIDO") msg.textContent = "Errore invio (token).";
-        else msg.textContent = "Errore invio. Riprova tra poco.";
+      } catch (err) {
+        msg.textContent = "Errore di rete. Riprova tra poco.";
       }
     });
   })();
   </script>
 </section>
-
 <!-- CONTATTI -->
 <section id="contatti" class="section">
   <h2>Contatti</h2>
