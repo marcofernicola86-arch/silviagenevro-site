@@ -155,13 +155,14 @@
 </section>
   
 <!-- NEWSLETTER -->
+<!-- NEWSLETTER -->
 <section id="newsletter" class="section">
   <h2>Entra nella Newsletter periodica!</h2>
   <p>Lascia la tua email per ricevere aggiornamenti sui corsi e progetti futuri :)</p>
 
   <form id="newsletterForm"
         method="POST"
-        action="https://script.google.com/macros/s/AKfycbygkrK2lwQdds9jt4ssXWReiceFJGKcuy8oeP5ZFeqYUo2yvQwbq3ql73pQV73ytNs06Q/exec"
+        action="INCOLLA_QUI_LA_TUA_URL_EXEC"
         target="nl_iframe">
 
     <input type="hidden" name="token" value="NL_2026_SILVIA_9f3b7c2a_1a4d_4c8e_91f2_3c9a7b1d2e44">
@@ -171,8 +172,8 @@
     </div>
 
     <div class="nl-grid">
-      <input type="text" name="nome" placeholder="Nome (opzionale)">
-      <input type="text" name="cognome" placeholder="Cognome (opzionale)">
+      <input type="text"  name="nome"    placeholder="Nome (opzionale)">
+      <input type="text"  name="cognome" placeholder="Cognome (opzionale)">
     </div>
 
     <input type="email" name="email" placeholder="La tua email" required>
@@ -184,7 +185,7 @@
     </label>
 
     <button type="submit" id="nlBtn">Iscriviti</button>
-    <p id="newsletterMsg" style="margin-top:12px; display:none;"></p>
+    <span id="newsletterMsg" style="margin-left:10px; display:none;"></span>
   </form>
 
   <iframe name="nl_iframe" id="nl_iframe" style="display:none;"></iframe>
@@ -197,7 +198,7 @@
     if (!form || !msg) return;
 
     form.addEventListener("submit", function () {
-      msg.style.display = "block";
+      msg.style.display = "inline";
       msg.textContent = "Invio in corso...";
       if (btn) btn.disabled = true;
     });
@@ -206,13 +207,15 @@
       if (!e.data || typeof e.data !== "object") return;
       if (typeof e.data.ok !== "boolean") return;
 
+      msg.style.display = "inline";
+
       if (e.data.ok) {
         msg.textContent = "Iscrizione inviata ✅";
         form.reset();
       } else {
-        const code = e.data.code || "ERRORE";
-        msg.textContent = "Errore invio: " + code;
+        msg.textContent = "Errore invio: " + (e.data.code || "ERRORE");
       }
+
       if (btn) btn.disabled = false;
     });
   })();
