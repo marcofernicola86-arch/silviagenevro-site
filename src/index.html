@@ -154,31 +154,82 @@
     <img src="assets/img/certificazioni.png" alt="Certificazioni di Silvia Genevro">
   </section>
 
-  <!-- NEWSLETTER -->
-  <section id="newsletter" class="section">
-    <h2>Entra nella Newsletter periodica!</h2>
-    <p>Lascia la tua email per ricevere aggiornamenti sui corsi e progetti futuri :)</p>
-<form id="newsletterForm" name="newsletter" method="POST" data-netlify="true" action="/" data-netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="newsletter">
-  <input type="hidden" name="bot-field">
+<!-- NEWSLETTER -->
+<section id="newsletter" class="section">
+  <h2>Entra nella Newsletter periodica!</h2>
+  <p>Lascia la tua email per ricevere aggiornamenti sui corsi e progetti futuri :)</p>
 
-  <div class="nl-grid">
-    <input type="text"  name="nome"    placeholder="Nome (opzionale)">
-    <input type="text"  name="cognome" placeholder="Cognome (opzionale)">
-  </div>
+  <form id="newsletterForm"
+        method="POST"
+        action="https://script.google.com/macros/s/AKfycbzEabdZumVn7tKwSDknr3Ti0mqELN5l94Y2qupBvET_c1OW3PsyTuDkgp6l6-TxN_XsRQ/exec"
+        target="nl_iframe">
 
-  <input type="email" name="email" placeholder="La tua email" required>
+    <!-- TOKEN anti-spam: DEVE coincidere con quello nello script Apps -->
+    <input type="hidden" name="token" value="NL_2026_SILVIA_9f3b7c2a_1a4d_4c8e_91f2_3c9a7b1d2e44">
 
-  <label class="consenso">
-    <input type="checkbox" name="consenso_newsletter" required>
-    Acconsento a ricevere comunicazioni e newsletter via email. Ho letto l’
-    <a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a>.
-  </label>
+    <!-- Honeypot anti-bot (deve restare vuoto) -->
+    <div style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
+      <label>Lascia vuoto <input type="text" name="website" autocomplete="off"></label>
+    </div>
 
-  <button type="submit">Iscriviti</button>
-  <p id="newsletterMsg" style="margin-top:12px; display:none;"></p>
-</form>
-  </section>
+    <div class="nl-grid">
+      <input type="text"  name="nome"    placeholder="Nome (opzionale)">
+      <input type="text"  name="cognome" placeholder="Cognome (opzionale)">
+    </div>
+
+    <input type="email" name="email" placeholder="La tua email" required>
+
+    <label class="consenso">
+      <input type="checkbox" name="consenso_newsletter" required>
+      Acconsento a ricevere comunicazioni e newsletter via email. Ho letto l’
+      <a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a>.
+    </label>
+
+    <button type="submit">Iscriviti</button>
+    <p id="newsletterMsg" style="margin-top:12px; display:none;"></p>
+  </form>
+
+  <!-- Iframe invisibile: evita redirect/404 e riceve la risposta della Web App -->
+  <iframe name="nl_iframe" id="nl_iframe" style="display:none;"></iframe>
+
+  <script>
+  (function () {
+    const form = document.getElementById("newsletterForm");
+    const msg  = document.getElementById("newsletterMsg");
+
+    if (!form || !msg) return;
+
+    // Quando invii, mostra stato "invio..."
+    form.addEventListener("submit", function () {
+      msg.style.display = "block";
+      msg.textContent = "Invio in corso...";
+    });
+
+    // Riceve esito da Apps Script via postMessage
+    window.addEventListener("message", function (e) {
+      // Ci aspettiamo un oggetto: { ok: true/false, code: "..." }
+      if (!e.data || typeof e.data !== "object") return;
+      if (typeof e.data.ok !== "boolean") return;
+
+      if (e.data.ok === true) {
+        msg.style.display = "block";
+        msg.textContent = "Iscrizione inviata ✅";
+        form.reset();
+      } else {
+        const code = e.data.code || "ERRORE";
+        msg.style.display = "block";
+
+        if (code === "RATE_LIMIT") msg.textContent = "Attendi un minuto e riprova.";
+        else if (code === "CONSENSO_MANCANTE") msg.textContent = "Serve il consenso per iscriversi.";
+        else if (code === "EMAIL_NON_VALIDA") msg.textContent = "Email non valida.";
+        else if (code === "BOT_DETECTED") msg.textContent = "Invio bloccato (anti-spam).";
+        else if (code === "TOKEN_INVALIDO") msg.textContent = "Errore invio (token).";
+        else msg.textContent = "Errore invio. Riprova tra poco.";
+      }
+    });
+  })();
+  </script>
+</section>
 
 <!-- CONTATTI -->
 <section id="contatti" class="section">
