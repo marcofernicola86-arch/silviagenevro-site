@@ -1,11 +1,6 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <!-- Event snippet for Contatta conversion page -->
-<script>
-  gtag('event', 'conversion', {'send_to': 'AW-17512970480/2JzZCJPWuJgbEPDx6p5B'});
-</script>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,23 +27,30 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato&display=swap" rel="stylesheet">
   <meta name="google-site-verification" content="jrAuXxmCcju56sMJXkRzgrYA4dewUzp_A_s89oQoPgI" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17512970480">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-17512970480');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17512970480"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17512970480');
+
+    // conversion event: lo lanciamo quando la pagina è pronta (evita "gtag is not defined")
+    window.addEventListener("load", function () {
+      try {
+        if (typeof gtag === "function") {
+          gtag('event', 'conversion', {'send_to': 'AW-17512970480/2JzZCJPWuJgbEPDx6p5B'});
+        }
+      } catch(e) {}
+    });
+  </script>
 </head>
 
 <body>
 
 <!-- HEADER -->
 <header>
-  <!-- icona hamburger -->
   <span class="menu-toggle" id="menu-toggle" role="button" aria-label="Apri/chiudi menu" aria-expanded="false"></span>
 
   <nav id="nav-links">
@@ -64,31 +66,32 @@
   </nav>
 </header>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <h1>Mindfulness per vivere con presenza e leggerezza</h1>
-    <p>Corsi MBSR, meditazioni guidate e percorsi personalizzati per ridurre lo stress e coltivare consapevolezza.</p>
-    <img src="assets/img/hero-heart-brain.png" alt="Mindfulness cuore cervello">
-    <div class="hero-buttons">
-      <a class="btn primary" href="#corsi">Scopri i corsi</a>
-      <a class="btn alt" href="meditazione.html">Prova una meditazione</a>
-    </div>
-  </section>
+<!-- HERO -->
+<section class="hero" id="home">
+  <h1>Mindfulness per vivere con presenza e leggerezza</h1>
+  <p>Corsi MBSR, meditazioni guidate e percorsi personalizzati per ridurre lo stress e coltivare consapevolezza.</p>
+  <img src="assets/img/hero-heart-brain.png" alt="Mindfulness cuore cervello">
+  <div class="hero-buttons">
+    <a class="btn primary" href="#corsi">Scopri i corsi</a>
+    <a class="btn alt" href="meditazione.html">Prova una meditazione</a>
+  </div>
+</section>
 
-  <!-- CHI SONO -->
-  <section id="chi-sono" class="section about">
-    <h2>Chi sono</h2>
-    <div class="about-container">
-      <img src="assets/img/Silviafotoprofilo.jpg" alt="Silvia Genevro">
-      <div class="about-text">
-        <p>Sono <strong>istruttrice di Mindfulness</strong> e formatrice nell’ambito delle soft skills.
-<br>Aiuto persone e gruppi a coltivare benessere attraverso la consapevolezza, la presenza e la gentilezza.</br>  
-<br>Progetto percorsi per privati e aziende su comunicazione efficace, team working e team building, integrando tecniche teatrali ed esperienziali per facilitare connessione autentica e crescita personale e professionale.</br>  
-<br><i>Insegno Mindfulness e soft skills come si insegna a camminare scalzi sull’erba: con cura, ascolto e meraviglia.</i></br></p>
-        <a class="btn primary" href="#corsi">Scopri i corsi</a>
-      </div>
+<!-- CHI SONO -->
+<section id="chi-sono" class="section about">
+  <h2>Chi sono</h2>
+  <div class="about-container">
+    <img src="assets/img/Silviafotoprofilo.jpg" alt="Silvia Genevro">
+    <div class="about-text">
+      <p>Sono <strong>istruttrice di Mindfulness</strong> e formatrice nell’ambito delle soft skills.
+        <br>Aiuto persone e gruppi a coltivare benessere attraverso la consapevolezza, la presenza e la gentilezza.</br>
+        <br>Progetto percorsi per privati e aziende su comunicazione efficace, team working e team building, integrando tecniche teatrali ed esperienziali per facilitare connessione autentica e crescita personale e professionale.</br>
+        <br><i>Insegno Mindfulness e soft skills come si insegna a camminare scalzi sull’erba: con cura, ascolto e meraviglia.</i></br>
+      </p>
+      <a class="btn primary" href="#corsi">Scopri i corsi</a>
     </div>
-  </section>
+  </div>
+</section>
 
 <section id="corsi" class="section">
   <h2>Corsi</h2>
@@ -118,11 +121,11 @@
   </div>
 </section>
 
-  <!-- FORMAZIONE -->
-  <section id="formazione" class="section">
-    <h2>Formazione</h2>
-    <p>Soft Skills, Team Working, Team Building, Comunicazione Efficace, MBSR. Disponibili percorsi individuali e per aziende.</p>
-  </section>
+<!-- FORMAZIONE -->
+<section id="formazione" class="section">
+  <h2>Formazione</h2>
+  <p>Soft Skills, Team Working, Team Building, Comunicazione Efficace, MBSR. Disponibili percorsi individuali e per aziende.</p>
+</section>
 
 <!-- EVENTI -->
 <section id="eventi" class="section">
@@ -141,32 +144,33 @@
   </div>
 </section>
 
-  <!-- CERTIFICAZIONI -->
-  <section id="certificazioni" class="section">
-    <h2>Certificazioni</h2>
-    <p>
-      Istruttrice di Mindfulness con iscrizione all'Albo Nazionale Federmindfulness n. 3038.<br>
-      <a href="https://www.albonazionalemindfulness.it/professionista/silvia-genevro" target="_blank">🔗 Verifica le credenziali sull'Albo ufficiale</a>
-    </p>
-    <img src="assets/img/certificazioni.png" alt="Certificazioni di Silvia Genevro">
-  </section>
+<!-- CERTIFICAZIONI -->
+<section id="certificazioni" class="section">
+  <h2>Certificazioni</h2>
+  <p>
+    Istruttrice di Mindfulness con iscrizione all'Albo Nazionale Federmindfulness n. 3038.<br>
+    <a href="https://www.albonazionalemindfulness.it/professionista/silvia-genevro" target="_blank">🔗 Verifica le credenziali sull'Albo ufficiale</a>
+  </p>
+  <img src="assets/img/certificazioni.png" alt="Certificazioni di Silvia Genevro">
+</section>
 
 <!-- NEWSLETTER -->
 <section id="newsletter" class="section">
   <h2>Entra nella Newsletter periodica!</h2>
   <p>Lascia la tua email per ricevere aggiornamenti sui corsi e progetti futuri :)</p>
 
-  <form id="newsletterForm">
+  <form id="newsletterForm" autocomplete="on">
+    <!-- token (deve combaciare con TOKEN nello script Apps) -->
     <input type="hidden" name="token" value="NL_2026_SILVIA_9f3b7c2a_1a4d_4c8e_91f2_3c9a7b1d2e44">
 
-    <!-- Honeypot anti-bot (deve restare vuoto) -->
+    <!-- honeypot anti-bot -->
     <div style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
       <label>Lascia vuoto <input type="text" name="website" autocomplete="off"></label>
     </div>
 
     <div class="nl-grid">
-      <input type="text"  name="nome"    placeholder="Nome (opzionale)">
-      <input type="text"  name="cognome" placeholder="Cognome (opzionale)">
+      <input type="text" name="nome" placeholder="Nome (opzionale)">
+      <input type="text" name="cognome" placeholder="Cognome (opzionale)">
     </div>
 
     <input type="email" name="email" placeholder="La tua email" required>
@@ -182,47 +186,43 @@
   </form>
 
   <script>
-  (function () {
-    const ENDPOINT = "https://script.google.com/macros/s/AKfycbzEabdZumVn7tKwSDknr3Ti0mqELN5l94Y2qupBvET_c1OW3PsyTuDkgp6l6-TxN_XsRQ/exec";
+    (function () {
+      const form = document.getElementById("newsletterForm");
+      const msg  = document.getElementById("newsletterMsg");
+      if (!form || !msg) return;
 
-    const form = document.getElementById("newsletterForm");
-    const msg  = document.getElementById("newsletterMsg");
-    if (!form || !msg) return;
+      const ENDPOINT = "https://script.google.com/macros/s/AKfycbzEabdZumVn7tKwSDknr3Ti0mqELN5l94Y2qupBvET_c1OW3PsyTuDkgp6l6-TxN_XsRQ/exec";
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
 
-      msg.style.display = "block";
-      msg.textContent = "Invio in corso...";
+        msg.style.display = "block";
+        msg.textContent = "Invio in corso...";
 
-      const fd = new FormData(form);
+        const data = new FormData(form);
 
-      // validazione minima lato client (evita invii “vuoti”)
-      const email = (fd.get("email") || "").toString().trim();
-      const consenso = fd.get("consenso_newsletter");
-      if (!email) { msg.textContent = "Inserisci una email."; return; }
-      if (!consenso) { msg.textContent = "Serve il consenso per iscriversi."; return; }
+        // Validazione veloce lato client (prima di chiamare Google)
+        const email = (data.get("email") || "").toString().trim();
+        if (!email) { msg.textContent = "Inserisci una email."; return; }
 
-      // IMPORTANTISSIMO: no custom headers => niente preflight.
-      // mode:"no-cors" => il browser non blocca la richiesta cross-domain.
-      try {
-        await fetch(ENDPOINT, {
-          method: "POST",
-          mode: "no-cors",
-          body: new URLSearchParams(fd)
-        });
+        try {
+          // no-cors => il browser non blocca CORS e noi non leggiamo la risposta
+          await fetch(ENDPOINT, {
+            method: "POST",
+            mode: "no-cors",
+            body: data
+          });
 
-        // Non possiamo leggere la risposta (no-cors), quindi mostriamo conferma.
-        msg.textContent = "Iscrizione inviata ✅";
-        form.reset();
-
-      } catch (err) {
-        msg.textContent = "Errore di rete. Riprova tra poco.";
-      }
-    });
-  })();
+          msg.textContent = "Iscrizione inviata ✅";
+          form.reset();
+        } catch (err) {
+          msg.textContent = "Errore di rete. Riprova tra poco.";
+        }
+      });
+    })();
   </script>
 </section>
+
 <!-- CONTATTI -->
 <section id="contatti" class="section">
   <h2>Contatti</h2>
@@ -234,13 +234,13 @@
   </div>
 </section>
 
-  <!-- FOOTER -->
-  <footer>
-     <p>© 2025 Silvia Genevro – Mindfulness Professional Trainer<br>P.IVA: 13288610010</p>
-    <p style="font-size:0.8em; margin-top:8px;">
-      <a href="privacy.html" style="color:#666; text-decoration:none;">Privacy & Cookies Policy</a>
-    </p>
-  </footer>
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Silvia Genevro – Mindfulness Professional Trainer<br>P.IVA: 13288610010</p>
+  <p style="font-size:0.8em; margin-top:8px;">
+    <a href="privacy.html" style="color:#666; text-decoration:none;">Privacy & Cookies Policy</a>
+  </p>
+</footer>
 
 <!-- MENU LOGIC -->
 <script>
