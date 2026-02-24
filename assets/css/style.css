@@ -230,7 +230,8 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
   border-radius:16px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   overflow:hidden;
-  display: block;     /* elimina la fascia vuota a destra */
+  max-width: 750px;   /* 👈 questa è la chiave */
+
 }
 
 .evento-img{
