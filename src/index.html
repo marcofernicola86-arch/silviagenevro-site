@@ -118,7 +118,6 @@
   </div>
 </section>
 
-
   <!-- FORMAZIONE -->
   <section id="formazione" class="section">
     <h2>Formazione</h2>
@@ -142,8 +141,6 @@
   </div>
 </section>
 
-
-
   <!-- CERTIFICAZIONI -->
   <section id="certificazioni" class="section">
     <h2>Certificazioni</h2>
@@ -164,10 +161,8 @@
         action="https://script.google.com/macros/s/AKfycbzEabdZumVn7tKwSDknr3Ti0mqELN5l94Y2qupBvET_c1OW3PsyTuDkgp6l6-TxN_XsRQ/exec"
         target="nl_iframe">
 
-    <!-- TOKEN anti-spam: DEVE coincidere con quello nello script Apps -->
     <input type="hidden" name="token" value="NL_2026_SILVIA_9f3b7c2a_1a4d_4c8e_91f2_3c9a7b1d2e44">
 
-    <!-- Honeypot anti-bot (deve restare vuoto) -->
     <div style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
       <label>Lascia vuoto <input type="text" name="website" autocomplete="off"></label>
     </div>
@@ -189,25 +184,20 @@
     <p id="newsletterMsg" style="margin-top:12px; display:none;"></p>
   </form>
 
-  <!-- Iframe invisibile: evita redirect/404 e riceve la risposta della Web App -->
   <iframe name="nl_iframe" id="nl_iframe" style="display:none;"></iframe>
 
   <script>
   (function () {
     const form = document.getElementById("newsletterForm");
     const msg  = document.getElementById("newsletterMsg");
-
     if (!form || !msg) return;
 
-    // Quando invii, mostra stato "invio..."
     form.addEventListener("submit", function () {
       msg.style.display = "block";
       msg.textContent = "Invio in corso...";
     });
 
-    // Riceve esito da Apps Script via postMessage
     window.addEventListener("message", function (e) {
-      // Ci aspettiamo un oggetto: { ok: true/false, code: "..." }
       if (!e.data || typeof e.data !== "object") return;
       if (typeof e.data.ok !== "boolean") return;
 
@@ -235,24 +225,19 @@
 <section id="contatti" class="section">
   <h2>Contatti</h2>
   <div class="contact-grid">
-    <!-- Email -->
     <a href="mailto:silvia.genevro@gmail.com" class="contact-btn email">✉️ Email</a>
-    <!-- WhatsApp -->
     <a href="https://wa.me/393771747588" target="_blank" class="contact-btn whatsapp">💬 WhatsApp</a>
-    <!-- Instagram -->
     <a href="https://www.instagram.com/silvia_genevro" target="_blank" class="contact-btn instagram">📸 Instagram</a>
-    <!-- Telegram -->
     <a href="https://t.me/silviagenevro" target="_blank" class="contact-btn telegram">✈️ Telegram</a>
   </div>
 </section>
 
   <!-- FOOTER -->
   <footer>
-  
      <p>© 2025 Silvia Genevro – Mindfulness Professional Trainer<br>P.IVA: 13288610010</p>
-  <p style="font-size:0.8em; margin-top:8px;">
-    <a href="privacy.html" style="color:#666; text-decoration:none;">Privacy & Cookies Policy</a>
-  </p>
+    <p style="font-size:0.8em; margin-top:8px;">
+      <a href="privacy.html" style="color:#666; text-decoration:none;">Privacy & Cookies Policy</a>
+    </p>
   </footer>
 
 <!-- MENU LOGIC -->
@@ -273,87 +258,36 @@ document.addEventListener("DOMContentLoaded", function () {
     menuToggle.setAttribute("aria-expanded", "false");
   };
 
-  // Toggle con l’icona
   menuToggle.addEventListener("click", (e) => {
     e.stopPropagation();
     isOpen() ? closeMenu() : openMenu();
   });
 
-  // Chiudi clic su un link
   navLinks.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
-      closeMenu();
-    });
+    a.addEventListener("click", () => { closeMenu(); });
   });
 
-  // Chiudi clic FUORI dal menu
   document.addEventListener("click", (e) => {
     if (isOpen() && !navLinks.contains(e.target) && e.target !== menuToggle) {
       closeMenu();
     }
   });
 
-  // Chiudi con ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && isOpen()) closeMenu();
   });
 
-  // Chiudi allo scroll
   window.addEventListener("scroll", () => {
     if (isOpen()) closeMenu();
   }, { passive: true });
 
-  // Chiudi se cambia l’anchor/hash
   window.addEventListener("hashchange", closeMenu);
 
-  // Chiudi tornando a desktop
   window.addEventListener("resize", () => {
     if (window.innerWidth > 992 && isOpen()) closeMenu();
   });
 });
 </script>
-<script>
-(function () {
-  const form = document.getElementById('newsletterForm');
-  if (!form) return;
 
-  const msg = document.getElementById('newsletterMsg');
-
-  function encode(data) {
-    return new URLSearchParams(data).toString();
-  }
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault(); // << blocca qualsiasi redirect/404
-
-    const formData = new FormData(form);
-    const payload = {};
-    formData.forEach((v, k) => payload[k] = v);
-
-    try {
-      const res = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode(payload)
-      });
-
-      // Anche se la response non fosse perfetta, Netlify di solito registra comunque la submission.
-      if (msg) {
-        msg.style.display = 'block';
-        msg.textContent = (res.ok)
-          ? 'Iscrizione ricevuta ✅'
-          : 'Iscrizione inviata ✅ (se non vedi la conferma in Netlify Forms, dimmelo)';
-      }
-
-      form.reset();
-    } catch (err) {
-      if (msg) {
-        msg.style.display = 'block';
-        msg.textContent = 'Errore di rete. Riprova tra pochi secondi.';
-      }
-    }
-  });
-})();
-</script>
 </body>
 </html>
