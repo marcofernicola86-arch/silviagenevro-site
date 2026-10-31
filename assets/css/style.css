@@ -300,3 +300,18 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
 #regalo .btn { display: inline-block; margin-top: 8px; padding: 14px 28px; border-radius: 28px; font-weight: bold; text-decoration: none; }
 #regalo p a:not(.btn) { color: #2fa79b; }
 .zone-corsi { text-align: center; color: #555; margin-top: 4px; }
+
+/* ===== DOMANDE FREQUENTI ===== */
+#faq h2 { text-align: center; }
+.faq-item { border-bottom: 1px solid #e6ddd3; padding: 4px 0; max-width: 760px; margin: 0 auto; }
+.faq-item summary { cursor: pointer; font-weight: 700; padding: 14px 32px 14px 0; list-style: none; position: relative; color: #24323a; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; position: absolute; right: 6px; top: 10px; font-size: 1.4rem; color: #2fa79b; }
+.faq-item[open] summary::after { content: "–"; }
+.faq-item p { margin: 0 0 16px; line-height: 1.6; }
+.faq-item a { color: #2fa79b; }
+
+/* Menu desktop su schermi medi (993–1199px): 10 voci devono stare su una riga */
+@media (min-width: 993px) and (max-width: 1199px) {
+  header nav a { font-size: 0.95em; margin: 0 6px; }
+}
