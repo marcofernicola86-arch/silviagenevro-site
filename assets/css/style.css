@@ -226,8 +226,16 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     z-index: 10002;              /* sopra al backdrop ma sotto all’icona */
     flex-direction: column;
-    gap: 18px;
+    gap: 2px;
     align-items: center;
+
+    /* il menu non supera mai lo schermo e, se serve, scorre al suo interno */
+    max-height: calc(100vh - 60px);
+    max-height: calc(100dvh - 60px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;   /* lo scroll non "passa" alla pagina sotto */
+    box-sizing: border-box;
   }
 
   /* quando attivo, mostra il menu */
