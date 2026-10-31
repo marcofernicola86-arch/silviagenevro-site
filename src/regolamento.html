@@ -4,24 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Regolamento Voucher – Silvia Genevro Mindfulness</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-<header>
-  <span class="menu-toggle" id="menu-toggle" role="button" aria-label="Apri/chiudi menu" aria-expanded="false"></span>
-
-  <nav id="nav-links">
-    <a href="index.html#home">Home</a>
-    <a href="index.html#chi-sono">Chi sono</a>
-    <a href="index.html#corsi">Corsi</a>
-    <a href="index.html#formazione">Formazione</a>
-    <a href="index.html#eventi">Eventi</a>
-    <a href="index.html#certificazioni">Certificazioni</a>
-    <a href="index.html#regalo">Fai un Regalo</a>
-    <a href="meditazione.html">Meditazione Guidata</a>
-    <a href="index.html#contatti">Contatti</a>
-  </nav>
-</header>
+{% include "header.html" %}
 
 <section class="section" style="max-width:850px; margin:auto; line-height:1.7; color:#333;">
   <h1>Regolamento per l’acquisto e l’utilizzo dei Voucher Mindfulness</h1>
@@ -44,7 +30,7 @@
 
   <h2>5. Trattamento dei dati personali</h2>
   <p>I dati forniti in fase di acquisto e utilizzo dei voucher saranno trattati nel pieno rispetto del <strong>Regolamento UE 679/2016 (GDPR)</strong> e utilizzati esclusivamente per finalità amministrative, fiscali e di gestione delle sessioni. I dati non saranno ceduti a terzi.</p>
-  <p>Per maggiori informazioni è possibile consultare la <a href="privacy.html" target="_blank" rel="noopener">Privacy & Cookies Policy</a> disponibile sul sito.</p>
+  <p>Per maggiori informazioni è possibile consultare la <a href="/privacy/" target="_blank" rel="noopener">Privacy & Cookies Policy</a> disponibile sul sito.</p>
 
   <h2>6. Limitazioni di responsabilità</h2>
   <p>I percorsi e le sessioni di mindfulness proposti da Silvia Genevro hanno finalità di crescita personale, consapevolezza e benessere psicofisico. Non sostituiscono trattamenti medici, psicologici o psicoterapeutici. Chi partecipa lo fa sotto la propria responsabilità, in uno spazio di apprendimento e consapevolezza non clinico.</p>
@@ -63,8 +49,65 @@
 <footer>
   <p>© 2025 Silvia Genevro – Mindfulness Professional Trainer<br>P.IVA: 13288610010</p>
   <p style="font-size:0.8em; margin-top:8px;">
-    <a href="privacy.html" style="color:#666; text-decoration:none;">Privacy & Cookies Policy</a>
+    <a href="/privacy/" style="color:#666; text-decoration:none;">Privacy & Cookies Policy</a>
   </p>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks   = document.getElementById("nav-links");
+
+  const isOpen = () => navLinks.classList.contains("active");
+  const openMenu = () => {
+    navLinks.classList.add("active");
+    document.body.classList.add("menu-open");
+    menuToggle.setAttribute("aria-expanded", "true");
+  };
+  const closeMenu = () => {
+    navLinks.classList.remove("active");
+    document.body.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  };
+
+  // Toggle con l’icona
+  menuToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    isOpen() ? closeMenu() : openMenu();
+  });
+
+  // Chiudi clic su un link
+  navLinks.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      closeMenu();
+    });
+  });
+
+  // Chiudi clic FUORI dal menu (senza backdrop)
+  document.addEventListener("click", (e) => {
+    if (isOpen() && !navLinks.contains(e.target) && e.target !== menuToggle) {
+      closeMenu();
+    }
+  });
+
+  // Chiudi con ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && isOpen()) closeMenu();
+  });
+
+  // Chiudi allo scroll
+  window.addEventListener("scroll", () => {
+    if (isOpen()) closeMenu();
+  }, { passive: true });
+
+  // Chiudi se cambia l’anchor/hash
+  window.addEventListener("hashchange", closeMenu);
+
+  // Chiudi tornando a desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 992 && isOpen()) closeMenu();
+  });
+});
+</script>
 </body>
 </html>

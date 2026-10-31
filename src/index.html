@@ -50,21 +50,7 @@
 <body>
 
 <!-- HEADER -->
-<header>
-  <span class="menu-toggle" id="menu-toggle" role="button" aria-label="Apri/chiudi menu" aria-expanded="false"></span>
-
-  <nav id="nav-links">
-    <a href="#home">Home</a>
-    <a href="#chi-sono">Chi sono</a>
-    <a href="#corsi">Corsi</a>
-    <a href="#formazione">Formazione</a>
-    <a href="#eventi">Eventi</a>
-    <a href="#certificazioni">Certificazioni</a>
-    <a href="meditazione.html">Meditazione Guidata</a>
-    <a href="https://blog.silviagenevro.it">Blog</a>
-    <a href="#contatti">Contatti</a>
-  </nav>
-</header>
+{% include "header.html" %}
 
 <!-- HERO -->
 <section class="hero" id="home">
@@ -73,7 +59,7 @@
   <img src="assets/img/hero-heart-brain.png" alt="Mindfulness cuore cervello">
   <div class="hero-buttons">
     <a class="btn primary" href="#corsi">Scopri i corsi</a>
-    <a class="btn alt" href="meditazione.html">Prova una meditazione</a>
+    <a class="btn alt" href="/meditazione/">Prova una meditazione</a>
   </div>
 </section>
 
@@ -99,21 +85,21 @@
 
     <div class="card mbsr">
       <div class="card-header">🧘‍♀️</div>
-      <h3><a href="mbsr.html">MBSR – 8 settimane</a></h3>
+      <h3><a href="/mbsr/">MBSR – 8 settimane</a></h3>
       <p>Protocollo completo per ridurre lo stress e coltivare la presenza.</p>
       <a class="btn" href="mailto:silvia.genevro@gmail.com?subject=Iscrizione%20MBSR">Iscriviti</a>
     </div>
 
     <div class="card intro">
       <div class="card-header">🌱</div>
-      <h3><a href="introduttivo.html">Gestione dello Stress</a></h3>
+      <h3><a href="/introduttivo/">Gestione dello Stress</a></h3>
       <p>Strumenti per affrontare le sfide di ogni giorno .</p>
       <a class="btn" href="mailto:silvia.genevro@gmail.com?subject=Iscrizione%20Introduttivo">Iscriviti</a>
     </div>
 
     <div class="card sessioni">
       <div class="card-header">🎯</div>
-      <h3><a href="sessioni.html">Sessioni individuali</a></h3>
+      <h3><a href="/sessioni/">Sessioni individuali</a></h3>
       <p>Percorso su misura con obiettivi chiari e flessibilità.</p>
       <a class="btn" href="mailto:silvia.genevro@gmail.com?subject=Prenotazione%20Sessione">Prenota</a>
     </div>
@@ -153,6 +139,19 @@
   </p>
   <img src="assets/img/certificazioni.png" alt="Certificazioni di Silvia Genevro">
 </section>
+
+<!-- FAI UN REGALO -->
+<section id="regalo" class="section">
+  <h2>Fai un Regalo</h2>
+  <p>
+    Regala un momento di presenza: un voucher per una sessione individuale o per un percorso di mindfulness.<br>
+    Il voucher non ha scadenza e la data si concorda direttamente con me, in base alla disponibilità.
+  </p>
+  <p>
+    <a href="mailto:silvia.genevro@gmail.com?subject=Richiesta%20voucher%20regalo" class="btn primary">🎁 Richiedi un voucher</a>
+  </p>
+  <p><a href="/regolamento/">Leggi il regolamento dei voucher</a></p>
+</section>
   
 <!-- NEWSLETTER -->
 <section id="newsletter" class="section">
@@ -177,7 +176,7 @@
     <label class="consenso">
       <input type="checkbox" name="consenso_newsletter" required>
       Acconsento a ricevere comunicazioni e newsletter via email. Ho letto l’
-      <a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a>.
+      <a href="/privacy/" target="_blank" rel="noopener">informativa privacy</a>.
     </label>
 
     <button type="submit" id="nlBtn">Iscriviti</button>
@@ -240,7 +239,7 @@
 <footer>
   <p>© 2025 Silvia Genevro – Mindfulness Professional Trainer<br>P.IVA: 13288610010</p>
   <p style="font-size:0.8em; margin-top:8px;">
-    <a href="privacy.html" style="color:#666; text-decoration:none;">Privacy & Cookies Policy</a>
+    <a href="/privacy/" style="color:#666; text-decoration:none;">Privacy & Cookies Policy</a>
   </p>
 </footer>
 

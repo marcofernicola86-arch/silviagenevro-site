@@ -25,24 +25,7 @@
 <body>
 
   <!-- HEADER -->
-  <header>
-    <!-- icona hamburger -->
-    <span class="menu-toggle" id="menu-toggle"></span>
-
-    <!-- nav con id come nella home -->
-    <nav id="nav-links">
-      <a href="/">Home</a>
-<a href="/#chi-sono">Chi sono</a>
-<a href="/#corsi">Corsi</a>
-<a href="/#formazione">Formazione</a>
-<a href="/#eventi">Eventi</a>
-<a href="/#certificazioni">Certificazioni</a>
-<a href="/#regalo">Fai un Regalo</a>
-<a href="/meditazione/">Meditazione Guidata</a>
-<a href="/blog/">Blog</a>
-<a href="/#contatti">Contatti</a>
-    </nav>
-  </header>
+  {% include "header.html" %}
 
   <!-- SEZIONE VIDEO -->
   <section class="section meditazione-section">
@@ -143,6 +126,6 @@ document.addEventListener("DOMContentLoaded", function () {
 <footer>
   <p>© 2025 Silvia Genevro – Mindfulness Professional Trainer<br>P.IVA: 13288610010</p>
   <p style="font-size:0.8em; margin-top:8px;">
-    <a href="privacy.html" style="color:#666; text-decoration:none;">Privacy & Cookies Policy</a>
+    <a href="/privacy/" style="color:#666; text-decoration:none;">Privacy & Cookies Policy</a>
   </p>
 </footer>
