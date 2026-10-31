@@ -299,3 +299,4 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
 #regalo { text-align: center; }
 #regalo .btn { display: inline-block; margin-top: 8px; padding: 14px 28px; border-radius: 28px; font-weight: bold; text-decoration: none; }
 #regalo p a:not(.btn) { color: #2fa79b; }
+.zone-corsi { text-align: center; color: #555; margin-top: 4px; }
