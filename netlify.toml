@@ -1,3 +1,11 @@
 [build]
   command = "npm run build"
   publish = "_site"
+
+# Il vecchio indirizzo netlify.app porta al dominio ufficiale.
+# Le anteprime di Netlify (deploy-preview-...) hanno un indirizzo diverso e non sono toccate.
+[[redirects]]
+  from = "https://silviagenevro.netlify.app/*"
+  to = "https://silviagenevro.it/:splat"
+  status = 301
+  force = true
