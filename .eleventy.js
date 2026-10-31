@@ -8,6 +8,10 @@ eleventyConfig.addLayoutAlias("post.njk", "layouts/post.njk");
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("admin");
 
+  // sitemap e robots vanno pubblicati così come sono, nella radice del sito
+  eleventyConfig.addPassthroughCopy({ "src/sitemap.xml": "sitemap.xml" });
+  eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
+
   return {
     dir: {
       input: "src",
