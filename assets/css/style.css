@@ -265,34 +265,30 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
 
 
 /* ===== EVENTI (locandina) ===== */
-.evento-wrapper{
-  margin-top: 20px;
-}
-
+/* ===== EVENTI ===== */
+#eventi h2 { text-align: center; }
 .evento-card{
-  background:#fff;
-  padding:24px;
-  border-radius:16px;
+  background:#fff; padding:24px; border-radius:16px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  overflow:hidden;
-  max-width: 750px;   /* 👈 questa è la chiave */
-
+  max-width: 900px; margin: 20px auto 0;
 }
-
-.evento-img{
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-}
-/* Mobile: locandina piena */
-@media (max-width: 768px){
-  .evento-card{
-    display:block;
-  }
-  .evento-img{
-    width:100%;
-  }
+.evento-card[hidden]{ display:none; }
+.evento-locandine{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:start; }
+.evento-locandine a{ display:block; }
+.evento-img{ width:100%; height:auto; display:block; border-radius:12px; transition: transform .2s ease; }
+.evento-locandine a:hover .evento-img{ transform: scale(1.02); }
+.evento-info{ text-align:center; padding: 20px 8px 4px; }
+.evento-info h3{ font-size:1.6rem; margin:0 0 12px; }
+.evento-info h3 span{ display:block; font-size:1.05rem; font-weight:400; color:#555; margin-top:4px; }
+.evento-dati{ list-style:none; padding:0; margin:0 0 16px; line-height:1.9; }
+.evento-info p{ max-width:640px; margin:0 auto 20px; line-height:1.6; }
+.evento-btn{ display:inline-block; padding:14px 28px; border-radius:28px; font-weight:bold; text-decoration:none; }
+.evento-zoom{ text-align:center; font-size:.85rem; color:#888; margin:10px 0 0; }
+.evento-nessuno{ text-align:center; }
+.evento-nessuno a{ color:#2fa79b; }
+@media (max-width: 600px){
+  .evento-card{ padding:14px; }
+  .evento-locandine{ grid-template-columns: 1fr; }
 }
 
 /* ===== FAI UN REGALO ===== */

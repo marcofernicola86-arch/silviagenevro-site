@@ -164,17 +164,96 @@
 <section id="eventi" class="section">
   <h2>Eventi</h2>
 
-  <div class="evento-wrapper">
-    <div class="evento-card">
-      <a href="/assets/img/Volantinomeditazione.jpg" download="Volantinomeditazione.jpg">
-        <img
-          src="/assets/img/Volantinomeditazione.jpg"
-          alt="Locandina Meditazione guidata di gruppo - Silvia Genevro"
-          class="evento-img"
-        >
+  <!-- L'evento si nasconde da solo dopo la data indicata in data-fine -->
+  <article class="evento-card" data-fine="2026-11-22T18:00:00+01:00">
+    <div class="evento-locandine">
+      <a href="/assets/img/evento-smascherati-1.jpg" target="_blank" rel="noopener">
+        <img src="/assets/img/evento-smascherati-1.jpg" class="evento-img" loading="lazy" width="1080" height="1080"
+             alt="Locandina Smascherati! Ritrova te stess* tra meditazione e creatività – 22 novembre 2026, Associazione Olos, Asti">
+      </a>
+      <a href="/assets/img/evento-smascherati-2.jpg" target="_blank" rel="noopener">
+        <img src="/assets/img/evento-smascherati-2.jpg" class="evento-img" loading="lazy" width="1080" height="1350"
+             alt="Programma del laboratorio Smascherati! con Silvia Genevro e Antonella Di Dedda">
       </a>
     </div>
-  </div>
+    <p class="evento-zoom">Tocca le locandine per ingrandirle</p>
+
+    <div class="evento-info">
+      <h3>Smascherati! <span>Ritrova te stess* tra meditazione e creatività</span></h3>
+      <ul class="evento-dati">
+        <li>📅 <strong>Domenica 22 novembre 2026</strong>, dalle 15 alle 18</li>
+        <li>📍 Associazione Olos aps, Viale Partigiani 115, Asti</li>
+        <li>💶 35 € – tutti i materiali sono inclusi</li>
+      </ul>
+      <p>Un pomeriggio per rallentare con una meditazione dolce guidata da Silvia, e poi, con la psicologa fototerapeuta Antonella Di Dedda, ritrovare i pezzi di noi attraverso collage e scrittura personale, fino a creare la propria maschera.</p>
+      <a class="btn primary evento-btn" href="mailto:silvia.genevro@gmail.com?subject=Iscrizione%20Smascherati%21%20%E2%80%93%2022%20novembre&body=Ciao%20Silvia%2C%0Avorrei%20iscrivermi%20al%20laboratorio%20%22Smascherati%21%22%20di%20domenica%2022%20novembre%20ad%20Asti.%0A%0ANome%20e%20cognome%3A%0ATelefono%3A%0A%0AGrazie%21">✉️ Scrivi a Silvia per iscriverti</a>
+    </div>
+  </article>
+
+  <p class="evento-nessuno" hidden>Nuovi eventi in arrivo! <a href="#newsletter">Iscriviti alla newsletter</a> per ricevere le prossime date.</p>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Smascherati! Ritrova te stess* tra meditazione e creatività",
+  "startDate": "2026-11-22T15:00:00+01:00",
+  "endDate": "2026-11-22T18:00:00+01:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "Associazione Olos aps",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Viale Partigiani 115",
+      "addressLocality": "Asti",
+      "addressCountry": "IT"
+    }
+  },
+  "image": [
+    "https://silviagenevro.it/assets/img/evento-smascherati-1.jpg"
+  ],
+  "description": "Laboratorio esperienziale con una meditazione dolce guidata da Silvia Genevro e un percorso di collage e scrittura personale con Antonella Di Dedda per creare la propria maschera. Materiali inclusi.",
+  "offers": {
+    "@type": "Offer",
+    "price": "35",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "url": "https://silviagenevro.it/#eventi"
+  },
+  "organizer": [
+    {
+      "@type": "Person",
+      "name": "Silvia Genevro",
+      "url": "https://silviagenevro.it/"
+    },
+    {
+      "@type": "Person",
+      "name": "Antonella Di Dedda"
+    }
+  ],
+  "performer": [
+    {
+      "@type": "Person",
+      "name": "Silvia Genevro"
+    },
+    {
+      "@type": "Person",
+      "name": "Antonella Di Dedda"
+    }
+  ]
+}
+  </script>
+  <script>
+    (function () {
+      var card = document.querySelector("#eventi .evento-card");
+      if (card && new Date() > new Date(card.dataset.fine)) {
+        card.hidden = true;
+        document.querySelector("#eventi .evento-nessuno").hidden = false;
+      }
+    })();
+  </script>
 </section>
 
 <!-- CERTIFICAZIONI -->
