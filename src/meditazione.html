@@ -14,7 +14,6 @@
   <meta property="og:locale" content="it_IT">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato&display=swap" rel="stylesheet">
 
   <link rel="canonical" href="https://silviagenevro.it/meditazione/">
 </head>
@@ -37,16 +36,11 @@
 
   <!-- NEWSLETTER + INSTAGRAM -->
   <section id="newsletter" class="section">
-    <h2>Entra nella Newsletter periodica!</h2>
-    <p>Lascia la tua email per ricevere aggiornamenti sui corsi e progetti futuri :)</p>
-    <form name="newsletter" method="POST" data-netlify="true">
-      <input type="email" name="email" placeholder="La tua email" required>
-      <button type="submit">Iscriviti</button>
-    </form>
+    {% include "newsletter.html" %}
 
     <div class="follow-instagram">
       <h2>Seguimi anche su Instagram!</h2>
-      <a href="https://www.instagram.com/silvia_genevro" target="_blank" class="instagram-btn">
+      <a href="https://www.instagram.com/silvia_genevro" target="_blank" class="instagram-btn" rel="noopener">
         👉 Seguimi su Instagram
       </a>
     </div>
@@ -57,71 +51,5 @@
     <a class="btn primary" href="/">← Torna al sito</a>
   </p>
 
- <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks   = document.getElementById("nav-links");
-
-  const isOpen = () => navLinks.classList.contains("active");
-  const openMenu = () => {
-    navLinks.classList.add("active");
-    document.body.classList.add("menu-open");
-    menuToggle.setAttribute("aria-expanded", "true");
-  };
-  const closeMenu = () => {
-    navLinks.classList.remove("active");
-    document.body.classList.remove("menu-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-  };
-
-  // Toggle con l'icona
-  menuToggle.setAttribute("role","button");
-  menuToggle.setAttribute("aria-label","Apri/chiudi menu");
-  menuToggle.addEventListener("click", (e) => {
-    e.stopPropagation(); // evita chiusura immediata per click sul documento
-    isOpen() ? closeMenu() : openMenu();
-  });
-
-  // Chiudi cliccando un link del menu
-  navLinks.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
-      // se è un anchor della stessa pagina, chiudi subito
-      closeMenu();
-      // lasciare il tempo all'ancora di scrollare
-    });
-  });
-
-  // Chiudi clic fuori dal menu
-  document.addEventListener("click", (e) => {
-    if (isOpen() && !navLinks.contains(e.target) && e.target !== menuToggle) {
-      closeMenu();
-    }
-  });
-
-  // Chiudi con ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && isOpen()) closeMenu();
-  });
-
-  // Chiudi quando l'utente INIZIA a scorrere
-  let lastScrollY = window.scrollY;
-  window.addEventListener("scroll", () => {
-    if (isOpen()) closeMenu();
-    lastScrollY = window.scrollY;
-  }, { passive: true });
-
-  // Chiudi se cambia l'hash (clic su #ancora)
-  window.addEventListener("hashchange", closeMenu);
-
-  // Chiudi tornando a desktop
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 992 && isOpen()) closeMenu();
-  });
-});
-</script>
-<footer>
-  <p>© 2026 Silvia Genevro – Mindfulness Professional Trainer<br>P.IVA: 13288610010</p>
-  <p style="font-size:0.8em; margin-top:8px;">
-    <a href="/privacy/" style="color:#666; text-decoration:none;">Privacy & Cookies Policy</a>
-  </p>
-</footer>
+<script src="/assets/js/menu.js"></script>
+{% include "footer.html" %}

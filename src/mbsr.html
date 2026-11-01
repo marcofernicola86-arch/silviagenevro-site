@@ -25,11 +25,9 @@
 <!-- CONTENUTO -->
 <section class="section">
   <h1>MBSR – 8 settimane</h1>
-  <p>
-    Il programma MBSR (Mindfulness Based Stress Reduction) è un percorso di 8 settimane, oltre a una giornata conclusiva intensiva con pratiche basate sul silenzio.
-    <br>Impiega meditazioni guidate ed esercizi e prevede diversi momenti di condivisione con il gruppo.</br>
-    <br>Basato su forti evidenze scientifiche, insegna a coltivare consapevolezza e migliorare il benessere anche grazie a un più attento ascolto del corpo e maggiore presenza nel quotidiano.</br>
-  </p>
+  <p>Il programma MBSR (Mindfulness Based Stress Reduction) è un percorso di 8 settimane, oltre a una giornata conclusiva intensiva con pratiche basate sul silenzio.<br>
+    Impiega meditazioni guidate ed esercizi e prevede diversi momenti di condivisione con il gruppo.</p>
+  <p>Basato su forti evidenze scientifiche, insegna a coltivare consapevolezza e migliorare il benessere anche grazie a un più attento ascolto del corpo e maggiore presenza nel quotidiano.</p>
 
   <h2>Obiettivi e Benefici</h2>
   <ul>
@@ -46,9 +44,8 @@
   <p>8 incontri settimanali da 2 ore + una giornata intensiva finale. <br> Sono in programmazione percorsi MBSR in autunno/inverno a Torre Pellice e Asti.</p>
 
   <h2>Costo MBSR</h2>
-  <p>Il Percorso MBSR ha un costo di <strong>€ 400 a persona</strong>.
-    <br><br>È previsto un incontro preliminare gratuito di presentazione.</br></br>
-  </p>
+  <p>Il Percorso MBSR ha un costo di <strong>€ 400 a persona</strong>.</p>
+  <p>È previsto un incontro preliminare gratuito di presentazione.</p>
 
   <!-- Nuovo pulsante Contattami -->
   <a href="mailto:silvia.genevro@gmail.com?subject=Iscrizione%20al%20corso%20MBSR%20-%208%20settimane"
@@ -72,65 +69,9 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <p>© 2026 Silvia Genevro – Mindfulness Professional Trainer<br>P.IVA: 13288610010</p>
-  <p style="font-size:0.8em; margin-top:8px;">
-    <a href="/privacy/" style="color:#666; text-decoration:none;">Privacy & Cookies Policy</a>
-  </p>
-</footer>
+{% include "footer.html" %}
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks   = document.getElementById("nav-links");
-
-  const isOpen = () => navLinks.classList.contains("active");
-  const openMenu = () => {
-    navLinks.classList.add("active");
-    document.body.classList.add("menu-open");
-    menuToggle.setAttribute("aria-expanded", "true");
-  };
-  const closeMenu = () => {
-    navLinks.classList.remove("active");
-    document.body.classList.remove("menu-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-  };
-
-  // Toggle con l’icona
-  menuToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    isOpen() ? closeMenu() : openMenu();
-  });
-
-  // Chiudi clic su un link
-  navLinks.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => closeMenu());
-  });
-
-  // Chiudi clic FUORI dal menu
-  document.addEventListener("click", (e) => {
-    if (isOpen() && !navLinks.contains(e.target) && e.target !== menuToggle) closeMenu();
-  });
-
-  // Chiudi con ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && isOpen()) closeMenu();
-  });
-
-  // Chiudi allo scroll
-  window.addEventListener("scroll", () => {
-    if (isOpen()) closeMenu();
-  }, { passive: true });
-
-  // Chiudi se cambia l’anchor/hash
-  window.addEventListener("hashchange", closeMenu);
-
-  // Chiudi tornando a desktop
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 992 && isOpen()) closeMenu();
-  });
-});
-</script>
+<script src="/assets/js/menu.js"></script>
 
 </body>
 </html>

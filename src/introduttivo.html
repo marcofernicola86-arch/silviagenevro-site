@@ -23,12 +23,9 @@
 
 <section class="section">
   <h1>Gestione dello Stress – 4 incontri</h1>
-  <p>
-    
-    <br>Un viaggio in quattro tappe, per riscoprire la presenza nel Qui ed Ora, coltivare consapevolezza, gentilezza amorevole e ritrovare uno spazio interiore di calma e chiarezza.</br>
-    <br>Attraverso pratiche guidate, riflessioni e condivisioni, impareremo ad ascoltarci con mente aperta e cuore presente.</br>
-    <br>Ogni incontro un passo verso un modo nuovo di abitare se stessi.</br>
-  </p>
+  <p>Un viaggio in quattro tappe, per riscoprire la presenza nel Qui ed Ora, coltivare consapevolezza, gentilezza amorevole e ritrovare uno spazio interiore di calma e chiarezza.</p>
+  <p>Attraverso pratiche guidate, riflessioni e condivisioni, impareremo ad ascoltarci con mente aperta e cuore presente.</p>
+  <p>Ogni incontro un passo verso un modo nuovo di abitare se stessi.</p>
 
   <h2>Obiettivi</h2>
   <ul>
@@ -67,69 +64,9 @@
 
 </section>
 
-<footer>
-  <p>© 2026 Silvia Genevro – Mindfulness Professional Trainer<br>P.IVA: 13288610010</p>
-  <p style="font-size:0.8em; margin-top:8px;">
-    <a href="/privacy/" style="color:#666; text-decoration:none;">Privacy & Cookies Policy</a>
-  </p>
-</footer>
+{% include "footer.html" %}
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks   = document.getElementById("nav-links");
-
-  const isOpen = () => navLinks.classList.contains("active");
-  const openMenu = () => {
-    navLinks.classList.add("active");
-    document.body.classList.add("menu-open");
-    menuToggle.setAttribute("aria-expanded", "true");
-  };
-  const closeMenu = () => {
-    navLinks.classList.remove("active");
-    document.body.classList.remove("menu-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-  };
-
-  // Toggle con l’icona
-  menuToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    isOpen() ? closeMenu() : openMenu();
-  });
-
-  // Chiudi clic su un link
-  navLinks.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
-      closeMenu();
-    });
-  });
-
-  // Chiudi clic FUORI dal menu (senza backdrop)
-  document.addEventListener("click", (e) => {
-    if (isOpen() && !navLinks.contains(e.target) && e.target !== menuToggle) {
-      closeMenu();
-    }
-  });
-
-  // Chiudi con ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && isOpen()) closeMenu();
-  });
-
-  // Chiudi allo scroll
-  window.addEventListener("scroll", () => {
-    if (isOpen()) closeMenu();
-  }, { passive: true });
-
-  // Chiudi se cambia l’anchor/hash
-  window.addEventListener("hashchange", closeMenu);
-
-  // Chiudi tornando a desktop
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 992 && isOpen()) closeMenu();
-  });
-});
-</script>
+<script src="/assets/js/menu.js"></script>
 
 </body>
 </html>

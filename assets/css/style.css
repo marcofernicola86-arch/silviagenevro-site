@@ -1,3 +1,9 @@
+/* ===== FONT (ospitati sul sito: nessuna richiesta a Google) ===== */
+@font-face { font-family: "Lato"; font-style: normal; font-weight: 400; font-display: swap; src: url("/assets/fonts/lato-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Lato"; font-style: italic; font-weight: 400; font-display: swap; src: url("/assets/fonts/lato-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "Lato"; font-style: normal; font-weight: 700; font-display: swap; src: url("/assets/fonts/lato-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 700; font-display: swap; src: url("/assets/fonts/montserrat-latin-700-normal.woff2") format("woff2"); }
+
 /* ===== BASE ===== */
 body {
   margin: 0;
@@ -172,7 +178,7 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
 /* ===== SEZIONE CHI SONO ===== */
 .about-text { font-size: 1.25rem; line-height: 1.6; }
 .about-text p { font-size: 1.25rem; line-height: 1.6; }
-.about-container .btn { font-size: 1.1rem; padding: 14px 28px; }
+.about-container .btn { display: inline-block; font-size: 1.1rem; padding: 14px 28px; border-radius: 28px; font-weight: bold; text-decoration: none; }
 .cards .card h3 a { text-decoration: none; color: inherit; }
 .cards .card h3 a:hover { text-decoration: underline; }
 
@@ -195,7 +201,11 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
   height: 51px;          /* 34px → +50% */
   cursor: pointer;
   z-index: 10003;        /* sopra a menu e backdrop */
+  /* è un <button>: tolgo l'aspetto predefinito */
+  background: none; border: 0; padding: 0; margin: 0;
 }
+.menu-toggle:focus-visible{ outline: 3px solid #2fa79b; outline-offset: 4px; border-radius: 4px; }
+header nav a:focus-visible{ outline: 3px solid #2fa79b; outline-offset: 3px; border-radius: 4px; }
 
 /* tre barre spesse e ben visibili */
 .menu-toggle::before{
@@ -311,3 +321,10 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
 @media (min-width: 993px) and (max-width: 1199px) {
   header nav a { font-size: 0.95em; margin: 0 6px; }
 }
+
+/* ===== PAGINA 404 ===== */
+.pagina-404{ text-align:center; min-height:50vh; }
+.pagina-404 p{ line-height:1.6; }
+.pagina-404-link .btn{ display:inline-block; padding:14px 28px; border-radius:28px; font-weight:bold; text-decoration:none; margin:10px 0 20px; }
+.pagina-404-elenco{ list-style:none; padding:0; line-height:2.2; }
+.pagina-404-elenco a{ color:#2fa79b; }

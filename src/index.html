@@ -27,8 +27,7 @@
   <meta name="twitter:image" content="https://silviagenevro.it/assets/img/anteprima-social.jpg">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
   <meta name="google-site-verification" content="jrAuXxmCcju56sMJXkRzgrYA4dewUzp_A_s89oQoPgI" />
 
   <script type="application/ld+json">
@@ -115,11 +114,10 @@
   <div class="about-container">
     <img src="/assets/img/Silviafotoprofilo.jpg" loading="lazy" alt="Silvia Genevro">
     <div class="about-text">
-      <p>Sono <strong>istruttrice di Mindfulness</strong> e formatrice nell’ambito delle soft skills.
-        <br>Aiuto persone e gruppi a coltivare benessere attraverso la consapevolezza, la presenza e la gentilezza.</br>
-        <br>Progetto percorsi per privati e aziende su comunicazione efficace, team working e team building, integrando tecniche teatrali ed esperienziali per facilitare connessione autentica e crescita personale e professionale.</br>
-        <br><i>Insegno Mindfulness e soft skills come si insegna a camminare scalzi sull’erba: con cura, ascolto e meraviglia.</i></br>
-      </p>
+      <p>Sono <strong>istruttrice di Mindfulness</strong> e formatrice nell’ambito delle soft skills.<br>
+        Aiuto persone e gruppi a coltivare benessere attraverso la consapevolezza, la presenza e la gentilezza.</p>
+      <p>Progetto percorsi per privati e aziende su comunicazione efficace, team working e team building, integrando tecniche teatrali ed esperienziali per facilitare connessione autentica e crescita personale e professionale.</p>
+      <p><i>Insegno Mindfulness e soft skills come si insegna a camminare scalzi sull’erba: con cura, ascolto e meraviglia.</i></p>
       <a class="btn primary" href="#corsi">Scopri i corsi</a>
     </div>
   </div>
@@ -131,7 +129,7 @@
   <p>
     Istruttrice di Mindfulness con iscrizione all'Albo Nazionale Federmindfulness n. 3038.<br>
     Certificazioni: Mindfulness Basic Training, Mindfulness Professional Trainer®, MBSR e MAPS for ADHD.<br>
-    <a href="https://www.albonazionalemindfulness.it/professionista/silvia-genevro" target="_blank">🔗 Verifica le credenziali sull'Albo ufficiale</a>
+    <a href="https://www.albonazionalemindfulness.it/professionista/silvia-genevro" target="_blank" rel="noopener">🔗 Verifica le credenziali sull'Albo ufficiale</a>
   </p>
   <picture>
     <source media="(max-width: 600px)" srcset="/assets/img/certificazioni-mobile.png">
@@ -406,142 +404,24 @@
 
 <!-- NEWSLETTER -->
 <section id="newsletter" class="section">
-  <h2>Entra nella Newsletter periodica!</h2>
-  <p>Lascia la tua email per ricevere aggiornamenti sui corsi e progetti futuri :)</p>
-
-  <form id="newsletterForm" accept-charset="UTF-8">
-    <input type="hidden" name="token" value="NL_2026_SILVIA_9f3b7c2a_1a4d_4c8e_91f2_3c9a7b1d2e44">
-
-    <!-- Honeypot anti-bot -->
-    <div style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
-      <label>Lascia vuoto <input type="text" name="website" autocomplete="off"></label>
-    </div>
-
-    <div class="nl-grid">
-      <input type="text"  name="nome"    placeholder="Nome (opzionale)">
-      <input type="text"  name="cognome" placeholder="Cognome (opzionale)">
-    </div>
-
-    <input type="email" name="email" placeholder="La tua email" required>
-
-    <label class="consenso">
-      <input type="checkbox" name="consenso_newsletter" required>
-      Acconsento a ricevere comunicazioni e newsletter via email. Ho letto l’
-      <a href="/privacy/" target="_blank" rel="noopener">informativa privacy</a>.
-    </label>
-
-    <button type="submit" id="nlBtn">Iscriviti</button>
-    <span id="newsletterMsg" style="margin-left:10px; display:none;"></span>
-  </form>
-
-  <script>
-  (function () {
-    const ENDPOINT = "https://script.google.com/macros/s/AKfycbzqr2T9fAcqCnmaw1OZ6AA5A_raR5WJEGLOASFuJFx7kyhijvGPmJlRYjLnfc-ctF1DZg/exec"; // <-- incolla qui il tuo /exec
-    const form = document.getElementById("newsletterForm");
-    const msg  = document.getElementById("newsletterMsg");
-    const btn  = document.getElementById("nlBtn");
-    if (!form || !msg) return;
-
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      msg.style.display = "inline";
-      msg.textContent = "Invio in corso...";
-      if (btn) btn.disabled = true;
-
-      const fd = new FormData(form);
-
-      // anti-bot: se honeypot compilato, fingi successo e stop
-      if ((fd.get("website") || "").toString().trim() !== "") {
-        msg.textContent = "Iscrizione inviata ✅";
-        form.reset();
-        if (btn) btn.disabled = false;
-        return;
-      }
-
-      try {
-        // no-cors: il browser non blocca per CORS e non aspetta risposta “leggibile”
-        await fetch(ENDPOINT, { method: "POST", mode: "no-cors", body: fd });
-
-        // feedback immediato (robusto)
-        msg.textContent = "Iscrizione inviata ✅";
-        form.reset();
-      } catch (err) {
-        msg.textContent = "Errore di rete. Riprova tra poco.";
-      } finally {
-        if (btn) btn.disabled = false;
-      }
-    });
-  })();
-  </script>
+  {% include "newsletter.html" %}
 </section>
 <!-- CONTATTI -->
 <section id="contatti" class="section">
   <h2>Contatti</h2>
   <div class="contact-grid">
     <a href="mailto:silvia.genevro@gmail.com" class="contact-btn email">✉️ Email</a>
-    <a href="https://wa.me/393771747588" target="_blank" class="contact-btn whatsapp">💬 WhatsApp</a>
-    <a href="https://www.instagram.com/silvia_genevro" target="_blank" class="contact-btn instagram">📸 Instagram</a>
-    <a href="https://t.me/silviagenevro" target="_blank" class="contact-btn telegram">✈️ Telegram</a>
+    <a href="https://wa.me/393771747588" target="_blank" class="contact-btn whatsapp" rel="noopener">💬 WhatsApp</a>
+    <a href="https://www.instagram.com/silvia_genevro" target="_blank" class="contact-btn instagram" rel="noopener">📸 Instagram</a>
+    <a href="https://t.me/silviagenevro" target="_blank" class="contact-btn telegram" rel="noopener">✈️ Telegram</a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <p>© 2026 Silvia Genevro – Mindfulness Professional Trainer<br>P.IVA: 13288610010</p>
-  <p style="font-size:0.8em; margin-top:8px;">
-    <a href="/privacy/" style="color:#666; text-decoration:none;">Privacy & Cookies Policy</a>
-  </p>
-</footer>
+{% include "footer.html" %}
 
 <!-- MENU LOGIC -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks   = document.getElementById("nav-links");
-
-  const isOpen = () => navLinks.classList.contains("active");
-  const openMenu = () => {
-    navLinks.classList.add("active");
-    document.body.classList.add("menu-open");
-    menuToggle.setAttribute("aria-expanded", "true");
-  };
-  const closeMenu = () => {
-    navLinks.classList.remove("active");
-    document.body.classList.remove("menu-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-  };
-
-  menuToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    isOpen() ? closeMenu() : openMenu();
-  });
-
-  navLinks.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => { closeMenu(); });
-  });
-
-  document.addEventListener("click", (e) => {
-    if (isOpen() && !navLinks.contains(e.target) && e.target !== menuToggle) {
-      closeMenu();
-    }
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && isOpen()) closeMenu();
-  });
-
-  window.addEventListener("scroll", () => {
-    if (isOpen()) closeMenu();
-  }, { passive: true });
-
-  window.addEventListener("hashchange", closeMenu);
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 992 && isOpen()) closeMenu();
-  });
-});
-</script>
+<script src="/assets/js/menu.js"></script>
 
 </body>
 </html>

@@ -65,29 +65,9 @@
   <p>La presente informativa può essere aggiornata. Ultimo aggiornamento: agosto 2025.</p>
 </section>
 
-<footer>
-  <p>© 2026 Silvia Genevro – Mindfulness Professional Trainer<br>P.IVA: 13288610010</p>
-</footer>
+{% include "footer.html" %}
 
-<script>
-  /* stesso script menu delle altre pagine */
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks   = document.getElementById("nav-links");
-
-    const isOpen = () => navLinks.classList.contains("active");
-    const openMenu = () => { navLinks.classList.add("active"); document.body.classList.add("menu-open"); menuToggle.setAttribute("aria-expanded", "true"); };
-    const closeMenu = () => { navLinks.classList.remove("active"); document.body.classList.remove("menu-open"); menuToggle.setAttribute("aria-expanded", "false"); };
-
-    menuToggle.addEventListener("click", (e) => { e.stopPropagation(); isOpen() ? closeMenu() : openMenu(); });
-    navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
-    document.addEventListener("click", (e) => { if (isOpen() && !navLinks.contains(e.target) && e.target !== menuToggle) closeMenu(); });
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && isOpen()) closeMenu(); });
-    window.addEventListener("scroll", () => { if (isOpen()) closeMenu(); }, { passive: true });
-    window.addEventListener("hashchange", closeMenu);
-    window.addEventListener("resize", () => { if (window.innerWidth > 992 && isOpen()) closeMenu(); });
-  });
-</script>
+<script src="/assets/js/menu.js"></script>
 
 </body>
 </html>

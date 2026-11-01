@@ -9,3 +9,17 @@
   to = "https://silviagenevro.it/:splat"
   status = 301
   force = true
+
+# Il blog è su blog.silviagenevro.it: i vecchi indirizzi del blog interno portano lì.
+[[redirects]]
+  from = "/blog/*"
+  to = "https://blog.silviagenevro.it/"
+  status = 301
+  force = true
+
+# Il vecchio pannello di amministrazione del blog interno non esiste più.
+[[redirects]]
+  from = "/admin/*"
+  to = "/"
+  status = 301
+  force = true

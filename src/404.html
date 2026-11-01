@@ -1,0 +1,37 @@
+---
+permalink: 404.html
+---
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pagina non trovata | Silvia Genevro</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+{% include "header.html" %}
+
+<section class="section pagina-404">
+  <h1>Questa pagina non c’è</h1>
+  <p>Forse l’indirizzo è cambiato o contiene un errore di battitura.<br>
+  Prenditi un respiro: da qui puoi tornare dove serve.</p>
+  <p class="pagina-404-link">
+    <a class="btn primary" href="/">← Torna alla home</a>
+  </p>
+  <ul class="pagina-404-elenco">
+    <li><a href="/mbsr/">Corso MBSR – 8 settimane</a></li>
+    <li><a href="/introduttivo/">Gestione dello Stress – 4 incontri</a></li>
+    <li><a href="/sessioni/">Sessioni individuali</a></li>
+    <li><a href="/meditazione/">Meditazione guidata gratuita</a></li>
+    <li><a href="/#contatti">Contatti</a></li>
+  </ul>
+</section>
+
+{% include "footer.html" %}
+
+<script src="/assets/js/menu.js"></script>
+</body>
+</html>
