@@ -195,10 +195,10 @@ footer { padding: 20px; text-align: center; color: #5b6b73; font-size: .9em; bac
 .menu-toggle{
   display: none;
   position: fixed;
-  top: 16px;
-  right: 16px;
-  width: 63px;           /* 42px → +50% */
-  height: 51px;          /* 34px → +50% */
+  top: 6px;              /* centrato nella barra da 56px */
+  right: 10px;
+  width: 44px;           /* area da toccare comoda (44x44) */
+  height: 44px;
   cursor: pointer;
   z-index: 10003;        /* sopra a menu e backdrop */
   /* è un <button>: tolgo l'aspetto predefinito */
@@ -210,12 +210,14 @@ header nav a:focus-visible{ outline: 3px solid #2fa79b; outline-offset: 3px; bor
 /* tre barre spesse e ben visibili */
 .menu-toggle::before{
   content: "";
-  display: block;
-  width: 100%;
-  height: 6px;           /* 4px → +50% */
+  position: absolute;
+  top: 12px;
+  left: 8px;
+  width: 28px;           /* tre barre sottili */
+  height: 3px;
   background: #24323a;
-  border-radius: 3px;
-  box-shadow: 0 15px 0 #24323a, 0 30px 0 #24323a; /* 10px/20px → +50% */
+  border-radius: 2px;
+  box-shadow: 0 8px 0 #24323a, 0 16px 0 #24323a;
 }
 
 /* Mobile & tablet */
@@ -223,12 +225,14 @@ header nav a:focus-visible{ outline: 3px solid #2fa79b; outline-offset: 3px; bor
 
   /* mostra l'hamburger su mobile */
   .menu-toggle{ display: block; }
+  /* barra bianca alta abbastanza da contenere l'icona */
+  header{ min-height: 56px; box-sizing: border-box; }
 
   /* menu nascosto di default */
   #nav-links{
     display: none;               /* nascosto finché non è .active */
     position: fixed;
-    top: 60px; left: 0;
+    top: 56px; left: 0;
     width: 100%;
     background: #fff;
     text-align: center;
@@ -240,8 +244,8 @@ header nav a:focus-visible{ outline: 3px solid #2fa79b; outline-offset: 3px; bor
     align-items: center;
 
     /* il menu non supera mai lo schermo e, se serve, scorre al suo interno */
-    max-height: calc(100vh - 60px);
-    max-height: calc(100dvh - 60px);
+    max-height: calc(100vh - 56px);
+    max-height: calc(100dvh - 56px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;   /* lo scroll non "passa" alla pagina sotto */

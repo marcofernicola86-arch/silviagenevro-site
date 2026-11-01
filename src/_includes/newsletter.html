@@ -78,8 +78,13 @@
                             ". Riprova o scrivi a silvia.genevro@gmail.com.";
         }
       } catch (err) {
-        // rete assente o risposta illeggibile: non diciamo che è andata bene
-        msg.textContent = "Non è stato possibile completare l’iscrizione. Controlla la connessione e riprova, oppure scrivi a silvia.genevro@gmail.com.";
+        if (!navigator.onLine) {
+          msg.textContent = "Sembra che tu sia offline: controlla la connessione e riprova.";
+        } else {
+          // la richiesta è partita ma la risposta non è leggibile: non possiamo confermare né smentire
+          msg.textContent = "Richiesta inviata: a breve riceverai un’email di conferma. Se non arriva entro qualche minuto controlla lo spam o scrivi a silvia.genevro@gmail.com.";
+          form.reset();
+        }
       } finally {
         if (btn) btn.disabled = false;
       }
