@@ -49,4 +49,4 @@ quando si modifica una pagina fissa, aggiornare lì la sua `lastmod`.
 
 ## Vecchio blog
 Il vecchio blog era su Blogger (blog.silviagenevro.it). I due articoli sono stati trasferiti in `src/blog/articoli/`;
-i redirect dai vecchi indirizzi sono in `netlify.toml` (attivi quando il sottodominio blog punta a Netlify).
+i redirect dai vecchi indirizzi sono in `netlify.toml` (blog.silviagenevro.it punta a Netlify dal 1° novembre 2026).
