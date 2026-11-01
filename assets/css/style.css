@@ -500,3 +500,16 @@ header nav a:focus-visible { outline: 3px solid var(--acqua-scuro); outline-offs
   .blog-card img { width: calc(100% + 40px); margin: -22px -20px 18px; height: 180px; }
   .articolo-testo { font-size: 1.08rem; }
 }
+
+/* Home: ultimo articolo del blog */
+.blog-ultimo {
+  max-width: 720px; margin: 0 auto; text-align: center;
+  background: #fff; border: 1px solid var(--bordo); border-radius: var(--raggio); box-shadow: var(--ombra);
+  padding: 30px 32px;
+}
+.blog-ultimo h3 { font-size: 1.5rem; margin: 4px 0 12px; }
+.blog-ultimo h3 a { color: var(--blu); text-decoration: none; }
+.blog-ultimo h3 a:hover { color: var(--acqua-scuro); }
+.blog-ultimo p { margin: 0 0 16px; }
+.blog-ultimo-azioni { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 6px 0 0 !important; }
+@media (max-width: 600px) { .blog-ultimo { padding: 24px 20px; } }
