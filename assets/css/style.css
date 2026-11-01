@@ -332,3 +332,17 @@ header nav a:focus-visible{ outline: 3px solid #2fa79b; outline-offset: 3px; bor
 .pagina-404-link .btn{ display:inline-block; padding:14px 28px; border-radius:28px; font-weight:bold; text-decoration:none; margin:10px 0 20px; }
 .pagina-404-elenco{ list-style:none; padding:0; line-height:2.2; }
 .pagina-404-elenco a{ color:#2fa79b; }
+
+/* ===== INVITO RECENSIONI (sobrio) ===== */
+.recensioni-invito{ max-width: 520px; margin: 36px auto 0; padding-top: 28px; border-top: 1px solid #e6ddd3; text-align: center; }
+.recensioni-titolo{ font-style: italic; color: #6b6b6b; margin: 0 0 10px; }
+.recensioni-link{ display: inline-flex; align-items: center; gap: 10px; padding: 10px 22px; border: 1px solid #2fa79b; border-radius: 28px; color: #24323a; font-weight: 700; text-decoration: none; transition: background .2s ease, color .2s ease; }
+.recensioni-link:hover, .recensioni-link:focus-visible{ background: #2fa79b; color: #fff; }
+.recensioni-stelle{ color: #d9a62e; letter-spacing: 2px; font-size: .95rem; }
+.recensioni-link:hover .recensioni-stelle, .recensioni-link:focus-visible .recensioni-stelle{ color: #fff; }
+.recensioni-lascia{ font-size: .85rem; color: #888; margin: 12px 0 0; }
+.recensioni-lascia a{ color: #2fa79b; }
+@media (max-width: 480px){
+  .recensioni-link{ flex-direction: column; gap: 2px; padding: 10px 26px; }
+}
+#certificazioni p a{ color: #2fa79b; }
