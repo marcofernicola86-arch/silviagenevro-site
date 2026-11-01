@@ -81,7 +81,6 @@ header nav a {
 .card.intro    { background: linear-gradient(135deg, #6a1b9a, #9c27b0); }
 .card.sessioni { background: linear-gradient(135deg, #e91e63, #ad1457); }
 .cards .card h3 { font-size: 1.3rem; margin: 15px 0 10px; }
-.cards .card .card-etichetta { margin: 12px 0 -8px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.9; }
 .cards .card p  { flex-grow: 1; padding: 0 15px; font-size: 0.95rem; }
 .cards .card a.btn { display: inline-block; margin: 15px auto 20px; padding: 10px 20px; border-radius: 25px; background: #fff; color: #333; font-weight: bold; text-decoration: none; transition: background 0.3s ease, color 0.3s ease; }
 .cards .card a.btn:hover { background: #333; color: #fff; }
