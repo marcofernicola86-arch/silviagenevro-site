@@ -23,3 +23,10 @@
   to = "/"
   status = 301
   force = true
+
+# Il corso "Gestione dello Stress – 4 incontri" non è più in programma: chi arriva al vecchio indirizzo vede i corsi attuali.
+[[redirects]]
+  from = "/introduttivo/*"
+  to = "/#corsi"
+  status = 301
+  force = true
