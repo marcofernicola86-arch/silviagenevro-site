@@ -216,6 +216,26 @@ header nav a:hover { color: var(--acqua-scuro); border-bottom-color: var(--acqua
 .evento-btn { display: inline-block; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; }
 .evento-zoom { text-align: center; font-size: .85rem; color: var(--testo-tenue); margin: 10px 0 0; }
 .evento-nessuno { text-align: center; }
+.apri-locandina { cursor: zoom-in; }
+
+/* Locandina ingrandita */
+.locandina-grande {
+  border: 0; padding: 0; background: transparent; overflow: visible;
+  max-width: 94vw; max-height: 92vh; max-height: 92dvh;
+}
+.locandina-grande::backdrop { background: rgba(1, 26, 50, .82); }
+.locandina-grande img {
+  display: block; max-width: 94vw; max-height: 92vh; max-height: 92dvh;
+  width: auto; height: auto; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,.4);
+}
+.locandina-chiudi {
+  position: fixed; top: 14px; right: 14px; z-index: 2;
+  width: 48px; height: 48px; border-radius: 50%; border: 0; cursor: pointer;
+  background: #fff; color: var(--blu); font-size: 2rem; line-height: 1; font-family: var(--sans);
+  box-shadow: 0 4px 14px rgba(0,0,0,.3);
+}
+.locandina-chiudi:focus-visible { outline: 3px solid var(--acqua); outline-offset: 3px; }
+body.locandina-aperta { overflow: hidden; }
 @media (max-width: 600px) {
   .evento-card { padding: 14px; }
   .evento-locandine { grid-template-columns: 1fr; }

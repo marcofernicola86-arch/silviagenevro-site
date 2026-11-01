@@ -197,11 +197,11 @@
   <!-- L'evento si nasconde da solo dopo la data indicata in data-fine -->
   <article class="evento-card" data-fine="2026-11-22T18:00:00+01:00">
     <div class="evento-locandine">
-      <a href="/assets/img/evento-smascherati-1.jpg" target="_blank" rel="noopener">
+      <a href="/assets/img/evento-smascherati-1.jpg" class="apri-locandina">
         <img src="/assets/img/evento-smascherati-1.jpg" class="evento-img" loading="lazy" width="1080" height="1080"
              alt="Locandina Smascherati! Ritrova te stess* tra meditazione e creatività – 22 novembre 2026, Associazione Serenamente Olos, Asti">
       </a>
-      <a href="/assets/img/evento-smascherati-2.jpg" target="_blank" rel="noopener">
+      <a href="/assets/img/evento-smascherati-2.jpg" class="apri-locandina">
         <img src="/assets/img/evento-smascherati-2.jpg" class="evento-img" loading="lazy" width="1080" height="1350"
              alt="Programma del laboratorio Smascherati! con Silvia Genevro e Antonella Di Dedda">
       </a>
@@ -284,6 +284,49 @@
       }
     })();
   </script>
+
+  <!-- Locandina ingrandita: si chiude con la ×, toccando fuori, con Esc o con il tasto "indietro" del telefono -->
+  <dialog id="locandina-grande" class="locandina-grande" aria-label="Locandina ingrandita">
+    <button type="button" class="locandina-chiudi" aria-label="Chiudi">×</button>
+    <img src="" alt="">
+  </dialog>
+  <script>
+    (function () {
+      var dlg = document.getElementById("locandina-grande");
+      if (!dlg || typeof dlg.showModal !== "function") return; // browser molto vecchi: il link apre l'immagine come prima
+      var img = dlg.querySelector("img");
+      var daStoria = false;
+
+      function chiudi() { if (dlg.open) dlg.close(); }
+
+      document.querySelectorAll("#eventi .apri-locandina").forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          var anteprima = a.querySelector("img");
+          img.src = a.getAttribute("href");
+          img.alt = anteprima ? anteprima.alt : "";
+          dlg.showModal();
+          document.body.classList.add("locandina-aperta");
+          history.pushState({ locandina: true }, "");
+        });
+      });
+
+      dlg.querySelector(".locandina-chiudi").addEventListener("click", chiudi);
+      // tocco sullo sfondo scuro (fuori dall'immagine)
+      dlg.addEventListener("click", function (e) { if (e.target === dlg) chiudi(); });
+
+      dlg.addEventListener("close", function () {
+        document.body.classList.remove("locandina-aperta");
+        // se chiusa con × / Esc / tocco fuori, tolgo il passo aggiunto alla cronologia
+        if (!daStoria && history.state && history.state.locandina) history.back();
+        daStoria = false;
+      });
+      // tasto "indietro" del telefono o del browser: chiude la locandina invece di lasciare il sito
+      window.addEventListener("popstate", function () {
+        if (dlg.open) { daStoria = true; dlg.close(); }
+      });
+    })();
+  </script>
 </section>
 
 <!-- FAI UN REGALO -->
@@ -303,7 +346,7 @@
 <section id="faq" class="section">
   <h2>Domande frequenti</h2>
   <details class="faq-item">
-    <summary>Chi è Silvia Genevro?</summary>
+    <summary>Chi sono?</summary>
     <p>Sono istruttrice di Mindfulness iscritta all’Albo Nazionale Federmindfulness (n. 3038) e formatrice nell’ambito delle soft skills. Accompagno persone, gruppi e aziende a coltivare benessere attraverso la consapevolezza, la presenza e la gentilezza.</p>
   </details>
   <details class="faq-item">
@@ -345,7 +388,7 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Chi è Silvia Genevro?",
+      "name": "Chi sono?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Sono istruttrice di Mindfulness iscritta all’Albo Nazionale Federmindfulness (n. 3038) e formatrice nell’ambito delle soft skills. Accompagno persone, gruppi e aziende a coltivare benessere attraverso la consapevolezza, la presenza e la gentilezza."
