@@ -84,6 +84,12 @@ header nav a {
 .cards .card p  { flex-grow: 1; padding: 0 15px; font-size: 0.95rem; }
 .cards .card a.btn { display: inline-block; margin: 15px auto 20px; padding: 10px 20px; border-radius: 25px; background: #fff; color: #333; font-weight: bold; text-decoration: none; transition: background 0.3s ease, color 0.3s ease; }
 .cards .card a.btn:hover { background: #333; color: #fff; }
+/* Titoli, testi e pulsanti allineati alla stessa altezza in tutti i riquadri */
+@supports (grid-template-rows: subgrid) {
+  .cards .card { display: grid; grid-row: span 4; grid-template-rows: subgrid; grid-template-columns: minmax(0, 1fr); row-gap: 0; }
+  .cards .card h3, .cards .card p { align-self: start; }
+  .cards .card a.btn { align-self: end; justify-self: center; }
+}
 
 /* ===== ABOUT ===== */
 .about-container { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; justify-content: center; }
