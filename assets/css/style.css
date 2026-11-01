@@ -363,6 +363,7 @@ footer a:hover { color: var(--acqua); border-bottom-color: var(--acqua); }
   .cards { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .contact-btn { font-size: .95em; padding: 12px 10px; }
+  .contact-grid a:last-child:nth-child(odd) { grid-column: 1 / -1; }
   #newsletter { max-width: calc(100% - 32px); padding: 40px 18px; margin: 56px auto; }
 }
 
