@@ -52,14 +52,34 @@
       }
 
       try {
-        // no-cors: il browser non blocca per CORS e non aspetta risposta “leggibile”
-        await fetch(ENDPOINT, { method: "POST", mode: "no-cors", body: fd });
+        // Leggiamo la risposta dello script (Apps Script la rende leggibile: CORS "*")
+        const res = await fetch(ENDPOINT, { method: "POST", body: fd });
+        const text = (await res.text()).trim();
 
-        // feedback immediato (robusto)
-        msg.textContent = "Iscrizione inviata ✅";
-        form.reset();
+        let ok = res.ok;
+        let detail = "";
+        try {
+          // risposta JSON, es. {"ok":true} oppure {"ok":false,"message":"..."}
+          const data = JSON.parse(text);
+          if (data.ok === false || data.success === false || data.status === "error") {
+            ok = false;
+            detail = data.message || data.error || "";
+          }
+        } catch (_) {
+          // risposta in testo semplice: errore se lo dice
+          if (/errore|error|non valid|invalid|unauthori[sz]ed|token/i.test(text)) { ok = false; detail = text.startsWith("<") ? "" : text; }
+        }
+
+        if (ok) {
+          msg.textContent = "Iscrizione completata ✅ Controlla la tua email.";
+          form.reset();
+        } else {
+          msg.textContent = "Iscrizione non riuscita" + (detail ? " (" + detail.slice(0, 120) + ")" : "") +
+                            ". Riprova o scrivi a silvia.genevro@gmail.com.";
+        }
       } catch (err) {
-        msg.textContent = "Errore di rete. Riprova tra poco.";
+        // rete assente o risposta illeggibile: non diciamo che è andata bene
+        msg.textContent = "Non è stato possibile completare l’iscrizione. Controlla la connessione e riprova, oppure scrivi a silvia.genevro@gmail.com.";
       } finally {
         if (btn) btn.disabled = false;
       }
