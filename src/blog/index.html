@@ -1,0 +1,48 @@
+---
+permalink: /blog/
+---
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog: mindfulness, MBSR e presenza nel quotidiano | Silvia Genevro</title>
+  <meta name="description" content="Articoli di Silvia Genevro, istruttrice di Mindfulness: MBSR, meditazione, gestione dello stress e pratiche per vivere con più presenza nella vita di ogni giorno.">
+  <meta property="og:title" content="Blog di Silvia Genevro – Mindfulness e presenza">
+  <meta property="og:description" content="Articoli su MBSR, meditazione, gestione dello stress e pratiche per vivere con più presenza nella vita di ogni giorno.">
+  <meta property="og:url" content="https://silviagenevro.it/blog/">
+  <meta property="og:image" content="https://silviagenevro.it/assets/img/anteprima-social.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="canonical" href="https://silviagenevro.it/blog/">
+</head>
+<body>
+
+{% include "header.html" %}
+
+<main class="section blog-elenco" id="blog">
+  <h1>Blog</h1>
+  <p class="blog-intro">Pensieri, pratiche e scoperte sulla mindfulness: per portare un po' più di presenza nella vita di ogni giorno.</p>
+
+  <div class="blog-lista">
+    {% assign articoli = collections.articolo | reverse %}
+    {% for articolo in articoli %}
+    <article class="blog-card">
+      {% if articolo.data.immagine %}<a href="{{ articolo.url }}" tabindex="-1" aria-hidden="true"><img src="{{ articolo.data.immagine }}" alt="" loading="lazy"></a>{% endif %}
+      <p class="blog-card-data"><time datetime="{{ articolo.date | dataIso }}">{{ articolo.date | dataIt }}</time> · {{ articolo.templateContent | minutiLettura }} min di lettura</p>
+      <h2><a href="{{ articolo.url }}">{{ articolo.data.title }}</a></h2>
+      <p>{{ articolo.data.description }}</p>
+      <a class="blog-card-leggi" href="{{ articolo.url }}">Leggi l'articolo <span aria-hidden="true">→</span></a>
+    </article>
+    {% endfor %}
+  </div>
+</main>
+
+{% include "footer.html" %}
+
+<script src="/assets/js/menu.js"></script>
+
+</body>
+</html>

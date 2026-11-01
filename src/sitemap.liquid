@@ -1,0 +1,24 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- comment -%} Pagine fisse: aggiornare la data quando la pagina cambia {%- endcomment -%}
+{%- for p in pagine_sitemap %}
+  <url>
+    <loc>https://silviagenevro.it{{ p.url }}</loc>
+    <lastmod>{{ p.lastmod }}</lastmod>
+    <priority>{{ p.priority }}</priority>
+  </url>
+{%- endfor %}
+{%- comment -%} Articoli del blog: aggiunti in automatico {%- endcomment -%}
+{%- assign articoli = collections.articolo | reverse %}
+{%- for a in articoli %}
+  <url>
+    <loc>https://silviagenevro.it{{ a.url }}</loc>
+    <lastmod>{% if a.data.aggiornato %}{{ a.data.aggiornato | dataIso }}{% else %}{{ a.date | dataIso }}{% endif %}</lastmod>
+    <priority>0.6</priority>
+  </url>
+{%- endfor %}
+</urlset>

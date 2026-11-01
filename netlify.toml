@@ -10,10 +10,23 @@
   status = 301
   force = true
 
-# Il blog è su blog.silviagenevro.it: i vecchi indirizzi del blog interno portano lì.
+# Il blog ora è dentro il sito (silviagenevro.it/blog/).
+# Quando blog.silviagenevro.it punterà a Netlify, i vecchi indirizzi di Blogger portano agli articoli nuovi.
 [[redirects]]
-  from = "/blog/*"
-  to = "https://blog.silviagenevro.it/"
+  from = "https://blog.silviagenevro.it/2026/09/svegliarsi-dal-pilota-automatico-perche.html"
+  to = "https://silviagenevro.it/blog/svegliarsi-dal-pilota-automatico/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://blog.silviagenevro.it/2026/02/mbsr-la-mindfulness-che-ridisegna-il.html"
+  to = "https://silviagenevro.it/blog/mbsr-mindfulness-ridisegna-cervello/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://blog.silviagenevro.it/*"
+  to = "https://silviagenevro.it/blog/"
   status = 301
   force = true
 
