@@ -9,9 +9,7 @@ Chi chiede le modifiche: Marco Fernicola (compagno di Silvia). Rispondere in ita
 - Dopo la pubblicazione: verificare sul sito reale (curl) e segnalare le pagine nuove/cambiate a Bing con IndexNow
   (chiave `5f689786bb57f79a900bd2fb34cd96ed`, file nella radice del sito).
 - Stile grafico: colori e caratteri sono variabili in `assets/css/style.css` (`:root`). Titoli di sezione Montserrat maiuscolo spaziato, titoli lunghi Lora, testo Lato.
-- Illustrazioni: stile "alla Chagall" (cielo blu notte, figure che fluttuano, prato fiorito, uomini e donne insieme) generate da
-  `tools/genera-chagall.py` (SVG) e poi convertite in WebP 1200×680 in `assets/img/illustrazioni/chagall-*.webp`.
-  Le icone dei benefici e le vecchie illustrazioni piatte restano SVG da `tools/genera-illustrazioni.py`.
+- Illustrazioni: SVG in `assets/img/illustrazioni/`, generate da `tools/genera-illustrazioni.py` (palette del logo, figure senza volto).
 - Nessun prezzo sul sito, tranne quelli degli eventi.
 - Zone: "Asti, Alessandria, Torino, Pinerolo, Torre Pellice e nel Nord Italia".
 
@@ -27,7 +25,7 @@ Silvia manda un testo (Word o incollato) e di solito un paio di immagini. Proced
    description: "Riassunto di 140–160 caratteri con le parole che la gente cerca (es. mindfulness, MBSR, ADHD, stress, città)."
    date: AAAA-MM-GG
    immagine: /assets/img/blog/slug-breve.jpg      # facoltativa: immagine di copertina
-   copertina: /assets/img/illustrazioni/chagall-gruppo.webp  # se manca una foto: illustrazione del sito come copertina
+   copertina: /assets/img/illustrazioni/corso-gruppo.svg  # se manca una foto: illustrazione del sito come copertina
    immagine_alt: "Descrizione dell'immagine"       # facoltativa
    cta_testo: "Scopri il percorso MBSR"            # facoltativo: pulsante in fondo (default: Scopri i corsi)
    cta_link: "/mbsr/"                              # facoltativo

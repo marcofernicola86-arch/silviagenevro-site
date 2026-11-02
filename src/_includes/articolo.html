@@ -9,7 +9,7 @@
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description }}">
   <meta property="og:url" content="https://silviagenevro.it{{ page.url }}">
-  <meta property="og:image" content="https://silviagenevro.it{% if immagine %}{{ immagine }}{% elsif copertina and copertina contains ".webp" %}{{ copertina }}{% else %}/assets/img/anteprima-social.jpg{% endif %}">
+  <meta property="og:image" content="https://silviagenevro.it{% if immagine %}{{ immagine }}{% else %}/assets/img/anteprima-social.jpg{% endif %}">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="it_IT">
   <meta property="article:published_time" content="{{ page.date | dataIso }}">
@@ -26,7 +26,7 @@
   "dateModified": "{% if aggiornato %}{{ aggiornato | dataIso }}{% else %}{{ page.date | dataIso }}{% endif %}",
   "inLanguage": "it-IT",
   "mainEntityOfPage": "https://silviagenevro.it{{ page.url }}",
-  "image": "https://silviagenevro.it{% if immagine %}{{ immagine }}{% elsif copertina and copertina contains ".webp" %}{{ copertina }}{% else %}/assets/img/anteprima-social.jpg{% endif %}",
+  "image": "https://silviagenevro.it{% if immagine %}{{ immagine }}{% else %}/assets/img/anteprima-social.jpg{% endif %}",
   "author": {
     "@type": "Person",
     "name": "Silvia Genevro",
