@@ -551,3 +551,38 @@ header nav a:focus-visible { outline: 3px solid var(--acqua-scuro); outline-offs
 .beneficio p { margin: 0; color: var(--testo-tenue); font-size: 1rem; }
 @media (max-width: 800px) { .benefici { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 18px; } }
 @media (max-width: 420px) { .beneficio img { width: 72px; height: 72px; } .beneficio p { font-size: .95rem; } }
+
+/* ===== POP-UP NEWSLETTER ===== */
+.nl-popup {
+  width: min(420px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto; box-sizing: border-box;
+  border: 0; border-radius: var(--raggio); padding: 34px 28px 22px; text-align: center;
+  background: #fff; color: var(--testo); box-shadow: 0 20px 60px rgba(1,26,50,.35);
+  background-image:
+    radial-gradient(circle at 0% 0%, rgba(43,239,192,.16), transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(148,255,131,.2), transparent 40%);
+}
+.nl-popup::backdrop { background: rgba(1, 26, 50, .55); }
+.nl-popup img { display: block; margin: 0 auto 10px; }
+.nl-popup-titolo {
+  font-family: var(--etichetta); font-weight: 500; text-transform: uppercase; letter-spacing: .1em;
+  font-size: 1.25rem; color: var(--blu); margin: 0 0 8px;
+}
+.nl-popup-testo { margin: 0 0 18px; color: var(--testo-tenue); font-size: 1rem; }
+.nl-popup form { display: flex; flex-direction: column; gap: 10px; }
+.nl-popup input[type=text], .nl-popup input[type=email] {
+  width: 100%; box-sizing: border-box; padding: 12px 14px; font: inherit; font-size: 1rem;
+  border: 1px solid var(--bordo); border-radius: 10px; background: #fff; color: var(--testo);
+}
+.nl-popup input:focus { outline: 2px solid var(--acqua); outline-offset: 1px; border-color: var(--acqua-scuro); }
+.nl-popup-consenso { text-align: left; font-size: .9rem; color: var(--testo-tenue); line-height: 1.5; }
+.nl-popup-consenso input { margin-right: 6px; accent-color: var(--acqua-scuro); }
+.nl-popup .btn { border: 0; cursor: pointer; font: inherit; font-weight: 700; margin-top: 4px; }
+.nl-popup-msg { margin: 4px 0 0; min-height: 1.4em; font-size: .95rem; color: var(--blu); }
+.nl-popup-chiudi {
+  position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; border-radius: 50%;
+  border: 0; background: transparent; color: var(--blu); font-size: 1.8rem; line-height: 1; cursor: pointer;
+}
+.nl-popup-chiudi:hover { background: var(--sfondo-tinta); }
+.nl-popup-no { margin-top: 8px; border: 0; background: none; color: var(--testo-tenue); font: inherit; font-size: .9rem; text-decoration: underline; cursor: pointer; }
+.nl-popup-chiudi:focus { outline: none; }
+.nl-popup-chiudi:focus-visible { outline: 2px solid var(--acqua-scuro); outline-offset: 2px; }
