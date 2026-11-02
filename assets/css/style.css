@@ -184,22 +184,22 @@ header nav a:hover { color: var(--acqua-scuro); border-bottom-color: var(--acqua
   padding-top: 0;
   transition: transform .3s ease, box-shadow .3s ease;
 }
-/* sfondi colorati dalla palette del logo */
-.card.mbsr     { background: linear-gradient(140deg, #013260, #0b4f86); border-color: transparent; }
-.card.adhd     { background: linear-gradient(140deg, #2befc0, #9cf6df); border-color: transparent; }
-.card.intro    { background: linear-gradient(140deg, #075a4e, #0b8270); border-color: transparent; }
-.card.sessioni { background: linear-gradient(140deg, #94ff83, #d2ffc8); border-color: transparent; }
+/* sfondi colorati dalla palette del logo, in ordine: blu notte, acqua, verde petrolio, verde chiaro */
+.card.c-blu     { background: linear-gradient(140deg, #013260, #0b4f86); border-color: transparent; }
+.card.c-acqua     { background: linear-gradient(140deg, #2befc0, #9cf6df); border-color: transparent; }
+.card.c-verde    { background: linear-gradient(140deg, #075a4e, #0b8270); border-color: transparent; }
+.card.c-verdino { background: linear-gradient(140deg, #94ff83, #d2ffc8); border-color: transparent; }
 /* riquadri scuri: testo bianco, pulsante bianco */
-.card.mbsr, .card.intro { color: #fff; }
-.card.mbsr h3, .card.intro h3 { color: #fff; }
-.cards .card.mbsr p, .cards .card.intro p { color: rgba(255,255,255,.9); }
-.cards .card.mbsr a.btn, .cards .card.intro a.btn { background: #fff; color: var(--blu); }
-.cards .card.mbsr a.btn:hover, .cards .card.intro a.btn:hover { background: var(--sfondo-tinta); color: var(--blu); }
-.cards .card.mbsr h3 a:hover, .cards .card.intro h3 a:hover { color: #fff; text-decoration: underline; }
+.card.c-blu, .card.c-verde { color: #fff; }
+.card.c-blu h3, .card.c-verde h3 { color: #fff; }
+.cards .card.c-blu p, .cards .card.c-verde p { color: rgba(255,255,255,.9); }
+.cards .card.c-blu a.btn, .cards .card.c-verde a.btn { background: #fff; color: var(--blu); }
+.cards .card.c-blu a.btn:hover, .cards .card.c-verde a.btn:hover { background: var(--sfondo-tinta); color: var(--blu); }
+.cards .card.c-blu h3 a:hover, .cards .card.c-verde h3 a:hover { color: #fff; text-decoration: underline; }
 /* riquadri chiari: testo blu, pulsante blu */
-.cards .card.adhd p, .cards .card.sessioni p { color: var(--blu); }
-.cards .card.adhd a.btn, .cards .card.sessioni a.btn { background: var(--blu); color: #fff; }
-.cards .card.adhd a.btn:hover, .cards .card.sessioni a.btn:hover { background: #0b4f86; }
+.cards .card.c-acqua p, .cards .card.c-verdino p { color: var(--blu); }
+.cards .card.c-acqua a.btn, .cards .card.c-verdino a.btn { background: var(--blu); color: #fff; }
+.cards .card.c-acqua a.btn:hover, .cards .card.c-verdino a.btn:hover { background: #0b4f86; }
 .card:hover { transform: translateY(-6px); box-shadow: 0 14px 34px rgba(1,50,96,.14); }
 /* illustrazione in testa al riquadro */
 .cards .card-illu { display: block; width: 100%; height: auto; aspect-ratio: 600 / 340; object-fit: cover; }
