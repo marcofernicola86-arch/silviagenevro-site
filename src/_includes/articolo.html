@@ -54,7 +54,7 @@
         Silvia Genevro · <time datetime="{{ page.date | dataIso }}">{{ page.date | dataIt }}</time> · {{ content | minutiLettura }} min di lettura
       </p>
     </div>
-    {% if immagine %}<img class="articolo-immagine" src="{{ immagine }}" alt="{{ immagine_alt | default: title }}">{% endif %}
+    {% if immagine %}<img class="articolo-immagine" src="{{ immagine }}" alt="{{ immagine_alt | default: title }}">{% elsif copertina %}<img class="articolo-immagine" src="{{ copertina }}" alt="">{% endif %}
     <div class="articolo-testo">
       {{ content }}
     </div>

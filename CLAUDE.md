@@ -8,7 +8,8 @@ Chi chiede le modifiche: Marco Fernicola (compagno di Silvia). Rispondere in ita
 - Lavorare sul ramo di sviluppo, mostrare un'anteprima (screenshot telefono + computer) e **pubblicare su `main` solo dopo un "pubblica" esplicito**.
 - Dopo la pubblicazione: verificare sul sito reale (curl) e segnalare le pagine nuove/cambiate a Bing con IndexNow
   (chiave `5f689786bb57f79a900bd2fb34cd96ed`, file nella radice del sito).
-- Stile grafico: colori e caratteri sono variabili in `assets/css/style.css` (`:root`). Titoli Lora, testo Lato.
+- Stile grafico: colori e caratteri sono variabili in `assets/css/style.css` (`:root`). Titoli di sezione Montserrat maiuscolo spaziato, titoli lunghi Lora, testo Lato.
+- Illustrazioni: SVG in `assets/img/illustrazioni/`, generate da `tools/genera-illustrazioni.py` (palette del logo, figure senza volto).
 - Nessun prezzo sul sito, tranne quelli degli eventi.
 - Zone: "Asti, Alessandria, Torino, Pinerolo, Torre Pellice e nel Nord Italia".
 
@@ -24,6 +25,7 @@ Silvia manda un testo (Word o incollato) e di solito un paio di immagini. Proced
    description: "Riassunto di 140–160 caratteri con le parole che la gente cerca (es. mindfulness, MBSR, ADHD, stress, città)."
    date: AAAA-MM-GG
    immagine: /assets/img/blog/slug-breve.jpg      # facoltativa: immagine di copertina
+   copertina: /assets/img/illustrazioni/corso-gruppo.svg  # se manca una foto: illustrazione del sito come copertina
    immagine_alt: "Descrizione dell'immagine"       # facoltativa
    cta_testo: "Scopri il percorso MBSR"            # facoltativo: pulsante in fondo (default: Scopri i corsi)
    cta_link: "/mbsr/"                              # facoltativo

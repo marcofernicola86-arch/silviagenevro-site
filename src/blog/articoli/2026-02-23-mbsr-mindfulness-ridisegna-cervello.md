@@ -1,6 +1,7 @@
 ---
 title: "MBSR: la Mindfulness che ridisegna il cervello e la vita"
 description: "Cos'è l'MBSR (Mindfulness Based Stress Reduction), come funziona il percorso di 8 settimane, cosa dice la scienza e come ha cambiato la vita di Silvia Genevro."
+copertina: /assets/img/illustrazioni/corso-gruppo.svg
 date: 2026-02-23
 aggiornato: 2026-06-14
 cta_testo: "Scopri il percorso MBSR"
