@@ -607,6 +607,3 @@ span.azioni { display: flex; }
 .cards .card .card-azioni a.btn.btn-wa { background: #fff; color: var(--blu); border-color: transparent; }
 .cards .card.c-acqua .card-azioni a.btn.btn-wa, .cards .card.c-verdino .card-azioni a.btn.btn-wa { border-color: var(--blu); }
 .cards .card .card-azioni a.btn.btn-wa:hover { background: var(--blu); color: #fff; }
-/* riga "chi e dove" sotto il titolo di apertura */
-.hero-chi { margin: 4px auto 0; max-width: 720px; color: var(--testo-tenue); font-size: 1.02rem; letter-spacing: .01em; }
-@media (max-width: 480px) { .hero-chi { font-size: .92rem; } }
