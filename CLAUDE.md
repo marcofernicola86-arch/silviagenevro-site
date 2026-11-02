@@ -11,6 +11,7 @@ Chi chiede le modifiche: Marco Fernicola (compagno di Silvia). Rispondere in ita
 - Stile grafico: colori e caratteri sono variabili in `assets/css/style.css` (`:root`). Titoli di sezione Montserrat maiuscolo spaziato, titoli lunghi Lora, testo Lato.
 - Illustrazioni: SVG in `assets/img/illustrazioni/`, generate da `tools/genera-illustrazioni.py` (palette del logo, figure senza volto).
 - Nessun prezzo sul sito, tranne quelli degli eventi.
+- "Mindfulness" sempre con la M maiuscola nei testi (non negli indirizzi web e nei nomi dei file).
 - Zone: "Asti, Alessandria, Torino, Pinerolo, Torre Pellice e nel Nord Italia".
 
 ## Pubblicare un articolo del blog

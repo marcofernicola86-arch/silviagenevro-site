@@ -17,7 +17,7 @@ Oggi, l'MBSR è praticato in tutto il mondo – da ospedali e università (come 
 
 ## Cos'è la Mindfulness?
 
-La mindfulness è l'arte di essere presenti, momento per momento, con consapevolezza e senza giudizio. È uno stato mentale naturale che tutti possiamo coltivare.
+La Mindfulness è l'arte di essere presenti, momento per momento, con consapevolezza e senza giudizio. È uno stato mentale naturale che tutti possiamo coltivare.
 
 Come dice Kabat-Zinn: “Mindfulness significa prestare attenzione, in un modo particolare: con intenzione, al momento presente, e in modo non giudicante.”
 
