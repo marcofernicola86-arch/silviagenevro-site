@@ -120,82 +120,7 @@
   </div>
 </section>
 
-<!-- CHI SONO -->
-<section id="chi-sono" class="section about">
-  <h2>Chi sono</h2>
-  <div class="about-container">
-    <img src="/assets/img/Silviafotoprofilo.jpg" loading="lazy" alt="Silvia Genevro">
-    <div class="about-text">
-      <p>Sono <strong>istruttrice di Mindfulness</strong> e formatrice nell’ambito delle soft skills.<br>
-        Aiuto persone e gruppi a coltivare benessere attraverso la consapevolezza, la presenza e la gentilezza.</p>
-      <p>Progetto percorsi per privati e aziende su comunicazione efficace, team working e team building, integrando tecniche teatrali ed esperienziali per facilitare connessione autentica e crescita personale e professionale.</p>
-      <p><i>Insegno Mindfulness e soft skills come si insegna a camminare scalzi sull’erba: con cura, ascolto e meraviglia.</i></p>
-      <a class="btn primary" href="#corsi">Scopri i corsi</a>
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICAZIONI -->
-<section id="certificazioni" class="section tinta">
-  <h2>Certificazioni</h2>
-  <p>
-    Istruttrice di Mindfulness con iscrizione all'Albo Nazionale Federmindfulness n. 3038.<br>
-    Certificazioni: Mindfulness Basic Training, Mindfulness Professional Trainer®, MBSR e MAPS for ADHD.<br>
-    <a href="https://www.albonazionalemindfulness.it/professionista/silvia-genevro" target="_blank" rel="noopener">🔗 Verifica le credenziali sull'Albo ufficiale</a>
-  </p>
-  <picture>
-    <source media="(max-width: 600px)" srcset="/assets/img/certificazioni-mobile.png">
-    <img src="/assets/img/certificazioni.png" loading="lazy" alt="Certificazioni di Silvia Genevro: Mindfulness Basic Training, Mindfulness Professional Trainer®, MBSR e MAPS for ADHD">
-  </picture>
-
-  <div class="recensioni-invito">
-    <p class="recensioni-titolo">Le parole di chi ha già partecipato</p>
-    <a class="recensioni-link" href="https://g.page/r/CR_8HUH1DPyiEAE" target="_blank" rel="noopener">
-      <span class="recensioni-stelle" aria-hidden="true">★★★★★</span>
-      <span>Leggi le recensioni su Google <span aria-hidden="true">→</span></span>
-    </a>
-    <p class="recensioni-lascia">Hai partecipato a un percorso? <a href="https://g.page/r/CR_8HUH1DPyiEAE/review" target="_blank" rel="noopener">Lascia la tua recensione</a></p>
-  </div>
-</section>
-
-<!-- BENEFICI -->
-<section id="benefici" class="section">
-  <h2>Cosa coltiverai</h2>
-  <p class="sezione-sottotitolo">La mindfulness è un allenamento della mente con solide basi scientifiche. Ecco cosa può portare nella tua vita di ogni giorno.</p>
-  <div class="benefici">
-    <div class="beneficio">
-      <img src="/assets/img/illustrazioni/icona-calma.svg" width="88" height="88" alt="" loading="lazy">
-      <h3>Meno stress</h3>
-      <p>Riconoscere i segnali dello stress e dell'ansia e imparare a rispondere, invece di reagire in automatico.</p>
-    </div>
-    <div class="beneficio">
-      <img src="/assets/img/illustrazioni/icona-respiro.svg" width="88" height="88" alt="" loading="lazy">
-      <h3>Presenza</h3>
-      <p>Tornare al respiro e al corpo per abitare il momento presente, anche nelle giornate più piene.</p>
-    </div>
-    <div class="beneficio">
-      <img src="/assets/img/illustrazioni/icona-emozioni.svg" width="88" height="88" alt="" loading="lazy">
-      <h3>Emozioni</h3>
-      <p>Accogliere le emozioni senza esserne travolti e gestirle con più equilibrio.</p>
-    </div>
-    <div class="beneficio">
-      <img src="/assets/img/illustrazioni/icona-attenzione.svg" width="88" height="88" alt="" loading="lazy">
-      <h3>Chiarezza</h3>
-      <p>Una mente più chiara e una concentrazione più stabile, per scegliere con lucidità.</p>
-    </div>
-    <div class="beneficio">
-      <img src="/assets/img/illustrazioni/icona-sonno.svg" width="88" height="88" alt="" loading="lazy">
-      <h3>Sonno</h3>
-      <p>Rallentare i pensieri la sera e ritrovare un riposo più profondo.</p>
-    </div>
-    <div class="beneficio">
-      <img src="/assets/img/illustrazioni/icona-gentilezza.svg" width="88" height="88" alt="" loading="lazy">
-      <h3>Gentilezza</h3>
-      <p>Più gentilezza verso se stessi e relazioni più autentiche con gli altri.</p>
-    </div>
-  </div>
-</section>
-
+<!-- CORSI -->
 <section id="corsi" class="section tinta">
   <h2>Corsi</h2>
   <p class="zone-corsi">In presenza ad Asti, Alessandria, Torino, Pinerolo, Torre Pellice e nel Nord Italia, oppure online.</p>
@@ -232,30 +157,8 @@
   </div>
 </section>
 
-<!-- DAL BLOG -->
-<section id="dal-blog" class="section">
-  <h2>Dal blog</h2>
-  {%- assign ultimo = collections.articolo | last %}
-  {%- if ultimo %}
-  <article class="blog-ultimo">
-    {%- if ultimo.data.copertina %}
-    <a class="blog-ultimo-img" href="{{ ultimo.url }}" tabindex="-1" aria-hidden="true"><img src="{{ ultimo.data.copertina }}" alt="" loading="lazy"></a>
-    {%- endif %}
-    <div class="blog-ultimo-testo">
-    <p class="blog-card-data"><time datetime="{{ ultimo.date | dataIso }}">{{ ultimo.date | dataIt }}</time> · {{ ultimo.templateContent | minutiLettura }} min di lettura</p>
-    <h3><a href="{{ ultimo.url }}">{{ ultimo.data.title }}</a></h3>
-    <p>{{ ultimo.data.description }}</p>
-    <p class="blog-ultimo-azioni">
-      <a class="btn primary" href="{{ ultimo.url }}">Leggi l'articolo</a>
-      <a class="btn alt" href="/blog/">Tutti gli articoli</a>
-    </p>
-    </div>
-  </article>
-  {%- endif %}
-</section>
-
 <!-- EVENTI -->
-<section id="eventi" class="section tinta">
+<section id="eventi" class="section">
   <h2>Eventi</h2>
 
   <!-- L'evento si nasconde da solo dopo la data indicata in data-fine -->
@@ -393,8 +296,106 @@
   </script>
 </section>
 
+<!-- BENEFICI -->
+<section id="benefici" class="section tinta">
+  <h2>Cosa coltiverai</h2>
+  <p class="sezione-sottotitolo">La mindfulness è un allenamento della mente con solide basi scientifiche. Ecco cosa può portare nella tua vita di ogni giorno.</p>
+  <div class="benefici">
+    <div class="beneficio">
+      <img src="/assets/img/illustrazioni/icona-calma.svg" width="88" height="88" alt="" loading="lazy">
+      <h3>Meno stress</h3>
+      <p>Riconoscere i segnali dello stress e dell'ansia e imparare a rispondere, invece di reagire in automatico.</p>
+    </div>
+    <div class="beneficio">
+      <img src="/assets/img/illustrazioni/icona-respiro.svg" width="88" height="88" alt="" loading="lazy">
+      <h3>Presenza</h3>
+      <p>Tornare al respiro e al corpo per abitare il momento presente, anche nelle giornate più piene.</p>
+    </div>
+    <div class="beneficio">
+      <img src="/assets/img/illustrazioni/icona-emozioni.svg" width="88" height="88" alt="" loading="lazy">
+      <h3>Emozioni</h3>
+      <p>Accogliere le emozioni senza esserne travolti e gestirle con più equilibrio.</p>
+    </div>
+    <div class="beneficio">
+      <img src="/assets/img/illustrazioni/icona-attenzione.svg" width="88" height="88" alt="" loading="lazy">
+      <h3>Chiarezza</h3>
+      <p>Una mente più chiara e una concentrazione più stabile, per scegliere con lucidità.</p>
+    </div>
+    <div class="beneficio">
+      <img src="/assets/img/illustrazioni/icona-sonno.svg" width="88" height="88" alt="" loading="lazy">
+      <h3>Sonno</h3>
+      <p>Rallentare i pensieri la sera e ritrovare un riposo più profondo.</p>
+    </div>
+    <div class="beneficio">
+      <img src="/assets/img/illustrazioni/icona-gentilezza.svg" width="88" height="88" alt="" loading="lazy">
+      <h3>Gentilezza</h3>
+      <p>Più gentilezza verso se stessi e relazioni più autentiche con gli altri.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHI SONO -->
+<section id="chi-sono" class="section about">
+  <h2>Chi sono</h2>
+  <div class="about-container">
+    <img src="/assets/img/Silviafotoprofilo.jpg" loading="lazy" alt="Silvia Genevro">
+    <div class="about-text">
+      <p>Sono <strong>istruttrice di Mindfulness</strong> e formatrice nell’ambito delle soft skills.<br>
+        Aiuto persone e gruppi a coltivare benessere attraverso la consapevolezza, la presenza e la gentilezza.</p>
+      <p>Progetto percorsi per privati e aziende su comunicazione efficace, team working e team building, integrando tecniche teatrali ed esperienziali per facilitare connessione autentica e crescita personale e professionale.</p>
+      <p><i>Insegno Mindfulness e soft skills come si insegna a camminare scalzi sull’erba: con cura, ascolto e meraviglia.</i></p>
+      <a class="btn primary" href="#contatti">Scrivimi</a>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICAZIONI -->
+<section id="certificazioni" class="section tinta">
+  <h2>Certificazioni</h2>
+  <p>
+    Istruttrice di Mindfulness con iscrizione all'Albo Nazionale Federmindfulness n. 3038.<br>
+    Certificazioni: Mindfulness Basic Training, Mindfulness Professional Trainer®, MBSR e MAPS for ADHD.<br>
+    <a href="https://www.albonazionalemindfulness.it/professionista/silvia-genevro" target="_blank" rel="noopener">🔗 Verifica le credenziali sull'Albo ufficiale</a>
+  </p>
+  <picture>
+    <source media="(max-width: 600px)" srcset="/assets/img/certificazioni-mobile.png">
+    <img src="/assets/img/certificazioni.png" loading="lazy" alt="Certificazioni di Silvia Genevro: Mindfulness Basic Training, Mindfulness Professional Trainer®, MBSR e MAPS for ADHD">
+  </picture>
+
+  <div class="recensioni-invito">
+    <p class="recensioni-titolo">Le parole di chi ha già partecipato</p>
+    <a class="recensioni-link" href="https://g.page/r/CR_8HUH1DPyiEAE" target="_blank" rel="noopener">
+      <span class="recensioni-stelle" aria-hidden="true">★★★★★</span>
+      <span>Leggi le recensioni su Google <span aria-hidden="true">→</span></span>
+    </a>
+    <p class="recensioni-lascia">Hai partecipato a un percorso? <a href="https://g.page/r/CR_8HUH1DPyiEAE/review" target="_blank" rel="noopener">Lascia la tua recensione</a></p>
+  </div>
+</section>
+
+<!-- DAL BLOG -->
+<section id="dal-blog" class="section">
+  <h2>Dal blog</h2>
+  {%- assign ultimo = collections.articolo | last %}
+  {%- if ultimo %}
+  <article class="blog-ultimo">
+    {%- if ultimo.data.copertina %}
+    <a class="blog-ultimo-img" href="{{ ultimo.url }}" tabindex="-1" aria-hidden="true"><img src="{{ ultimo.data.copertina }}" alt="" loading="lazy"></a>
+    {%- endif %}
+    <div class="blog-ultimo-testo">
+    <p class="blog-card-data"><time datetime="{{ ultimo.date | dataIso }}">{{ ultimo.date | dataIt }}</time> · {{ ultimo.templateContent | minutiLettura }} min di lettura</p>
+    <h3><a href="{{ ultimo.url }}">{{ ultimo.data.title }}</a></h3>
+    <p>{{ ultimo.data.description }}</p>
+    <p class="blog-ultimo-azioni">
+      <a class="btn primary" href="{{ ultimo.url }}">Leggi l'articolo</a>
+      <a class="btn alt" href="/blog/">Tutti gli articoli</a>
+    </p>
+    </div>
+  </article>
+  {%- endif %}
+</section>
+
 <!-- FAI UN REGALO -->
-<section id="regalo" class="section">
+<section id="regalo" class="section tinta">
   <h2>Fai un Regalo</h2>
   <p>
     Regala un momento di presenza: un voucher per una sessione individuale o per un percorso di mindfulness.<br>
@@ -405,9 +406,9 @@
   </p>
   <p><a href="/regolamento/">Leggi il regolamento dei voucher</a></p>
 </section>
-  
+
 <!-- DOMANDE FREQUENTI -->
-<section id="faq" class="section tinta">
+<section id="faq" class="section">
   <h2>Domande frequenti</h2>
   <details class="faq-item">
     <summary>Chi sono?</summary>
@@ -531,6 +532,7 @@
 <section id="newsletter" class="section">
   {% include "newsletter.html" %}
 </section>
+
 <!-- CONTATTI -->
 <section id="contatti" class="section tinta">
   <h2>Contatti</h2>
