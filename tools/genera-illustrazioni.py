@@ -65,7 +65,7 @@ def manager_uomo(x, y, s=1.0, giacca=BLU2, cravatta=ACQUA, capelli=BLU, pelle=PE
     return g
 
 
-def manager_donna(x, y, s=1.0, tailleur=ACQUA, camicetta="#ffffff", capelli=BLU, pelle=PELLE):
+def manager_donna(x, y, s=1.0, tailleur=ACQUA, camicetta="#ffffff", capelli=BLU, pelle=PELLE, pettinatura="lunghi"):
     """Donna in tailleur con gonna, in piedi, capelli raccolti."""
     g = f'<g transform="translate({x} {y}) scale({s})">'
     g += f'<path d="M-6 0 L-5 -30 L-1 -30 L-2 0Z M2 0 L1 -30 L5 -30 L6 0Z" fill="{pelle}"/>'   # gambe
@@ -75,10 +75,16 @@ def manager_donna(x, y, s=1.0, tailleur=ACQUA, camicetta="#ffffff", capelli=BLU,
     g += f'<path d="M-5 -98 L0 -84 L5 -98Z" fill="{camicetta}"/>'                            # scollo
     g += f'<path d="M-5 -98 L-10 -78 L-1 -88Z M5 -98 L10 -78 L1 -88Z" fill="{BLU}" opacity=".3"/>'  # revers
     g += f'<circle cx="0" cy="-72" r="1.6" fill="{BLU}" opacity=".5"/><circle cx="0" cy="-62" r="1.6" fill="{BLU}" opacity=".5"/>'
+    if pettinatura == "lunghi":   # capelli lunghi sciolti sulle spalle (dietro al viso)
+        g += f'<path d="M-14 -116 Q-15 -132 0 -132 Q15 -132 14 -116 L16 -88 Q8 -84 6 -92 L-6 -92 Q-8 -84 -16 -88Z" fill="{capelli}"/>'
+    else:                          # caschetto corto
+        g += f'<path d="M-14 -114 Q-15 -132 0 -132 Q15 -132 14 -114 L14 -104 Q10 -101 9 -106 L-9 -106 Q-10 -101 -14 -104Z" fill="{capelli}"/>'
     g += f'<rect x="-4" y="-106" width="8" height="10" rx="3" fill="{pelle}"/>'
     g += f'<circle cx="0" cy="-116" r="11" fill="{pelle}"/>'
-    g += f'<path d="M-11.5 -116 Q-12 -129 0 -129 Q12 -129 11.5 -116 Q7 -123 0 -123 Q-7 -123 -11.5 -116Z" fill="{capelli}"/>'
-    g += f'<circle cx="0" cy="-132" r="5.5" fill="{capelli}"/>'                              # chignon
+    if pettinatura == "lunghi":   # frangia di lato
+        g += f'<path d="M-11.5 -116 Q-12 -129 0 -129 Q12 -129 11.5 -118 Q4 -126 -4 -122 Q-8 -120 -11.5 -116Z" fill="{capelli}"/>'
+    else:                          # frangia dritta del caschetto
+        g += f'<path d="M-11.5 -114 Q-12 -129 0 -129 Q12 -129 11.5 -114 L10 -118 L-10 -118Z" fill="{capelli}"/>'
     g += "</g>"
     return g
 
@@ -121,9 +127,9 @@ b += f'<g transform="translate(300 25) scale(1.05) translate(-330 -40)"><path d=
 b += f'<path d="M318 78 C318 64 334 64 336 76 C338 64 354 64 354 78 C354 94 336 104 336 104 C336 104 318 94 318 78Z" fill="none" stroke="{BLU}" stroke-width="3"/></g>'
 b += f'<rect x="0" y="305" width="{W}" height="35" fill="{TEAL}"/>'
 b += manager_uomo(150, 305, 1.45, giacca=BLU2, cravatta=ACQUA)
-b += manager_donna(235, 305, 1.5, tailleur=ACQUA, capelli="#5a3b2a")
+b += manager_donna(235, 305, 1.5, tailleur=ACQUA, capelli="#5a3b2a", pettinatura="lunghi")
 b += manager_uomo(370, 305, 1.5, giacca=BLU, cravatta=VERDE, capelli="#3a2a20")
-b += manager_donna(455, 305, 1.42, tailleur=VERDE, capelli=BLU)
+b += manager_donna(455, 305, 1.42, tailleur=VERDE, capelli=BLU, pettinatura="caschetto")
 salva("corso-aziende.svg", svg(W, H, b, "Due uomini in giacca e cravatta e due donne in tailleur, uniti da una nuvoletta di dialogo con un cuore"))
 
 # 4. Sessioni individuali: una figura, grande cerchio, piccola pianta
