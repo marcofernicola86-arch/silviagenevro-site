@@ -38,9 +38,9 @@ def figura(x, y, s=1.0, corpo=BLU, capelli=BLU, pelle=PELLE, stola=None):
     return g
 
 
-def figura_in_piedi(x, y, s=1.0, corpo=BLU, capelli=BLU, pelle=PELLE):
+def figura_in_piedi(x, y, s=1.0, corpo=BLU, capelli=BLU, pelle=PELLE, gambe=BLU):
     g = f'<g transform="translate({x} {y}) scale({s})">'
-    g += f'<path d="M-9 0 L-7 -48 L7 -48 L9 0 L3 0 L0 -36 L-3 0Z" fill="{BLU}"/>'
+    g += f'<path d="M-9 0 L-7 -48 L7 -48 L9 0 L3 0 L0 -36 L-3 0Z" fill="{gambe}"/>'
     g += f'<path d="M-16 -46 L-13 -96 Q0 -104 13 -96 L16 -46 Q0 -42 -16 -46Z" fill="{corpo}"/>'
     g += f'<rect x="-4" y="-106" width="8" height="10" rx="3" fill="{pelle}"/>'
     g += f'<circle cx="0" cy="-116" r="11" fill="{pelle}"/>'
@@ -128,3 +128,48 @@ icona("icona-gentilezza.svg",
       f'<path d="M30 74 Q30 58 46 58 L60 66 L74 58 Q90 58 90 74 Q76 92 60 92 Q44 92 30 74Z" fill="{TEAL}"/>'
       f'<path d="M60 52 C60 52 46 44 46 34 C46 28 54 26 60 33 C66 26 74 28 74 34 C74 44 60 52 60 52Z" fill="{BLU}"/>', "Gentilezza", VERDE_T)
 print("ok")
+
+
+# ===== Copertina blog: "Svegliarsi dal pilota automatico" =====
+import math
+
+def ingranaggio(cx, cy, r, denti, colore, foro=MENTA, rot=0):
+    """Ruota dentata semplice."""
+    pts = []
+    n = denti * 4
+    for i in range(n):
+        a = math.radians(rot) + 2 * math.pi * i / n
+        rr = r + 9 if (i % 4) in (1, 2) else r
+        pts.append(f"{cx + rr * math.cos(a):.1f},{cy + rr * math.sin(a):.1f}")
+    g = f'<polygon points="{" ".join(pts)}" fill="{colore}"/>'
+    g += f'<circle cx="{cx}" cy="{cy}" r="{r * .38:.1f}" fill="{foro}"/>'
+    return g
+
+GRIGIO = "#9fb1c2"
+GRIGIO_S = "#7f93a8"
+b = f'<rect width="{W}" height="{H}" fill="{MENTA}"/>'
+# metà sinistra: il "pilota automatico" (ingranaggi grigi, nastro trasportatore, figura grigia)
+b += f'<rect width="300" height="{H}" fill="#e6ecf1"/>'
+b += ingranaggio(58, 52, 28, 9, GRIGIO, "#e6ecf1", 8)
+b += ingranaggio(112, 70, 16, 7, GRIGIO_S, "#e6ecf1", 20)
+b += ingranaggio(250, 50, 24, 8, GRIGIO, "#e6ecf1", 0)
+b += f'<rect x="20" y="268" width="280" height="14" rx="7" fill="{GRIGIO_S}"/>'
+for x in range(40, 300, 40):
+    b += f'<circle cx="{x}" cy="275" r="4" fill="#e6ecf1"/>'
+b += figura_in_piedi(105, 268, 1.25, corpo=GRIGIO_S, capelli=GRIGIO_S, pelle="#c9d3dc", gambe="#6c7f93")
+b += figura_in_piedi(200, 268, 1.25, corpo=GRIGIO, capelli=GRIGIO_S, pelle="#c9d3dc", gambe="#6c7f93")
+# metà destra: la presenza (sole, prato, fiore, figura a colori che si ferma e respira)
+b += f'<circle cx="470" cy="105" r="62" fill="{ACQUA_T}"/>'
+b += f'<path d="M300 280 Q450 250 600 272 V340 H300Z" fill="{VERDE}" opacity=".85"/>'
+b += f'<rect x="0" y="282" width="300" height="58" fill="#d5dee6"/>'
+# respiro: onde leggere che escono dalla figura
+b += f'<path d="M418 128 Q440 116 462 128 T506 128" stroke="{TEAL}" stroke-width="3.5" fill="none" stroke-linecap="round" opacity=".8"/>'
+b += f'<path d="M426 108 Q446 98 466 108 T506 108" stroke="{BLU}" stroke-width="3" fill="none" stroke-linecap="round" opacity=".55"/>'
+b += figura_in_piedi(400, 276, 1.35, corpo=ACQUA, capelli=BLU)
+# fiore con cuore, che la figura guarda
+b += f'<path d="M500 276 Q498 248 504 228" stroke="{TEAL}" stroke-width="4" fill="none" stroke-linecap="round"/>'
+b += f'<path d="M502 252 Q520 242 526 230 Q508 232 502 252Z" fill="{TEAL}"/>'
+b += f'<path d="M504 220 C504 220 488 210 488 199 C488 192 497 189 504 197 C511 189 520 192 520 199 C520 210 504 220 504 220Z" fill="{BLU}"/>'
+# soglia tra i due mondi: passi tratteggiati
+b += f'<path d="M282 262 Q320 250 356 262" stroke="{BLU}" stroke-width="3" fill="none" stroke-dasharray="2 9" stroke-linecap="round"/>'
+salva("blog-pilota-automatico.svg", svg(W, H, b, "Da un lato ingranaggi e persone grigie in automatico, dall'altro una persona a colori che si ferma, respira e guarda un fiore"))

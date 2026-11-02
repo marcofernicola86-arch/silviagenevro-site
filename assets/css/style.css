@@ -509,25 +509,19 @@ header nav a:focus-visible { outline: 3px solid var(--acqua-scuro); outline-offs
 
 /* Home: ultimo articolo del blog */
 .blog-ultimo {
-  max-width: 900px; margin: 0 auto; text-align: left; overflow: hidden;
+  max-width: 720px; margin: 0 auto; text-align: center; overflow: hidden;
   background: #fff; border: 1px solid var(--bordo); border-radius: var(--raggio); box-shadow: var(--ombra);
-  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: center;
 }
-.blog-ultimo-img { display: block; height: 100%; }
-.blog-ultimo-img img { display: block; width: 100%; height: 100%; min-height: 240px; object-fit: cover; }
-.blog-ultimo-testo { padding: 30px 32px; }
-.blog-ultimo:not(:has(.blog-ultimo-img)) { grid-template-columns: 1fr; }
+/* copertina sempre intera (niente ritagli), sopra il testo */
+.blog-ultimo-img { display: block; }
+.blog-ultimo-img img { display: block; width: 100%; height: auto; aspect-ratio: 600 / 340; object-fit: cover; }
+.blog-ultimo-testo { padding: 28px 34px 32px; }
 .blog-ultimo h3 { font-size: 1.5rem; margin: 4px 0 12px; }
 .blog-ultimo h3 a { color: var(--blu); text-decoration: none; }
 .blog-ultimo h3 a:hover { color: var(--acqua-scuro); }
 .blog-ultimo p { margin: 0 0 16px; }
-.blog-ultimo-azioni { display: flex; gap: 12px; flex-wrap: wrap; margin: 6px 0 0 !important; }
-@media (max-width: 700px) {
-  .blog-ultimo { grid-template-columns: 1fr; text-align: center; }
-  .blog-ultimo-img img { min-height: 0; aspect-ratio: 600 / 340; height: auto; }
-  .blog-ultimo-testo { padding: 24px 20px; }
-  .blog-ultimo-azioni { justify-content: center; }
-}
+.blog-ultimo-azioni { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 6px 0 0 !important; }
+@media (max-width: 700px) { .blog-ultimo-testo { padding: 24px 20px; } }
 
 /* ===== BENEFICI ===== */
 .benefici { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 28px; }
