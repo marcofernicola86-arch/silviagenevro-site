@@ -49,6 +49,40 @@ def figura_in_piedi(x, y, s=1.0, corpo=BLU, capelli=BLU, pelle=PELLE, gambe=BLU)
     return g
 
 
+def manager_uomo(x, y, s=1.0, giacca=BLU2, cravatta=ACQUA, capelli=BLU, pelle=PELLE):
+    """Uomo in giacca e cravatta, in piedi."""
+    g = f'<g transform="translate({x} {y}) scale({s})">'
+    g += f'<path d="M-9 0 L-8 -48 L8 -48 L9 0 L3 0 L0 -36 L-3 0Z" fill="{BLU}"/>'          # pantaloni
+    g += f'<path d="M-17 -46 L-14 -96 Q0 -103 14 -96 L17 -46 Q0 -42 -17 -46Z" fill="{giacca}"/>'  # giacca
+    g += f'<path d="M-6 -98 L0 -84 L6 -98Z" fill="#ffffff"/>'                                # camicia
+    g += f'<path d="M-6 -98 L-11 -80 L-2 -90Z M6 -98 L11 -80 L2 -90Z" fill="{BLU}" opacity=".35"/>'  # revers
+    g += f'<path d="M-2.4 -94 L2.4 -94 L3.6 -70 L0 -64 L-3.6 -70Z" fill="{cravatta}"/>'      # cravatta
+    g += f'<path d="M-3 -97 L3 -97 L2.4 -92 L-2.4 -92Z" fill="{cravatta}"/>'                 # nodo
+    g += f'<rect x="-4" y="-106" width="8" height="10" rx="3" fill="{pelle}"/>'
+    g += f'<circle cx="0" cy="-116" r="11" fill="{pelle}"/>'
+    g += f'<path d="M-11.5 -114 Q-13 -130 0 -130 Q13 -130 11.5 -114 Q9 -123 0 -124 Q-9 -123 -11.5 -114Z" fill="{capelli}"/>'
+    g += "</g>"
+    return g
+
+
+def manager_donna(x, y, s=1.0, tailleur=ACQUA, camicetta="#ffffff", capelli=BLU, pelle=PELLE):
+    """Donna in tailleur con gonna, in piedi, capelli raccolti."""
+    g = f'<g transform="translate({x} {y}) scale({s})">'
+    g += f'<path d="M-6 0 L-5 -30 L-1 -30 L-2 0Z M2 0 L1 -30 L5 -30 L6 0Z" fill="{pelle}"/>'   # gambe
+    g += f'<path d="M-8 0 L-3 -3 L-1 0Z M8 0 L3 -3 L1 0Z" fill="{BLU}"/>'                       # scarpe
+    g += f'<path d="M-14 -28 L-12 -54 L12 -54 L14 -28Z" fill="{tailleur}"/>'                    # gonna
+    g += f'<path d="M-15 -52 L-13 -96 Q0 -103 13 -96 L15 -52 Q0 -48 -15 -52Z" fill="{tailleur}"/>'  # giacca
+    g += f'<path d="M-5 -98 L0 -84 L5 -98Z" fill="{camicetta}"/>'                            # scollo
+    g += f'<path d="M-5 -98 L-10 -78 L-1 -88Z M5 -98 L10 -78 L1 -88Z" fill="{BLU}" opacity=".3"/>'  # revers
+    g += f'<circle cx="0" cy="-72" r="1.6" fill="{BLU}" opacity=".5"/><circle cx="0" cy="-62" r="1.6" fill="{BLU}" opacity=".5"/>'
+    g += f'<rect x="-4" y="-106" width="8" height="10" rx="3" fill="{pelle}"/>'
+    g += f'<circle cx="0" cy="-116" r="11" fill="{pelle}"/>'
+    g += f'<path d="M-11.5 -116 Q-12 -129 0 -129 Q12 -129 11.5 -116 Q7 -123 0 -123 Q-7 -123 -11.5 -116Z" fill="{capelli}"/>'
+    g += f'<circle cx="0" cy="-132" r="5.5" fill="{capelli}"/>'                              # chignon
+    g += "</g>"
+    return g
+
+
 def svg(w, h, body, titolo):
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" role="img" aria-label="{titolo}">'
             f'<title>{titolo}</title>{body}</svg>\n')
@@ -86,11 +120,11 @@ b = f'<rect width="{W}" height="{H}" fill="{MENTA}"/>'
 b += f'<g transform="translate(300 25) scale(1.05) translate(-330 -40)"><path d="M250 70 C250 30 330 22 360 50 C400 40 430 80 410 105 C420 140 360 150 340 128 C310 150 255 135 262 110 L240 128 L250 100Z" fill="{ACQUA}" opacity=".85"/>'
 b += f'<path d="M318 78 C318 64 334 64 336 76 C338 64 354 64 354 78 C354 94 336 104 336 104 C336 104 318 94 318 78Z" fill="none" stroke="{BLU}" stroke-width="3"/></g>'
 b += f'<rect x="0" y="305" width="{W}" height="35" fill="{TEAL}"/>'
-b += figura_in_piedi(150, 305, 1.45, corpo=BLU2)
-b += figura_in_piedi(235, 305, 1.55, corpo=ACQUA, capelli="#5a3b2a")
-b += figura_in_piedi(370, 305, 1.5, corpo=BLU)
-b += figura_in_piedi(455, 305, 1.42, corpo=VERDE, capelli=BLU)
-salva("corso-aziende.svg", svg(W, H, b, "Colleghi in piedi uniti da una nuvoletta di dialogo con un cuore"))
+b += manager_uomo(150, 305, 1.45, giacca=BLU2, cravatta=ACQUA)
+b += manager_donna(235, 305, 1.5, tailleur=ACQUA, capelli="#5a3b2a")
+b += manager_uomo(370, 305, 1.5, giacca=BLU, cravatta=VERDE, capelli="#3a2a20")
+b += manager_donna(455, 305, 1.42, tailleur=VERDE, capelli=BLU)
+salva("corso-aziende.svg", svg(W, H, b, "Due uomini in giacca e cravatta e due donne in tailleur, uniti da una nuvoletta di dialogo con un cuore"))
 
 # 4. Sessioni individuali: una figura, grande cerchio, piccola pianta
 b = f'<rect width="{W}" height="{H}" fill="{CREMA}"/>'
