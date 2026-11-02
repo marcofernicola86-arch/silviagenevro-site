@@ -113,6 +113,7 @@
 <section class="hero" id="home">
   <img class="hero-logo" src="/assets/img/logo-hero.webp" width="650" height="612" alt="Silvia Genevro – Mindfulness e formazione: una donna collega il cuore e la mente">
   <h1>Percorsi di Mindfulness <br class="solo-pc">per ridurre lo stress <br class="solo-pc">e coltivare consapevolezza</h1>
+  <p class="hero-chi">Silvia Genevro · Istruttrice di Mindfulness certificata Federmindfulness · Asti, Torino, Nord Italia e online</p>
   <img class="hero-img hero-foto" src="/assets/img/silvia-campana-tibetana.webp" width="1080" height="921" alt="Silvia Genevro suona una campana tibetana all'ombra di un albero, in riva al fiume">
   <div class="hero-buttons">
     <a class="btn primary" href="#corsi">Scopri i corsi</a>
@@ -130,28 +131,40 @@
       <img class="card-illu" src="/assets/img/illustrazioni/corso-aziende.svg" width="600" height="340" alt="Colleghi uniti da una nuvoletta di dialogo con un cuore" loading="lazy">
       <h3>Mindfulness in azienda<br>formazione e team building</h3>
       <p>Percorsi su misura per team e organizzazioni: benessere, comunicazione e collaborazione.</p>
-      <a class="btn" href="mailto:silvia.genevro@gmail.com?subject=Mindfulness%20per%20aziende">Richiedi info</a>
+      <div class="card-azioni">
+        <a class="btn" href="mailto:silvia.genevro@gmail.com?subject=Mindfulness%20per%20aziende">Richiedi info</a>
+        {% include "pulsante-whatsapp.html" %}
+      </div>
     </div>
 
     <div class="card c-acqua">
       <img class="card-illu" src="/assets/img/illustrazioni/corso-gruppo.svg" width="600" height="340" alt="Tre persone meditano insieme su una collina" loading="lazy">
       <h3><a href="/mbsr/">Percorsi di Gruppo<br>MBSR</a></h3>
       <p>Protocollo completo per ridurre lo stress e coltivare la presenza.</p>
-      <a class="btn" href="mailto:silvia.genevro@gmail.com?subject=Iscrizione%20MBSR">Iscriviti</a>
+      <div class="card-azioni">
+        <a class="btn" href="mailto:silvia.genevro@gmail.com?subject=Iscrizione%20MBSR">Iscriviti</a>
+        {% include "pulsante-whatsapp.html" %}
+      </div>
     </div>
 
     <div class="card c-verde">
       <img class="card-illu" src="/assets/img/illustrazioni/corso-adhd.svg" width="600" height="340" alt="Una persona medita mentre un filo aggrovigliato diventa un'onda calma" loading="lazy">
       <h3>Percorso Mindfulness<br>per ADHD</h3>
       <p>MAPS for ADHD<br>Di gruppo o individuale</p>
-      <a class="btn" href="mailto:silvia.genevro@gmail.com?subject=Percorso%20mindfulness%20per%20ADHD">Richiedi info</a>
+      <div class="card-azioni">
+        <a class="btn" href="mailto:silvia.genevro@gmail.com?subject=Percorso%20mindfulness%20per%20ADHD">Richiedi info</a>
+        {% include "pulsante-whatsapp.html" %}
+      </div>
     </div>
 
     <div class="card c-verdino">
       <img class="card-illu" src="/assets/img/illustrazioni/corso-individuale.svg" width="600" height="340" alt="Una persona medita da sola davanti a un grande cerchio" loading="lazy">
       <h3><a href="/sessioni/">Sessioni individuali</a></h3>
       <p>Percorso su misura.</p>
-      <a class="btn" href="mailto:silvia.genevro@gmail.com?subject=Prenotazione%20Sessione">Prenota</a>
+      <div class="card-azioni">
+        <a class="btn" href="mailto:silvia.genevro@gmail.com?subject=Prenotazione%20Sessione">Prenota</a>
+        {% include "pulsante-whatsapp.html" %}
+      </div>
     </div>
 
   </div>
@@ -211,11 +224,14 @@
 <section id="regalo" class="section tinta">
   <h2>Fai un Regalo</h2>
   <p>
-    Regala un momento di presenza: un voucher per una sessione individuale o per un percorso di mindfulness.<br>
+    Regala un momento di presenza: un voucher per una sessione individuale o per un percorso di Mindfulness.<br>
     Il voucher non ha scadenza e la data si concorda direttamente con me, in base alla disponibilità.
   </p>
   <p>
-    <a href="mailto:silvia.genevro@gmail.com?subject=Richiesta%20voucher%20regalo" class="btn primary">🎁 Richiedi un voucher</a>
+    <span class="azioni azioni-centro">
+      <a href="mailto:silvia.genevro@gmail.com?subject=Richiesta%20voucher%20regalo" class="btn primary">🎁 Richiedi un voucher</a>
+      {% include "pulsante-whatsapp.html" %}
+    </span>
   </p>
   <p><a href="/regolamento/">Leggi il regolamento dei voucher</a></p>
 </section>
@@ -423,7 +439,10 @@
         <li>💶 35 € – tutti i materiali sono inclusi</li>
       </ul>
       <p>Un pomeriggio per rallentare con una meditazione dolce guidata da Silvia, e poi, con la psicologa fototerapeuta Antonella Di Dedda, ritrovare i pezzi di noi attraverso collage e scrittura personale, fino a creare la propria maschera.</p>
-      <a class="btn primary evento-btn" href="mailto:silvia.genevro@gmail.com?subject=Iscrizione%20Smascherati%21%20%E2%80%93%2022%20novembre&body=Ciao%20Silvia%2C%0Avorrei%20iscrivermi%20al%20laboratorio%20%22Smascherati%21%22%20di%20domenica%2022%20novembre%20ad%20Asti.%0A%0ANome%20e%20cognome%3A%0ATelefono%3A%0A%0AGrazie%21">✉️ Scrivi a Silvia per iscriverti</a>
+      <div class="azioni azioni-centro">
+        <a class="btn primary evento-btn" href="mailto:silvia.genevro@gmail.com?subject=Iscrizione%20Smascherati%21%20%E2%80%93%2022%20novembre&body=Ciao%20Silvia%2C%0Avorrei%20iscrivermi%20al%20laboratorio%20%22Smascherati%21%22%20di%20domenica%2022%20novembre%20ad%20Asti.%0A%0ANome%20e%20cognome%3A%0ATelefono%3A%0A%0AGrazie%21">✉️ Scrivi a Silvia per iscriverti</a>
+        {% include "pulsante-whatsapp.html" %}
+      </div>
     </div>
   </article>
 
@@ -541,7 +560,7 @@
   <h2>Contatti</h2>
   <div class="contact-grid">
     <a href="mailto:silvia.genevro@gmail.com" class="contact-btn email">✉️ Email</a>
-    <a href="https://wa.me/393771747588" target="_blank" class="contact-btn whatsapp" rel="noopener">💬 WhatsApp</a>
+    <a href="{{ contatti.whatsapp }}" target="_blank" class="contact-btn whatsapp" rel="noopener">💬 WhatsApp</a>
     <a href="https://www.instagram.com/silvia_genevro" target="_blank" class="contact-btn instagram" rel="noopener">📸 Instagram</a>
     <a href="https://www.linkedin.com/in/silvia-genevro" target="_blank" class="contact-btn linkedin" rel="noopener">💼 LinkedIn</a>
     <a href="https://t.me/silviagenevro" target="_blank" class="contact-btn telegram" rel="noopener">✈️ Telegram</a>

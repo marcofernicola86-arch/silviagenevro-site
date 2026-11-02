@@ -592,3 +592,21 @@ header nav a:focus-visible { outline: 3px solid var(--acqua-scuro); outline-offs
 /* Invito alle recensioni come piccola sezione a sé, subito dopo "Cosa coltiverai" */
 .sezione-recensioni { padding-top: 0; padding-bottom: 64px; }
 .sezione-recensioni .recensioni-invito { margin-top: 0; }
+
+/* ===== PULSANTE WHATSAPP (accanto ai pulsanti email) ===== */
+.btn.btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #fff; color: var(--blu); border-color: var(--blu); }
+.btn.btn-wa:hover { background: var(--blu); color: #fff; }
+.btn-wa .ico-wa { width: 20px; height: 20px; flex: 0 0 auto; color: #1fa855; }
+.btn.btn-wa:hover .ico-wa { color: #fff; }
+.azioni-centro { justify-content: center; }
+span.azioni { display: flex; }
+/* nei riquadri dei corsi i due pulsanti stanno affiancati (o uno sotto l'altro se non c'è spazio) */
+.cards .card .card-azioni { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 20px 16px 26px; }
+.cards .card .card-azioni a.btn { margin: 0; }
+@supports (grid-template-rows: subgrid) { .cards .card .card-azioni { align-self: end; } }
+.cards .card .card-azioni a.btn.btn-wa { background: #fff; color: var(--blu); border-color: transparent; }
+.cards .card.c-acqua .card-azioni a.btn.btn-wa, .cards .card.c-verdino .card-azioni a.btn.btn-wa { border-color: var(--blu); }
+.cards .card .card-azioni a.btn.btn-wa:hover { background: var(--blu); color: #fff; }
+/* riga "chi e dove" sotto il titolo di apertura */
+.hero-chi { margin: 4px auto 0; max-width: 720px; color: var(--testo-tenue); font-size: 1.02rem; letter-spacing: .01em; }
+@media (max-width: 480px) { .hero-chi { font-size: .92rem; } }
