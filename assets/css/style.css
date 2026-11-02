@@ -143,6 +143,8 @@ header nav a:hover { color: var(--acqua-scuro); border-bottom-color: var(--acqua
 }
 /* al massimo tre righe su ogni schermo */
 @media (max-width: 1000px) { .hero h1 { font-size: 1.6rem; } }
+/* a capo voluti solo su computer: sul telefono il titolo va a capo da solo */
+@media (max-width: 640px) { .hero h1 br.solo-pc { display: none; } }
 @media (max-width: 640px)  { .hero h1 { font-size: 1.45rem; letter-spacing: .06em; } }
 @media (max-width: 480px)  { .hero h1 { font-size: min(1.35rem, 5.05vw); letter-spacing: .05em; } }
 .hero > p { max-width: 640px; margin: 0 auto; color: var(--testo-tenue); font-size: 1.15rem; }
