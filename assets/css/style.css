@@ -588,3 +588,7 @@ header nav a:focus-visible { outline: 3px solid var(--acqua-scuro); outline-offs
 .nl-popup-chiudi:focus { outline: none; }
 .nl-popup-chiudi:focus-visible { outline: 2px solid var(--acqua-scuro); outline-offset: 2px; }
 .nl-popup-titolo:focus { outline: none; }
+
+/* Invito alle recensioni come piccola sezione a sé, subito dopo "Cosa coltiverai" */
+.sezione-recensioni { padding-top: 0; padding-bottom: 64px; }
+.sezione-recensioni .recensioni-invito { margin-top: 0; }
