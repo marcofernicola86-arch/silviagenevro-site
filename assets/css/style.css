@@ -149,7 +149,12 @@ header nav a:hover { color: var(--acqua-scuro); border-bottom-color: var(--acqua
 @media (max-width: 480px)  { .hero h1 { font-size: min(1.35rem, 5.05vw); letter-spacing: .05em; } }
 .hero > p { max-width: 640px; margin: 0 auto; color: var(--testo-tenue); font-size: 1.15rem; }
 .hero-img { width: 100%; max-width: 560px; height: auto; margin: 32px auto 8px; display: block; }
-.hero-foto { max-width: 620px; border-radius: var(--raggio); box-shadow: var(--ombra); }
+/* foto a tutta larghezza, come una fascia (stile Meraki): si adatta tagliando sopra e sotto */
+.hero-foto {
+  width: 100vw; max-width: none; margin: 36px calc(50% - 50vw) 28px;
+  height: clamp(230px, 32vw, 440px); object-fit: cover; object-position: 50% 66%;
+  border-radius: 0; box-shadow: none;
+}
 .hero-buttons { margin-top: 24px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
 .hero-buttons .btn { flex: 1 1 45%; max-width: 230px; min-width: 150px; white-space: nowrap; }
 
