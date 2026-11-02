@@ -173,3 +173,42 @@ b += f'<path d="M504 220 C504 220 488 210 488 199 C488 192 497 189 504 197 C511 
 # soglia tra i due mondi: passi tratteggiati
 b += f'<path d="M282 262 Q320 250 356 262" stroke="{BLU}" stroke-width="3" fill="none" stroke-dasharray="2 9" stroke-linecap="round"/>'
 salva("blog-pilota-automatico.svg", svg(W, H, b, "Da un lato ingranaggi e persone grigie in automatico, dall'altro una persona a colori che si ferma, respira e guarda un fiore"))
+
+
+# ===== Copertina blog: "MBSR: la Mindfulness che ridisegna il cervello e la vita" – fiore di loto =====
+def petalo(cx, cy, h, w, angolo, colore, opacita=1):
+    """Petalo a goccia con la base in (cx, cy), ruotato di 'angolo' gradi."""
+    d = f"M0 0 C{w} {-h*0.35} {w*0.55} {-h*0.85} 0 {-h} C{-w*0.55} {-h*0.85} {-w} {-h*0.35} 0 0Z"
+    return (f'<path d="{d}" fill="{colore}" opacity="{opacita}" '
+            f'transform="translate({cx} {cy}) rotate({angolo})"/>')
+
+CX, CY = 300, 232
+b = f'<rect width="{W}" height="{H}" fill="{MENTA}"/>'
+# sole / luna dietro al fiore
+b += f'<circle cx="{CX}" cy="150" r="118" fill="{VERDE_T}"/>'
+b += f'<circle cx="{CX}" cy="150" r="84" fill="#ffffff" opacity=".65"/>'
+# acqua
+b += f'<rect x="0" y="{CY}" width="{W}" height="{H-CY}" fill="{ACQUA_T}"/>'
+b += f'<path d="M0 {CY} Q150 {CY-8} 300 {CY} T600 {CY} V{CY+6} H0Z" fill="{ACQUA}" opacity=".35"/>'
+# cerchi sull'acqua (onde concentriche)
+for rx, op in ((150, .55), (215, .35), (280, .22)):
+    b += f'<ellipse cx="{CX}" cy="{CY+30}" rx="{rx}" ry="{rx*0.1:.0f}" fill="none" stroke="{TEAL}" stroke-width="2.5" opacity="{op}"/>'
+# foglie di loto galleggianti
+b += f'<ellipse cx="135" cy="{CY+48}" rx="62" ry="13" fill="{TEAL}"/><path d="M135 {CY+48} L190 {CY+40} L188 {CY+50}Z" fill="{ACQUA_T}"/>'
+b += f'<ellipse cx="472" cy="{CY+60}" rx="52" ry="11" fill="{TEAL}" opacity=".85"/><path d="M472 {CY+60} L420 {CY+53} L422 {CY+63}Z" fill="{ACQUA_T}"/>'
+# fiore di loto: petali esterni, intermedi e centrali
+b += petalo(CX, CY+10, 92, 30, -72, BLU2)
+b += petalo(CX, CY+10, 92, 30, 72, BLU2)
+b += petalo(CX, CY+8, 112, 34, -46, TEAL)
+b += petalo(CX, CY+8, 112, 34, 46, TEAL)
+b += petalo(CX, CY+6, 128, 36, -22, ACQUA)
+b += petalo(CX, CY+6, 128, 36, 22, ACQUA)
+b += petalo(CX, CY+4, 138, 38, 0, VERDE)
+# venature leggere sul petalo centrale e cuore del fiore
+b += f'<path d="M{CX} {CY-4} L{CX} {CY-112}" stroke="{TEAL}" stroke-width="2" opacity=".5"/>'
+b += f'<ellipse cx="{CX}" cy="{CY+8}" rx="46" ry="10" fill="{BLU}"/>'
+# otto piccoli cerchi: le otto settimane del percorso
+for i in range(8):
+    x = CX - 105 + i * 30
+    b += f'<circle cx="{x}" cy="{CY+84}" r="5.5" fill="{BLU}" opacity="{0.35 + i*0.08:.2f}"/>'
+salva("blog-mbsr-loto.svg", svg(W, H, b, "Un fiore di loto stilizzato si apre sull'acqua davanti a un grande cerchio; sotto, otto piccoli cerchi come le otto settimane del percorso"))
