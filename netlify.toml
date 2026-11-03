@@ -43,3 +43,17 @@
   to = "/#corsi"
   status = 301
   force = true
+
+# Link breve per chiedere una recensione: silviagenevro.it/recensione porta al modulo di recensione Google.
+# Non compare sul sito: serve da mandare su WhatsApp o da stampare. Se cambia il link di Google, basta aggiornarlo qui.
+[[redirects]]
+  from = "/recensione"
+  to = "https://g.page/r/CR_8HUH1DPyiEAE/review"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/recensione/*"
+  to = "https://g.page/r/CR_8HUH1DPyiEAE/review"
+  status = 302
+  force = true
