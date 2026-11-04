@@ -648,3 +648,7 @@ span.azioni { display: flex; }
 /* frase di invito in "Parliamone": una sola riga su computer */
 .azienda-contatto > p.azienda-invito { max-width: none; }
 @media (min-width: 900px) { .azienda-invito { white-space: nowrap; } }
+/* "Parliamone": pulsanti pieni verde scuro con scritta bianca */
+.azioni-piene .btn, .azioni-piene .btn.btn-wa { background: var(--acqua-scuro); color: #fff; border-color: var(--acqua-scuro); }
+.azioni-piene .btn:hover, .azioni-piene .btn.btn-wa:hover { background: var(--acqua-scuro-hover); border-color: var(--acqua-scuro-hover); color: #fff; }
+.azioni-piene .btn-wa .ico-wa { color: #fff; }
