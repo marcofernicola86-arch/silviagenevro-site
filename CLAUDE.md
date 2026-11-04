@@ -12,7 +12,7 @@ Chi chiede le modifiche: Marco Fernicola (compagno di Silvia). Rispondere in ita
 - Illustrazioni: SVG in `assets/img/illustrazioni/`, generate da `tools/genera-illustrazioni.py` (palette del logo, figure senza volto).
 - Nessun prezzo sul sito, tranne quelli degli eventi.
 - "Mindfulness" sempre con la M maiuscola nei testi (non negli indirizzi web e nei nomi dei file).
-- Zone: "Asti, Alessandria, Torino, Pinerolo, Torre Pellice e nel Nord Italia".
+- Zone (testi visibili): "Asti, Alessandria, Torino, Pinerolo e in tutto il Nord Italia". Torre Pellice resta solo nei dati strutturati e dove si parla di corsi specifici.
 
 ## Pubblicare un articolo del blog
 Silvia manda un testo (Word o incollato) e di solito un paio di immagini. Procedura:
