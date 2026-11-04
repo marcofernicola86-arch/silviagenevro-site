@@ -645,3 +645,6 @@ span.azioni { display: flex; }
 .azioni-chiare .btn-wa .ico-wa { color: var(--acqua-scuro); }
 .azioni-chiare .btn:hover .ico-wa { color: #fff; }
 .ico-btn { width: 20px; height: 20px; flex: 0 0 auto; }
+/* frase di invito in "Parliamone": una sola riga su computer */
+.azienda-contatto > p.azienda-invito { max-width: none; }
+@media (min-width: 900px) { .azienda-invito { white-space: nowrap; } }
