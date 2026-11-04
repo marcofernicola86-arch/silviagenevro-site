@@ -283,3 +283,29 @@ icona("icona-maschere.svg",
       f'<path d="M58 42 Q76 34 96 42 L94 68 Q90 88 77 90 Q64 88 60 68Z" fill="{TEAL}"/>'
       f'<path d="M68 58 q4 3 8 0 M82 58 q4 3 8 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>'
       f'<circle cx="77" cy="76" r="4" fill="#fff"/>', "Tecniche teatrali", VERDE_T)
+
+
+# ===== Icone della pagina "Percorso Mindfulness per ADHD" =====
+icona("icona-filo-attenzione.svg",
+      f'<path d="M22 70 C22 50 44 46 44 62 C44 76 26 74 30 58 C34 42 58 42 56 60 C54 74 38 72 44 58 C50 46 66 52 64 62 C62 70 70 62 98 62" fill="none" stroke="{BLU}" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>'
+      f'<circle cx="96" cy="60" r="6" fill="{TEAL}"/>', "Attenzione")
+icona("icona-pausa.svg",
+      f'<circle cx="60" cy="60" r="30" fill="none" stroke="{BLU}" stroke-width="5"/>'
+      f'<rect x="48" y="45" width="8" height="30" rx="3" fill="{TEAL}"/><rect x="64" y="45" width="8" height="30" rx="3" fill="{TEAL}"/>', "Pausa", VERDE_T)
+icona("icona-onda.svg",
+      f'<path d="M20 72 C32 52 44 52 52 66 C60 80 72 80 80 62 C86 50 94 48 100 52" fill="none" stroke="{BLU}" stroke-width="6" stroke-linecap="round"/>'
+      f'<path d="M20 86 C36 78 52 90 68 84 S92 78 100 82" fill="none" stroke="{TEAL}" stroke-width="5" stroke-linecap="round" opacity=".8"/>'
+      f'<circle cx="76" cy="36" r="9" fill="{TEAL}"/>', "Emozioni")
+icona("icona-bussola.svg",
+      f'<circle cx="60" cy="60" r="32" fill="none" stroke="{BLU}" stroke-width="5"/>'
+      f'<path d="M60 34 L68 60 L60 86 L52 60Z" fill="{TEAL}"/><path d="M60 34 L68 60 L52 60Z" fill="{BLU}"/>'
+      f'<circle cx="60" cy="60" r="4" fill="#fff"/>', "Orientamento")
+icona("icona-sole.svg",
+      f'<circle cx="60" cy="60" r="16" fill="{TEAL}"/>'
+      + ''.join(f'<path d="M{60+26*__import__("math").cos(a):.1f} {60+26*__import__("math").sin(a):.1f} L{60+36*__import__("math").cos(a):.1f} {60+36*__import__("math").sin(a):.1f}" stroke="{BLU}" stroke-width="5" stroke-linecap="round"/>' for a in [i*0.7854 for i in range(8)]),
+      "Fiducia in sé", VERDE_T)
+icona("icona-corpo.svg",
+      f'<circle cx="60" cy="34" r="9" fill="{BLU}"/>'
+      f'<path d="M60 46 C50 46 44 54 44 62 L44 70 M60 46 C70 46 76 54 76 62 L76 70" fill="none" stroke="{BLU}" stroke-width="6" stroke-linecap="round"/>'
+      f'<path d="M60 46 L60 76 M60 76 L48 94 M60 76 L72 94" fill="none" stroke="{BLU}" stroke-width="6" stroke-linecap="round"/>'
+      f'<path d="M30 58 q-6 8 0 16 M90 58 q6 8 0 16" fill="none" stroke="{TEAL}" stroke-width="4" stroke-linecap="round"/>', "Corpo e respiro")
