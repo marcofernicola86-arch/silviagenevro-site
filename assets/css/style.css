@@ -607,3 +607,25 @@ span.azioni { display: flex; }
 .cards .card .card-azioni a.btn.btn-wa { background: #fff; color: var(--blu); border-color: transparent; }
 .cards .card.c-acqua .card-azioni a.btn.btn-wa, .cards .card.c-verdino .card-azioni a.btn.btn-wa { border-color: var(--blu); }
 .cards .card .card-azioni a.btn.btn-wa:hover { background: var(--blu); color: #fff; }
+
+/* ===== PAGINA MINDFULNESS IN AZIENDA ===== */
+.azienda-apertura { text-align: center; padding-top: 48px; }
+.azienda-etichetta { font-family: var(--etichetta); font-weight: 600; text-transform: uppercase; letter-spacing: .12em; font-size: .85rem; color: var(--acqua-scuro); margin: 0 0 10px; }
+.azienda-apertura h1 { font-family: var(--etichetta); font-weight: 500; text-transform: uppercase; letter-spacing: .08em; font-size: clamp(1.6rem, 4.4vw, 2.4rem); }
+.azienda-sottotitolo { max-width: 640px; margin: 0 auto; font-size: 1.15rem; color: var(--testo-tenue); }
+.azienda-illu { display: block; width: 100%; max-width: 620px; height: auto; margin: 30px auto 26px; border-radius: var(--raggio); box-shadow: var(--ombra); }
+.azienda-testo > p { max-width: 760px; margin-left: auto; margin-right: auto; }
+.azienda-contatto { text-align: center; }
+.azienda-contatto > p { max-width: 640px; margin: 0 auto 20px; }
+.azienda-zone { margin-top: 18px !important; font-size: .95rem; color: var(--testo-tenue); }
+.recensioni-aziende { display: grid; gap: 22px; max-width: 760px; margin: 0 auto; }
+.recensione-card { margin: 0; background: #fff; border: 1px solid var(--bordo); border-radius: var(--raggio); box-shadow: var(--ombra); padding: 28px 32px; position: relative; }
+.recensione-card::before { content: "“"; position: absolute; top: -18px; left: 24px; font-family: var(--serif); font-size: 5rem; line-height: 1; color: var(--acqua); }
+.recensione-stelle { color: #d9a62e; letter-spacing: 3px; margin: 0 0 10px; }
+.recensione-card blockquote { margin: 0; }
+.recensione-card blockquote p { margin: 0 0 16px; font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--blu); font-size: 1.12rem; line-height: 1.7; }
+.recensione-card figcaption { color: var(--testo-tenue); font-size: .95rem; }
+.recensioni-altre { text-align: center; margin: 22px 0 0; }
+/* riquadro della home: anche l'illustrazione porta alla pagina */
+.cards .card > a:first-child { display: block; }
+@media (max-width: 600px) { .recensione-card { padding: 24px 20px; } }

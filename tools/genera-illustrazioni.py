@@ -252,3 +252,34 @@ for i in range(8):
     x = CX - 105 + i * 30
     b += f'<circle cx="{x}" cy="{CY+84}" r="5.5" fill="{BLU}" opacity="{0.35 + i*0.08:.2f}"/>'
 salva("blog-mbsr-loto.svg", svg(W, H, b, "Un fiore di loto stilizzato si apre sull'acqua davanti a un grande cerchio; sotto, otto piccoli cerchi come le otto settimane del percorso"))
+
+
+# ===== Icone della pagina "Mindfulness in azienda" (diverse da quelle della home) =====
+icona("icona-dialogo.svg",
+      f'<path d="M24 34 h44 a8 8 0 0 1 8 8 v18 a8 8 0 0 1 -8 8 h-26 l-12 10 v-10 h-6 a8 8 0 0 1 -8 -8 v-18 a8 8 0 0 1 8 -8Z" fill="{BLU}"/>'
+      f'<path d="M58 54 h30 a8 8 0 0 1 8 8 v14 a8 8 0 0 1 -8 8 h-4 v9 l-11 -9 h-15 a8 8 0 0 1 -8 -8 v-14 a8 8 0 0 1 8 -8Z" fill="{TEAL}"/>'
+      f'<circle cx="34" cy="51" r="3.2" fill="#fff"/><circle cx="46" cy="51" r="3.2" fill="#fff"/><circle cx="58" cy="51" r="3.2" fill="#fff"/>', "Comunicazione")
+icona("icona-ascolto.svg",
+      f'<path d="M64 26 C46 26 36 40 36 54 C36 64 42 68 46 74 C50 80 46 92 58 94 C66 95 70 88 70 82" fill="none" stroke="{BLU}" stroke-width="7" stroke-linecap="round"/>'
+      f'<path d="M50 54 C50 44 56 38 64 38 C72 38 78 44 78 52 C78 60 70 62 68 68" fill="none" stroke="{TEAL}" stroke-width="6" stroke-linecap="round"/>'
+      f'<path d="M86 40 q8 14 0 28 M94 34 q12 20 0 40" fill="none" stroke="{TEAL}" stroke-width="4" stroke-linecap="round" opacity=".7"/>', "Ascolto", VERDE_T)
+icona("icona-squadra.svg",
+      f'<circle cx="60" cy="40" r="10" fill="{BLU}"/><path d="M42 74 a18 18 0 0 1 36 0Z" fill="{BLU}"/>'
+      f'<circle cx="34" cy="52" r="8" fill="{TEAL}"/><path d="M20 82 a14 14 0 0 1 28 0Z" fill="{TEAL}"/>'
+      f'<circle cx="86" cy="52" r="8" fill="{TEAL}"/><path d="M72 82 a14 14 0 0 1 28 0Z" fill="{TEAL}"/>'
+      f'<path d="M30 92 Q60 104 90 92" fill="none" stroke="{BLU}" stroke-width="4" stroke-linecap="round"/>', "Squadra")
+icona("icona-empatia.svg",
+      f'<path d="M48 88 C48 88 22 72 22 54 C22 44 36 38 48 50 C60 38 74 44 74 54 C74 72 48 88 48 88Z" fill="{TEAL}"/>'
+      f'<path d="M74 84 C74 84 52 70 52 55 C52 47 64 42 74 52 C84 42 96 47 96 55 C96 70 74 84 74 84Z" fill="{BLU}" opacity=".92"/>', "Empatia", VERDE_T)
+icona("icona-equilibrio.svg",
+      f'<ellipse cx="60" cy="88" rx="30" ry="9" fill="{BLU}"/>'
+      f'<ellipse cx="60" cy="70" rx="22" ry="8" fill="{TEAL}"/>'
+      f'<ellipse cx="60" cy="55" rx="15" ry="6.5" fill="{BLU}" opacity=".85"/>'
+      f'<path d="M60 47 C52 38 52 28 60 22 C68 28 68 38 60 47Z" fill="{TEAL}"/>', "Equilibrio")
+icona("icona-maschere.svg",
+      f'<path d="M24 34 Q44 26 62 34 L60 60 Q56 80 43 82 Q30 80 26 60Z" fill="{BLU}"/>'
+      f'<path d="M34 50 q4 -4 8 0 M48 50 q4 -4 8 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>'
+      f'<path d="M36 64 Q43 72 50 64" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>'
+      f'<path d="M58 42 Q76 34 96 42 L94 68 Q90 88 77 90 Q64 88 60 68Z" fill="{TEAL}"/>'
+      f'<path d="M68 58 q4 3 8 0 M82 58 q4 3 8 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>'
+      f'<circle cx="77" cy="76" r="4" fill="#fff"/>', "Tecniche teatrali", VERDE_T)
