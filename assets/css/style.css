@@ -629,3 +629,9 @@ span.azioni { display: flex; }
 /* riquadro della home: anche l'illustrazione porta alla pagina */
 .cards .card > a:first-child { display: block; }
 @media (max-width: 600px) { .recensione-card { padding: 24px 20px; } }
+/* citazione d'autore nella pagina aziende */
+.citazione { max-width: 680px; margin: 30px auto 0; padding: 22px 28px; background: #fff; border-left: 5px solid var(--acqua); border-radius: 0 var(--raggio) var(--raggio) 0; box-shadow: var(--ombra); }
+.citazione blockquote { margin: 0; }
+.citazione blockquote p { margin: 0 0 10px; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.15rem; line-height: 1.6; color: var(--blu); }
+.citazione figcaption { font-size: .92rem; color: var(--testo-tenue); }
+.citazione cite { font-style: italic; }
