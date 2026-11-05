@@ -730,4 +730,4 @@ h1, h2, h3 { font-family: var(--etichetta); font-weight: 600; letter-spacing: .0
   .formato-voce strong { font-size: .88rem; letter-spacing: .06em; }
 }
 /* nota sotto "Come funziona": più grande e in grassetto */
-.formato-nota { font-style: normal; font-weight: 700; font-size: 1.08rem; color: var(--blu); line-height: 1.6; }
+.formato-nota { font-style: normal; font-weight: 400; font-size: 1.2rem; color: var(--blu); line-height: 1.6; }
