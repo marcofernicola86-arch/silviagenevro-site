@@ -50,6 +50,8 @@ Kabat-Zinn diceva: “Coltivare la Mindfulness è come svegliarsi da un lungo so
 
 Se senti il desiderio di fermarti, respirare e riscoprire un modo più gentile di abitare la vita, l'invito è semplice: comincia a praticare perché come ricorda Kabat-Zinn: “Ovunque tu vada, ci sei già.”
 
+<span id="la-mia-esperienza"></span>
+
 ## Come mi ha cambiato la vita l'MBSR?
 
 Semplice, ha reso la mia esistenza compatibile con la vita.
