@@ -142,45 +142,44 @@ b += f'<path d="M480 298 Q482 248 492 222 M490 258 Q514 240 520 214 M486 272 Q46
 b += f'<path d="M466 298 L470 276 H510 L514 298Z" fill="{BLU2}"/>'
 salva("corso-individuale.svg", svg(W, H, b, "Una persona medita da sola davanti a un grande cerchio"))
 
-# 5. Mindset e soft skills: un cervello luminoso che irradia scintille
+# 5. Mindset e soft skills: un cervello simpatico che si allena (fascia e manubri)
 def scintilla(cx, cy, r, colore):
     return (f'<path d="M{cx} {cy-r} Q{cx+r*.18} {cy-r*.18} {cx+r} {cy} Q{cx+r*.18} {cy+r*.18} {cx} {cy+r} '
             f'Q{cx-r*.18} {cy+r*.18} {cx-r} {cy} Q{cx-r*.18} {cy-r*.18} {cx} {cy-r}Z" fill="{colore}"/>')
+def manubrio(cx, cy, ang):
+    return (f'<g transform="rotate({ang} {cx} {cy})">'
+            f'<rect x="{cx-22}" y="{cy-5}" width="44" height="10" rx="5" fill="{BLU}"/>'
+            f'<rect x="{cx-40}" y="{cy-22}" width="20" height="44" rx="8" fill="{TEAL}" stroke="{BLU}" stroke-width="3"/>'
+            f'<rect x="{cx+20}" y="{cy-22}" width="20" height="44" rx="8" fill="{TEAL}" stroke="{BLU}" stroke-width="3"/></g>')
 b = f'<rect width="{W}" height="{H}" fill="{MENTA}"/>'
-b += f'<circle cx="300" cy="160" r="150" fill="{VERDE_T}"/>'
-b += f'<circle cx="300" cy="160" r="112" fill="{ACQUA_T}"/>'
-# raggi di luce
-import math
-for i in range(12):
-    a = math.radians(i * 30 + 15)
-    x1, y1 = 300 + 128 * math.cos(a), 160 + 128 * math.sin(a)
-    x2, y2 = 300 + 146 * math.cos(a), 160 + 146 * math.sin(a)
-    b += f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{TEAL}" stroke-width="4" stroke-linecap="round" opacity=".7"/>'
-# tronco cerebrale
-b += f'<path d="M304 214 Q306 246 318 266 L340 266 Q328 244 332 210Z" fill="{BLU2}"/>'
-# cervelletto
-b += f'<ellipse cx="362" cy="228" rx="32" ry="19" fill="{TEAL}"/>'
-b += f'<path d="M338 226 Q362 218 388 228 M342 236 Q362 230 382 238" stroke="{ACQUA}" stroke-width="2.5" fill="none" stroke-linecap="round"/>'
-# sagoma del cervello: lobi morbidi (cerchi sovrapposti)
-lobi = [(230,150,46),(262,118,46),(306,104,48),(350,116,46),(378,148,42),(372,186,38),(334,206,40),(290,206,42),(248,192,42),(300,160,60)]
+b += f'<circle cx="300" cy="168" r="140" fill="{VERDE_T}"/>'
+b += f'<circle cx="300" cy="168" r="104" fill="{ACQUA_T}"/>'
+b += f'<path d="M0 300 Q300 278 600 300 V340 H0Z" fill="{TEAL}" opacity=".85"/>'
+# gambette
+b += f'<path d="M278 236 V286 H266 M322 236 V286 H334" stroke="{BLU}" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
+# braccia alzate verso i manubri
+b += f'<path d="M218 168 Q188 140 180 96" stroke="{BLU}" stroke-width="6" fill="none" stroke-linecap="round"/>'
+b += f'<path d="M382 168 Q412 140 420 96" stroke="{BLU}" stroke-width="6" fill="none" stroke-linecap="round"/>'
+b += manubrio(180, 80, -15) + manubrio(420, 80, 15)
+# sagoma morbida del cervello
+lobi = [(236,176,40),(250,136,40),(286,112,42),(326,116,42),(358,140,38),(366,180,36),(336,212,38),(292,218,40),(254,208,38),(300,168,62)]
+b += "".join(f'<circle cx="{x}" cy="{y}" r="{r+4}" fill="{BLU}"/>' for x, y, r in lobi)
 b += "".join(f'<circle cx="{x}" cy="{y}" r="{r}" fill="{ACQUA}"/>' for x, y, r in lobi)
-# solchi e circonvoluzioni
-pieghe = [
-  "M300 66 Q296 100 304 126 Q312 150 300 176",
-  "M214 140 Q240 132 252 150 Q262 168 246 182",
-  "M244 100 Q262 116 258 140",
-  "M330 78 Q324 104 342 118 Q360 130 382 124",
-  "M352 154 Q338 168 350 184 Q362 196 386 188",
-  "M262 206 Q276 186 300 192 Q318 196 326 182",
-  "M268 160 Q284 150 286 132",
-  "M318 140 Q334 150 330 166",
-]
-b += "".join(f'<path d="{d}" stroke="{BLU}" stroke-width="4.5" fill="none" stroke-linecap="round" opacity=".8"/>' for d in pieghe)
+# riflesso di luce e qualche piega
+b += f'<path d="M258 118 Q276 100 300 104" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round" opacity=".7"/>'
+b += f'<path d="M302 84 Q296 106 304 126" stroke="{BLU}" stroke-width="4" fill="none" stroke-linecap="round" opacity=".75"/>'
+b += f'<path d="M230 196 Q246 186 244 170 M372 168 Q356 176 360 196 M346 226 Q350 212 364 208" stroke="{BLU}" stroke-width="4" fill="none" stroke-linecap="round" opacity=".75"/>'
+# fascia sportiva
+b += f'<path d="M222 140 Q300 112 378 140 L374 158 Q300 132 226 158Z" fill="{VERDE}" stroke="{BLU}" stroke-width="3.5" stroke-linejoin="round"/>'
+# visetto
+b += f'<circle cx="276" cy="184" r="10" fill="{BLU}"/><circle cx="324" cy="184" r="10" fill="{BLU}"/>'
+b += f'<circle cx="279" cy="181" r="2.6" fill="#ffffff"/><circle cx="327" cy="181" r="2.6" fill="#ffffff"/>'
+b += f'<path d="M290 198 Q300 208 310 198" stroke="{BLU}" stroke-width="4" fill="none" stroke-linecap="round"/>'
+b += f'<ellipse cx="258" cy="200" rx="9" ry="5" fill="#ffb3c4" opacity=".95"/><ellipse cx="342" cy="200" rx="9" ry="5" fill="#ffb3c4" opacity=".95"/>'
 # scintille
-b += scintilla(168, 78, 16, VERDE) + scintilla(438, 70, 12, TEAL) + scintilla(452, 226, 16, VERDE)
-b += scintilla(150, 236, 10, TEAL) + scintilla(410, 40, 7, ACQUA) + scintilla(196, 40, 8, ACQUA)
-b += f'<path d="M0 306 Q300 284 600 306 V340 H0Z" fill="{TEAL}" opacity=".85"/>'
-salva("corso-mindset.svg", svg(W, H, b, "Un cervello luminoso circondato da raggi e scintille"))
+b += scintilla(150, 150, 14, VERDE) + scintilla(456, 160, 14, VERDE) + scintilla(470, 236, 9, TEAL)
+b += scintilla(132, 232, 9, TEAL) + scintilla(300, 40, 9, TEAL)
+salva("corso-mindset.svg", svg(W, H, b, "Un cervello sorridente con la fascia sportiva che solleva due manubri"))
 
 # ===== Icone benefici (cerchio con simbolo) =====
 def icona(nome, simbolo, titolo, sfondo=ACQUA_T):
