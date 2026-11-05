@@ -747,3 +747,9 @@ h1, h2, h3 { font-family: var(--etichetta); font-weight: 600; letter-spacing: .0
 .benefici.pilastri { display: flex; flex-wrap: wrap; justify-content: center; gap: 36px 28px; }
 .benefici.pilastri .beneficio { flex: 0 1 calc(25% - 21px); min-width: 200px; }
 @media (max-width: 800px) { .benefici.pilastri { gap: 30px 18px; } .benefici.pilastri .beneficio { flex-basis: calc(50% - 9px); min-width: 0; } }
+/* Sessioni individuali: 5 voci (3 + 2 su computer), solo testo sotto l'icona */
+.benefici.su-misura .beneficio { flex-basis: calc(33.333% - 19px); max-width: 300px; }
+.benefici.su-misura .beneficio p { font-family: var(--etichetta); font-weight: 500; color: var(--blu); font-size: 1.02rem; line-height: 1.5; }
+@media (max-width: 800px) { .benefici.su-misura .beneficio { flex-basis: calc(50% - 9px); } .benefici.su-misura .beneficio p { font-size: .95rem; } }
+.paypal-sessione { text-align: center; margin-top: 34px; }
+.paypal-sessione img { height: 44px; width: auto; border: 0; }

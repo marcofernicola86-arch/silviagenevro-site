@@ -340,3 +340,24 @@ icona("pilastro-lasciar-andare.svg", # mano aperta e foglia che vola via
       f'<path d="M28 84 L30 70 Q46 64 64 74" fill="none" stroke="{BLU}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'
       f'<path d="M58 50 C62 34 78 26 92 30 C88 46 72 54 58 50Z" fill="{TEAL}"/>'
       f'<path d="M46 56 q4 -6 10 -6" stroke="{TEAL}" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="2 5"/>', "Lasciar andare")
+
+
+# ===== Icone della pagina "Sessioni individuali" =====
+icona("sessione-centratura.svg",     # cerchi concentrici morbidi attorno a un punto
+      f'<circle cx="60" cy="60" r="30" fill="none" stroke="{TEAL}" stroke-width="3.5" opacity=".55"/>'
+      f'<circle cx="60" cy="60" r="19" fill="none" stroke="{BLU}" stroke-width="4"/>'
+      f'<circle cx="60" cy="60" r="7" fill="{TEAL}"/>', "Centratura")
+icona("sessione-quotidiano.svg",     # tazza fumante: la presenza nelle piccole cose
+      f'<path d="M34 54 H78 V70 A18 18 0 0 1 60 88 H52 A18 18 0 0 1 34 70Z" fill="{BLU}"/>'
+      f'<path d="M78 58 Q92 58 92 68 Q92 78 78 76" fill="none" stroke="{BLU}" stroke-width="5"/>'
+      f'<path d="M46 46 q-6 -8 0 -14 M58 46 q-6 -8 0 -14 M70 46 q-6 -8 0 -14" fill="none" stroke="{TEAL}" stroke-width="3.5" stroke-linecap="round"/>', "Presenza nel quotidiano", VERDE_T)
+icona("sessione-nuvola-sole.svg",    # nuvola che lascia passare il sole: stress ed emozioni
+      f'<circle cx="74" cy="44" r="14" fill="{TEAL}"/>'
+      f'<path d="M30 82 H82 A14 14 0 0 0 80 54 A18 18 0 0 0 46 56 A13 13 0 0 0 30 82Z" fill="{BLU}"/>', "Stress ed emozioni")
+icona("sessione-mano-cuore.svg",     # cuore accolto da una mano a coppa: autocompassione
+      f'<path d="M60 66 C60 66 42 55 42 43 C42 35 52 31 60 40 C68 31 78 35 78 43 C78 55 60 66 60 66Z" fill="{TEAL}"/>'
+      f'<path d="M30 66 Q34 86 60 86 Q86 86 90 66 Q82 74 70 74 L50 74 Q38 74 30 66Z" fill="{BLU}"/>', "Autocompassione", VERDE_T)
+icona("sessione-sentiero.svg",       # sentiero che sale verso un sole: il cambiamento
+      f'<circle cx="80" cy="36" r="9" fill="{TEAL}"/>'
+      f'<path d="M36 94 C44 78 74 78 66 64 C60 54 44 56 54 44" fill="none" stroke="{BLU}" stroke-width="6" stroke-linecap="round"/>'
+      f'<path d="M36 94 C44 78 74 78 66 64 C60 54 44 56 54 44" fill="none" stroke="#fff" stroke-width="1.6" stroke-dasharray="3 6" stroke-linecap="round"/>', "Cambiamento personale")
