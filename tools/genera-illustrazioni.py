@@ -101,47 +101,6 @@ def salva(nome, contenuto):
 
 W, H = 600, 340
 
-# 1. MBSR – percorsi di gruppo: tre figure su una collina, grande sole
-b = f'<rect width="{W}" height="{H}" fill="{MENTA}"/>'
-b += f'<circle cx="420" cy="120" r="88" fill="{ACQUA_T}"/>'
-b += f'<path d="M0 240 Q150 190 300 220 T600 205 V340 H0Z" fill="{ACQUA}" opacity=".55"/>'
-b += f'<path d="M0 300 Q200 270 380 292 T600 286 V340 H0Z" fill="{TEAL}" opacity=".9"/>'
-b += figura(165, 300, 1.25, corpo=BLU, capelli=BLU)
-b += figura(300, 292, 1.4, corpo=BLU2, capelli=BLU, stola=ACQUA)
-b += figura(435, 302, 1.25, corpo=TEAL, capelli="#5a3b2a", stola=VERDE)
-salva("corso-gruppo.svg", svg(W, H, b, "Tre persone meditano insieme su una collina"))
-
-# 2. ADHD: figura con un filo che da groviglio diventa onda calma
-b = f'<rect width="{W}" height="{H}" fill="{VERDE_T}"/>'
-b += f'<circle cx="130" cy="110" r="70" fill="#ffffff" opacity=".7"/>'
-b += (f'<path d="M60 150 C90 90 140 190 170 120 S220 80 200 150 S150 170 190 110 '
-      f'C240 60 260 140 300 120 S380 110 420 118 S520 126 560 120" '
-      f'stroke="{BLU}" stroke-width="3.5" fill="none" stroke-linecap="round"/>')
-b += f'<path d="M0 295 Q300 265 600 295 V340 H0Z" fill="{VERDE}" opacity=".9"/>'
-b += figura(300, 300, 1.55, corpo=TEAL, capelli=BLU, stola=VERDE)
-salva("corso-adhd.svg", svg(W, H, b, "Una persona medita mentre un filo aggrovigliato diventa un'onda calma"))
-
-# 3. Aziende: persone in piedi con nuvoletta di dialogo (richiamo al logo)
-b = f'<rect width="{W}" height="{H}" fill="{MENTA}"/>'
-b += f'<g transform="translate(300 25) scale(1.05) translate(-330 -40)"><path d="M250 70 C250 30 330 22 360 50 C400 40 430 80 410 105 C420 140 360 150 340 128 C310 150 255 135 262 110 L240 128 L250 100Z" fill="{ACQUA}" opacity=".85"/>'
-b += f'<path d="M318 78 C318 64 334 64 336 76 C338 64 354 64 354 78 C354 94 336 104 336 104 C336 104 318 94 318 78Z" fill="none" stroke="{BLU}" stroke-width="3"/></g>'
-b += f'<rect x="0" y="305" width="{W}" height="35" fill="{TEAL}"/>'
-b += manager_uomo(150, 305, 1.45, giacca=BLU2, cravatta=ACQUA)
-b += manager_donna(235, 305, 1.5, tailleur=ACQUA, capelli="#5a3b2a", pettinatura="lunghi")
-b += manager_uomo(370, 305, 1.5, giacca=BLU, cravatta=VERDE, capelli="#3a2a20")
-b += manager_donna(455, 305, 1.42, tailleur=VERDE, capelli=BLU, pettinatura="caschetto")
-salva("corso-aziende.svg", svg(W, H, b, "Due uomini in giacca e cravatta e due donne in tailleur, uniti da una nuvoletta di dialogo con un cuore"))
-
-# 4. Sessioni individuali: una figura, grande cerchio, piccola pianta
-b = f'<rect width="{W}" height="{H}" fill="{CREMA}"/>'
-b += f'<circle cx="300" cy="150" r="135" fill="{VERDE_T}"/>'
-b += f'<circle cx="300" cy="150" r="96" fill="{ACQUA_T}"/>'
-b += f'<path d="M0 298 H600 V340 H0Z" fill="{VERDE}" opacity=".7"/>'
-b += figura(300, 300, 1.6, corpo=BLU, capelli=BLU, stola=ACQUA)
-b += f'<path d="M480 298 Q482 248 492 222 M490 258 Q514 240 520 214 M486 272 Q462 254 456 232" stroke="{TEAL}" stroke-width="4" fill="none" stroke-linecap="round"/>'
-b += f'<path d="M466 298 L470 276 H510 L514 298Z" fill="{BLU2}"/>'
-salva("corso-individuale.svg", svg(W, H, b, "Una persona medita da sola davanti a un grande cerchio"))
-
 # 5. Mindset e soft skills: un cervello simpatico che si allena (fascia e manubri)
 def scintilla(cx, cy, r, colore):
     return (f'<path d="M{cx} {cy-r} Q{cx+r*.18} {cy-r*.18} {cx+r} {cy} Q{cx+r*.18} {cy+r*.18} {cx} {cy+r} '
@@ -181,23 +140,6 @@ b += scintilla(150, 150, 14, VERDE) + scintilla(456, 160, 14, VERDE) + scintilla
 b += scintilla(132, 232, 9, TEAL) + scintilla(300, 40, 9, TEAL)
 salva("corso-mindset.svg", svg(W, H, b, "Un cervello sorridente con la fascia sportiva che solleva due manubri"))
 
-# 6. Workshop e retreat: montagne, sole, una tenda e due persone che meditano sul prato
-b = f'<rect width="{W}" height="{H}" fill="{CREMA}"/>'
-b += f'<circle cx="430" cy="92" r="46" fill="{VERDE}" opacity=".8"/>'
-b += f'<path d="M-20 250 L120 110 L210 190 L300 96 L420 214 L500 150 L620 250Z" fill="{ACQUA}" opacity=".55"/>'
-b += f'<path d="M120 110 L150 140 L132 136 L120 150 L108 138 L94 136Z M300 96 L330 126 L312 122 L300 136 L288 124 L272 126Z" fill="#ffffff" opacity=".9"/>'
-b += f'<path d="M-20 270 L90 170 L190 240 L330 150 L470 250 L560 200 L620 270Z" fill="{TEAL}" opacity=".9"/>'
-b += f'<path d="M0 262 Q300 236 600 262 V340 H0Z" fill="{VERDE}" opacity=".75"/>'
-# tenda
-b += f'<path d="M440 296 L488 222 L536 296Z" fill="{BLU2}"/><path d="M488 222 L474 296 H502Z" fill="{ACQUA_T}"/>'
-b += f'<path d="M488 222 L488 210" stroke="{BLU}" stroke-width="3" stroke-linecap="round"/>'
-# alberelli
-for x, h in [(60, 46), (92, 34)]:
-    b += f'<path d="M{x} {280-h} L{x+16} 282 H{x-16}Z" fill="{TEAL}"/><rect x="{x-3}" y="280" width="6" height="10" fill="{BLU2}"/>'
-b += figura(230, 304, 1.25, corpo=BLU, capelli=BLU, stola=ACQUA)
-b += figura(345, 304, 1.25, corpo=BLU2, capelli="#5a3b2a", stola=VERDE)
-salva("corso-retreat.svg", svg(W, H, b, "Due persone meditano su un prato tra le montagne, accanto a una tenda"))
-
 # ===== Icone benefici (cerchio con simbolo) =====
 def icona(nome, simbolo, titolo, sfondo=ACQUA_T):
     b = f'<circle cx="60" cy="60" r="56" fill="{sfondo}"/>' + simbolo
@@ -224,90 +166,6 @@ icona("icona-gentilezza.svg",
       f'<path d="M30 74 Q30 58 46 58 L60 66 L74 58 Q90 58 90 74 Q76 92 60 92 Q44 92 30 74Z" fill="{TEAL}"/>'
       f'<path d="M60 52 C60 52 46 44 46 34 C46 28 54 26 60 33 C66 26 74 28 74 34 C74 44 60 52 60 52Z" fill="{BLU}"/>', "Gentilezza", VERDE_T)
 print("ok")
-
-
-# ===== Copertina blog: "Svegliarsi dal pilota automatico" =====
-import math
-
-def ingranaggio(cx, cy, r, denti, colore, foro=MENTA, rot=0):
-    """Ruota dentata semplice."""
-    pts = []
-    n = denti * 4
-    for i in range(n):
-        a = math.radians(rot) + 2 * math.pi * i / n
-        rr = r + 9 if (i % 4) in (1, 2) else r
-        pts.append(f"{cx + rr * math.cos(a):.1f},{cy + rr * math.sin(a):.1f}")
-    g = f'<polygon points="{" ".join(pts)}" fill="{colore}"/>'
-    g += f'<circle cx="{cx}" cy="{cy}" r="{r * .38:.1f}" fill="{foro}"/>'
-    return g
-
-GRIGIO = "#9fb1c2"
-GRIGIO_S = "#7f93a8"
-b = f'<rect width="{W}" height="{H}" fill="{MENTA}"/>'
-# metà sinistra: il "pilota automatico" (ingranaggi grigi, nastro trasportatore, figura grigia)
-b += f'<rect width="300" height="{H}" fill="#e6ecf1"/>'
-b += ingranaggio(58, 52, 28, 9, GRIGIO, "#e6ecf1", 8)
-b += ingranaggio(112, 70, 16, 7, GRIGIO_S, "#e6ecf1", 20)
-b += ingranaggio(250, 50, 24, 8, GRIGIO, "#e6ecf1", 0)
-b += f'<rect x="20" y="268" width="280" height="14" rx="7" fill="{GRIGIO_S}"/>'
-for x in range(40, 300, 40):
-    b += f'<circle cx="{x}" cy="275" r="4" fill="#e6ecf1"/>'
-b += figura_in_piedi(105, 268, 1.25, corpo=GRIGIO_S, capelli=GRIGIO_S, pelle="#c9d3dc", gambe="#6c7f93")
-b += figura_in_piedi(200, 268, 1.25, corpo=GRIGIO, capelli=GRIGIO_S, pelle="#c9d3dc", gambe="#6c7f93")
-# metà destra: la presenza (sole, prato, fiore, figura a colori che si ferma e respira)
-b += f'<circle cx="470" cy="105" r="62" fill="{ACQUA_T}"/>'
-b += f'<path d="M300 280 Q450 250 600 272 V340 H300Z" fill="{VERDE}" opacity=".85"/>'
-b += f'<rect x="0" y="282" width="300" height="58" fill="#d5dee6"/>'
-# respiro: onde leggere che escono dalla figura
-b += f'<path d="M418 128 Q440 116 462 128 T506 128" stroke="{TEAL}" stroke-width="3.5" fill="none" stroke-linecap="round" opacity=".8"/>'
-b += f'<path d="M426 108 Q446 98 466 108 T506 108" stroke="{BLU}" stroke-width="3" fill="none" stroke-linecap="round" opacity=".55"/>'
-b += figura_in_piedi(400, 276, 1.35, corpo=ACQUA, capelli=BLU)
-# fiore con cuore, che la figura guarda
-b += f'<path d="M500 276 Q498 248 504 228" stroke="{TEAL}" stroke-width="4" fill="none" stroke-linecap="round"/>'
-b += f'<path d="M502 252 Q520 242 526 230 Q508 232 502 252Z" fill="{TEAL}"/>'
-b += f'<path d="M504 220 C504 220 488 210 488 199 C488 192 497 189 504 197 C511 189 520 192 520 199 C520 210 504 220 504 220Z" fill="{BLU}"/>'
-# soglia tra i due mondi: passi tratteggiati
-b += f'<path d="M282 262 Q320 250 356 262" stroke="{BLU}" stroke-width="3" fill="none" stroke-dasharray="2 9" stroke-linecap="round"/>'
-salva("blog-pilota-automatico.svg", svg(W, H, b, "Da un lato ingranaggi e persone grigie in automatico, dall'altro una persona a colori che si ferma, respira e guarda un fiore"))
-
-
-# ===== Copertina blog: "MBSR: la Mindfulness che ridisegna il cervello e la vita" – fiore di loto =====
-def petalo(cx, cy, h, w, angolo, colore, opacita=1):
-    """Petalo a goccia con la base in (cx, cy), ruotato di 'angolo' gradi."""
-    d = f"M0 0 C{w} {-h*0.35} {w*0.55} {-h*0.85} 0 {-h} C{-w*0.55} {-h*0.85} {-w} {-h*0.35} 0 0Z"
-    return (f'<path d="{d}" fill="{colore}" opacity="{opacita}" '
-            f'transform="translate({cx} {cy}) rotate({angolo})"/>')
-
-CX, CY = 300, 232
-b = f'<rect width="{W}" height="{H}" fill="{MENTA}"/>'
-# sole / luna dietro al fiore
-b += f'<circle cx="{CX}" cy="150" r="118" fill="{VERDE_T}"/>'
-b += f'<circle cx="{CX}" cy="150" r="84" fill="#ffffff" opacity=".65"/>'
-# acqua
-b += f'<rect x="0" y="{CY}" width="{W}" height="{H-CY}" fill="{ACQUA_T}"/>'
-b += f'<path d="M0 {CY} Q150 {CY-8} 300 {CY} T600 {CY} V{CY+6} H0Z" fill="{ACQUA}" opacity=".35"/>'
-# cerchi sull'acqua (onde concentriche)
-for rx, op in ((150, .55), (215, .35), (280, .22)):
-    b += f'<ellipse cx="{CX}" cy="{CY+30}" rx="{rx}" ry="{rx*0.1:.0f}" fill="none" stroke="{TEAL}" stroke-width="2.5" opacity="{op}"/>'
-# foglie di loto galleggianti
-b += f'<ellipse cx="135" cy="{CY+48}" rx="62" ry="13" fill="{TEAL}"/><path d="M135 {CY+48} L190 {CY+40} L188 {CY+50}Z" fill="{ACQUA_T}"/>'
-b += f'<ellipse cx="472" cy="{CY+60}" rx="52" ry="11" fill="{TEAL}" opacity=".85"/><path d="M472 {CY+60} L420 {CY+53} L422 {CY+63}Z" fill="{ACQUA_T}"/>'
-# fiore di loto: petali esterni, intermedi e centrali
-b += petalo(CX, CY+10, 92, 30, -72, BLU2)
-b += petalo(CX, CY+10, 92, 30, 72, BLU2)
-b += petalo(CX, CY+8, 112, 34, -46, TEAL)
-b += petalo(CX, CY+8, 112, 34, 46, TEAL)
-b += petalo(CX, CY+6, 128, 36, -22, ACQUA)
-b += petalo(CX, CY+6, 128, 36, 22, ACQUA)
-b += petalo(CX, CY+4, 138, 38, 0, VERDE)
-# venature leggere sul petalo centrale e cuore del fiore
-b += f'<path d="M{CX} {CY-4} L{CX} {CY-112}" stroke="{TEAL}" stroke-width="2" opacity=".5"/>'
-b += f'<ellipse cx="{CX}" cy="{CY+8}" rx="46" ry="10" fill="{BLU}"/>'
-# otto piccoli cerchi: le otto settimane del percorso
-for i in range(8):
-    x = CX - 105 + i * 30
-    b += f'<circle cx="{x}" cy="{CY+84}" r="5.5" fill="{BLU}" opacity="{0.35 + i*0.08:.2f}"/>'
-salva("blog-mbsr-loto.svg", svg(W, H, b, "Un fiore di loto stilizzato si apre sull'acqua davanti a un grande cerchio; sotto, otto piccoli cerchi come le otto settimane del percorso"))
 
 
 # ===== Icone della pagina "Mindfulness in azienda" (diverse da quelle della home) =====
@@ -417,3 +275,227 @@ icona("sessione-sentiero.svg",       # sentiero che sale verso un sole: il cambi
       f'<circle cx="80" cy="36" r="9" fill="{TEAL}"/>'
       f'<path d="M36 94 C44 78 74 78 66 64 C60 54 44 56 54 44" fill="none" stroke="{BLU}" stroke-width="6" stroke-linecap="round"/>'
       f'<path d="M36 94 C44 78 74 78 66 64 C60 54 44 56 54 44" fill="none" stroke="#fff" stroke-width="1.6" stroke-dasharray="3 6" stroke-linecap="round"/>', "Cambiamento personale")
+
+
+# =====================================================================
+# ===== ILLUSTRAZIONI GRANDI – STILE "CARTOON" (come il cervello) =====
+# Contorno blu spesso, alone tondo dietro, scintille, collina petrolio,
+# personaggi simpatici con visetto e guance rosa.
+# =====================================================================
+import math
+CONT = BLU          # colore del contorno
+GUANCE = "#ffb3c4"
+SW = 3.5            # spessore del contorno (prima della scala)
+
+def _c(sw=SW):
+    return f'stroke="{CONT}" stroke-width="{sw}" stroke-linejoin="round"'
+
+def sfondo_cartoon(cx=300, cy=160, r=140, fondo=MENTA, collina=True):
+    b = f'<rect width="{W}" height="{H}" fill="{fondo}"/>'
+    b += f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{VERDE_T}"/>'
+    b += f'<circle cx="{cx}" cy="{cy}" r="{r*0.74:.0f}" fill="{ACQUA_T}"/>'
+    return b
+
+def collina_cartoon(y=300, colore=TEAL):
+    return f'<path d="M0 {y} Q300 {y-22} 600 {y} V340 H0Z" fill="{colore}" opacity=".85"/>'
+
+def viso(cy, aperti=False, r=1.0, dx=0):
+    """Visetto: occhi (chiusi = meditazione, aperti = con riflesso), sorriso, guance."""
+    g = ""
+    ex, ey = 11 * r, cy
+    if aperti == "assonnato":       # occhi a lineetta e bocca dritta: il "pilota automatico"
+        for sx in (-1, 1):
+            x = dx + sx * ex
+            g += f'<path d="M{x-5*r:.1f} {ey+1:.1f} H{x+5*r:.1f}" stroke="{CONT}" stroke-width="3" stroke-linecap="round"/>'
+        g += f'<path d="M{dx-4*r:.1f} {cy+11*r:.1f} H{dx+4*r:.1f}" stroke="{CONT}" stroke-width="3" stroke-linecap="round"/>'
+        return g
+    if aperti:
+        for sx in (-1, 1):
+            g += f'<circle cx="{dx+sx*ex:.1f}" cy="{ey:.1f}" r="{5*r:.1f}" fill="{CONT}"/>'
+            g += f'<circle cx="{dx+sx*ex+1.6*r:.1f}" cy="{ey-1.8*r:.1f}" r="{1.7*r:.1f}" fill="#ffffff"/>'
+    else:
+        for sx in (-1, 1):
+            x = dx + sx * ex
+            g += f'<path d="M{x-5*r:.1f} {ey:.1f} Q{x:.1f} {ey+5*r:.1f} {x+5*r:.1f} {ey:.1f}" stroke="{CONT}" stroke-width="3" fill="none" stroke-linecap="round"/>'
+    g += f'<path d="M{dx-5*r:.1f} {cy+9*r:.1f} Q{dx:.1f} {cy+14*r:.1f} {dx+5*r:.1f} {cy+9*r:.1f}" stroke="{CONT}" stroke-width="3" fill="none" stroke-linecap="round"/>'
+    for sx in (-1, 1):
+        g += f'<ellipse cx="{dx+sx*19*r:.1f}" cy="{cy+7*r:.1f}" rx="{5.5*r:.1f}" ry="{3.4*r:.1f}" fill="{GUANCE}" opacity=".95"/>'
+    return g
+
+def testa(cy, capelli, pettinatura, pelle=PELLE, aperti=False, R=27):
+    g = ""
+    if pettinatura == "lunghi":      # capelli lunghi, dietro la testa
+        g += f'<path d="M{-R-4} {cy} Q{-R-6} {cy-R-8} 0 {cy-R-8} Q{R+6} {cy-R-8} {R+4} {cy} L{R+6} {cy+R+6} Q{R-6} {cy+R+10} {R-10} {cy+R} H{-R+10} Q{-R+6} {cy+R+10} {-R-6} {cy+R+6}Z" fill="{capelli}" {_c()}/>'
+    if pettinatura == "chignon":
+        g += f'<circle cx="0" cy="{cy-R-6}" r="11" fill="{capelli}" {_c()}/>'
+    g += f'<circle cx="0" cy="{cy}" r="{R}" fill="{pelle}" {_c()}/>'
+    if pettinatura in ("chignon", "lunghi"):
+        g += f'<path d="M{-R} {cy-2} Q{-R-1} {cy-R-2} 0 {cy-R-2} Q{R+1} {cy-R-2} {R} {cy-2} Q{R*0.6:.0f} {cy-R*0.55:.0f} 4 {cy-R*0.62:.0f} Q{-R*0.6:.0f} {cy-R*0.55:.0f} {-R} {cy-2}Z" fill="{capelli}" {_c()}/>'
+    elif pettinatura == "caschetto":
+        g += f'<path d="M{-R-3} {cy+10} Q{-R-5} {cy-R-4} 0 {cy-R-4} Q{R+5} {cy-R-4} {R+3} {cy+10} L{R-4} {cy+10} L{R-6} {cy-R*0.45:.0f} H{-R+6} L{-R+4} {cy+10}Z" fill="{capelli}" {_c()}/>'
+    else:                             # corti (uomo)
+        g += f'<path d="M{-R} {cy-4} Q{-R-1} {cy-R-4} 0 {cy-R-4} Q{R+1} {cy-R-4} {R} {cy-4} Q{R*0.7:.0f} {cy-R*0.6:.0f} {R*0.2:.0f} {cy-R*0.6:.0f} Q{-R*0.5:.0f} {cy-R*0.62:.0f} {-R} {cy-4}Z" fill="{capelli}" {_c()}/>'
+    g += viso(cy + 3, aperti)
+    return g
+
+def meditante(x, y, s=1.0, corpo=BLU2, capelli=BLU, stola=ACQUA, pettinatura="chignon", pelle=PELLE, aperti=False):
+    """Personaggio seduto in meditazione. (x, y) = punto a terra al centro."""
+    g = f'<g transform="translate({x} {y}) scale({s})">'
+    g += f'<path d="M-50 -2 Q-50 -30 -18 -32 H18 Q50 -30 50 -2 Q26 6 0 4 Q-26 6 -50 -2Z" fill="{corpo}" {_c()}/>'   # gambe incrociate
+    g += f'<path d="M-27 -28 Q-30 -76 0 -78 Q30 -76 27 -28 Q0 -22 -27 -28Z" fill="{corpo}" {_c()}/>'            # busto
+    if stola:
+        g += f'<path d="M-20 -70 Q0 -82 20 -70 L13 -52 Q0 -58 -13 -52Z" fill="{stola}" {_c()}/>'
+    for sx in (-1, 1):                                                                                          # braccia
+        g += f'<path d="M{sx*22} -68 Q{sx*42} -50 {sx*38} -26" stroke="{CONT}" stroke-width="15" fill="none" stroke-linecap="round"/>'
+        g += f'<path d="M{sx*22} -68 Q{sx*42} -50 {sx*38} -26" stroke="{corpo}" stroke-width="8" fill="none" stroke-linecap="round"/>'
+        g += f'<circle cx="{sx*38}" cy="-24" r="7" fill="{pelle}" {_c()}/>'
+    g += testa(-106, capelli, pettinatura, pelle, aperti)
+    g += "</g>"
+    return g
+
+def in_piedi(x, y, s=1.0, abito=BLU2, capelli=BLU, pettinatura="corti", cravatta=None, gonna=False, pelle=PELLE, gambe=BLU, aperti=True):
+    """Personaggio in piedi (giacca/tailleur). (x, y) = punto a terra al centro."""
+    g = f'<g transform="translate({x} {y}) scale({s})">'
+    if gonna:
+        g += f'<rect x="-13" y="-34" width="9" height="34" rx="4" fill="{pelle}" {_c()}/><rect x="4" y="-34" width="9" height="34" rx="4" fill="{pelle}" {_c()}/>'
+        g += f'<path d="M-24 -30 L-20 -58 H20 L24 -30Z" fill="{abito}" {_c()}/>'
+    else:
+        g += f'<rect x="-16" y="-44" width="14" height="44" rx="6" fill="{gambe}" {_c()}/><rect x="2" y="-44" width="14" height="44" rx="6" fill="{gambe}" {_c()}/>'
+    g += f'<path d="M-26 -40 Q-28 -92 0 -94 Q28 -92 26 -40 Q0 -34 -26 -40Z" fill="{abito}" {_c()}/>'            # giacca
+    g += f'<path d="M-9 -92 L0 -76 L9 -92Z" fill="#ffffff" {_c(2.5)}/>'                        # colletto
+    if cravatta:
+        g += f'<path d="M-3.5 -86 H3.5 L5 -62 L0 -56 L-5 -62Z" fill="{cravatta}" {_c(2.5)}/>'
+    else:
+        g += f'<circle cx="0" cy="-64" r="2.4" fill="{CONT}"/><circle cx="0" cy="-52" r="2.4" fill="{CONT}"/>'
+    for sx in (-1, 1):                                                                                          # braccia lungo i fianchi
+        g += f'<path d="M{sx*22} -84 Q{sx*32} -66 {sx*30} -46" stroke="{CONT}" stroke-width="14" fill="none" stroke-linecap="round"/>'
+        g += f'<path d="M{sx*22} -84 Q{sx*32} -66 {sx*30} -46" stroke="{abito}" stroke-width="7" fill="none" stroke-linecap="round"/>'
+        g += f'<circle cx="{sx*30}" cy="-44" r="6.5" fill="{pelle}" {_c()}/>'
+    g += testa(-122, capelli, pettinatura, pelle, aperti, R=26)
+    g += "</g>"
+    return g
+
+def scintille(lista):
+    return "".join(scintilla(x, y, r, c) for x, y, r, c in lista)
+
+SCINTILLE = [(130, 120, 14, VERDE), (470, 120, 14, VERDE), (100, 220, 9, TEAL), (500, 226, 9, TEAL), (300, 30, 9, TEAL)]
+
+# 1. MBSR – percorsi di gruppo: tre amici che meditano sulla collina
+b = sfondo_cartoon(300, 170, 150)
+b += collina_cartoon(300)
+b += meditante(170, 298, 0.82, corpo=BLU2, capelli=BLU, stola=ACQUA, pettinatura="caschetto")
+b += meditante(430, 298, 0.82, corpo=TEAL, capelli="#5a3b2a", stola=VERDE, pettinatura="corti")
+b += meditante(300, 300, 0.95, corpo=BLU, capelli="#3a2a20", stola=VERDE, pettinatura="chignon")
+b += scintille([(90, 110, 14, VERDE), (510, 110, 14, VERDE), (70, 220, 9, TEAL), (530, 220, 9, TEAL), (300, 28, 9, TEAL)])
+salva("corso-gruppo.svg", svg(W, H, b, "Tre personaggi sorridenti meditano insieme su una collina"))
+
+# 2. ADHD: un filo aggrovigliato sopra la testa che diventa un'onda calma
+b = sfondo_cartoon(300, 170, 145, fondo=VERDE_T)
+b += collina_cartoon(302, VERDE)
+b += (f'<path d="M48 126 C78 66 128 166 158 96 S208 56 188 126 S138 146 178 86 '
+      f'C228 36 248 116 288 96 S368 86 408 94 S508 102 552 96" '
+      f'stroke="#ffffff" stroke-width="10" fill="none" stroke-linecap="round"/>')
+b += (f'<path d="M48 126 C78 66 128 166 158 96 S208 56 188 126 S138 146 178 86 '
+      f'C228 36 248 116 288 96 S368 86 408 94 S508 102 552 96" '
+      f'stroke="{CONT}" stroke-width="4" fill="none" stroke-linecap="round"/>')
+b += meditante(300, 300, 1.05, corpo=TEAL, capelli=BLU, stola=VERDE, pettinatura="chignon")
+b += scintille([(110, 200, 13, TEAL), (490, 190, 13, TEAL), (470, 260, 8, BLU2), (130, 266, 8, BLU2)])
+salva("corso-adhd.svg", svg(W, H, b, "Un personaggio sorridente medita mentre sopra di lui un filo aggrovigliato diventa un'onda calma"))
+
+# 3. Aziende: quattro colleghi sorridenti e una nuvoletta con il cuore
+b = sfondo_cartoon(300, 150, 150)
+b += collina_cartoon(306)
+b += (f'<path d="M250 70 C250 30 330 22 360 50 C400 40 430 80 410 105 C420 140 360 150 340 128 '
+      f'C310 150 255 135 262 110 L240 128 L250 100Z" fill="{ACQUA}" {_c()} transform="translate(-30 -28)"/>')
+b += (f'<path d="M318 78 C318 64 334 64 336 76 C338 64 354 64 354 78 C354 94 336 104 336 104 '
+      f'C336 104 318 94 318 78Z" fill="{GUANCE}" {_c(3)} transform="translate(-30 -28)"/>')
+b += in_piedi(140, 300, 0.92, abito=BLU2, capelli=BLU, pettinatura="corti", cravatta=ACQUA)
+b += in_piedi(240, 300, 0.95, abito=ACQUA, capelli="#5a3b2a", pettinatura="lunghi", gonna=True)
+b += in_piedi(360, 300, 0.95, abito=BLU, capelli="#3a2a20", pettinatura="corti", cravatta=VERDE)
+b += in_piedi(460, 300, 0.92, abito=VERDE, capelli=BLU, pettinatura="caschetto", gonna=True)
+b += scintille([(60, 120, 13, VERDE), (540, 110, 13, VERDE), (520, 200, 8, TEAL), (80, 210, 8, TEAL)])
+salva("corso-aziende.svg", svg(W, H, b, "Due colleghi in giacca e cravatta e due colleghe in tailleur, sorridenti, sotto una nuvoletta con un cuore"))
+
+# 4. Sessioni individuali: un personaggio nel suo alone, con una piantina
+b = sfondo_cartoon(300, 160, 140, fondo=CREMA)
+b += collina_cartoon(302, VERDE)
+b += meditante(290, 300, 1.08, corpo=BLU, capelli=BLU, stola=ACQUA, pettinatura="chignon")
+b += f'<path d="M478 266 Q480 222 490 198 M488 232 Q512 214 518 190 M484 246 Q460 228 454 206" stroke="{CONT}" stroke-width="9" fill="none" stroke-linecap="round"/>'
+b += f'<path d="M478 266 Q480 222 490 198 M488 232 Q512 214 518 190 M484 246 Q460 228 454 206" stroke="{TEAL}" stroke-width="4" fill="none" stroke-linecap="round"/>'
+b += f'<path d="M460 296 L465 264 H505 L510 296Z" fill="{BLU2}" {_c()}/>'
+b += scintille([(110, 120, 14, VERDE), (470, 110, 12, TEAL), (120, 230, 9, TEAL), (300, 26, 9, TEAL)])
+salva("corso-individuale.svg", svg(W, H, b, "Un personaggio sorridente medita da solo dentro un grande alone, accanto a una piantina"))
+
+# 5. Workshop e retreat: montagne, sole, tenda e due amici che meditano
+b = f'<rect width="{W}" height="{H}" fill="{CREMA}"/>'
+b += f'<circle cx="440" cy="84" r="40" fill="{VERDE}" {_c()}/>'
+b += f'<path d="M-20 250 L120 110 L210 190 L300 96 L420 214 L500 150 L620 250Z" fill="{ACQUA}" {_c()}/>'
+b += f'<path d="M120 110 L148 138 L132 134 L120 148 L108 136 L92 138Z M300 96 L328 124 L312 120 L300 134 L288 122 L272 124Z" fill="#ffffff" {_c(2.5)}/>'
+b += f'<path d="M-20 270 L90 180 L190 244 L330 160 L470 254 L560 206 L620 270Z" fill="{TEAL}" {_c()}/>'
+b += f'<path d="M-10 268 Q300 240 610 268 V350 H-10Z" fill="{VERDE}" {_c()}/>'
+b += f'<path d="M444 300 L490 226 L536 300Z" fill="{BLU2}" {_c()}/><path d="M490 226 L476 300 H504Z" fill="{ACQUA_T}" {_c(2.5)}/>'
+b += f'<path d="M490 226 V210" stroke="{CONT}" stroke-width="3.5" stroke-linecap="round"/>'
+for x, h in [(56, 50), (94, 38)]:
+    b += f'<rect x="{x-4}" y="282" width="8" height="12" fill="{BLU2}" {_c(2.5)}/><path d="M{x} {282-h} L{x+18} 284 H{x-18}Z" fill="{TEAL}" {_c()}/>'
+b += meditante(220, 310, 0.9, corpo=BLU, capelli=BLU, stola=ACQUA, pettinatura="chignon")
+b += meditante(345, 310, 0.9, corpo=BLU2, capelli="#5a3b2a", stola=VERDE, pettinatura="corti")
+b += scintille([(200, 50, 10, TEAL), (540, 150, 9, BLU2), (380, 40, 7, TEAL)])
+salva("corso-retreat.svg", svg(W, H, b, "Due personaggi sorridenti meditano su un prato tra le montagne, accanto a una tenda"))
+
+# 6. Blog "Svegliarsi dal pilota automatico": a sinistra ingranaggi grigi e un personaggio assonnato,
+#    a destra un personaggio sveglio e sorridente che si ferma davanti a un fiore
+GR, GR2, GR_F = "#9fb1c2", "#7f93a8", "#e6ecf1"
+def ruota(cx, cy, r, denti, colore, rot=0):
+    pts = []
+    n = denti * 4
+    for i in range(n):
+        a = math.radians(rot) + 2 * math.pi * i / n
+        rr = r + 9 if (i % 4) in (1, 2) else r
+        pts.append(f"{cx + rr * math.cos(a):.1f},{cy + rr * math.sin(a):.1f}")
+    return (f'<polygon points="{" ".join(pts)}" fill="{colore}" stroke="{GR2}" stroke-width="3" stroke-linejoin="round"/>'
+            f'<circle cx="{cx}" cy="{cy}" r="{r*.38:.1f}" fill="{GR_F}" stroke="{GR2}" stroke-width="3"/>')
+b = f'<rect width="{W}" height="{H}" fill="{MENTA}"/>'
+b += f'<rect width="300" height="{H}" fill="{GR_F}"/>'
+b += ruota(62, 56, 28, 9, GR, 8) + ruota(118, 78, 16, 7, "#b9c7d4", 20) + ruota(248, 54, 24, 8, GR, 0)
+b += f'<rect x="14" y="290" width="286" height="16" rx="8" fill="{GR2}" stroke="#6c7f93" stroke-width="3"/>'
+for x in range(36, 300, 38):
+    b += f'<circle cx="{x}" cy="298" r="4" fill="{GR_F}"/>'
+# personaggio "in automatico": grigio, occhi a lineetta
+g = in_piedi(150, 290, 0.95, abito=GR, capelli=GR2, pettinatura="corti", pelle="#d3dbe3", gambe=GR2, aperti="assonnato")
+b += g
+# a destra: alone, prato, fiore, personaggio a colori
+b += f'<circle cx="450" cy="150" r="120" fill="{VERDE_T}"/><circle cx="450" cy="150" r="88" fill="{ACQUA_T}"/>'
+b += f'<path d="M300 300 Q450 278 600 296 V340 H300Z" fill="{TEAL}" opacity=".85"/>'
+b += in_piedi(420, 300, 0.98, abito=ACQUA, capelli=BLU, pettinatura="chignon", gonna=True)
+b += f'<path d="M520 298 Q516 262 524 232" stroke="{CONT}" stroke-width="9" fill="none" stroke-linecap="round"/><path d="M520 298 Q516 262 524 232" stroke="{TEAL}" stroke-width="4" fill="none" stroke-linecap="round"/>'
+b += f'<path d="M521 266 Q542 256 550 240 Q530 240 521 266Z" fill="{TEAL}" {_c()}/>'
+for a in range(0, 360, 60):
+    r_ = math.radians(a)
+    b += f'<circle cx="{524+15*math.cos(r_):.1f}" cy="{222+15*math.sin(r_):.1f}" r="10" fill="{VERDE}" {_c(3)}/>'
+b += f'<circle cx="524" cy="222" r="9" fill="#ffd36b" {_c(3)}/>'
+b += f'<path d="M282 280 Q320 266 356 280" stroke="{CONT}" stroke-width="3" fill="none" stroke-dasharray="2 9" stroke-linecap="round"/>'
+b += scintille([(360, 70, 12, VERDE), (560, 100, 12, VERDE), (580, 200, 8, TEAL)])
+salva("blog-pilota-automatico.svg", svg(W, H, b, "A sinistra ingranaggi grigi e un personaggio grigio in automatico, a destra un personaggio sorridente a colori che si ferma davanti a un fiore"))
+
+# 7. Blog "MBSR: la Mindfulness che ridisegna il cervello": un fiore di loto sorridente sull'acqua
+def petalo_c(cx, cy, h, w, angolo, colore):
+    d = f"M0 0 C{w} {-h*0.35} {w*0.55} {-h*0.85} 0 {-h} C{-w*0.55} {-h*0.85} {-w} {-h*0.35} 0 0Z"
+    return f'<path d="{d}" fill="{colore}" {_c()} transform="translate({cx} {cy}) rotate({angolo})"/>'
+CX, CY = 300, 236
+b = sfondo_cartoon(300, 150, 132)
+b += f'<rect x="0" y="{CY}" width="{W}" height="{H-CY}" fill="{ACQUA_T}"/>'
+b += f'<path d="M0 {CY} Q150 {CY-8} 300 {CY} T600 {CY}" stroke="{CONT}" stroke-width="3" fill="none"/>'
+for rx, op in ((150, .6), (215, .4)):
+    b += f'<ellipse cx="{CX}" cy="{CY+30}" rx="{rx}" ry="{rx*0.1:.0f}" fill="none" stroke="{TEAL}" stroke-width="3" opacity="{op}"/>'
+b += f'<ellipse cx="120" cy="{CY+50}" rx="60" ry="14" fill="{TEAL}" {_c()}/>'
+b += f'<ellipse cx="480" cy="{CY+58}" rx="50" ry="12" fill="{TEAL}" {_c()}/>'
+b += petalo_c(CX, CY+10, 88, 30, -72, BLU2) + petalo_c(CX, CY+10, 88, 30, 72, BLU2)
+b += petalo_c(CX, CY+8, 108, 34, -46, TEAL) + petalo_c(CX, CY+8, 108, 34, 46, TEAL)
+b += petalo_c(CX, CY+6, 124, 36, -22, ACQUA) + petalo_c(CX, CY+6, 124, 36, 22, ACQUA)
+b += petalo_c(CX, CY+4, 136, 40, 0, VERDE)
+b += viso(CY - 62, aperti=True, r=1.3, dx=CX)
+b += f'<ellipse cx="{CX}" cy="{CY+8}" rx="46" ry="10" fill="{BLU}" {_c()}/>'
+for i in range(8):
+    b += f'<circle cx="{CX-105+i*30}" cy="{CY+84}" r="6" fill="{VERDE}" {_c(2.5)}/>'
+b += scintille([(110, 90, 14, VERDE), (490, 90, 14, VERDE), (150, 190, 8, TEAL), (450, 190, 8, TEAL), (300, 20, 8, TEAL)])
+salva("blog-mbsr-loto.svg", svg(W, H, b, "Un fiore di loto sorridente si apre sull'acqua davanti a un grande alone; sotto, otto piccoli cerchi come le otto settimane del percorso"))

@@ -9,7 +9,9 @@ Chi chiede le modifiche: Marco Fernicola (compagno di Silvia). Rispondere in ita
 - Dopo la pubblicazione: verificare sul sito reale (curl) e segnalare le pagine nuove/cambiate a Bing con IndexNow
   (chiave `5f689786bb57f79a900bd2fb34cd96ed`, file nella radice del sito).
 - Stile grafico: colori e caratteri sono variabili in `assets/css/style.css` (`:root`). Titoli di sezione Montserrat maiuscolo spaziato, titoli lunghi Lora, testo Lato.
-- Illustrazioni: SVG in `assets/img/illustrazioni/`, generate da `tools/genera-illustrazioni.py` (palette del logo, figure senza volto).
+- Illustrazioni: SVG in `assets/img/illustrazioni/`, generate da `tools/genera-illustrazioni.py` (palette del logo).
+  Illustrazioni grandi (corsi, copertine del blog): stile "cartoon" come il cervello di Mindset, cioè contorno blu spesso, alone tondo, scintille, personaggi con visetto e guance rosa.
+  Icone piccole: cerchio colorato con simbolo piatto, senza contorno.
 - Nessun prezzo sul sito, tranne quelli degli eventi.
 - "Mindfulness" sempre con la M maiuscola nei testi (non negli indirizzi web e nei nomi dei file).
 - Zone (testi visibili): "Asti, Alessandria, Torino, Pinerolo e in tutto il Nord Italia". Torre Pellice resta solo nei dati strutturati e dove si parla di corsi specifici.
