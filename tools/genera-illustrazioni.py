@@ -142,6 +142,46 @@ b += f'<path d="M480 298 Q482 248 492 222 M490 258 Q514 240 520 214 M486 272 Q46
 b += f'<path d="M466 298 L470 276 H510 L514 298Z" fill="{BLU2}"/>'
 salva("corso-individuale.svg", svg(W, H, b, "Una persona medita da sola davanti a un grande cerchio"))
 
+# 5. Mindset e soft skills: un cervello luminoso che irradia scintille
+def scintilla(cx, cy, r, colore):
+    return (f'<path d="M{cx} {cy-r} Q{cx+r*.18} {cy-r*.18} {cx+r} {cy} Q{cx+r*.18} {cy+r*.18} {cx} {cy+r} '
+            f'Q{cx-r*.18} {cy+r*.18} {cx-r} {cy} Q{cx-r*.18} {cy-r*.18} {cx} {cy-r}Z" fill="{colore}"/>')
+b = f'<rect width="{W}" height="{H}" fill="{MENTA}"/>'
+b += f'<circle cx="300" cy="160" r="150" fill="{VERDE_T}"/>'
+b += f'<circle cx="300" cy="160" r="112" fill="{ACQUA_T}"/>'
+# raggi di luce
+import math
+for i in range(12):
+    a = math.radians(i * 30 + 15)
+    x1, y1 = 300 + 128 * math.cos(a), 160 + 128 * math.sin(a)
+    x2, y2 = 300 + 146 * math.cos(a), 160 + 146 * math.sin(a)
+    b += f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{TEAL}" stroke-width="4" stroke-linecap="round" opacity=".7"/>'
+# tronco cerebrale
+b += f'<path d="M304 214 Q306 246 318 266 L340 266 Q328 244 332 210Z" fill="{BLU2}"/>'
+# cervelletto
+b += f'<ellipse cx="362" cy="228" rx="32" ry="19" fill="{TEAL}"/>'
+b += f'<path d="M338 226 Q362 218 388 228 M342 236 Q362 230 382 238" stroke="{ACQUA}" stroke-width="2.5" fill="none" stroke-linecap="round"/>'
+# sagoma del cervello: lobi morbidi (cerchi sovrapposti)
+lobi = [(230,150,46),(262,118,46),(306,104,48),(350,116,46),(378,148,42),(372,186,38),(334,206,40),(290,206,42),(248,192,42),(300,160,60)]
+b += "".join(f'<circle cx="{x}" cy="{y}" r="{r}" fill="{ACQUA}"/>' for x, y, r in lobi)
+# solchi e circonvoluzioni
+pieghe = [
+  "M300 66 Q296 100 304 126 Q312 150 300 176",
+  "M214 140 Q240 132 252 150 Q262 168 246 182",
+  "M244 100 Q262 116 258 140",
+  "M330 78 Q324 104 342 118 Q360 130 382 124",
+  "M352 154 Q338 168 350 184 Q362 196 386 188",
+  "M262 206 Q276 186 300 192 Q318 196 326 182",
+  "M268 160 Q284 150 286 132",
+  "M318 140 Q334 150 330 166",
+]
+b += "".join(f'<path d="{d}" stroke="{BLU}" stroke-width="4.5" fill="none" stroke-linecap="round" opacity=".8"/>' for d in pieghe)
+# scintille
+b += scintilla(168, 78, 16, VERDE) + scintilla(438, 70, 12, TEAL) + scintilla(452, 226, 16, VERDE)
+b += scintilla(150, 236, 10, TEAL) + scintilla(410, 40, 7, ACQUA) + scintilla(196, 40, 8, ACQUA)
+b += f'<path d="M0 306 Q300 284 600 306 V340 H0Z" fill="{TEAL}" opacity=".85"/>'
+salva("corso-mindset.svg", svg(W, H, b, "Un cervello luminoso circondato da raggi e scintille"))
+
 # ===== Icone benefici (cerchio con simbolo) =====
 def icona(nome, simbolo, titolo, sfondo=ACQUA_T):
     b = f'<circle cx="60" cy="60" r="56" fill="{sfondo}"/>' + simbolo
