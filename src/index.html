@@ -114,6 +114,10 @@
   <img class="hero-logo" src="/assets/img/logo-hero.webp" width="650" height="612" alt="Silvia Genevro – Mindfulness e formazione: una donna collega il cuore e la mente">
   <h1>Percorsi di Mindfulness <br class="solo-pc">per ridurre lo stress <br class="solo-pc">e coltivare consapevolezza</h1>
   <img class="hero-img hero-foto" src="/assets/img/silvia-campana-tibetana.webp" width="1080" height="921" alt="Silvia Genevro suona una campana tibetana all'ombra di un albero, in riva al fiume">
+  <blockquote class="hero-firma">
+    <p>Insegno Mindfulness e soft skills come si insegna a camminare scalzi sull’erba: con cura, ascolto e meraviglia.</p>
+    <cite>Silvia Genevro</cite>
+  </blockquote>
   <div class="hero-buttons">
     <a class="btn primary" href="#corsi">Scopri i corsi</a>
     <a class="btn alt" href="/meditazione/">Prova una meditazione</a>
@@ -141,7 +145,7 @@
       <h3><a href="/mbsr/">Percorsi di Gruppo<br>MBSR</a></h3>
       <p>Protocollo completo per ridurre lo stress e coltivare la presenza.</p>
       <div class="card-azioni">
-        <a class="btn" href="mailto:silvia.genevro@gmail.com?subject=Iscrizione%20MBSR">Iscriviti</a>
+        <a class="btn" href="mailto:silvia.genevro@gmail.com?subject=Percorso%20MBSR">Scrivi a Silvia</a>
         {% include "pulsante-whatsapp.html" %}
       </div>
     </div>
@@ -161,7 +165,7 @@
       <h3><a href="/sessioni/">Sessioni individuali</a></h3>
       <p>Percorso su misura.</p>
       <div class="card-azioni">
-        <a class="btn" href="mailto:silvia.genevro@gmail.com?subject=Prenotazione%20Sessione">Prenota</a>
+        <a class="btn" href="mailto:silvia.genevro@gmail.com?subject=Sessioni%20individuali">Scrivi a Silvia</a>
         {% include "pulsante-whatsapp.html" %}
       </div>
     </div>
@@ -213,7 +217,7 @@
     <p class="recensioni-titolo">Le parole di chi ha già partecipato</p>
     <a class="recensioni-link" href="https://g.page/r/CR_8HUH1DPyiEAE" target="_blank" rel="noopener">
       <span class="recensioni-stelle" aria-hidden="true">★★★★★</span>
-      <span>Leggi le recensioni su Google <span aria-hidden="true">→</span></span>
+      <span>Leggi le recensioni su Google</span>
     </a>
     <p class="recensioni-lascia">Hai partecipato a un percorso? <a href="https://g.page/r/CR_8HUH1DPyiEAE/review" target="_blank" rel="noopener">Lascia la tua recensione</a></p>
   </div>
@@ -228,7 +232,7 @@
   </p>
   <p>
     <span class="azioni azioni-centro">
-      <a href="mailto:silvia.genevro@gmail.com?subject=Richiesta%20voucher%20regalo" class="btn primary">🎁 Richiedi un voucher</a>
+      <a href="mailto:silvia.genevro@gmail.com?subject=Richiesta%20voucher%20regalo" class="btn primary btn-ico">{% include "icone/regalo.html" %}Richiedi un voucher</a>
       {% include "pulsante-whatsapp.html" %}
     </span>
   </p>
@@ -244,7 +248,6 @@
       <p>Sono <strong>istruttrice di Mindfulness</strong> e formatrice nell’ambito delle soft skills.<br>
         Aiuto persone e gruppi a coltivare benessere attraverso la consapevolezza, la presenza e la gentilezza.</p>
       <p>Progetto percorsi per privati e aziende su comunicazione efficace, team working e team building, integrando tecniche teatrali ed esperienziali per facilitare connessione autentica e crescita personale e professionale.</p>
-      <p><i>Insegno Mindfulness e soft skills come si insegna a camminare scalzi sull’erba: con cura, ascolto e meraviglia.</i></p>
       <a class="btn primary" href="#contatti">Scrivimi</a>
     </div>
   </div>
@@ -256,7 +259,7 @@
   <p>
     Istruttrice di Mindfulness con iscrizione all'Albo Nazionale Federmindfulness n. 3038.<br>
     Certificazioni: Mindfulness Basic Training, Mindfulness Professional Trainer®, MBSR e MAPS for ADHD.<br>
-    <a href="https://www.albonazionalemindfulness.it/professionista/silvia-genevro" target="_blank" rel="noopener">🔗 Verifica le credenziali sull'Albo ufficiale</a>
+    <a href="https://www.albonazionalemindfulness.it/professionista/silvia-genevro" target="_blank" rel="noopener" class="link-ico">{% include "icone/verifica.html" %}Verifica le credenziali sull'Albo ufficiale</a>
   </p>
   <picture>
     <source media="(max-width: 600px)" srcset="/assets/img/certificazioni-mobile.png">
@@ -274,7 +277,7 @@
     <a class="blog-ultimo-img" href="{{ ultimo.url }}" tabindex="-1" aria-hidden="true"><img src="{{ ultimo.data.copertina }}" alt="" loading="lazy"></a>
     {%- endif %}
     <div class="blog-ultimo-testo">
-    <p class="blog-card-data"><time datetime="{{ ultimo.date | dataIso }}">{{ ultimo.date | dataIt }}</time> · {{ ultimo.templateContent | minutiLettura }} min di lettura</p>
+    <p class="blog-card-data"><time datetime="{{ ultimo.date | dataIso }}">{{ ultimo.date | dataIt }}</time>, {{ ultimo.templateContent | minutiLettura }} minuti di lettura</p>
     <h3><a href="{{ ultimo.url }}">{{ ultimo.data.title }}</a></h3>
     <p>{{ ultimo.data.description }}</p>
     <p class="blog-ultimo-azioni">
@@ -433,13 +436,13 @@
     <div class="evento-info">
       <h3>Smascherati! <span>Ritrova te stess* tra meditazione e creatività</span></h3>
       <ul class="evento-dati">
-        <li>📅 <strong>Domenica 22 novembre 2026</strong>, dalle 15 alle 18</li>
-        <li>📍 Associazione Serenamente Olos aps, Viale Partigiani 115, Asti</li>
-        <li>💶 35 € – tutti i materiali sono inclusi</li>
+        <li>{% include "icone/calendario.html" %}<span><strong>Domenica 22 novembre 2026</strong>, dalle 15 alle 18</span></li>
+        <li>{% include "icone/luogo.html" %}<span>Associazione Serenamente Olos aps, Viale Partigiani 115, Asti</span></li>
+        <li>{% include "icone/quota.html" %}<span>35 €, tutti i materiali sono inclusi</span></li>
       </ul>
       <p>Un pomeriggio per rallentare con una meditazione dolce guidata da Silvia, e poi, con la psicologa fototerapeuta Antonella Di Dedda, ritrovare i pezzi di noi attraverso collage e scrittura personale, fino a creare la propria maschera.</p>
       <div class="azioni azioni-centro">
-        <a class="btn primary evento-btn" href="mailto:silvia.genevro@gmail.com?subject=Iscrizione%20Smascherati%21%20%E2%80%93%2022%20novembre&body=Ciao%20Silvia%2C%0Avorrei%20iscrivermi%20al%20laboratorio%20%22Smascherati%21%22%20di%20domenica%2022%20novembre%20ad%20Asti.%0A%0ANome%20e%20cognome%3A%0ATelefono%3A%0A%0AGrazie%21">✉️ Scrivi a Silvia per iscriverti</a>
+        <a class="btn primary evento-btn" href="mailto:silvia.genevro@gmail.com?subject=Iscrizione%20Smascherati%21%20%E2%80%93%2022%20novembre&body=Ciao%20Silvia%2C%0Avorrei%20iscrivermi%20al%20laboratorio%20%22Smascherati%21%22%20di%20domenica%2022%20novembre%20ad%20Asti.%0A%0ANome%20e%20cognome%3A%0ATelefono%3A%0A%0AGrazie%21">{% include "icone/posta.html" %}Scrivi a Silvia</a>
         {% include "pulsante-whatsapp.html" %}
       </div>
     </div>
@@ -558,11 +561,11 @@
 <section id="contatti" class="section">
   <h2>Contatti</h2>
   <div class="contact-grid">
-    <a href="mailto:silvia.genevro@gmail.com" class="contact-btn email">✉️ Email</a>
-    <a href="{{ contatti.whatsapp }}" target="_blank" class="contact-btn whatsapp" rel="noopener">💬 WhatsApp</a>
-    <a href="https://www.instagram.com/silvia_genevro" target="_blank" class="contact-btn instagram" rel="noopener">📸 Instagram</a>
-    <a href="https://www.linkedin.com/in/silvia-genevro" target="_blank" class="contact-btn linkedin" rel="noopener">💼 LinkedIn</a>
-    <a href="https://t.me/silviagenevro" target="_blank" class="contact-btn telegram" rel="noopener">✈️ Telegram</a>
+    <a href="mailto:silvia.genevro@gmail.com" class="contact-btn email">{% include "icone/posta.html" %}Email</a>
+    <a href="{{ contatti.whatsapp }}" target="_blank" class="contact-btn whatsapp" rel="noopener">{% include "icone/whatsapp.html" %}WhatsApp</a>
+    <a href="https://www.instagram.com/silvia_genevro" target="_blank" class="contact-btn instagram" rel="noopener">{% include "icone/instagram.html" %}Instagram</a>
+    <a href="https://www.linkedin.com/in/silvia-genevro" target="_blank" class="contact-btn linkedin" rel="noopener">{% include "icone/linkedin.html" %}LinkedIn</a>
+    <a href="https://t.me/silviagenevro" target="_blank" class="contact-btn telegram" rel="noopener">{% include "icone/telegram.html" %}Telegram</a>
   </div>
 </section>
 
