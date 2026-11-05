@@ -743,3 +743,7 @@ h1, h2, h3 { font-family: var(--etichetta); font-weight: 600; letter-spacing: .0
 .approfondimento-testo strong { font-family: var(--etichetta); font-weight: 600; font-size: 1.15rem; color: var(--blu); }
 .approfondimento-testo span { color: var(--testo-tenue); }
 @media (max-width: 700px) { .approfondimenti { grid-template-columns: 1fr; } }
+/* 7 pilastri: righe centrate (4 + 3 su computer) */
+.benefici.pilastri { display: flex; flex-wrap: wrap; justify-content: center; gap: 36px 28px; }
+.benefici.pilastri .beneficio { flex: 0 1 calc(25% - 21px); min-width: 200px; }
+@media (max-width: 800px) { .benefici.pilastri { gap: 30px 18px; } .benefici.pilastri .beneficio { flex-basis: calc(50% - 9px); min-width: 0; } }

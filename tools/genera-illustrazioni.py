@@ -309,3 +309,34 @@ icona("icona-corpo.svg",
       f'<path d="M60 46 C50 46 44 54 44 62 L44 70 M60 46 C70 46 76 54 76 62 L76 70" fill="none" stroke="{BLU}" stroke-width="6" stroke-linecap="round"/>'
       f'<path d="M60 46 L60 76 M60 76 L48 94 M60 76 L72 94" fill="none" stroke="{BLU}" stroke-width="6" stroke-linecap="round"/>'
       f'<path d="M30 58 q-6 8 0 16 M90 58 q6 8 0 16" fill="none" stroke="{TEAL}" stroke-width="4" stroke-linecap="round"/>', "Corpo e respiro")
+
+
+# ===== I 7 pilastri della Mindfulness (Jon Kabat-Zinn) – pagina MBSR =====
+icona("pilastro-non-giudizio.svg",   # occhio aperto e sereno
+      f'<path d="M22 60 Q60 28 98 60 Q60 92 22 60Z" fill="none" stroke="{BLU}" stroke-width="5" stroke-linejoin="round"/>'
+      f'<circle cx="60" cy="60" r="12" fill="{TEAL}"/><circle cx="60" cy="60" r="4.5" fill="#fff"/>', "Non giudizio")
+icona("pilastro-pazienza.svg",       # clessidra
+      f'<path d="M40 28 H80 M40 92 H80" stroke="{BLU}" stroke-width="5" stroke-linecap="round"/>'
+      f'<path d="M44 30 C44 50 58 54 60 60 C62 66 76 70 76 90 M76 30 C76 50 62 54 60 60 C58 66 44 70 44 90" fill="none" stroke="{BLU}" stroke-width="4.5" stroke-linecap="round"/>'
+      f'<path d="M50 84 Q60 72 70 84Z" fill="{TEAL}"/><path d="M52 40 H68 Q62 50 60 52 Q58 50 52 40Z" fill="{TEAL}" opacity=".6"/>', "Pazienza", VERDE_T)
+icona("pilastro-mente-principiante.svg",  # germoglio
+      f'<path d="M60 92 V58" stroke="{BLU}" stroke-width="5" stroke-linecap="round"/>'
+      f'<path d="M60 64 C46 64 36 54 36 40 C50 40 60 50 60 64Z" fill="{TEAL}"/>'
+      f'<path d="M60 56 C60 42 70 32 86 32 C86 46 76 56 60 56Z" fill="{BLU}"/>'
+      f'<path d="M40 92 H80" stroke="{TEAL}" stroke-width="4" stroke-linecap="round"/>', "Mente del principiante")
+icona("pilastro-fiducia.svg",        # mani che sostengono un cuore
+      f'<path d="M24 66 Q30 88 60 90 Q90 88 96 66 Q84 74 72 72 L60 80 L48 72 Q36 74 24 66Z" fill="{TEAL}"/>'
+      f'<path d="M60 64 C60 64 42 54 42 42 C42 34 52 30 60 39 C68 30 78 34 78 42 C78 54 60 64 60 64Z" fill="{BLU}"/>', "Fiducia", VERDE_T)
+icona("pilastro-non-cercare.svg",    # foglia che galleggia sull'acqua, senza sforzo
+      f'<path d="M22 74 Q36 66 50 74 T78 74 T98 72" fill="none" stroke="{TEAL}" stroke-width="4.5" stroke-linecap="round"/>'
+      f'<path d="M22 88 Q38 80 54 88 T86 88" fill="none" stroke="{TEAL}" stroke-width="3.5" stroke-linecap="round" opacity=".6"/>'
+      f'<path d="M40 64 C46 44 70 38 86 44 C80 62 58 70 40 64Z" fill="{BLU}"/><path d="M42 63 C56 56 68 50 84 45" stroke="#fff" stroke-width="2.2" fill="none"/>', "Non cercare risultati")
+icona("pilastro-accettazione.svg",   # braccia aperte che accolgono
+      f'<circle cx="60" cy="38" r="9" fill="{BLU}"/>'
+      f'<path d="M60 50 V80 M60 80 L50 96 M60 80 L70 96" stroke="{BLU}" stroke-width="5.5" stroke-linecap="round" fill="none"/>'
+      f'<path d="M60 56 Q44 54 30 40 M60 56 Q76 54 90 40" stroke="{TEAL}" stroke-width="5.5" stroke-linecap="round" fill="none"/>', "Accettazione", VERDE_T)
+icona("pilastro-lasciar-andare.svg", # mano aperta e foglia che vola via
+      f'<path d="M28 84 Q44 92 64 86 L86 76 Q92 72 88 68 Q84 66 78 70 L66 74" fill="none" stroke="{BLU}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'
+      f'<path d="M28 84 L30 70 Q46 64 64 74" fill="none" stroke="{BLU}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'
+      f'<path d="M58 50 C62 34 78 26 92 30 C88 46 72 54 58 50Z" fill="{TEAL}"/>'
+      f'<path d="M46 56 q4 -6 10 -6" stroke="{TEAL}" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="2 5"/>', "Lasciar andare")
