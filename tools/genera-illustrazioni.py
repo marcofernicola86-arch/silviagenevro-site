@@ -181,6 +181,23 @@ b += scintilla(150, 150, 14, VERDE) + scintilla(456, 160, 14, VERDE) + scintilla
 b += scintilla(132, 232, 9, TEAL) + scintilla(300, 40, 9, TEAL)
 salva("corso-mindset.svg", svg(W, H, b, "Un cervello sorridente con la fascia sportiva che solleva due manubri"))
 
+# 6. Workshop e retreat: montagne, sole, una tenda e due persone che meditano sul prato
+b = f'<rect width="{W}" height="{H}" fill="{CREMA}"/>'
+b += f'<circle cx="430" cy="92" r="46" fill="{VERDE}" opacity=".8"/>'
+b += f'<path d="M-20 250 L120 110 L210 190 L300 96 L420 214 L500 150 L620 250Z" fill="{ACQUA}" opacity=".55"/>'
+b += f'<path d="M120 110 L150 140 L132 136 L120 150 L108 138 L94 136Z M300 96 L330 126 L312 122 L300 136 L288 124 L272 126Z" fill="#ffffff" opacity=".9"/>'
+b += f'<path d="M-20 270 L90 170 L190 240 L330 150 L470 250 L560 200 L620 270Z" fill="{TEAL}" opacity=".9"/>'
+b += f'<path d="M0 262 Q300 236 600 262 V340 H0Z" fill="{VERDE}" opacity=".75"/>'
+# tenda
+b += f'<path d="M440 296 L488 222 L536 296Z" fill="{BLU2}"/><path d="M488 222 L474 296 H502Z" fill="{ACQUA_T}"/>'
+b += f'<path d="M488 222 L488 210" stroke="{BLU}" stroke-width="3" stroke-linecap="round"/>'
+# alberelli
+for x, h in [(60, 46), (92, 34)]:
+    b += f'<path d="M{x} {280-h} L{x+16} 282 H{x-16}Z" fill="{TEAL}"/><rect x="{x-3}" y="280" width="6" height="10" fill="{BLU2}"/>'
+b += figura(230, 304, 1.25, corpo=BLU, capelli=BLU, stola=ACQUA)
+b += figura(345, 304, 1.25, corpo=BLU2, capelli="#5a3b2a", stola=VERDE)
+salva("corso-retreat.svg", svg(W, H, b, "Due persone meditano su un prato tra le montagne, accanto a una tenda"))
+
 # ===== Icone benefici (cerchio con simbolo) =====
 def icona(nome, simbolo, titolo, sfondo=ACQUA_T):
     b = f'<circle cx="60" cy="60" r="56" fill="{sfondo}"/>' + simbolo
