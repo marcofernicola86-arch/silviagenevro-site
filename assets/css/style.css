@@ -835,3 +835,22 @@ footer a:hover { color: var(--acqua); }
   #regalo .regalo-azioni { justify-content: center; }
   .regalo-regolamento { text-align: center; }
 }
+/* Chi sono: foto più grande con alone sfumato, nome e ruolo sopra il testo */
+.about-container { flex-wrap: nowrap; gap: 64px; max-width: 1000px; margin: 0 auto; }
+.about-foto { position: relative; flex: 0 0 auto; }
+.about-foto::before { content: ""; position: absolute; inset: -26px; border-radius: 50%; z-index: 0;
+  background: radial-gradient(circle at 30% 30%, var(--acqua) 0%, rgba(43,239,192,.35) 45%, rgba(148,255,131,.25) 70%, transparent 72%);
+  filter: blur(6px); transform: translate(14px, 10px); }
+.about-container .about-foto img { position: relative; z-index: 1; width: 300px; }
+.about-nome { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 1.9rem; color: var(--blu); margin: 0 0 4px !important; line-height: 1.2; }
+.about-ruolo { font-family: var(--etichetta); font-weight: 500; text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; color: var(--acqua-scuro); margin: 0 0 22px !important; }
+.about-text { max-width: 560px; }
+.about-azioni { justify-content: flex-start; margin-top: 8px; }
+@media (max-width: 768px) {
+  .about-container { flex-direction: column; gap: 40px; }
+  .about-container .about-foto img { width: 220px; }
+  .about-foto::before { inset: -18px; transform: translate(8px, 6px); }
+  .about-nome, .about-ruolo { text-align: center; }
+  .about-azioni { justify-content: center; }
+}
+@media (max-width: 768px) { .about-ruolo span { display: block; } .about-ruolo .about-sep { display: none; } }
