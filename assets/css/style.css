@@ -938,3 +938,8 @@ footer a:hover { color: var(--acqua); }
   background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
 .recensioni-link:hover, .recensioni-link:focus-visible { color: #fff;
   background: linear-gradient(var(--blu), var(--blu)) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+/* Pulsanti chiari (btn alt): cornice sfumata acqua → verde, al passaggio diventano blu */
+.btn.alt { border: 2px solid transparent; color: var(--blu);
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+.btn.alt:hover { color: #fff; border-color: transparent;
+  background: linear-gradient(var(--blu), var(--blu)) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
