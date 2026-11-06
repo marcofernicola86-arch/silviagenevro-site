@@ -871,3 +871,18 @@ footer a:hover { color: var(--acqua); }
 .dal-blog-leggi:hover { color: var(--blu); }
 .dal-blog-tutti { margin-top: 32px; }
 @media (max-width: 700px) { .dal-blog-griglia { grid-template-columns: 1fr; } .dal-blog-testo { padding: 20px; } }
+/* Domande frequenti: ogni domanda è un riquadro bianco; aperta prende la cornice sfumata */
+#faq .faq-item { max-width: 820px; margin: 0 auto 12px; padding: 0 24px; border-radius: 14px; border: 2px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(#fff, #fff) border-box; box-shadow: 0 2px 10px rgba(1,50,96,.05);
+  transition: box-shadow .2s ease; }
+#faq .faq-item:hover { box-shadow: 0 6px 18px rgba(1,50,96,.09); }
+#faq .faq-item[open] { background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+#faq .faq-item summary { padding: 18px 52px 18px 0; transition: color .2s ease; }
+#faq .faq-item summary:hover { color: var(--acqua-scuro); }
+#faq .faq-item summary::after { content: ""; top: 50%; right: 0; width: 30px; height: 30px; margin-top: -15px; border-radius: 50%;
+  background: var(--sfondo-tinta) no-repeat center / 14px 14px;
+  background-image: linear-gradient(var(--acqua-scuro), var(--acqua-scuro)), linear-gradient(var(--acqua-scuro), var(--acqua-scuro));
+  background-size: 14px 2px, 2px 14px; transition: transform .25s ease, background-color .2s ease; }
+#faq .faq-item[open] summary::after { content: ""; background-size: 14px 2px, 0 0; background-color: #dcffd4; }
+#faq .faq-item p { margin: 0 0 20px; color: var(--testo); }
+@media (max-width: 600px) { #faq .faq-item { padding: 0 18px; } #faq .faq-item summary { padding: 16px 44px 16px 0; font-size: .98rem; } }
