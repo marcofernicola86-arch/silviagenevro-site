@@ -762,3 +762,14 @@ h1, h2, h3 { font-family: var(--etichetta); font-weight: 600; letter-spacing: .0
 /* Titolo della home in verde scuro */
 .hero h1 { color: var(--acqua-scuro); }
 @media (min-width: 1001px) { .hero h1 { max-width: 1120px; } }
+/* Link uniformi: mai sottolineati, al passaggio cambiano solo colore */
+a, a:hover, a:focus { text-decoration: none; }
+a:hover { color: var(--blu); }
+header nav a, header nav a:hover { border-bottom-color: transparent; }
+header nav a:hover { color: var(--acqua-scuro); }
+footer a { border-bottom: 0; }
+footer a:hover { color: var(--acqua); }
+.cards .card.c-blu h3 a:hover, .cards .card.c-verde h3 a:hover { color: var(--acqua); text-decoration: none; }
+.cards .card.c-acqua h3 a:hover, .cards .card.c-verdino h3 a:hover { color: var(--acqua-scuro); }
+.blog-card-leggi:hover, .articolo-torna a:hover { color: var(--blu); }
+.approfondimento:hover .approfondimento-testo strong { color: var(--acqua-scuro); }
