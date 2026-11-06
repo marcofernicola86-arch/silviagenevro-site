@@ -791,3 +791,18 @@ footer a:hover { color: var(--acqua); }
 @media (max-width: 800px) { .cert-griglia { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   .cert-voce { padding: 20px 12px 18px; } #certificazioni .cert-voce img { width: 110px; } .cert-voce span { font-size: .78rem; letter-spacing: .06em; } }
 @media (max-width: 480px) { .cert-intro .link-ico { font-size: .9rem; padding: 10px 16px; gap: 6px; } }
+/* Recensioni in home: tre riquadri con cornice sfumata, testo nel corsivo della voce di Silvia */
+.sezione-recensioni { padding-top: 72px; }
+.recensioni-sottotitolo { text-align: center; font-family: var(--serif); font-style: italic; color: var(--testo-tenue); font-size: 1.1rem; margin: -6px 0 32px; }
+.recensioni-home { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; max-width: 1100px; margin: 0 auto; }
+.recensione-home { margin: 0; padding: 26px 26px 22px; border-radius: var(--raggio); border: 3px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box;
+  display: flex; flex-direction: column; }
+.recensione-home .recensione-stelle { margin: 0 0 12px; font-size: 1.05rem; }
+.recensione-home blockquote { margin: 0 0 18px; flex: 1; }
+.recensione-home blockquote p { margin: 0; font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--blu); font-size: 1.02rem; line-height: 1.7; }
+.recensione-home figcaption { display: flex; flex-direction: column; gap: 2px; font-size: .9rem; color: var(--testo-tenue);
+  padding-top: 14px; border-top: 1px solid var(--bordo); }
+.recensione-home figcaption strong { font-family: var(--etichetta); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; color: var(--blu); }
+.sezione-recensioni .recensioni-invito { margin-top: 32px; padding-top: 0; border-top: 0; }
+@media (max-width: 900px) { .recensioni-home { grid-template-columns: 1fr; max-width: 560px; } .sezione-recensioni { padding-top: 56px; } }
