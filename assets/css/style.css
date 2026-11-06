@@ -958,3 +958,14 @@ footer a:hover { color: var(--acqua); }
 .meditazione-video { max-width: 360px; }
 .meditazione-video video { aspect-ratio: 9 / 16; object-fit: fill; }
 @media (max-width: 480px) { .meditazione-video { max-width: 300px; } }
+/* Meditazione: riquadro orizzontale con copertina; il video verticale compare al centro, senza deformarsi */
+.meditazione-video { position: relative; max-width: 640px; aspect-ratio: 3 / 2; }
+.meditazione-video video { position: absolute; inset: 0; margin: auto; width: auto; height: 100%; max-width: 100%; aspect-ratio: 9 / 16; object-fit: fill; }
+.meditazione-copertina { position: absolute; inset: 0; z-index: 2; padding: 0; border: 0; cursor: pointer; background: none; display: block; width: 100%; height: 100%; }
+.meditazione-copertina img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.meditazione-play { position: absolute; left: 50%; top: 50%; width: 84px; height: 84px; margin: -42px 0 0 -42px; border-radius: 50%;
+  background: rgba(10,117,101,.92); box-shadow: 0 10px 30px rgba(1,50,96,.35); transition: transform .2s ease, background .2s ease; }
+.meditazione-play::after { content: ""; position: absolute; left: 34px; top: 26px; border-style: solid; border-width: 16px 0 16px 26px; border-color: transparent transparent transparent #fff; }
+.meditazione-copertina:hover .meditazione-play { transform: scale(1.08); background: var(--blu); }
+@media (max-width: 480px) { .meditazione-video { max-width: none; } .meditazione-play { width: 68px; height: 68px; margin: -34px 0 0 -34px; } .meditazione-play::after { left: 27px; top: 20px; border-width: 14px 0 14px 22px; } }
+.meditazione-copertina[hidden] { display: none; }

@@ -25,10 +25,14 @@
     <h1>Meditazione guidata</h1>
     <p class="azienda-sottotitolo meditazione-sottotitolo">Questa meditazione guidata è un omaggio per tutti coloro che desiderano avvicinarsi alla pratica della Mindfulness. Concediti qualche minuto di presenza e ascolto.</p>
     <div class="meditazione-video">
-      <video controls preload="metadata" poster="/assets/img/meditazione-copertina.webp" width="450" height="800">
+      <video id="video-meditazione" controls preload="metadata" width="450" height="800">
         <source src="/assets/media/meditazione.mp4" type="video/mp4">
         Il tuo browser non supporta il video.
       </video>
+      <button type="button" class="meditazione-copertina" id="avvia-meditazione" aria-label="Avvia la meditazione guidata">
+        <img src="/assets/img/meditazione-copertina.webp" width="1200" height="800" alt="">
+        <span class="meditazione-play" aria-hidden="true"></span>
+      </button>
     </div>
     <ul class="meditazione-info">
       <li>Circa 5 minuti</li>
@@ -69,5 +73,12 @@
     </div>
   </section>
 
+<script>
+  (function () {
+    var btn = document.getElementById("avvia-meditazione"), v = document.getElementById("video-meditazione");
+    if (!btn || !v) return;
+    btn.addEventListener("click", function () { btn.hidden = true; v.play(); });
+  })();
+</script>
 <script src="/assets/js/menu.js"></script>
 {% include "footer.html" %}
