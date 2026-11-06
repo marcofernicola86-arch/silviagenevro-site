@@ -974,3 +974,5 @@ footer a:hover { color: var(--acqua); }
 /* Copertina della meditazione intera, senza tagli: il riquadro prende le sue proporzioni */
 .meditazione-video { aspect-ratio: 1665 / 944; max-width: 720px; }
 .meditazione-sottotitolo { max-width: 760px; }
+.voucher-nodo { width: 120px; top: 18%; filter: drop-shadow(0 4px 6px rgba(0,20,40,.35)); }
+@media (max-width: 820px) { .voucher-nodo { width: 92px; } }
