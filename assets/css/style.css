@@ -969,3 +969,5 @@ footer a:hover { color: var(--acqua); }
 .meditazione-copertina:hover .meditazione-play { transform: scale(1.08); background: var(--blu); }
 @media (max-width: 480px) { .meditazione-video { max-width: none; } .meditazione-play { width: 68px; height: 68px; margin: -34px 0 0 -34px; } .meditazione-play::after { left: 27px; top: 20px; border-width: 14px 0 14px 22px; } }
 .meditazione-copertina[hidden] { display: none; }
+.approfondimenti.approfondimenti-tre { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 1100px; }
+@media (max-width: 900px) { .approfondimenti.approfondimenti-tre { grid-template-columns: 1fr; max-width: 560px; } }
