@@ -30,7 +30,7 @@ Silvia manda un testo (Word o incollato) e di solito un paio di immagini. Proced
    description: "Riassunto di 140–160 caratteri con le parole che la gente cerca (es. mindfulness, MBSR, ADHD, stress, città)."
    date: AAAA-MM-GG
    immagine: /assets/img/blog/slug-breve.jpg      # facoltativa: immagine di copertina
-   copertina: /assets/img/illustrazioni/corso-gruppo.svg  # se manca una foto: illustrazione del sito come copertina
+   copertina: /assets/img/corsi/mbsr-percorsi-di-gruppo.webp  # se manca una foto: un'immagine del sito come copertina
    immagine_alt: "Descrizione dell'immagine"       # facoltativa
    cta_testo: "Scopri il percorso MBSR"            # facoltativo: pulsante in fondo (default: Scopri i corsi)
    cta_link: "/mbsr/"                              # facoltativo
