@@ -152,7 +152,7 @@ header nav a:hover { color: var(--acqua-scuro); border-bottom-color: var(--acqua
 /* foto a tutta larghezza, come una fascia (stile Meraki): si adatta tagliando sopra e sotto */
 .hero-foto {
   width: 100vw; max-width: none; margin: 36px calc(50% - 50vw) 28px;
-  height: clamp(230px, 32vw, 440px); object-fit: cover; object-position: 50% 66%;
+  height: clamp(230px, 32vw, 440px); object-fit: cover; object-position: 50% 75%;
   border-radius: 0; box-shadow: none;
 }
 .hero-buttons { margin-top: 24px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
