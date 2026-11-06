@@ -954,3 +954,7 @@ footer a:hover { color: var(--acqua); }
 .meditazione-instagram { padding-top: 0; }
 .meditazione-instagram .contatti-social-titolo { margin-top: 0; }
 @media (max-width: 768px) { #newsletter { max-width: calc(100% - 32px); margin-left: auto; margin-right: auto; } }
+/* Il video è verticale (9:16) ma il file è allargato a 3:2: lo riporto alle proporzioni giuste */
+.meditazione-video { max-width: 360px; }
+.meditazione-video video { aspect-ratio: 9 / 16; object-fit: fill; }
+@media (max-width: 480px) { .meditazione-video { max-width: 300px; } }
