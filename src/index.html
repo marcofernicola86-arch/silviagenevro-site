@@ -266,17 +266,28 @@
 <!-- FAI UN REGALO -->
 <section id="regalo" class="section tinta">
   <h2>Fai un Regalo</h2>
-  <p>
-    Regala un momento di presenza: un voucher per una sessione individuale o per un percorso di Mindfulness.<br>
-    Il voucher non ha scadenza e la data si concorda direttamente con me, in base alla disponibilità.
-  </p>
-  <p>
-    <span class="azioni azioni-centro">
-      <a href="mailto:silvia.genevro@gmail.com?subject=Richiesta%20voucher%20regalo" class="btn primary btn-ico">{% include "icone/regalo.html" %}Richiedi un voucher</a>
-      {% include "pulsante-whatsapp.html" %}
-    </span>
-  </p>
-  <p><a href="/regolamento/">Leggi il regolamento dei voucher</a></p>
+  <div class="regalo-griglia">
+    <div class="voucher" aria-hidden="true">
+      <span class="voucher-fiocco"><svg class="voucher-nodo" viewBox="0 0 100 70" aria-hidden="true"><defs><linearGradient id="g-fiocco" x1="0" x2="1"><stop offset="0" stop-color="#2befc0"/><stop offset="1" stop-color="#94ff83"/></linearGradient></defs><path d="M50 34 C38 14 12 8 10 22 C8 36 32 40 50 34Z" fill="url(#g-fiocco)" stroke="#013260" stroke-opacity=".25" stroke-width="1.5"/><path d="M50 34 C62 14 88 8 90 22 C92 36 68 40 50 34Z" fill="url(#g-fiocco)" stroke="#013260" stroke-opacity=".25" stroke-width="1.5"/><path d="M46 38 L30 66 L40 62 L44 70 L50 40Z M54 38 L70 66 L60 62 L56 70 L50 40Z" fill="#94ff83"/><circle cx="50" cy="35" r="8" fill="#2befc0" stroke="#013260" stroke-opacity=".25" stroke-width="1.5"/></svg></span>
+      <span class="voucher-ico">{% include "icone/regalo.html" %}</span>
+      <span class="voucher-etichetta">Voucher regalo</span>
+      <span class="voucher-titolo">Un momento di presenza</span>
+      <span class="voucher-dettagli">Sessione individuale o percorso di Mindfulness</span>
+      <span class="voucher-firma">Silvia Genevro</span>
+    </div>
+    <div class="regalo-testo">
+      <p>Regala un momento di presenza: un voucher per una sessione individuale o per un percorso di Mindfulness.</p>
+      <ul class="regalo-punti">
+        <li>Il voucher non ha scadenza</li>
+        <li>La data si concorda direttamente con me, in base alla disponibilità</li>
+      </ul>
+      <div class="azioni regalo-azioni">
+        <a href="mailto:silvia.genevro@gmail.com?subject=Richiesta%20voucher%20regalo" class="btn primary btn-ico">{% include "icone/regalo.html" %}Richiedi un voucher</a>
+        {% include "pulsante-whatsapp.html" %}
+      </div>
+      <p class="regalo-regolamento"><a href="/regolamento/">Leggi il regolamento dei voucher</a></p>
+    </div>
+  </div>
 </section>
 
 <!-- CHI SONO -->

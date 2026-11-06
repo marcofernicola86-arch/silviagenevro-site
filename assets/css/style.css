@@ -806,3 +806,32 @@ footer a:hover { color: var(--acqua); }
 .recensione-home figcaption strong { font-family: var(--etichetta); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; color: var(--blu); }
 .sezione-recensioni .recensioni-invito { margin-top: 32px; padding-top: 0; border-top: 0; }
 @media (max-width: 900px) { .recensioni-home { grid-template-columns: 1fr; max-width: 560px; } .sezione-recensioni { padding-top: 56px; } }
+/* Fai un Regalo: un voucher disegnato accanto al testo */
+#regalo .regalo-griglia { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 48px; align-items: center; max-width: 980px; margin: 0 auto; text-align: left; }
+.voucher { position: relative; aspect-ratio: 1.6; border-radius: 18px; padding: 28px 30px; overflow: hidden;
+  background: linear-gradient(135deg, var(--blu) 0%, #0b4f86 55%, var(--acqua-scuro) 100%); color: #fff;
+  display: flex; flex-direction: column; justify-content: center; gap: 6px; box-shadow: 0 18px 40px rgba(1,50,96,.22); transform: rotate(-2deg); }
+.voucher::after { content: ""; position: absolute; inset: 10px; border: 1.5px dashed rgba(255,255,255,.45); border-radius: 12px; pointer-events: none; }
+.voucher-fiocco { position: absolute; top: 0; bottom: 0; right: 16%; width: 16px; background: linear-gradient(var(--acqua), var(--verde)); }
+.voucher-nodo { position: absolute; left: 50%; top: 22%; width: 96px; height: auto; transform: translateX(-50%); overflow: visible; }
+.voucher-ico .ico { width: 30px; height: 30px; color: var(--acqua); }
+.voucher-etichetta { font-family: var(--etichetta); font-weight: 600; text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; color: var(--acqua); }
+.voucher-titolo { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 1.55rem; line-height: 1.25; max-width: 66%; }
+.voucher-dettagli { font-size: .9rem; opacity: .9; max-width: 62%; }
+.voucher-firma { margin-top: 10px; font-family: var(--serif); font-style: italic; font-size: .95rem; color: var(--verde); }
+.regalo-testo > p:first-child { font-size: 1.12rem; margin: 0 0 14px; text-align: left; max-width: none; }
+.regalo-punti { list-style: none; padding: 0; margin: 0 0 22px; display: grid; gap: 8px; }
+.regalo-punti li { position: relative; padding-left: 28px; }
+.regalo-punti li::before { content: ""; position: absolute; left: 0; top: .45em; width: 16px; height: 16px; border-radius: 50%;
+  background: linear-gradient(90deg, var(--acqua), var(--verde)); }
+#regalo .regalo-azioni { justify-content: flex-start; }
+#regalo .regalo-azioni .btn { margin-top: 0; }
+.regalo-regolamento { margin: 16px 0 0; font-size: .95rem; }
+@media (max-width: 820px) {
+  #regalo .regalo-griglia { grid-template-columns: 1fr; gap: 32px; max-width: 520px; }
+  .voucher { transform: none; padding: 24px; }
+  .voucher-titolo { font-size: 1.3rem; }
+  .voucher-nodo { width: 78px; }
+  #regalo .regalo-azioni { justify-content: center; }
+  .regalo-regolamento { text-align: center; }
+}
