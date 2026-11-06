@@ -971,3 +971,5 @@ footer a:hover { color: var(--acqua); }
 .meditazione-copertina[hidden] { display: none; }
 .approfondimenti.approfondimenti-tre { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 1100px; }
 @media (max-width: 900px) { .approfondimenti.approfondimenti-tre { grid-template-columns: 1fr; max-width: 560px; } }
+/* Copertina della meditazione intera, senza tagli: il riquadro prende le sue proporzioni */
+.meditazione-video { aspect-ratio: 1665 / 944; max-width: 720px; }
