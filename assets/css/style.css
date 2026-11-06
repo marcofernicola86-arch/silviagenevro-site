@@ -854,3 +854,20 @@ footer a:hover { color: var(--acqua); }
   .about-azioni { justify-content: center; }
 }
 @media (max-width: 768px) { .about-ruolo span { display: block; } .about-ruolo .about-sep { display: none; } }
+/* Dal blog in home: gli ultimi articoli in riquadri con la cornice sfumata */
+.dal-blog-sottotitolo { text-align: center; font-family: var(--serif); font-style: italic; color: var(--testo-tenue); font-size: 1.1rem; margin: -6px 0 32px; }
+.dal-blog-griglia { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+.dal-blog-card { border-radius: var(--raggio); overflow: hidden; border: 3px solid transparent; display: flex; flex-direction: column;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box;
+  transition: transform .3s ease, box-shadow .3s ease; }
+.dal-blog-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(1,50,96,.12); }
+.dal-blog-img img { display: block; width: 100%; height: auto; aspect-ratio: 600 / 340; object-fit: cover; }
+.dal-blog-testo { padding: 22px 26px 26px; display: flex; flex-direction: column; flex: 1; }
+.dal-blog-testo h3 { font-size: 1.22rem; line-height: 1.35; margin: 4px 0 10px; }
+.dal-blog-testo h3 a { color: var(--blu); }
+.dal-blog-testo h3 a:hover { color: var(--acqua-scuro); }
+.dal-blog-testo > p:not(.blog-card-data) { margin: 0 0 18px; color: var(--testo); flex: 1; }
+.dal-blog-leggi { font-weight: 700; color: var(--acqua-scuro); }
+.dal-blog-leggi:hover { color: var(--blu); }
+.dal-blog-tutti { margin-top: 32px; }
+@media (max-width: 700px) { .dal-blog-griglia { grid-template-columns: 1fr; } .dal-blog-testo { padding: 20px; } }
