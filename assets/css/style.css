@@ -976,3 +976,21 @@ footer a:hover { color: var(--acqua); }
 .meditazione-sottotitolo { max-width: 760px; }
 .voucher-nodo { width: 120px; top: 18%; filter: drop-shadow(0 4px 6px rgba(0,20,40,.35)); }
 @media (max-width: 820px) { .voucher-nodo { width: 92px; } }
+/* MBSR – Come funziona: tre tappe numerate con la cornice sfumata, unite da una linea */
+.formato-tappe { list-style: none; padding: 0; position: relative; counter-reset: none; }
+.formato-tappe::before { content: ""; position: absolute; left: 12%; right: 12%; top: 50%; height: 3px; border-radius: 3px; z-index: 0;
+  background: linear-gradient(90deg, var(--acqua), var(--verde)); }
+.formato-tappe .formato-voce { position: relative; z-index: 1; border: 3px solid transparent; padding-top: 36px;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+.tappa-num { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; background: var(--acqua-scuro); color: #fff;
+  font-family: var(--etichetta); font-weight: 600; font-size: 1.05rem; box-shadow: 0 0 0 5px var(--sfondo); }
+.formato.formato-tappe { margin-top: 40px; gap: 28px; }
+@media (max-width: 600px) { .formato-tappe::before { left: 50%; right: auto; top: 6%; bottom: 6%; width: 3px; height: auto; background: linear-gradient(var(--acqua), var(--verde)); }
+  .formato.formato-tappe { gap: 40px; } .formato-tappe .formato-voce { padding: 34px 14px 20px; } }
+/* Per approfondire: cornice sfumata */
+.approfondimenti-cornice .approfondimento { border: 3px solid transparent; box-shadow: none;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+.approfondimenti-cornice .approfondimento:hover { box-shadow: 0 14px 34px rgba(1,50,96,.12); }
+.approfondimenti-cornice .approfondimento:hover strong { color: var(--acqua-scuro); }
+.formato-tappe .formato-voce .tappa-num { color: #fff; font-size: 1.05rem; }
