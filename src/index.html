@@ -492,12 +492,22 @@
 <!-- CONTATTI -->
 <section id="contatti" class="section tinta">
   <h2>Contatti</h2>
-  <div class="contact-grid">
-    <a href="mailto:silvia.genevro@gmail.com" class="contact-btn email">{% include "icone/posta.html" %}Email</a>
-    <a href="{{ contatti.whatsapp }}" target="_blank" class="contact-btn whatsapp" rel="noopener">{% include "icone/whatsapp.html" %}WhatsApp</a>
-    <a href="https://www.instagram.com/silvia_genevro" target="_blank" class="contact-btn instagram" rel="noopener">{% include "icone/instagram.html" %}Instagram</a>
-    <a href="https://www.linkedin.com/in/silvia-genevro" target="_blank" class="contact-btn linkedin" rel="noopener">{% include "icone/linkedin.html" %}LinkedIn</a>
-    <a href="https://t.me/silviagenevro" target="_blank" class="contact-btn telegram" rel="noopener">{% include "icone/telegram.html" %}Telegram</a>
+  <p class="contatti-intro">Per informazioni sui percorsi scrivimi via email o WhatsApp.</p>
+  <div class="contatti-principali">
+    <a href="mailto:silvia.genevro@gmail.com" class="contatto-card">
+      <span class="contatto-ico">{% include "icone/posta.html" %}</span>
+      <span class="contatto-testo"><strong>Email</strong><span>silvia.genevro@gmail.com</span></span>
+    </a>
+    <a href="{{ contatti.whatsapp }}" target="_blank" rel="noopener" class="contatto-card">
+      <span class="contatto-ico contatto-ico-wa">{% include "icone/whatsapp.html" %}</span>
+      <span class="contatto-testo"><strong>WhatsApp</strong><span>Scrivimi un messaggio</span></span>
+    </a>
+  </div>
+  <p class="contatti-social-titolo">Seguimi anche su</p>
+  <div class="contatti-social">
+    <a href="https://www.instagram.com/silvia_genevro" target="_blank" rel="noopener" class="contact-btn instagram">{% include "icone/instagram.html" %}Instagram</a>
+    <a href="https://www.linkedin.com/in/silvia-genevro" target="_blank" rel="noopener" class="contact-btn linkedin">{% include "icone/linkedin.html" %}LinkedIn</a>
+    <a href="https://t.me/silviagenevro" target="_blank" rel="noopener" class="contact-btn telegram">{% include "icone/telegram.html" %}Telegram</a>
   </div>
 </section>
 

@@ -886,3 +886,24 @@ footer a:hover { color: var(--acqua); }
 #faq .faq-item[open] summary::after { content: ""; background-size: 14px 2px, 0 0; background-color: #dcffd4; }
 #faq .faq-item p { margin: 0 0 20px; color: var(--testo); }
 @media (max-width: 600px) { #faq .faq-item { padding: 0 18px; } #faq .faq-item summary { padding: 16px 44px 16px 0; font-size: .98rem; } }
+/* Contatti: email e WhatsApp in evidenza, social più piccoli sotto */
+.contatti-intro { text-align: center; font-size: 1.1rem; margin: 0 auto 28px; }
+.contatti-principali { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: 760px; margin: 0 auto; }
+.contatto-card { display: flex; align-items: center; gap: 18px; padding: 22px 26px; border-radius: var(--raggio); border: 3px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box;
+  color: var(--blu); transition: transform .3s ease, box-shadow .3s ease; }
+.contatto-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(1,50,96,.12); color: var(--blu); }
+.contatto-ico { flex: 0 0 auto; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: var(--acqua-scuro); transition: background .2s ease; }
+.contatto-ico .ico { width: 26px; height: 26px; color: #fff; }
+.contatto-card:hover .contatto-ico { background: var(--blu); }
+.contatto-testo { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.contatto-testo strong { font-family: var(--etichetta); font-weight: 600; text-transform: uppercase; letter-spacing: .1em; font-size: .9rem; }
+.contatto-testo span { color: var(--testo); overflow-wrap: anywhere; transition: color .2s ease; }
+.contatto-card:hover .contatto-testo span { color: var(--acqua-scuro); }
+.contatti-social-titolo { text-align: center; font-family: var(--etichetta); font-weight: 500; text-transform: uppercase; letter-spacing: .12em;
+  font-size: .8rem; color: var(--testo-tenue); margin: 36px 0 14px; }
+.contatti-social { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.contatti-social .contact-btn { padding: 10px 20px; font-size: .95rem; }
+@media (max-width: 640px) { .contatti-principali { grid-template-columns: 1fr; } .contatto-card { padding: 18px 20px; }
+  .contatti-social .contact-btn { padding: 10px 14px; font-size: .9rem; } }
