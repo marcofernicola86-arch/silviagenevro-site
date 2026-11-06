@@ -759,3 +759,6 @@ h1, h2, h3 { font-family: var(--etichetta); font-weight: 600; letter-spacing: .0
 #corsi .cards .card.c-acqua   { background: linear-gradient(#5ff2cf, #5ff2cf) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
 #corsi .cards .card.c-verde   { background: linear-gradient(#0a7565, #0a7565) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
 #corsi .cards .card.c-verdino { background: linear-gradient(#c4ffb8, #c4ffb8) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+/* Titolo della home in verde scuro */
+.hero h1 { color: var(--acqua-scuro); }
+@media (min-width: 1001px) { .hero h1 { max-width: 1120px; } }
