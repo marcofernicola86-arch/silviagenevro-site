@@ -30,11 +30,13 @@ permalink: /blog/
     {% assign articoli = collections.articolo | reverse %}
     {% for articolo in articoli %}
     <article class="blog-card">
-      {% assign cop = articolo.data.immagine | default: articolo.data.copertina %}{% if cop %}<a href="{{ articolo.url }}" tabindex="-1" aria-hidden="true"><img src="{{ cop }}" alt="" loading="lazy"></a>{% endif %}
+      {% assign cop = articolo.data.immagine | default: articolo.data.copertina %}{% if cop %}<a class="blog-card-img" href="{{ articolo.url }}" tabindex="-1" aria-hidden="true"><img src="{{ cop }}" alt="" loading="lazy" width="1600" height="907"></a>{% endif %}
+      <div class="blog-card-testo">
       <p class="blog-card-data"><time datetime="{{ articolo.date | dataIso }}">{{ articolo.date | dataIt }}</time>, {{ articolo.templateContent | minutiLettura }} minuti di lettura</p>
       <h2><a href="{{ articolo.url }}">{{ articolo.data.title }}</a></h2>
       <p>{{ articolo.data.description }}</p>
-      <a class="blog-card-leggi" href="{{ articolo.url }}">Leggi l'articolo</a>
+      <a class="blog-card-leggi" href="{{ articolo.url }}">Leggi l'articolo <span aria-hidden="true">→</span></a>
+      </div>
     </article>
     {% endfor %}
   </div>

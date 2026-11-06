@@ -1021,3 +1021,27 @@ header nav a { font-family: var(--etichetta); font-weight: 500; text-transform: 
 /* Aziende: una sola recensione, centrata; pulsante Google come in home */
 .recensioni-home.recensioni-una { grid-template-columns: 1fr; max-width: 720px; }
 #testimonianze .recensioni-invito { max-width: none; margin-top: 28px; padding-top: 0; border-top: 0; }
+/* Pagina Blog: riquadri con cornice sfumata e copertina intera */
+.blog-intro { font-family: var(--serif); font-style: italic; }
+.blog-card { padding: 0; border: 3px solid transparent; box-shadow: none; display: flex; flex-direction: column; transition: transform .3s ease, box-shadow .3s ease;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+.blog-card::before { display: none; }
+.blog-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(1,50,96,.12); }
+.blog-card .blog-card-img img, .blog-card img { width: 100%; margin: 0; height: auto; aspect-ratio: 1600 / 907; object-fit: cover; }
+.blog-card-testo { padding: 24px 30px 28px; }
+.blog-card-leggi { color: var(--acqua-scuro); }
+@media (max-width: 700px) { .blog-card { padding: 0; } .blog-card img { width: 100%; margin: 0; height: auto; } .blog-card-testo { padding: 20px; } }
+/* Articolo: riquadro finale con cornice sfumata */
+.articolo-invito { border: 3px solid transparent; background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+/* Articolo: Leggi anche */
+.leggi-anche { margin: 44px 0 0; }
+.leggi-anche-titolo { text-align: center; font-family: var(--etichetta); font-weight: 500; text-transform: uppercase; letter-spacing: .14em; font-size: .9rem; color: var(--blu); margin: 0 0 18px; }
+.leggi-anche-griglia { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.leggi-anche-card { display: flex; flex-direction: column; border-radius: var(--raggio); overflow: hidden; border: 3px solid transparent; color: var(--blu);
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; transition: transform .3s ease, box-shadow .3s ease; }
+.leggi-anche-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(1,50,96,.12); color: var(--acqua-scuro); }
+.leggi-anche-card img { width: 100%; height: auto; aspect-ratio: 1600 / 907; object-fit: cover; display: block; }
+.leggi-anche-testo { padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 4px; }
+.leggi-anche-testo .blog-card-data { margin: 0; }
+.leggi-anche-testo strong { font-family: var(--etichetta); font-weight: 600; font-size: 1.05rem; line-height: 1.35; }
+.leggi-anche-griglia { grid-template-columns: repeat(auto-fit, minmax(240px, 340px)); justify-content: center; }

@@ -68,6 +68,28 @@
       <a class="btn alt" href="/#newsletter">Iscriviti alla newsletter</a>
     </p>
   </aside>
+
+  {%- assign altri = collections.articolo | reverse %}
+  {%- assign n_altri = 0 %}
+  {%- for a in altri %}{% if a.url != page.url %}{% assign n_altri = n_altri | plus: 1 %}{% endif %}{% endfor %}
+  {%- if n_altri > 0 %}
+  <section class="leggi-anche" aria-labelledby="leggi-anche-titolo">
+    <p class="leggi-anche-titolo" id="leggi-anche-titolo">Leggi anche</p>
+    <div class="leggi-anche-griglia">
+      {%- assign mostrati = 0 %}
+      {%- for a in altri %}{% if a.url != page.url and mostrati < 2 %}{% assign mostrati = mostrati | plus: 1 %}
+      {%- assign cop = a.data.immagine | default: a.data.copertina %}
+      <a class="leggi-anche-card" href="{{ a.url }}">
+        {%- if cop %}<img src="{{ cop }}" alt="" loading="lazy" width="1600" height="907">{% endif %}
+        <span class="leggi-anche-testo">
+          <span class="blog-card-data">{{ a.date | dataIt }}</span>
+          <strong>{{ a.data.title }}</strong>
+        </span>
+      </a>
+      {%- endif %}{% endfor %}
+    </div>
+  </section>
+  {%- endif %}
 </main>
 
 {% include "footer.html" %}
