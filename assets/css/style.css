@@ -1061,10 +1061,3 @@ header nav a { font-family: var(--etichetta); font-weight: 500; text-transform: 
 .pagina-privacy li::marker { color: var(--acqua-scuro); }
 @media (max-width: 768px) { .pagina-privacy { margin: 24px 16px; padding: 30px 22px; } .pagina-privacy h1 { font-size: 1.3rem; } }
 .regolamento-data { margin-top: 28px; font-style: italic; color: var(--testo-tenue); font-size: .95rem; }
-/* Apertura: logo piccolo come un timbro, nome sopra il titolo, pulsanti subito sotto */
-.hero-logo { width: 74px; margin-bottom: 14px; }
-.hero-chi { font-family: var(--etichetta); font-weight: 600; text-transform: uppercase; letter-spacing: .16em; font-size: .82rem; color: var(--acqua-scuro); margin: 0 0 14px; }
-.hero .hero-buttons { margin-top: 28px; }
-@media (max-width: 768px) { .hero-logo { width: 64px; } .hero-chi { font-size: .72rem; letter-spacing: .12em; } }
-.hero > p.hero-chi { max-width: none; font-size: .82rem; color: var(--acqua-scuro); margin: 0 auto 12px; }
-@media (max-width: 640px) { .hero > p.hero-chi { font-size: .72rem; } .hero-chi span { display: block; } .hero-chi .hero-chi-sep { display: none; } }
