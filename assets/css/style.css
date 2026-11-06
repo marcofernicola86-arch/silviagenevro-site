@@ -753,3 +753,9 @@ h1, h2, h3 { font-family: var(--etichetta); font-weight: 600; letter-spacing: .0
 @media (max-width: 800px) { .benefici.su-misura .beneficio { flex-basis: calc(50% - 9px); } .benefici.su-misura .beneficio p { font-size: .95rem; } }
 /* Corsi in home: se le schede sono dispari, l'ultima sta al centro */
 @media (min-width: 769px) { .cards .card:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 12px); } }
+/* Corsi in home: cornice sfumata acqua → verde, come il trattino sotto i titoli (3px) */
+#corsi .cards .card { border: 3px solid transparent; }
+#corsi .cards .card.c-blu     { background: linear-gradient(#0b4f86, #0b4f86) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+#corsi .cards .card.c-acqua   { background: linear-gradient(#5ff2cf, #5ff2cf) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+#corsi .cards .card.c-verde   { background: linear-gradient(#0a7565, #0a7565) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+#corsi .cards .card.c-verdino { background: linear-gradient(#c4ffb8, #c4ffb8) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
