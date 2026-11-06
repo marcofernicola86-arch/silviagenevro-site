@@ -933,3 +933,8 @@ footer a:hover { color: var(--acqua); }
 .hero h1 .hero-t1 { display: block; font-family: var(--serif); font-weight: 600; font-size: clamp(2.1rem, 4.6vw, 3.4rem); color: var(--acqua-scuro); }
 .hero h1 .hero-t2 { display: block; margin-top: 14px; font-family: var(--etichetta); font-weight: 500; text-transform: uppercase;
   letter-spacing: .14em; font-size: clamp(.82rem, 1.6vw, 1.05rem); line-height: 1.6; color: var(--blu); }
+/* Pulsante "Leggi tutte le recensioni": cornice sfumata come gli altri riquadri */
+.recensioni-link { border: 2px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+.recensioni-link:hover, .recensioni-link:focus-visible { color: #fff;
+  background: linear-gradient(var(--blu), var(--blu)) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
