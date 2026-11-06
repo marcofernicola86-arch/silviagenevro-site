@@ -1,7 +1,8 @@
 ---
 title: "Svegliarsi dal pilota automatico: perché la Mindfulness è il segreto per restare umani"
 description: "Hannah Arendt, la banalità del male e il pilota automatico: perché la Mindfulness ci aiuta a restare presenti e umani. Con un piccolo esercizio da provare oggi."
-copertina: /assets/img/illustrazioni/blog-pilota-automatico.svg
+immagine: /assets/img/blog/svegliarsi-dal-pilota-automatico.webp
+immagine_alt: "A sinistra due persone grigie camminano in automatico su un nastro trasportatore tra gli ingranaggi; a destra una persona a colori si ferma, respira e si china verso un fiore a forma di cuore"
 date: 2026-09-07
 ---
 Ti è mai capitato di passare un’intera giornata a correre, seguendo la lista delle cose da fare, senza fermarti un secondo a riflettere? A volte si vive così tanto in "automatico" che il rischio è di perdere di vista ciò che conta davvero.
