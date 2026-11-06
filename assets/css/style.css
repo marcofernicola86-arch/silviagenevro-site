@@ -943,3 +943,14 @@ footer a:hover { color: var(--acqua); }
   background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
 .dal-blog-tutti .btn.alt:hover { color: #fff; border-color: transparent;
   background: linear-gradient(var(--blu), var(--blu)) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+/* Pagina Meditazione guidata */
+.meditazione-sottotitolo { max-width: 680px; white-space: normal !important; }
+.meditazione-video { max-width: 640px; margin: 32px auto 0; border-radius: 20px; padding: 0; overflow: hidden; border: 3px solid transparent;
+  background: linear-gradient(#0b2a3a, #0b2a3a) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; box-shadow: 0 18px 44px rgba(1,50,96,.18); }
+.meditazione-video video { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; }
+.meditazione-info { list-style: none; padding: 0; margin: 26px auto 0; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.meditazione-info li { font-family: var(--etichetta); font-weight: 500; text-transform: uppercase; letter-spacing: .1em; font-size: .78rem; color: var(--blu);
+  background: #cdf5ea; padding: 8px 16px; border-radius: 999px; }
+.meditazione-instagram { padding-top: 0; }
+.meditazione-instagram .contatti-social-titolo { margin-top: 0; }
+@media (max-width: 768px) { #newsletter { max-width: calc(100% - 32px); margin-left: auto; margin-right: auto; } }

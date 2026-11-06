@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="it">
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Meditazione guidata gratuita | Silvia Genevro Mindfulness</title>
@@ -9,12 +8,11 @@
   <meta property="og:title" content="Meditazione guidata gratuita | Silvia Genevro Mindfulness">
   <meta property="og:description" content="Una meditazione guidata in omaggio per avvicinarsi alla Mindfulness: qualche minuto di presenza e ascolto con Silvia Genevro, istruttrice di Mindfulness.">
   <meta property="og:url" content="https://silviagenevro.it/meditazione/">
-  <meta property="og:image" content="https://silviagenevro.it/assets/img/anteprima-social.jpg">
+  <meta property="og:image" content="https://silviagenevro.it/assets/img/meditazione-anteprima.jpg">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/assets/css/style.css">
-
   <link rel="canonical" href="https://silviagenevro.it/meditazione/">
 </head>
 <body>
@@ -22,34 +20,54 @@
   <!-- HEADER -->
   {% include "header.html" %}
 
-  <!-- SEZIONE VIDEO -->
-  <section class="section meditazione-section">
-    <h1>Meditazione Guidata</h1>
-    <p>Questa meditazione guidata è un omaggio per tutti coloro che desiderano avvicinarsi alla pratica della Mindfulness. Concediti qualche minuto di presenza e ascolto.</p>
-    <div class="video-container">
-      <video controls preload="metadata">
+  <!-- APERTURA CON IL VIDEO -->
+  <section class="section azienda-apertura meditazione-apertura">
+    <h1>Meditazione guidata</h1>
+    <p class="azienda-sottotitolo meditazione-sottotitolo">Questa meditazione guidata è un omaggio per tutti coloro che desiderano avvicinarsi alla pratica della Mindfulness. Concediti qualche minuto di presenza e ascolto.</p>
+    <div class="meditazione-video">
+      <video controls preload="metadata" poster="/assets/img/meditazione-copertina.webp" width="600" height="400">
         <source src="/assets/media/meditazione.mp4" type="video/mp4">
         Il tuo browser non supporta il video.
       </video>
+    </div>
+    <ul class="meditazione-info">
+      <li>Circa 5 minuti</li>
+      <li>Gratuita</li>
+      <li>Per chi si avvicina alla Mindfulness</li>
+    </ul>
+  </section>
+
+  <!-- PER CONTINUARE -->
+  <section id="continua" class="section tinta">
+    <h2>Vuoi continuare a praticare?</h2>
+    <div class="approfondimenti">
+      <a class="approfondimento" href="/mbsr/">
+        <img src="/assets/img/corsi/mbsr-percorsi-di-gruppo.webp" width="600" height="340" alt="" loading="lazy">
+        <span class="approfondimento-testo">
+          <strong>Percorsi di gruppo MBSR</strong>
+          <span>Protocollo completo per ridurre lo stress e coltivare la presenza.</span>
+        </span>
+      </a>
+      <a class="approfondimento" href="/sessioni/">
+        <img src="/assets/img/corsi/sessioni-individuali.webp" width="600" height="340" alt="" loading="lazy">
+        <span class="approfondimento-testo">
+          <strong>Sessioni individuali</strong>
+          <span>Percorsi personalizzati e flessibili di Mindfulness, con pratiche mirate.</span>
+        </span>
+      </a>
     </div>
   </section>
 
   <!-- NEWSLETTER + INSTAGRAM -->
   <section id="newsletter" class="section">
     {% include "newsletter.html" %}
-
-    <div class="follow-instagram">
-      <h2>Seguimi anche su Instagram!</h2>
-      <a href="https://www.instagram.com/silvia_genevro" target="_blank" class="instagram-btn" rel="noopener">
-        Seguimi su Instagram
-      </a>
+  </section>
+  <section class="section meditazione-instagram">
+    <p class="contatti-social-titolo">Seguimi anche su</p>
+    <div class="contatti-social">
+      <a href="https://www.instagram.com/silvia_genevro" target="_blank" rel="noopener" class="contact-btn instagram">{% include "icone/instagram.html" %}Instagram</a>
     </div>
   </section>
-
-  <!-- TORNA AL SITO -->
-  <p style="text-align:center; margin-top:30px;">
-    <a class="btn primary" href="/">← Torna al sito</a>
-  </p>
 
 <script src="/assets/js/menu.js"></script>
 {% include "footer.html" %}
