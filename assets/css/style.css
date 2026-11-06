@@ -907,3 +907,6 @@ footer a:hover { color: var(--acqua); }
 .contatti-social .contact-btn { padding: 10px 20px; font-size: .95rem; }
 @media (max-width: 640px) { .contatti-principali { grid-template-columns: 1fr; } .contatto-card { padding: 18px 20px; }
   .contatti-social .contact-btn { padding: 10px 14px; font-size: .9rem; } }
+.contatti-social .contact-btn { border: 2px solid transparent; box-shadow: none;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+.contatti-social .contact-btn:hover { background: linear-gradient(var(--blu), var(--blu)) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; color: #fff; }
