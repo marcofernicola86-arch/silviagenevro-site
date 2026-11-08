@@ -1061,3 +1061,7 @@ header nav a { font-family: var(--etichetta); font-weight: 500; text-transform: 
 .pagina-privacy li::marker { color: var(--acqua-scuro); }
 @media (max-width: 768px) { .pagina-privacy { margin: 24px 16px; padding: 30px 22px; } .pagina-privacy h1 { font-size: 1.3rem; } }
 .regolamento-data { margin-top: 28px; font-style: italic; color: var(--testo-tenue); font-size: .95rem; }
+/* Mindful Safety: riquadro "Si può finanziare" */
+.finanziabile-box { max-width: 720px; margin: 0 auto; padding: 28px 32px; text-align: center; border-radius: var(--raggio); border: 3px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+.finanziabile-box p { margin: 0; font-size: 1.12rem; }
