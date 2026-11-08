@@ -1065,3 +1065,8 @@ header nav a { font-family: var(--etichetta); font-weight: 500; text-transform: 
 .finanziabile-box { max-width: 720px; margin: 0 auto; padding: 28px 32px; text-align: center; border-radius: var(--raggio); border: 3px solid transparent;
   background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
 .finanziabile-box p { margin: 0; font-size: 1.12rem; }
+/* Mindful Safety: riquadri con descrizione breve */
+.formato-descr .formato-voce span:not(.formato-ico) { font-size: .95rem; color: var(--testo); line-height: 1.55; }
+.formato-descr .formato-voce { padding: 26px 20px; }
+.rimando-box { margin-top: 18px; }
+.finanziabile-box a { font-weight: 700; }
