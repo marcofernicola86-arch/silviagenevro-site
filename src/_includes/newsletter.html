@@ -22,7 +22,7 @@
     </label>
 
     <button type="submit" id="nlBtn">Iscriviti</button>
-    <span id="newsletterMsg" role="status" aria-live="polite" style="margin-left:10px; display:none;"></span>
+    <span id="newsletterMsg" role="status" aria-live="polite" style="display:block; min-height:1.5em; visibility:hidden;"></span>
   </form>
 
   <script>
@@ -36,7 +36,7 @@
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      msg.style.display = "inline";
+      msg.style.visibility = "visible";
       msg.textContent = "Invio in corso...";
       if (btn) btn.disabled = true;
 
