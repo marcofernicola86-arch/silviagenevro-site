@@ -21,6 +21,11 @@ module.exports = function (eleventyConfig) {
     return Math.max(1, Math.round(parole / 200));
   });
 
+  // collegamento WhatsApp con il messaggio già scritto (cambia da pagina a pagina, così si capisce da dove arriva chi scrive)
+  eleventyConfig.addFilter("linkWhatsapp", (testo, numero) =>
+    "https://wa.me/" + numero + "?text=" + encodeURIComponent(String(testo || "").trim())
+  );
+
   return {
     dir: {
       input: "src",

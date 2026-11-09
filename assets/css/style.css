@@ -144,7 +144,7 @@ header nav a:hover { color: var(--acqua-scuro); border-bottom-color: var(--acqua
 /* al massimo tre righe su ogni schermo */
 @media (max-width: 1000px) { .hero h1 { font-size: 1.6rem; } }
 /* a capo voluti solo su computer: sul telefono il titolo va a capo da solo */
-@media (max-width: 640px) { .hero h1 br.solo-pc { display: none; } }
+
 @media (max-width: 640px)  { .hero h1 { font-size: 1.45rem; letter-spacing: .06em; } }
 @media (max-width: 480px)  { .hero h1 { font-size: min(1.35rem, 5.05vw); letter-spacing: .05em; } }
 .hero > p { max-width: 640px; margin: 0 auto; color: var(--testo-tenue); font-size: 1.15rem; }
@@ -166,7 +166,6 @@ header nav a:hover { color: var(--acqua-scuro); border-bottom-color: var(--acqua
 }
 .about-text { max-width: 540px; font-size: 1.12rem; }
 .about-text p { margin: 0 0 16px; }
-.about-text i { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--blu); font-size: 1.15rem; }
 
 /* ===== CERTIFICAZIONI ===== */
 #certificazioni { text-align: center; }
@@ -217,52 +216,10 @@ header nav a:hover { color: var(--acqua-scuro); border-bottom-color: var(--acqua
 }
 
 /* ===== FORMAZIONE ===== */
-#formazione { text-align: center; }
-#formazione > p { max-width: 680px; margin: 0 auto; font-size: 1.12rem; }
 
 /* ===== EVENTI ===== */
-.evento-card {
-  background: #fff; padding: 24px; border-radius: var(--raggio);
-  border: 1px solid var(--bordo); box-shadow: var(--ombra);
-  max-width: 900px; margin: 0 auto;
-}
-.evento-card[hidden] { display: none; }
-.evento-locandine { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
-.evento-locandine a { display: block; }
-.evento-img { width: 100%; height: auto; display: block; border-radius: 12px; transition: transform .2s ease; }
-.evento-locandine a:hover .evento-img { transform: scale(1.02); }
-.evento-info { text-align: center; padding: 20px 8px 4px; }
-.evento-info h3 { font-size: 1.7rem; margin: 0 0 12px; }
-.evento-info h3 span { display: block; font-family: var(--sans); font-size: 1.05rem; font-weight: 400; color: var(--testo-tenue); margin-top: 4px; }
-.evento-dati { list-style: none; padding: 0; margin: 0 0 16px; line-height: 1.9; }
-.evento-info p { max-width: 640px; margin: 0 auto 20px; }
-.evento-btn { display: inline-block; padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; }
-.evento-zoom { text-align: center; font-size: .85rem; color: var(--testo-tenue); margin: 10px 0 0; }
-.evento-nessuno { text-align: center; }
-.apri-locandina { cursor: zoom-in; }
 
 /* Locandina ingrandita */
-.locandina-grande {
-  border: 0; padding: 0; background: transparent; overflow: visible;
-  max-width: 94vw; max-height: 92vh; max-height: 92dvh;
-}
-.locandina-grande::backdrop { background: rgba(1, 26, 50, .82); }
-.locandina-grande img {
-  display: block; max-width: 94vw; max-height: 92vh; max-height: 92dvh;
-  width: auto; height: auto; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,.4);
-}
-.locandina-chiudi {
-  position: fixed; top: 14px; right: 14px; z-index: 2;
-  width: 48px; height: 48px; border-radius: 50%; border: 0; cursor: pointer;
-  background: #fff; color: var(--blu); font-size: 2rem; line-height: 1; font-family: var(--sans);
-  box-shadow: 0 4px 14px rgba(0,0,0,.3);
-}
-.locandina-chiudi:focus-visible { outline: 3px solid var(--acqua); outline-offset: 3px; }
-body.locandina-aperta { overflow: hidden; }
-@media (max-width: 600px) {
-  .evento-card { padding: 14px; }
-  .evento-locandine { grid-template-columns: 1fr; }
-}
 
 /* ===== FAI UN REGALO ===== */
 #regalo { text-align: center; }
@@ -310,7 +267,7 @@ body.locandina-aperta { overflow: hidden; }
 #newsletter .consenso input { margin-right: 8px; accent-color: var(--acqua-scuro); }
 
 /* ===== CONTATTI ===== */
-.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 8px; }
+
 .contact-btn {
   display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px;
   border-radius: 999px; font-weight: 700; text-decoration: none;
@@ -333,27 +290,12 @@ footer a:hover { color: var(--acqua); border-bottom-color: var(--acqua); }
 .section > h2:first-child { margin-top: 0; }
 .section ul { padding-left: 1.2em; }
 .section ul li::marker { color: var(--acqua-scuro); }
-.box-info {
-  margin-top: 32px; background: var(--sfondo-tinta); padding: 20px 26px; border-radius: var(--raggio);
-  border-left: 5px solid var(--acqua); max-width: 650px;
-}
-.box-info p { margin: 0; }
+
 .testo-lungo { max-width: 850px; }
 
 /* ===== VIDEO / MEDITAZIONE ===== */
-.video-container { max-width: 800px; margin: 20px auto; }
-.meditazione-section { text-align: center; margin: 40px auto; max-width: 800px; padding: 0 20px; }
-.meditazione-section h1, .meditazione-section p { text-align: center; margin: 0 auto 20px; max-width: 700px; }
-.meditazione-section video { display: block; margin: 20px auto; width: 100%; max-width: 600px; border-radius: var(--raggio); box-shadow: var(--ombra); }
 
 /* Instagram */
-.follow-instagram { text-align: center; margin-top: 40px; }
-.follow-instagram p { font-size: 1.2rem; font-weight: bold; margin-bottom: 14px; }
-.instagram-btn {
-  display: inline-block; padding: 12px 24px; border-radius: 999px; font-weight: 700; text-decoration: none;
-  color: var(--blu); border: 2px solid var(--blu); transition: background .2s ease, color .2s ease;
-}
-.instagram-btn:hover { background: var(--blu); color: #fff; }
 
 /* ===== PAGINA 404 ===== */
 .pagina-404 { text-align: center; min-height: 50vh; }
@@ -362,7 +304,7 @@ footer a:hover { color: var(--acqua); border-bottom-color: var(--acqua); }
 
 /* ===== INVITO RECENSIONI (sobrio) ===== */
 .recensioni-invito { max-width: 520px; margin: 36px auto 0; padding-top: 28px; border-top: 1px solid var(--bordo); text-align: center; }
-.recensioni-titolo { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--blu); margin: 0 0 12px; font-size: 1.1rem; }
+
 .recensioni-link {
   display: inline-flex; align-items: center; gap: 10px; padding: 10px 22px;
   border: 1px solid var(--acqua-scuro); border-radius: 999px; background: #fff;
@@ -384,9 +326,9 @@ footer a:hover { color: var(--acqua); border-bottom-color: var(--acqua); }
   .about-container { flex-direction: column; text-align: center; gap: 28px; }
   .about-container img { width: 190px; }
   .cards { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  
   .contact-btn { font-size: .95em; padding: 12px 10px; }
-  .contact-grid a:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  
   #newsletter { max-width: calc(100% - 32px); padding: 40px 18px; margin: 56px auto; }
 }
 
@@ -462,8 +404,6 @@ header nav a:focus-visible { outline: 3px solid var(--acqua-scuro); outline-offs
   body.menu-open { overflow: hidden; }
 }
 
-#menu-backdrop { display: none !important; }
-
 /* ===================================================== */
 /* ======================== BLOG ======================= */
 /* ===================================================== */
@@ -525,20 +465,8 @@ header nav a:focus-visible { outline: 3px solid var(--acqua-scuro); outline-offs
 }
 
 /* Home: ultimo articolo del blog */
-.blog-ultimo {
-  max-width: 720px; margin: 0 auto; text-align: center; overflow: hidden;
-  background: #fff; border: 1px solid var(--bordo); border-radius: var(--raggio); box-shadow: var(--ombra);
-}
+
 /* copertina sempre intera (niente ritagli), sopra il testo */
-.blog-ultimo-img { display: block; }
-.blog-ultimo-img img { display: block; width: 100%; height: auto; aspect-ratio: 600 / 340; object-fit: cover; }
-.blog-ultimo-testo { padding: 28px 34px 32px; }
-.blog-ultimo h3 { font-size: 1.5rem; margin: 4px 0 12px; }
-.blog-ultimo h3 a { color: var(--blu); text-decoration: none; }
-.blog-ultimo h3 a:hover { color: var(--acqua-scuro); }
-.blog-ultimo p { margin: 0 0 16px; }
-.blog-ultimo-azioni { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 6px 0 0 !important; }
-@media (max-width: 700px) { .blog-ultimo-testo { padding: 24px 20px; } }
 
 /* ===== BENEFICI ===== */
 .benefici { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 28px; }
@@ -610,7 +538,7 @@ span.azioni { display: flex; }
 
 /* ===== PAGINA MINDFULNESS IN AZIENDA ===== */
 .azienda-apertura { text-align: center; padding-top: 48px; }
-.azienda-etichetta { font-family: var(--etichetta); font-weight: 600; text-transform: uppercase; letter-spacing: .12em; font-size: .85rem; color: var(--acqua-scuro); margin: 0 0 10px; }
+
 .azienda-apertura h1 { font-family: var(--etichetta); font-weight: 500; text-transform: uppercase; letter-spacing: .08em; font-size: clamp(1.6rem, 4.4vw, 2.4rem); }
 .azienda-sottotitolo { max-width: none; margin: 0 auto; font-size: 1.15rem; color: var(--testo-tenue); }
 @media (min-width: 900px) { .azienda-sottotitolo { white-space: nowrap; } }
@@ -626,7 +554,7 @@ span.azioni { display: flex; }
 .recensione-card blockquote { margin: 0; }
 .recensione-card blockquote p { margin: 0 0 16px; font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--blu); font-size: 1.12rem; line-height: 1.7; }
 .recensione-card figcaption { color: var(--testo-tenue); font-size: .95rem; }
-.recensioni-altre { text-align: center; margin: 22px 0 0; }
+
 /* riquadro della home: anche l'illustrazione porta alla pagina */
 .cards .card > a:first-child { display: block; }
 @media (max-width: 600px) { .recensione-card { padding: 24px 20px; } }
@@ -669,20 +597,17 @@ span.azioni { display: flex; }
 
 /* 4. Ruoli dei caratteri: Montserrat per i titoli, Lato per il testo, Lora solo per la "voce" */
 h1, h2, h3 { font-family: var(--etichetta); font-weight: 600; letter-spacing: .01em; }
-.cards .card h3, .blog-card h2, .blog-ultimo h3, .evento-info h3, .formato-voce strong,
-.faq-item summary, .articolo-testo h2, .articolo-testo h3, .articolo-invito-titolo {
+.cards .card h3, .blog-card h2, .formato-voce strong, .faq-item summary, .articolo-testo h2, .articolo-testo h3, .articolo-invito-titolo {
   font-family: var(--etichetta); font-weight: 600; letter-spacing: .01em;
 }
 .faq-item summary { font-size: 1.02rem; }
 .cards .card h3 { font-size: 1.18rem; line-height: 1.35; }
 .articolo-testa h1 { font-family: var(--serif); font-weight: 600; }            /* il titolo dell'articolo è la voce di Silvia */
-.recensione-card blockquote p, .citazione blockquote p, .recensioni-titolo,
-.hero-firma p, .about-text i { font-family: var(--serif); }
+.recensione-card blockquote p, .citazione blockquote p, .hero-firma p { font-family: var(--serif); }
 
 /* 1. Gerarchia: l'ombra resta solo su ciò che si clicca; il resto è piatto */
-.recensione-card, .citazione, .formato-voce, .evento-card, #newsletter, .articolo-invito,
-.azienda-illu, .box-info { box-shadow: none; }
-.recensione-card, .formato-voce, .evento-card, #newsletter { border: 1px solid var(--bordo); }
+.recensione-card, .citazione, .formato-voce, #newsletter, .articolo-invito, .azienda-illu { box-shadow: none; }
+.recensione-card, .formato-voce, #newsletter { border: 1px solid var(--bordo); }
 .citazione { background: transparent; border: 0; border-left: 3px solid var(--acqua-scuro); border-radius: 0; padding: 6px 0 6px 24px; }
 .recensione-card::before { display: none; }
 #newsletter, .articolo-invito { background-image: none; }
@@ -703,12 +628,10 @@ h1, h2, h3 { font-family: var(--etichetta); font-weight: 600; letter-spacing: .0
 @media (max-width: 768px) { .hero-logo { width: 110px; } }
 
 /* 3. Allineamento: paragrafi lunghi a sinistra, righe non oltre ~70 caratteri */
-#regalo > p:first-of-type, .evento-info > p, .blog-ultimo-testo > p:not(.blog-ultimo-azioni):not(.blog-card-data),
-.articolo-invito > p:not(.articolo-invito-titolo):not(.articolo-invito-azioni) {
+#regalo > p:first-of-type, .articolo-invito > p:not(.articolo-invito-titolo):not(.articolo-invito-azioni) {
   text-align: left; max-width: 68ch; margin-left: auto; margin-right: auto;
 }
-.blog-ultimo-testo h3, .blog-ultimo-testo .blog-card-data { text-align: left; }
-.blog-ultimo-azioni { justify-content: flex-start; }
+
 @media (max-width: 768px) { .about-container { text-align: left; } .about-container img { align-self: center; } }
 .azienda-testo > p { max-width: 68ch; }
 
@@ -718,9 +641,7 @@ h1, h2, h3 { font-family: var(--etichetta); font-weight: 600; letter-spacing: .0
 .contact-btn .ico { color: var(--acqua-scuro); }
 .contact-btn:hover .ico { color: #fff; }
 .link-ico { display: inline-flex; align-items: center; gap: 6px; }
-.evento-dati { display: inline-flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 6px; }
-.evento-dati li { display: flex; gap: 10px; align-items: flex-start; }
-.evento-dati .ico { color: var(--acqua-scuro); margin-top: 4px; }
+
 /* pagina ADHD, "Come funziona": riquadri azzurrini, solo titoli in maiuscolo spaziato */
 .formato-voce { background: #cdf5ea; border-color: transparent; justify-content: center; min-height: 96px; }
 .formato-voce strong { font-family: var(--etichetta); font-weight: 500; text-transform: uppercase; letter-spacing: .08em; font-size: 1rem; line-height: 1.45; color: var(--blu); }
@@ -1019,7 +940,7 @@ header nav a { font-family: var(--etichetta); font-weight: 500; text-transform: 
 @media (min-width: 993px) and (max-width: 1199px) { header nav a { font-size: .7rem; letter-spacing: .08em; margin: 0 6px; } }
 @media (max-width: 992px) { #nav-links a { font-size: .95rem; letter-spacing: .12em; padding: 13px 20px; } }
 /* Aziende: una sola recensione, centrata; pulsante Google come in home */
-.recensioni-home.recensioni-una { grid-template-columns: 1fr; max-width: 720px; }
+
 #testimonianze .recensioni-invito { max-width: none; margin-top: 28px; padding-top: 0; border-top: 0; }
 /* Pagina Blog: riquadri con cornice sfumata e copertina intera */
 .blog-intro { font-family: var(--serif); font-style: italic; }

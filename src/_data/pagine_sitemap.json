@@ -1,6 +1,6 @@
 [
   {"url": "/", "lastmod": "2026-11-08", "priority": "1.0"},
-  {"url": "/mbsr/", "lastmod": "2026-11-06", "priority": "0.8"},
+  {"url": "/mbsr/", "lastmod": "2026-11-09", "priority": "0.8"},
   {"url": "/sessioni/", "lastmod": "2026-11-06", "priority": "0.8"},
   {"url": "/aziende/", "lastmod": "2026-11-08", "priority": "0.8"},
   {"url": "/mindful-safety/", "lastmod": "2026-11-08", "priority": "0.8"},
@@ -8,6 +8,6 @@
   {"url": "/adhd/", "lastmod": "2026-11-06", "priority": "0.8"},
   {"url": "/meditazione/", "lastmod": "2026-11-06", "priority": "0.7"},
   {"url": "/blog/", "lastmod": "2026-11-06", "priority": "0.7"},
-  {"url": "/regolamento/", "lastmod": "2026-11-06", "priority": "0.4"},
+  {"url": "/regolamento/", "lastmod": "2026-11-09", "priority": "0.4"},
   {"url": "/privacy/", "lastmod": "2026-11-06", "priority": "0.2"}
 ]
