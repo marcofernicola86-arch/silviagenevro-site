@@ -999,3 +999,5 @@ header nav a { font-family: var(--etichetta); font-weight: 500; text-transform: 
 .attestato-box p { margin: 0; font-size: 1.08rem; }
 .attestato-box strong { font-family: var(--etichetta); font-weight: 600; text-transform: uppercase; letter-spacing: .1em; font-size: 1rem; color: var(--blu); }
 @media (max-width: 600px) { .attestato-box { flex-direction: column; text-align: center; padding: 22px 18px; } }
+/* Foto di apertura: fascia più bassa sugli schermi grandi, così nella prima schermata entra anche la frase di Silvia */
+@media (min-width: 900px) { .hero-foto { height: clamp(230px, 24vw, 330px); object-position: 50% 72%; } }
