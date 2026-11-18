@@ -1025,3 +1025,8 @@ header nav a { font-family: var(--etichetta); font-weight: 500; text-transform: 
 .articolo .articolo-chiusura-metta, .articolo .articolo-firma { font-family: "Fredoka", var(--sans); font-style: normal; font-weight: 400; }
 .articolo .articolo-testo blockquote, .articolo .articolo-testo blockquote p { font-family: "Fredoka", var(--sans); font-style: normal; font-weight: 400; }
 .articolo .articolo-testo em { font-family: "Nunito", var(--sans); font-style: italic; font-weight: 400; }
+/* Riquadro dei diari: testo centrato, titolo più grande */
+.articolo-box { text-align: center; padding: 28px 26px; }
+.articolo-box p:first-child { margin-bottom: 14px; }
+.articolo-box strong { font-size: 1.15rem; letter-spacing: .1em; }
+@media (max-width: 600px) { .articolo-box strong { font-size: 1rem; } }
