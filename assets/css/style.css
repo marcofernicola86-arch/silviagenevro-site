@@ -1025,4 +1025,3 @@ header nav a { font-family: var(--etichetta); font-weight: 500; text-transform: 
 .articolo .articolo-chiusura-metta, .articolo .articolo-firma { font-family: "Fredoka", var(--sans); font-style: normal; font-weight: 400; }
 .articolo .articolo-testo blockquote, .articolo .articolo-testo blockquote p { font-family: "Fredoka", var(--sans); font-style: normal; font-weight: 400; }
 .articolo .articolo-testo em { font-family: "Nunito", var(--sans); font-style: italic; font-weight: 400; }
-.articolo .articolo-testo blockquote p { font-size: 1.35rem; line-height: 1.6; }
