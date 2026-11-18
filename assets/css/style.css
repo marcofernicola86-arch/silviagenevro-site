@@ -1002,3 +1002,13 @@ header nav a { font-family: var(--etichetta); font-weight: 500; text-transform: 
 /* Foto di apertura: fascia più bassa sugli schermi grandi, così nella prima schermata entra anche la frase di Silvia */
 @media (min-width: 900px) { .hero-foto { height: clamp(230px, 24vw, 330px); object-position: 50% 72%; } }
 .azienda-testo > ul { max-width: 68ch; margin-left: auto; margin-right: auto; }
+/* Articoli: riquadro informativo e chiusura centrata */
+.articolo-box { margin: 36px 0 28px; padding: 22px 26px; border-radius: var(--raggio); border: 3px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--acqua), var(--verde)) border-box; }
+.articolo-box p { margin: 0 0 8px; }
+.articolo-box p:last-child { margin-bottom: 0; }
+.articolo-box strong { font-family: var(--etichetta); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: .9rem; color: var(--blu); }
+.articolo-chiusura { text-align: center; margin: 36px 0 8px; }
+.articolo-chiusura p { margin: 0 0 10px; }
+.articolo-chiusura-metta { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 1.5rem; color: var(--acqua-scuro); }
+.articolo-firma { font-family: var(--serif); font-style: italic; color: var(--testo-tenue); margin-top: 18px !important; }
