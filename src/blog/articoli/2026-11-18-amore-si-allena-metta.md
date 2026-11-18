@@ -6,6 +6,7 @@ immagine: /assets/img/blog/amore-si-allena.webp
 immagine_alt: "Una donna medita con la mano sul cuore, circondata da nastri di luce che la uniscono a due persone, a un cane, a un gatto, a un uccellino e a una piantina, sotto un cuore verde"
 cta_testo: "Prova la meditazione guidata"
 cta_link: "/meditazione/"
+senza_invito: true            # niente riquadro "Ti va di praticare insieme?" in fondo
 ---
 ## Nessuno ce l'ha insegnato
 

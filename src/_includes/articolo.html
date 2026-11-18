@@ -63,6 +63,7 @@
     </div>
   </article>
 
+  {%- unless senza_invito %}
   <aside class="articolo-invito">
     <p class="articolo-invito-titolo">Ti va di praticare insieme?</p>
     <p>Percorsi di gruppo, sessioni individuali e una meditazione guidata gratuita per iniziare.</p>
@@ -71,6 +72,7 @@
       <a class="btn alt" href="/#newsletter">Iscriviti alla newsletter</a>
     </p>
   </aside>
+  {%- endunless %}
 
   {%- assign altri = collections.articolo | reverse %}
   {%- assign n_altri = 0 %}
