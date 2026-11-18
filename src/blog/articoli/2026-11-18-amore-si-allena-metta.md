@@ -86,15 +86,15 @@ Ha bisogno di persone gentili. Di persone che si abbracciano dentro prima di abb
 
 E quell'abbraccio, lo giuro, non si ferma mai a una persona sola. Passa da te a tuo figlio, da tuo figlio al suo compagno di banco, dal compagno di banco a sua madre, e così via, fino a qualcuno che non incontrerai mai. Perché non c'è separazione. Non c'è mai stata.
 
-<div class="articolo-box">
-<p><strong>I diari Metta sono disponibili su Amazon</strong></p>
-<p>Diario della Gentilezza Amorevole – Edizione per adulti</p>
-<p>Diario della Gentilezza Amorevole – Edizione per bambini</p>
-</div>
-
 <div class="articolo-chiusura">
 <p>Intanto, chiudi gli occhi un attimo.</p>
 <p class="articolo-chiusura-metta">Che tu possa essere felice.</p>
 <p>Sì, dico proprio a te che stai leggendo.</p>
 <p class="articolo-firma">Silvia Genevro</p>
+</div>
+
+<div class="articolo-box">
+<p><strong>I diari Metta sono disponibili su Amazon</strong></p>
+<p>Diario della Gentilezza Amorevole – Edizione per adulti</p>
+<p>Diario della Gentilezza Amorevole – Edizione per bambini</p>
 </div>
