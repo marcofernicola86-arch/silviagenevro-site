@@ -1012,3 +1012,14 @@ header nav a { font-family: var(--etichetta); font-weight: 500; text-transform: 
 .articolo-chiusura p { margin: 0 0 10px; }
 .articolo-chiusura-metta { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 1.5rem; color: var(--acqua-scuro); }
 .articolo-firma { font-family: var(--serif); font-style: italic; color: var(--testo-tenue); margin-top: 18px !important; }
+/* Articoli del blog: caratteri morbidi come nei diari Metta (Fredoka per i titoli, Nunito per il testo) */
+@font-face { font-family: "Nunito"; font-style: normal; font-weight: 400; font-display: swap; src: url("/assets/fonts/nunito-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Nunito"; font-style: italic; font-weight: 400; font-display: swap; src: url("/assets/fonts/nunito-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "Nunito"; font-style: normal; font-weight: 700; font-display: swap; src: url("/assets/fonts/nunito-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Fredoka"; font-style: normal; font-weight: 400; font-display: swap; src: url("/assets/fonts/fredoka-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Fredoka"; font-style: normal; font-weight: 500; font-display: swap; src: url("/assets/fonts/fredoka-latin-500-normal.woff2") format("woff2"); }
+.articolo .articolo-testa h1, .articolo .articolo-testo h2, .articolo .articolo-testo h3 { font-family: "Fredoka", var(--sans); font-weight: 500; letter-spacing: 0; }
+.articolo .articolo-testa h1 { font-size: clamp(2rem, 4.6vw, 2.8rem); }
+.articolo .articolo-testo, .articolo .articolo-meta, .articolo .articolo-box p, .articolo .articolo-chiusura p:not(.articolo-chiusura-metta):not(.articolo-firma) { font-family: "Nunito", var(--sans); }
+.articolo .articolo-testo { font-size: 1.08rem; }
+.articolo .articolo-chiusura-metta, .articolo .articolo-firma { font-family: "Fredoka", var(--sans); font-style: normal; font-weight: 400; }
